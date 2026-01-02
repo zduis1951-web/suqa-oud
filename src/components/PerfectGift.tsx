@@ -1,5 +1,4 @@
-import giftDesktop from '@/assets/perfect-gift-desktop.png';
-import giftMobile from '@/assets/perfect-gift-mobile.jpg';
+import suqaOudGcc from '@/assets/suqa-oud-gcc.jpg';
 
 /**
  * PerfectGift Section
@@ -16,16 +15,19 @@ interface PerfectGiftProps {
 
 const PerfectGift = ({ onShopNowClick }: PerfectGiftProps) => {
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* Desktop Image */}
-      <picture>
-        <source media="(min-width: 768px)" srcSet={giftDesktop} />
-        <img
-          src={giftMobile}
-          alt="SUQA OUD"
-          className="w-full h-auto object-cover"
-        />
-      </picture>
+    <section className="relative w-full min-h-screen overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 w-full h-full"
+        style={{
+          backgroundImage: `url(${suqaOudGcc})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+        role="img"
+        aria-label="SUQA OUD GCC"
+      />
 
       {/* Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
