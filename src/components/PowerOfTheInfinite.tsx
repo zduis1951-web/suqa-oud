@@ -25,7 +25,7 @@ const PowerOfTheInfinite = ({
     }} role="img" aria-label="The Craft - SUQA OUD Elite" />
       
       {/* Content Overlay */}
-      <div className="absolute inset-0 flex flex-col items-center justify-end pb-16 md:pb-20 lg:pb-24">
+      <div className="absolute inset-0 flex flex-col items-center justify-end pb-24 md:pb-32 lg:pb-40">
         {/* Main Title */}
         <h2 style={{
         fontFamily: 'var(--font-display)'
