@@ -9,6 +9,7 @@ import PerfectGift from '@/components/PerfectGift';
 import FeaturedProductsGrid from '@/components/FeaturedProductsGrid';
 import StoreLocatorSection from '@/components/StoreLocatorSection';
 import HouseOfAmouageSection from '@/components/HouseOfAmouageSection';
+import EditorialGallerySection from '@/components/EditorialGallerySection';
 import { Helmet } from 'react-helmet-async';
 
 /**
@@ -82,6 +83,7 @@ const Index = () => {
         <PerfectGift onShopNowClick={handleGiftShopClick} />
         <FeaturedProductsGrid onProductClick={handleProductClick} />
         <StoreLocatorSection onStoreLocatorClick={handleStoreLocatorClick} />
+        <EditorialGallerySection />
         <HouseOfAmouageSection onDiscoverClick={handleDiscoverStoryClick} />
       </main>
     </>
