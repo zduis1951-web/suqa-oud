@@ -88,46 +88,46 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
         </h2>
       </div>
 
-      {/* Products Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+      {/* Products Grid - Full width with minimal gaps */}
+      <div className="w-full px-0">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] md:gap-[2px] bg-cream-signature">
           {products.map((product) => (
             <div 
               key={product.id}
-              className="group flex flex-col cursor-pointer"
+              className="group flex flex-col cursor-pointer bg-cream-light"
               onClick={() => onProductClick?.(product.id)}
             >
-              {/* Product Image Container */}
-              <div className="relative aspect-[3/4] bg-cream-light mb-4">
+              {/* Product Image Container - Large products filling the space */}
+              <div className="relative aspect-[4/5] overflow-visible">
                 {/* NEW Badge */}
                 {product.isNew && (
                   <span 
-                    className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-foreground text-[10px] md:text-xs tracking-[0.15em] uppercase border border-foreground/30 px-2 py-0.5"
+                    className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-foreground text-[10px] md:text-xs tracking-[0.15em] uppercase border border-foreground/40 px-3 py-1 bg-cream-light/80"
                     style={{ fontFamily: 'var(--font-primary)' }}
                   >
                     NEW
                   </span>
                 )}
                 
-                {/* Bottle Image - visible by default */}
+                {/* Bottle Image - visible by default, large scale */}
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="absolute inset-0 w-full h-full object-contain p-4 md:p-6 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                  className="absolute inset-0 w-full h-full object-contain scale-110 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                 />
                 
                 {/* Box Image - visible on hover */}
                 <img
                   src={product.hoverImage}
                   alt={`${product.name} packaging`}
-                  className="absolute inset-0 w-full h-full object-contain p-4 md:p-6 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 w-full h-full object-contain scale-110 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                 />
               </div>
 
               {/* Product Info */}
-              <div className="text-center">
+              <div className="text-center py-4 md:py-6 bg-cream-signature">
                 <h3 
-                  className="text-foreground text-sm md:text-base tracking-[0.15em] uppercase mb-1"
+                  className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.15em] uppercase mb-1"
                   style={{ fontFamily: 'var(--font-primary)' }}
                 >
                   {product.name.toUpperCase()}
@@ -135,7 +135,7 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                 
                 {product.variant && (
                   <p 
-                    className="text-foreground/70 text-xs md:text-sm tracking-[0.05em] mb-2"
+                    className="text-foreground/60 text-[10px] sm:text-xs md:text-sm tracking-[0.05em] mb-1"
                     style={{ fontFamily: 'var(--font-primary)' }}
                   >
                     {product.variant}
@@ -143,7 +143,7 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                 )}
                 
                 <p 
-                  className="text-foreground text-sm md:text-base tracking-[0.05em]"
+                  className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.05em]"
                   style={{ fontFamily: 'var(--font-primary)' }}
                 >
                   {product.price}
