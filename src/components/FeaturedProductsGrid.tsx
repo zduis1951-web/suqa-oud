@@ -101,13 +101,13 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
             return (
               <div 
                 key={product.id}
-                className={`group flex flex-col cursor-pointer flex-1 ${
+                className={`group relative cursor-pointer flex-1 ${
                   index < products.length - 1 ? 'border-r border-foreground/15' : ''
                 }`}
                 style={{ background: panelBg }}
                 onClick={() => onProductClick?.(product.id)}
               >
-                {/* Product Image Container - Full bleed to frame edges */}
+                {/* Single panel container - image fills with text overlay at bottom */}
                 <div className="relative aspect-[4/5] overflow-hidden">
                   {/* NEW Badge */}
                   {product.isNew && (
@@ -135,19 +135,16 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                     alt={`${product.name} packaging`}
                     className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                   />
-                </div>
 
-                {/* Product Name - same background, fills to edges */}
-                <div 
-                  className="text-center py-4 md:py-5"
-                  style={{ background: panelBg }}
-                >
-                  <h3 
-                    className="text-foreground text-[11px] sm:text-xs md:text-sm tracking-[0.15em] uppercase font-normal"
-                    style={{ fontFamily: 'var(--font-primary)' }}
-                  >
-                    {product.name.toUpperCase()}
-                  </h3>
+                  {/* Product Name - positioned at bottom inside the frame */}
+                  <div className="absolute bottom-0 left-0 right-0 text-center py-3 md:py-4">
+                    <h3 
+                      className="text-foreground text-[11px] sm:text-xs md:text-sm tracking-[0.15em] uppercase font-normal"
+                      style={{ fontFamily: 'var(--font-primary)' }}
+                    >
+                      {product.name.toUpperCase()}
+                    </h3>
+                  </div>
                 </div>
               </div>
             );
