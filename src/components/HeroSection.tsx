@@ -60,22 +60,22 @@ const HeroSection = ({ onShopNowClick }: HeroSectionProps) => {
         aria-label="Luxury fragrance gift collection"
       />
 
-      {/* Hero Content - Centered */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      {/* Hero Content - Bottom Center */}
+      <div className="absolute inset-x-0 bottom-16 md:bottom-24 flex justify-center">
         <div className="px-6 text-center">
           {/* Main Headline */}
-          <h2 className="animate-fade-in-up font-display text-3xl font-light tracking-luxury text-hero-text text-shadow-hero sm:text-4xl md:text-5xl lg:text-6xl">
-            THE GIFTING EDIT
+          <h2 className="animate-fade-in-up font-serif text-2xl font-light italic tracking-wide text-[#d4c5b0] sm:text-3xl md:text-4xl lg:text-5xl">
+            THE SECOND TRILOGY OF ESSENCES
           </h2>
 
           {/* CTA Button */}
-          <div className="animate-fade-in-up animation-delay-200 mt-8 md:mt-10">
+          <div className="animate-fade-in-up animation-delay-200 mt-6 md:mt-8">
             <button
               onClick={handleShopNowClick}
-              className="btn-hero"
-              aria-label="Shop the gifting collection now"
+              className="border border-[#d4c5b0] bg-transparent px-8 py-3 text-sm font-light tracking-[0.2em] text-[#d4c5b0] transition-all duration-300 hover:bg-[#d4c5b0] hover:text-black"
+              aria-label="Be the first to know"
             >
-              SHOP NOW
+              BE THE FIRST TO KNOW
             </button>
           </div>
         </div>
