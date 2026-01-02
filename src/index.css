@@ -246,7 +246,7 @@
     color: hsl(var(--hero-text));
   }
 
-  /* Outlands Section */
+  /* Outlands Section - Cinematic Hero Style */
   .outlands-section {
     @apply relative w-full overflow-hidden;
     height: 770px;
@@ -266,35 +266,8 @@
     background-repeat: no-repeat;
   }
 
-  .outlands-overlay {
-    @apply absolute inset-0;
-    background: linear-gradient(
-      to bottom,
-      hsl(var(--hero-overlay) / 0.15) 0%,
-      hsl(var(--hero-overlay) / 0.25) 100%
-    );
-  }
-
   .outlands-content {
-    @apply absolute inset-0 flex flex-col items-center justify-center;
-    padding-top: 40px;
-  }
-
-  .outlands-product {
-    @apply flex items-center justify-center mb-8;
-  }
-
-  .outlands-bottle {
-    @apply h-auto;
-    max-height: 380px;
-    width: auto;
-    object-fit: contain;
-  }
-
-  @media (max-width: 767px) {
-    .outlands-bottle {
-      max-height: 280px;
-    }
+    @apply absolute inset-0 flex flex-col items-center justify-end pb-16 md:pb-20;
   }
 
   .outlands-title {
