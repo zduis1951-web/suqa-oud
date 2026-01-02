@@ -9,71 +9,88 @@
 @layer base {
   :root {
     /* =============================================
-       AMOUAGE LUXURY PALETTE - #EEE5DA Primary
+       AMOUAGE LUXURY PALETTE
+       PRIMARY SIGNATURE COLOR: #EEE5DA
+       HSL Equivalent: 33 37% 89%
        ============================================= */
     
-    /* Core Background - The Signature Cream #EEE5DA */
-    --background: 33 37% 89%;
-    --foreground: 25 25% 15%;
+    /* ===== THE SIGNATURE CREAM #EEE5DA ===== */
+    --cream-signature: 33 37% 89%;
+    --cream-light: 33 40% 94%;
+    --cream-dark: 33 35% 84%;
+    
+    /* ===== LUXE DARK BROWN ===== */
+    --brown-deep: 25 30% 12%;
+    --brown-medium: 25 25% 20%;
+    --brown-light: 25 20% 35%;
+    
+    /* ===== CORE BACKGROUNDS ===== */
+    --background: var(--cream-signature);
+    --foreground: var(--brown-deep);
 
-    /* Card Surfaces - Slightly Lighter Cream */
-    --card: 33 40% 92%;
-    --card-foreground: 25 25% 15%;
+    /* Card Surfaces */
+    --card: var(--cream-light);
+    --card-foreground: var(--brown-deep);
 
-    /* Popover - Pure White Touch */
-    --popover: 33 45% 95%;
-    --popover-foreground: 25 25% 15%;
+    /* Popover */
+    --popover: var(--cream-light);
+    --popover-foreground: var(--brown-deep);
 
-    /* Primary - Rich Espresso Brown */
-    --primary: 25 30% 18%;
-    --primary-foreground: 33 37% 89%;
+    /* Primary - Deep Brown on Cream */
+    --primary: var(--brown-deep);
+    --primary-foreground: var(--cream-signature);
 
-    /* Secondary - Warm Sand */
-    --secondary: 33 30% 85%;
-    --secondary-foreground: 25 25% 15%;
+    /* Secondary - Cream Variant */
+    --secondary: var(--cream-dark);
+    --secondary-foreground: var(--brown-deep);
 
-    /* Muted - Subtle Taupe */
-    --muted: 30 20% 82%;
+    /* Muted */
+    --muted: 30 20% 80%;
     --muted-foreground: 25 15% 45%;
 
     /* Accent - Champagne Gold */
     --accent: 38 40% 78%;
-    --accent-foreground: 25 25% 15%;
+    --accent-foreground: var(--brown-deep);
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders & Inputs */
-    --border: 33 25% 82%;
-    --input: 33 25% 82%;
-    --ring: 25 30% 18%;
+    --border: var(--cream-dark);
+    --input: var(--cream-dark);
+    --ring: var(--brown-deep);
 
     --radius: 0rem;
 
-    /* Hero Specific - Cream on Dark */
-    --hero-overlay: 25 20% 8%;
-    --hero-text: 33 37% 89%;
-    --hero-button-bg: 33 37% 89%;
-    --hero-button-text: 25 25% 15%;
-    --hero-button-border: 33 30% 85%;
+    /* ===== HERO SECTION ===== */
+    --hero-overlay: 25 25% 8%;
+    --hero-text: var(--cream-signature);
+    --hero-button-bg: var(--cream-signature);
+    --hero-button-text: var(--brown-deep);
+    --hero-button-border: var(--cream-dark);
 
-    /* Announcement Bar - Dark Luxe */
-    --announcement-bg: 25 20% 12%;
-    --announcement-text: 33 37% 89%;
+    /* ===== ANNOUNCEMENT BAR ===== */
+    --announcement-bg: var(--brown-deep);
+    --announcement-text: var(--cream-signature);
 
-    /* Header */
-    --header-bg: 33 37% 89%;
-    --header-text: 25 25% 15%;
+    /* ===== HEADER ===== */
+    --header-bg: var(--cream-signature);
+    --header-text: var(--brown-deep);
 
-    /* Sidebar */
-    --sidebar-background: 33 40% 92%;
-    --sidebar-foreground: 25 25% 15%;
-    --sidebar-primary: 25 30% 18%;
-    --sidebar-primary-foreground: 33 37% 89%;
-    --sidebar-accent: 33 30% 85%;
-    --sidebar-accent-foreground: 25 25% 15%;
-    --sidebar-border: 33 25% 82%;
-    --sidebar-ring: 25 30% 18%;
+    /* ===== OUTLANDS SECTION ===== */
+    --outlands-bg: var(--cream-signature);
+    --outlands-text: var(--brown-deep);
+    --outlands-button-border: var(--brown-deep);
+
+    /* ===== SIDEBAR ===== */
+    --sidebar-background: var(--cream-light);
+    --sidebar-foreground: var(--brown-deep);
+    --sidebar-primary: var(--brown-deep);
+    --sidebar-primary-foreground: var(--cream-signature);
+    --sidebar-accent: var(--cream-dark);
+    --sidebar-accent-foreground: var(--brown-deep);
+    --sidebar-border: var(--cream-dark);
+    --sidebar-ring: var(--brown-deep);
   }
 
   .dark {
@@ -140,8 +157,8 @@
      ======================================== */
   .announcement-bar-premium {
     @apply w-full py-3 text-center text-xs tracking-wider;
-    background-color: hsl(25 20% 12%);
-    color: hsl(33 37% 89%);
+    background-color: hsl(var(--announcement-bg));
+    color: hsl(var(--announcement-text));
   }
 
   /* ========================================
@@ -152,8 +169,8 @@
   }
 
   .header-solid {
-    background-color: hsl(33 37% 89%);
-    box-shadow: 0 1px 0 hsl(33 25% 82%);
+    background-color: hsl(var(--header-bg));
+    box-shadow: 0 1px 0 hsl(var(--border));
   }
 
   .header-transparent {
@@ -161,9 +178,9 @@
   }
 
   .header-scrolled {
-    background-color: hsl(33 37% 89% / 0.98);
+    background-color: hsl(var(--header-bg) / 0.98);
     backdrop-filter: blur(12px);
-    box-shadow: 0 4px 20px hsl(25 20% 8% / 0.08);
+    box-shadow: 0 4px 20px hsl(var(--hero-overlay) / 0.08);
   }
 
   .header-content {
@@ -503,10 +520,13 @@
     transform: scale(1.1);
   }
 
-  /* Outlands Section - Cinematic Hero Style */
+  /* ========================================
+     OUTLANDS SECTION - Premium Cream Theme
+     ======================================== */
   .outlands-section {
     @apply relative w-full overflow-hidden;
     height: 770px;
+    background-color: hsl(var(--outlands-bg));
   }
 
   @media (max-width: 767px) {
@@ -529,13 +549,13 @@
 
   .outlands-title {
     @apply font-display text-4xl font-light tracking-luxury mb-6 md:text-5xl lg:text-6xl;
-    color: hsl(var(--foreground));
+    color: hsl(var(--outlands-text));
     text-shadow: 0 2px 8px hsl(var(--hero-overlay) / 0.1);
   }
 
   .outlands-media-control {
     @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-all duration-300;
-    color: hsl(var(--foreground));
+    color: hsl(var(--outlands-text));
   }
 
   .outlands-media-control:hover {
