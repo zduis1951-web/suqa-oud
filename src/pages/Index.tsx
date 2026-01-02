@@ -1,15 +1,20 @@
 import Hero from '@/components/Hero';
+import GuidanceCollection from '@/components/GuidanceCollection';
 import { Helmet } from 'react-helmet-async';
 
 /**
  * Amouage Homepage
  * 
- * Features the hero section recreation from the original amouage.com website.
- * This page serves as a demo/review of the hero component.
+ * Features the hero section and Guidance Collection promotional section
+ * recreation from the original amouage.com website.
  */
 const Index = () => {
   const handleShopNowClick = () => {
     console.log('Shop Now clicked - navigate to collection page');
+  };
+
+  const handleDiscoverClick = () => {
+    console.log('Discover clicked - navigate to Guidance collection');
   };
 
   return (
@@ -26,6 +31,7 @@ const Index = () => {
       
       <main>
         <Hero onShopNowClick={handleShopNowClick} />
+        <GuidanceCollection onDiscoverClick={handleDiscoverClick} />
       </main>
     </>
   );
