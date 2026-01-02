@@ -1,8 +1,7 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Pause, Play, Accessibility } from 'lucide-react';
 
-import heroDesktopImage from '@/assets/hero-new.jpg';
-import heroMobileImage from '@/assets/hero-new.jpg';
+import heroVideo from '@/assets/hero-video.mp4';
 
 interface HeroSectionProps {
   onShopNowClick?: () => void;
@@ -11,8 +10,16 @@ interface HeroSectionProps {
 const HeroSection = ({ onShopNowClick }: HeroSectionProps) => {
   const [isPlaying, setIsPlaying] = useState(true);
   const heroRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const handlePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+    }
     setIsPlaying(!isPlaying);
   };
 
@@ -28,37 +35,34 @@ const HeroSection = ({ onShopNowClick }: HeroSectionProps) => {
     }
   };
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        setIsPlaying(false);
+      });
+    }
+  }, []);
+
   return (
     <section 
       ref={heroRef}
       className="relative h-screen w-full overflow-hidden"
       aria-label="Hero section - SUQA OUD"
     >
-      {/* Background Image - Desktop */}
-      <div 
-        className="absolute inset-0 hidden md:block"
-        style={{
-          backgroundImage: `url(${heroDesktopImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-        role="img"
-        aria-label="SUQA OUD luxury fragrance"
+      {/* Background Video */}
+      <video
+        ref={videoRef}
+        className="absolute inset-0 h-full w-full object-cover"
+        src={heroVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-label="SUQA OUD luxury fragrance video"
       />
 
-      {/* Background Image - Mobile */}
-      <div 
-        className="absolute inset-0 md:hidden"
-        style={{
-          backgroundImage: `url(${heroMobileImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-        role="img"
-        aria-label="SUQA OUD luxury fragrance"
-      />
+      {/* Dark Overlay for text readability */}
+      <div className="absolute inset-0 bg-black/30" />
 
       {/* Hero Content - Bottom Center */}
       <div className="absolute inset-x-0 bottom-16 md:bottom-24 flex justify-center">
@@ -113,7 +117,7 @@ Simply present.`}
       <button
         onClick={handlePlayPause}
         className="media-control"
-        aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
+        aria-label={isPlaying ? 'Pause video' : 'Play video'}
       >
         {isPlaying ? (
           <Pause className="h-8 w-8" aria-hidden="true" />
