@@ -108,7 +108,7 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                 onClick={() => onProductClick?.(product.id)}
               >
                 {/* Product Image Panel - full bleed */}
-                <div className="relative aspect-[4/5] overflow-hidden flex items-end justify-center">
+                <div className="relative aspect-[4/5] overflow-hidden">
                   {/* NEW Badge */}
                   {product.isNew && (
                     <span 
@@ -122,18 +122,18 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                     </span>
                   )}
                   
-                  {/* Bottle Image - object-contain, positioned at bottom */}
+                  {/* Bottle Image - fills entire frame */}
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-[80%] h-[85%] object-contain object-bottom transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                   />
                   
                   {/* Box Image - visible on hover */}
                   <img
                     src={product.hoverImage}
                     alt={`${product.name} packaging`}
-                    className="absolute inset-0 w-full h-full object-contain p-8 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                   />
                 </div>
 
