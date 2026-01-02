@@ -1,11 +1,12 @@
 import Hero from '@/components/Hero';
 import GuidanceCollection from '@/components/GuidanceCollection';
+import OutlandsSection from '@/components/OutlandsSection';
 import { Helmet } from 'react-helmet-async';
 
 /**
  * Amouage Homepage
  * 
- * Features the hero section and Guidance Collection promotional section
+ * Features the hero section, Guidance Collection, and Outlands promotional sections
  * recreation from the original amouage.com website.
  */
 const Index = () => {
@@ -15,6 +16,10 @@ const Index = () => {
 
   const handleDiscoverClick = () => {
     console.log('Discover clicked - navigate to Guidance collection');
+  };
+
+  const handleOutlandsClick = () => {
+    console.log('Outlands Shop Now clicked - navigate to Outlands collection');
   };
 
   return (
@@ -32,6 +37,7 @@ const Index = () => {
       <main>
         <Hero onShopNowClick={handleShopNowClick} />
         <GuidanceCollection onDiscoverClick={handleDiscoverClick} />
+        <OutlandsSection onShopNowClick={handleOutlandsClick} />
       </main>
     </>
   );
