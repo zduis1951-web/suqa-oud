@@ -29,6 +29,12 @@ const HouseOfAmouageSection = ({
 
       {/* Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+        {/* Tagline */}
+        <p className="text-white text-sm tracking-[0.2em] uppercase mb-4" style={{
+          fontFamily: '"Cormorant Garamond", "Times New Roman", serif',
+        }}>
+          TO BE ROYAL IS TO BREATHE THE KINGDOM OF OUD
+        </p>
         {/* Heading */}
         <h2 style={{
         fontFamily: '"Cormorant Garamond", "Times New Roman", serif',
