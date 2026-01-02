@@ -4,6 +4,7 @@ import GuidanceCollection from '@/components/GuidanceCollection';
 import OutlandsSection from '@/components/OutlandsSection';
 import LuxuryBodyLine from '@/components/LuxuryBodyLine';
 import PowerOfTheInfinite from '@/components/PowerOfTheInfinite';
+import SohoFlagshipBoutique from '@/components/SohoFlagshipBoutique';
 import { Helmet } from 'react-helmet-async';
 
 /**
@@ -33,6 +34,10 @@ const Index = () => {
     console.log('Power of the Infinite Shop Now clicked - navigate to eternity collection');
   };
 
+  const handleSohoDiscoverClick = () => {
+    console.log('Soho Flagship Boutique Discover More clicked - navigate to boutique page');
+  };
+
   return (
     <>
       <Helmet>
@@ -53,6 +58,7 @@ const Index = () => {
         <OutlandsSection onShopNowClick={handleOutlandsClick} />
         <LuxuryBodyLine onShopNowClick={handleBodyLineClick} />
         <PowerOfTheInfinite onShopNowClick={handlePowerInfiniteClick} />
+        <SohoFlagshipBoutique onDiscoverMoreClick={handleSohoDiscoverClick} />
       </main>
     </>
   );
