@@ -1,16 +1,24 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Instagram } from 'lucide-react';
 import existenceImg from '@/assets/products/existence.jpg';
+import existenceBoxImg from '@/assets/products/existence-box.jpg';
 import guidanceImg from '@/assets/products/guidance.jpg';
+import guidanceBoxImg from '@/assets/products/guidance-box.jpg';
 import purposeImg from '@/assets/products/purpose-50.png';
+import purposeBoxImg from '@/assets/products/purpose-50-box.jpg';
 import reflectionImg from '@/assets/products/reflection-man.jpg';
+import reflectionBoxImg from '@/assets/products/reflection-man-box.jpg';
 
 const galleryImages = [
   { id: 1, image: existenceImg, alt: 'Amouage Existence' },
-  { id: 2, image: guidanceImg, alt: 'Amouage Guidance' },
-  { id: 3, image: purposeImg, alt: 'Amouage Purpose' },
-  { id: 4, image: reflectionImg, alt: 'Amouage Reflection Man' },
+  { id: 2, image: existenceBoxImg, alt: 'Amouage product display' },
+  { id: 3, image: guidanceImg, alt: 'Amouage Guidance green bottle' },
+  { id: 4, image: guidanceBoxImg, alt: 'Amouage Guidance pink bottle' },
+  { id: 5, image: purposeImg, alt: 'Amouage Purpose mint bottle' },
+  { id: 6, image: purposeBoxImg, alt: 'Amouage Purpose gold bottle' },
+  { id: 7, image: reflectionImg, alt: 'Amouage Reflection dark bottle' },
+  { id: 8, image: reflectionBoxImg, alt: 'Amouage boutique' },
 ];
 
 const HighPerfumeryGallery = () => {
@@ -59,25 +67,31 @@ const HighPerfumeryGallery = () => {
         {/* Gallery */}
         <div 
           ref={galleryRef}
-          className="flex overflow-x-auto scroll-smooth gap-1"
+          className="flex overflow-x-auto scroll-smooth"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {galleryImages.map((item, index) => (
-            <motion.div
+            <motion.a
               key={item.id}
+              href="https://instagram.com/amouageofficial"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 aspect-[4/5] relative overflow-hidden group cursor-pointer"
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="flex-shrink-0 w-1/2 md:w-1/4 lg:w-[12.5%] aspect-square relative overflow-hidden group"
             >
               <img 
                 src={item.image} 
                 alt={item.alt}
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </motion.div>
+              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-colors duration-300 flex items-center justify-center">
+                <Instagram className="w-6 h-6 text-background opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </motion.a>
           ))}
         </div>
 
