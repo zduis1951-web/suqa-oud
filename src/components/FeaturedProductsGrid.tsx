@@ -77,7 +77,7 @@ interface FeaturedProductsGridProps {
 
 const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => {
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20" style={{ backgroundColor: '#E6D8CB' }}>
+    <section className="w-full py-12 md:py-16 lg:py-20" style={{ backgroundColor: '#E3D6C6' }}>
       {/* Section Title */}
       <div className="text-center mb-8 md:mb-12">
         <h2 
@@ -93,7 +93,7 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
         <div className="flex">
           {products.map((product, index) => {
             // Unified background color for all products
-            const panelBgColor = '#E6D8CB';
+            const panelBgColor = '#E3D6C6';
             
               return (
               <div 
