@@ -1,69 +1,103 @@
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Instagram } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import existenceImg from '@/assets/products/existence.jpg';
 import guidanceImg from '@/assets/products/guidance.jpg';
 import purposeImg from '@/assets/products/purpose-50.png';
 import reflectionImg from '@/assets/products/reflection-man.jpg';
 import heroImg from '@/assets/hero-desktop.jpg';
 import giftingImg from '@/assets/gifting-hero-desktop.jpg';
+import luxuryBodyImg from '@/assets/luxury-body-desktop.jpg';
 
-const instagramPosts = [
-  { id: 1, image: existenceImg },
-  { id: 2, image: heroImg },
-  { id: 3, image: guidanceImg },
-  { id: 4, image: giftingImg },
-  { id: 5, image: purposeImg },
-  { id: 6, image: reflectionImg },
+const galleryImages = [
+  { id: 1, image: heroImg, alt: 'Amouage dark aesthetic' },
+  { id: 2, image: luxuryBodyImg, alt: 'Amouage body collection display' },
+  { id: 3, image: purposeImg, alt: 'Amouage perfume bottles' },
+  { id: 4, image: guidanceImg, alt: 'Amouage fragrance in sand' },
+  { id: 5, image: existenceImg, alt: 'Amouage product box' },
+  { id: 6, image: reflectionImg, alt: 'Amouage reflection collection' },
+  { id: 7, image: giftingImg, alt: 'Amouage studio setup' },
 ];
 
 const HighPerfumeryGallery = () => {
+  const galleryRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (galleryRef.current) {
+      const scrollAmount = galleryRef.current.clientWidth / 3;
+      galleryRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <section className="py-20 lg:py-32 bg-background">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+    <section 
+      className="py-12 md:py-16"
+      style={{ backgroundColor: '#F7F4EF' }}
+    >
+      {/* Section Header */}
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-center uppercase tracking-[0.2em] font-serif text-base md:text-lg lg:text-xl mb-8 md:mb-12 text-foreground px-4"
+      >
+        HIGH PERFUMERY FROM THE SULTANATE OF OMAN
+      </motion.h2>
+
+      {/* Gallery Container */}
+      <div className="relative">
+        {/* Left Arrow */}
+        <button 
+          onClick={() => scroll('left')}
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10
+                     w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/90 backdrop-blur-sm
+                     flex items-center justify-center hover:bg-white transition-colors
+                     shadow-md border border-gray-200"
+          aria-label="Scroll left"
+        >
+          <ChevronLeft className="w-5 h-5 text-foreground" />
+        </button>
+
+        {/* Gallery */}
+        <motion.div 
+          ref={galleryRef}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="flex overflow-x-auto scroll-smooth"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Instagram className="w-5 h-5" />
-            <p className="text-sm tracking-[0.2em] uppercase text-muted-foreground">
-              @amouageofficial
-            </p>
-          </div>
-          <h2 className="font-serif text-3xl lg:text-4xl font-light">
-            Follow Our Journey
-          </h2>
+          {galleryImages.map((item) => (
+            <div 
+              key={item.id}
+              className="flex-shrink-0 w-1/2 md:w-1/4 lg:w-[14.285%] aspect-square"
+            >
+              <img 
+                src={item.image} 
+                alt={item.alt}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))}
         </motion.div>
 
-        {/* Instagram Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 lg:gap-4">
-          {instagramPosts.map((post, index) => (
-            <motion.a
-              key={post.id}
-              href="https://instagram.com/amouageofficial"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="relative aspect-square overflow-hidden group"
-            >
-              <img
-                src={post.image}
-                alt="Instagram post"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-colors duration-300 flex items-center justify-center">
-                <Instagram className="w-6 h-6 text-background opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            </motion.a>
-          ))}
-        </div>
+        {/* Right Arrow */}
+        <button 
+          onClick={() => scroll('right')}
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10
+                     w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/90 backdrop-blur-sm
+                     flex items-center justify-center hover:bg-white transition-colors
+                     shadow-md border border-gray-200"
+          aria-label="Scroll right"
+        >
+          <ChevronRight className="w-5 h-5 text-foreground" />
+        </button>
       </div>
     </section>
   );
