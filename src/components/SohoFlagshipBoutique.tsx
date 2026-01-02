@@ -44,7 +44,7 @@ const SohoFlagshipBoutique = ({
         </p>
 
         {/* CTA Button */}
-        <button onClick={onDiscoverMoreClick} className="border border-white text-white bg-transparent px-8 py-3 md:px-10 md:py-4 text-xs md:text-sm tracking-[0.2em] uppercase transition-all duration-300 hover:bg-white hover:text-black" style={{
+        <button onClick={onDiscoverMoreClick} className="border border-white text-black bg-white px-8 py-3 md:px-10 md:py-4 text-xs md:text-sm tracking-[0.2em] uppercase transition-all duration-300 hover:bg-transparent hover:text-white" style={{
         fontFamily: 'var(--font-primary)'
       }}>
           EXPLORE
