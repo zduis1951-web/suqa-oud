@@ -77,68 +77,66 @@ interface FeaturedProductsGridProps {
 
 const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => {
   return (
-    <section className="w-full bg-cream-signature py-12 md:py-16 lg:py-20">
+    <section className="w-full bg-white py-12 md:py-16 lg:py-20">
       {/* Section Title */}
       <div className="text-center mb-8 md:mb-12">
         <h2 
-          className="text-foreground text-xl sm:text-2xl md:text-3xl tracking-[0.15em] uppercase"
+          className="text-foreground text-xl sm:text-2xl md:text-3xl tracking-[0.2em] uppercase font-light"
           style={{ fontFamily: 'var(--font-primary)' }}
         >
           PRECIOUS, POTENT, PERSONAL
         </h2>
       </div>
 
-      {/* Products Grid - Exact match with thin vertical separators */}
-      <div className="w-full bg-cream-signature">
-        <div className="flex flex-wrap md:flex-nowrap">
+      {/* Products Grid - Exact match to official site */}
+      <div className="w-full bg-white">
+        <div className="grid grid-cols-2 md:grid-cols-4">
           {products.map((product, index) => (
             <div 
               key={product.id}
-              className={`group flex flex-col cursor-pointer bg-cream-signature flex-1 min-w-[50%] md:min-w-0 ${
-                index < products.length - 1 ? 'md:border-r md:border-foreground/15' : ''
-              } ${index % 2 === 0 && index < products.length - 1 ? 'border-r border-foreground/15' : ''} ${
-                index < 2 ? 'border-b border-foreground/15 md:border-b-0' : ''
-              }`}
+              className={`group flex flex-col cursor-pointer bg-white relative ${
+                index < products.length - 1 ? 'border-r border-foreground/10' : ''
+              } ${index < 2 ? 'border-b border-foreground/10 md:border-b-0' : ''}`}
               onClick={() => onProductClick?.(product.id)}
             >
-              {/* Product Image Container - Large products with object-contain */}
-              <div className="relative aspect-[4/5] overflow-hidden bg-cream-signature">
-                {/* NEW Badge - Small, centered, with thin border */}
+              {/* Product Image Container - Full size, no padding */}
+              <div className="relative aspect-[3/4] overflow-hidden bg-white">
+                {/* NEW Badge */}
                 {product.isNew && (
                   <span 
-                    className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-foreground text-[10px] tracking-[0.1em] uppercase border border-foreground/50 px-2 py-0.5 bg-cream-signature"
+                    className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-foreground text-[9px] tracking-[0.15em] uppercase border border-foreground/40 px-2.5 py-1 bg-white"
                     style={{ fontFamily: 'var(--font-primary)' }}
                   >
                     NEW
                   </span>
                 )}
                 
-                {/* Bottle Image - Large, centered with object-contain */}
+                {/* Bottle Image */}
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="absolute inset-0 w-full h-full object-contain p-4 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                  className="absolute inset-0 w-full h-full object-contain scale-[0.85] transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                 />
                 
-                {/* Box Image - visible on hover */}
+                {/* Box Image - hover */}
                 <img
                   src={product.hoverImage}
                   alt={`${product.name} packaging`}
-                  className="absolute inset-0 w-full h-full object-contain p-4 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 w-full h-full object-contain scale-[0.85] transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                 />
               </div>
 
-              {/* Product Info - Minimal padding */}
-              <div className="text-center py-4 bg-cream-signature">
+              {/* Product Info */}
+              <div className="text-center py-5 bg-white">
                 <h3 
-                  className="text-foreground text-xs md:text-sm tracking-[0.15em] uppercase font-normal mb-1"
+                  className="text-foreground text-[11px] md:text-xs tracking-[0.15em] uppercase font-normal mb-1"
                   style={{ fontFamily: 'var(--font-primary)' }}
                 >
                   {product.name.toUpperCase()}
                 </h3>
                 
                 <p 
-                  className="text-foreground text-xs md:text-sm tracking-[0.05em]"
+                  className="text-foreground text-[11px] md:text-xs tracking-[0.05em]"
                   style={{ fontFamily: 'var(--font-primary)' }}
                 >
                   {product.price}
