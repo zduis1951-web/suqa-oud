@@ -1,22 +1,24 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Instagram } from 'lucide-react';
 import existenceImg from '@/assets/products/existence.jpg';
+import existenceBoxImg from '@/assets/products/existence-box.jpg';
 import guidanceImg from '@/assets/products/guidance.jpg';
+import guidanceBoxImg from '@/assets/products/guidance-box.jpg';
 import purposeImg from '@/assets/products/purpose-50.png';
+import purposeBoxImg from '@/assets/products/purpose-50-box.jpg';
 import reflectionImg from '@/assets/products/reflection-man.jpg';
-import heroImg from '@/assets/hero-desktop.jpg';
-import giftingImg from '@/assets/gifting-hero-desktop.jpg';
-import luxuryBodyImg from '@/assets/luxury-body-desktop.jpg';
+import reflectionBoxImg from '@/assets/products/reflection-man-box.jpg';
 
 const galleryImages = [
-  { id: 1, image: heroImg, alt: 'Amouage dark aesthetic' },
-  { id: 2, image: luxuryBodyImg, alt: 'Amouage body collection display' },
-  { id: 3, image: purposeImg, alt: 'Amouage perfume bottles' },
-  { id: 4, image: guidanceImg, alt: 'Amouage fragrance in sand' },
-  { id: 5, image: existenceImg, alt: 'Amouage product box' },
-  { id: 6, image: reflectionImg, alt: 'Amouage reflection collection' },
-  { id: 7, image: giftingImg, alt: 'Amouage studio setup' },
+  { id: 1, image: existenceImg, alt: 'Amouage Existence' },
+  { id: 2, image: existenceBoxImg, alt: 'Amouage product display' },
+  { id: 3, image: guidanceImg, alt: 'Amouage Guidance green bottle' },
+  { id: 4, image: guidanceBoxImg, alt: 'Amouage Guidance pink bottle' },
+  { id: 5, image: purposeImg, alt: 'Amouage Purpose mint bottle' },
+  { id: 6, image: purposeBoxImg, alt: 'Amouage Purpose gold bottle' },
+  { id: 7, image: reflectionImg, alt: 'Amouage Reflection dark bottle' },
+  { id: 8, image: reflectionBoxImg, alt: 'Amouage boutique' },
 ];
 
 const HighPerfumeryGallery = () => {
@@ -63,29 +65,35 @@ const HighPerfumeryGallery = () => {
         </button>
 
         {/* Gallery */}
-        <motion.div 
+        <div 
           ref={galleryRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
           className="flex overflow-x-auto scroll-smooth"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {galleryImages.map((item) => (
-            <div 
+          {galleryImages.map((item, index) => (
+            <motion.a
               key={item.id}
-              className="flex-shrink-0 w-1/2 md:w-1/4 lg:w-[14.285%] aspect-square"
+              href="https://instagram.com/amouageofficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="flex-shrink-0 w-1/2 md:w-1/4 lg:w-[12.5%] aspect-square relative overflow-hidden group"
             >
               <img 
                 src={item.image} 
                 alt={item.alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
-            </div>
+              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-colors duration-300 flex items-center justify-center">
+                <Instagram className="w-6 h-6 text-background opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </motion.a>
           ))}
-        </motion.div>
+        </div>
 
         {/* Right Arrow */}
         <button 
