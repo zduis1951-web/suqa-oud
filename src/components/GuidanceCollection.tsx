@@ -59,7 +59,7 @@ const GuidanceCollection = ({ onDiscoverClick }: GuidanceCollectionProps) => {
   return (
     <section 
       className="guidance-section"
-      aria-label="Guidance Collection promotional section"
+      aria-label="Our Story - SUQA OUD"
     >
       {/* Background Image - Desktop */}
       <div 
@@ -68,7 +68,7 @@ const GuidanceCollection = ({ onDiscoverClick }: GuidanceCollectionProps) => {
           backgroundImage: `url(${guidanceDesktopImage})`,
         }}
         role="img"
-        aria-label="Guidance fragrance collection"
+        aria-label="SUQA OUD collection"
       />
 
       {/* Background Image - Mobile */}
@@ -78,23 +78,39 @@ const GuidanceCollection = ({ onDiscoverClick }: GuidanceCollectionProps) => {
           backgroundImage: `url(${guidanceMobileImage})`,
         }}
         role="img"
-        aria-label="Guidance fragrance collection"
+        aria-label="SUQA OUD collection"
       />
 
       {/* Content Overlay */}
       <div className="guidance-content">
-        {/* Collection Title */}
+        {/* Section Title */}
         <h2 className="guidance-title">
-          GUIDANCE
+          OUR STORY
         </h2>
+        
+        {/* Description */}
+        <p className="text-foreground/80 text-sm md:text-base max-w-lg mx-auto text-center leading-relaxed mb-8 px-4 whitespace-pre-line font-light">
+          {`SUQA OUD was not created for the trend.
+It was created to last.
+
+No timelines to chase.
+No expectations to meet.
+
+Only a decision to build value quietly,
+without reference,
+without imitation.
+
+Because to be royal is not to announce luxury —
+to be royal is to breathe the kingdom of oud.`}
+        </p>
 
         {/* CTA Button */}
         <button
           onClick={handleDiscoverClick}
           className="btn-guidance"
-          aria-label="Discover the Guidance collection"
+          aria-label="Discover more about SUQA OUD"
         >
-          DISCOVER THE COLLECTION
+          DISCOVER MORE
         </button>
       </div>
 

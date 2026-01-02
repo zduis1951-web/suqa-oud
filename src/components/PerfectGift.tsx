@@ -22,7 +22,7 @@ const PerfectGift = ({ onShopNowClick }: PerfectGiftProps) => {
         <source media="(min-width: 768px)" srcSet={giftDesktop} />
         <img
           src={giftMobile}
-          alt="THE PERFECT GIFT"
+          alt="SUQA OUD"
           className="w-full h-auto object-cover"
         />
       </picture>
@@ -31,18 +31,26 @@ const PerfectGift = ({ onShopNowClick }: PerfectGiftProps) => {
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
         {/* Main Headline */}
         <h2 
-          className="text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.15em] uppercase mb-4 md:mb-6"
+          className="text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.3em] uppercase mb-4 md:mb-6"
           style={{ fontFamily: 'var(--font-primary)' }}
         >
-          THE PERFECT GIFT
+          SUQA OUD
         </h2>
 
         {/* Subtext */}
         <p 
-          className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.1em] mb-6 md:mb-8 max-w-xl md:max-w-2xl leading-relaxed"
+          className="text-foreground/80 text-xs sm:text-sm md:text-base max-w-md leading-relaxed mb-6 md:mb-8 whitespace-pre-line font-light"
           style={{ fontFamily: 'var(--font-primary)' }}
         >
-          Complimentary Wrapping and Personalization Choices. A Gift Fit for Kings.
+          {`For those who don't follow moments,
+but define their own.
+
+Where luxury is felt inwardly,
+presence is natural,
+and value is created —
+not borrowed.
+
+To be royal is to breathe the kingdom of oud.`}
         </p>
 
         {/* CTA Button */}
@@ -51,7 +59,7 @@ const PerfectGift = ({ onShopNowClick }: PerfectGiftProps) => {
           className="border border-foreground text-foreground bg-transparent px-8 py-3 md:px-10 md:py-4 text-xs md:text-sm tracking-[0.2em] uppercase transition-all duration-300 hover:bg-foreground hover:text-background"
           style={{ fontFamily: 'var(--font-primary)' }}
         >
-          SHOP NOW
+          DISCOVER
         </button>
       </div>
 

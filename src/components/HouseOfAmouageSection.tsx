@@ -15,7 +15,7 @@ const HouseOfAmouageSection = ({ onDiscoverClick }: HouseOfAmouageSectionProps) 
     if (onDiscoverClick) {
       onDiscoverClick();
     } else {
-      window.open('https://amouage.com/pages/house-of-amouage', '_blank');
+      window.open('https://suqaoud.com/about', '_blank');
     }
   };
 
@@ -25,12 +25,12 @@ const HouseOfAmouageSection = ({ onDiscoverClick }: HouseOfAmouageSectionProps) 
       style={{ 
         minHeight: 'clamp(500px, 56.25vw, 800px)',
       }}
-      aria-label="The House of Amouage"
+      aria-label="The House of SUQA OUD"
     >
       {/* High Quality Image Background */}
       <img
         src={houseOfAmouageBg}
-        alt="The House of Amouage - Suqa Oud Desert"
+        alt="The House of SUQA OUD"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ objectPosition: 'center 40%' }}
       />
@@ -48,7 +48,7 @@ const HouseOfAmouageSection = ({ onDiscoverClick }: HouseOfAmouageSectionProps) 
             color: '#F7F4EF',
           }}
         >
-          THE HOUSE OF AMOUAGE
+          THE HOUSE OF SUQA OUD
         </h2>
 
         {/* Discover Button */}
@@ -65,7 +65,7 @@ const HouseOfAmouageSection = ({ onDiscoverClick }: HouseOfAmouageSectionProps) 
             border: '1px solid rgba(255, 255, 255, 0.3)',
             padding: '14px 32px',
           }}
-          aria-label="Discover our story - learn about the House of Amouage"
+          aria-label="Discover our story - learn about the House of SUQA OUD"
         >
           DISCOVER OUR STORY
         </button>

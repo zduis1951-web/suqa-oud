@@ -32,7 +32,7 @@ const HeroSection = ({ onShopNowClick }: HeroSectionProps) => {
     <section 
       ref={heroRef}
       className="relative h-screen w-full overflow-hidden"
-      aria-label="Hero section - The Gifting Edit"
+      aria-label="Hero section - SUQA OUD"
     >
       {/* Background Image - Desktop */}
       <div 
@@ -44,7 +44,7 @@ const HeroSection = ({ onShopNowClick }: HeroSectionProps) => {
           backgroundRepeat: 'no-repeat',
         }}
         role="img"
-        aria-label="Luxury fragrance gift collection"
+        aria-label="SUQA OUD luxury fragrance"
       />
 
       {/* Background Image - Mobile */}
@@ -57,25 +57,44 @@ const HeroSection = ({ onShopNowClick }: HeroSectionProps) => {
           backgroundRepeat: 'no-repeat',
         }}
         role="img"
-        aria-label="Luxury fragrance gift collection"
+        aria-label="SUQA OUD luxury fragrance"
       />
 
       {/* Hero Content - Bottom Center */}
       <div className="absolute inset-x-0 bottom-16 md:bottom-24 flex justify-center">
         <div className="px-6 text-center">
+          {/* Brand Name */}
+          <h1 className="animate-fade-in-up font-serif text-3xl font-light tracking-[0.3em] text-[#d4c5b0] sm:text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-8">
+            SUQA OUD
+          </h1>
+          
           {/* Main Headline */}
-          <h2 className="animate-fade-in-up font-serif text-2xl font-light italic tracking-wide text-[#d4c5b0] sm:text-3xl md:text-4xl lg:text-5xl">
-            THE SECOND TRILOGY OF ESSENCES
-          </h2>
+          <p className="animate-fade-in-up font-serif text-sm font-light leading-relaxed text-[#d4c5b0]/90 sm:text-base md:text-lg max-w-md mx-auto whitespace-pre-line">
+            {`You don't reach for it
+to be noticed.
+
+You reach for it
+when you want luxury
+to feel effortless.
+
+Not displayed.
+Not explained.
+Simply present.`}
+          </p>
+          
+          {/* Tagline */}
+          <p className="animate-fade-in-up font-serif text-xs font-light italic tracking-wide text-[#d4c5b0]/80 sm:text-sm mt-6 md:mt-8">
+            To be royal is to breathe the kingdom of oud.
+          </p>
 
           {/* CTA Button */}
-          <div className="animate-fade-in-up animation-delay-200 mt-6 md:mt-8">
+          <div className="animate-fade-in-up animation-delay-200 mt-8 md:mt-10">
             <button
               onClick={handleShopNowClick}
               className="border border-[#d4c5b0] bg-transparent px-8 py-3 text-sm font-light tracking-[0.2em] text-[#d4c5b0] transition-all duration-300 hover:bg-[#d4c5b0] hover:text-black"
-              aria-label="Be the first to know"
+              aria-label="Discover SUQA OUD"
             >
-              BE THE FIRST TO KNOW
+              DISCOVER
             </button>
           </div>
         </div>

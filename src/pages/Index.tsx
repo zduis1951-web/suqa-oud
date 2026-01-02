@@ -14,10 +14,10 @@ import InsiderAccess from '@/components/InsiderAccess';
 import { Helmet } from 'react-helmet-async';
 
 /**
- * Amouage Homepage
+ * SUQA OUD Homepage
  * 
- * Features the header, hero section, Guidance Collection, Outlands, and Luxury Body Line sections
- * recreation from the original amouage.com website.
+ * Features the header, hero section, and various collection sections
+ * for the SUQA OUD luxury fragrance brand.
  */
 const Index = () => {
   const handleShopNowClick = () => {
@@ -57,19 +57,19 @@ const Index = () => {
   };
 
   const handleDiscoverStoryClick = () => {
-    console.log('Discover Our Story clicked - navigate to House of Amouage page');
+    console.log('Discover Our Story clicked - navigate to House of SUQA OUD page');
   };
 
   return (
     <>
       <Helmet>
-        <title>AMOUAGE | Luxury Perfumes & Fragrances | The Gifting Edit</title>
+        <title>SUQA OUD | Luxury Fragrances | To Be Royal Is To Breathe The Kingdom of Oud</title>
         <meta 
           name="description" 
-          content="Discover AMOUAGE's exclusive gifting collection. Luxury perfumes crafted in Oman with the finest ingredients. Shop the Gifting Edit now." 
+          content="SUQA OUD - For those who don't follow moments, but define their own. Where luxury is felt inwardly, presence is natural, and value is created — not borrowed." 
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://amouage.com" />
+        <link rel="canonical" href="https://suqaoud.com" />
       </Helmet>
       
       <Header />

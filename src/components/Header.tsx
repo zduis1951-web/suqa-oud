@@ -26,7 +26,7 @@ const Header = ({
     label: 'GIFT IDEAS',
     href: '#gift-ideas'
   }, {
-    label: 'HOUSE OF AMOUAGE',
+    label: 'HOUSE OF SUQA OUD',
     href: '#house'
   }];
   useEffect(() => {
@@ -62,9 +62,9 @@ const Header = ({
 
             {/* Center - Logo */}
             <div className="header-center">
-              <a href="/" className="logo-link group" aria-label="Amouage - Home">
+              <a href="/" className="logo-link group" aria-label="SUQA OUD - Home">
                 <span className="logo-text">
-                  AMOUAGE
+                  SUQA OUD
                 </span>
                 <span className="logo-underline" />
               </a>
