@@ -11,13 +11,13 @@
     /* =============================================
        AMOUAGE LUXURY PALETTE
        PRIMARY SIGNATURE COLOR: #EEE5DA
-       HSL Equivalent: 30 34% 89%
+       HSL Equivalent: 33 37% 89%
        ============================================= */
     
     /* ===== THE SIGNATURE CREAM #EEE5DA ===== */
-    --cream-signature: 30 34% 89%;
-    --cream-light: 30 38% 94%;
-    --cream-dark: 30 30% 84%;
+    --cream-signature: 33 37% 89%;
+    --cream-light: 33 40% 94%;
+    --cream-dark: 33 35% 84%;
     
     /* ===== LUXE DARK BROWN ===== */
     --brown-deep: 25 30% 12%;
