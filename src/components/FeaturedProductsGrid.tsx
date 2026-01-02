@@ -88,10 +88,10 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
         </h2>
       </div>
 
-      {/* Products Grid - with spacing and rounded frames */}
-      <div className="w-full px-4 md:px-6 lg:px-8">
-        <div className="flex flex-wrap md:flex-nowrap gap-4 md:gap-5 lg:gap-6">
-          {products.map((product) => {
+      {/* Products Grid - Full width, edge-to-edge, thin separator lines */}
+      <div className="w-full">
+        <div className="flex">
+          {products.map((product, index) => {
             // Reflection Man gets darker background treatment
             const isDark = product.id === 'reflection-man';
             const panelBg = isDark 
@@ -101,18 +101,18 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
             return (
               <div 
                 key={product.id}
-                className="group flex flex-col cursor-pointer flex-1 min-w-[45%] md:min-w-0"
+                className={`group flex flex-col cursor-pointer flex-1 ${
+                  index < products.length - 1 ? 'border-r border-foreground/15' : ''
+                }`}
+                style={{ background: panelBg }}
                 onClick={() => onProductClick?.(product.id)}
               >
-                {/* Product Image Panel - rounded frame */}
-                <div 
-                  className="relative aspect-[4/5] overflow-hidden rounded-sm flex items-center justify-center shadow-sm"
-                  style={{ background: panelBg }}
-                >
+                {/* Product Image Panel - full bleed */}
+                <div className="relative aspect-[4/5] overflow-hidden flex items-end justify-center">
                   {/* NEW Badge */}
                   {product.isNew && (
                     <span 
-                      className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-foreground text-[10px] md:text-[11px] tracking-[0.1em] uppercase border border-foreground/40 px-3 py-1 rounded-sm"
+                      className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-foreground text-[10px] md:text-[11px] tracking-[0.1em] uppercase border border-foreground/40 px-3 py-1"
                       style={{ 
                         fontFamily: 'var(--font-primary)',
                         background: 'hsl(30 20% 92% / 0.9)'
@@ -122,31 +122,31 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                     </span>
                   )}
                   
-                  {/* Bottle Image - object-contain to show full product */}
+                  {/* Bottle Image - object-contain, positioned at bottom */}
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-contain p-6 md:p-8 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                    className="w-[80%] h-[85%] object-contain object-bottom transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                   />
                   
                   {/* Box Image - visible on hover */}
                   <img
                     src={product.hoverImage}
                     alt={`${product.name} packaging`}
-                    className="absolute inset-0 w-full h-full object-contain p-6 md:p-8 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 w-full h-full object-contain p-8 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                   />
                 </div>
 
-                {/* Product Name & Price - below the image panel */}
-                <div className="text-center py-4 md:py-5">
+                {/* Product Name & Price - below the image, same background */}
+                <div className="text-center py-5 md:py-6">
                   <h3 
-                    className="text-foreground text-[11px] sm:text-xs md:text-sm tracking-[0.15em] uppercase font-normal mb-1"
+                    className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase font-normal mb-2"
                     style={{ fontFamily: 'var(--font-primary)' }}
                   >
                     {product.name.toUpperCase()}
                   </h3>
                   <p 
-                    className="text-foreground text-[11px] sm:text-xs md:text-sm tracking-[0.05em]"
+                    className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.05em]"
                     style={{ fontFamily: 'var(--font-primary)' }}
                   >
                     {product.price}
