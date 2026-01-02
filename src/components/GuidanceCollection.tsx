@@ -70,19 +70,8 @@ const GuidanceCollection = ({
         </h2>
         
         {/* Description */}
-        <p className="text-sm md:text-base max-w-lg mx-auto text-center leading-relaxed mb-8 px-4 whitespace-pre-line font-light text-white">
-          {`SUQA OUD was not created for the trend.
-It was created to last.
-
-No timelines to chase.
-No expectations to meet.
-
-Only a decision to build value quietly,
-without reference,
-without imitation.
-
-Because to be royal is not to announce luxury —
-to be royal is to breathe the kingdom of oud.`}
+        <p className="text-sm md:text-base max-w-lg mx-auto text-center leading-relaxed mb-8 px-4 font-light text-white">
+          YOU DON'T REACH FOR IT TO BE NOTICED. YOU REACH FOR IT WHEN YOU WANT LUXURY TO FEEL EFFORTLESS.
         </p>
 
         {/* CTA Button */}
