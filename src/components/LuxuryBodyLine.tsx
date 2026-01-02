@@ -37,17 +37,7 @@ const LuxuryBodyLine = ({
         
         {/* Description */}
         <p className="text-foreground/80 text-xs md:text-sm max-w-md mx-auto text-center leading-relaxed mb-6 md:mb-8 px-4 whitespace-pre-line font-light">
-          {`It doesn't seek attention.
-It creates a feeling of composure.
-Of clarity.
-Of being entirely at ease in your own presence.
-
-It becomes part of you —
-not something you wear,
-but something you inhabit.
-
-A quiet reminder that
-to be royal is to breathe the kingdom of oud.`}
+          OUR PHILOSOPHY
         </p>
         
         {/* Explore Button */}
