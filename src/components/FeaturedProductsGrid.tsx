@@ -34,6 +34,7 @@ interface Product {
   image: string;
   hoverImage: string;
   isNew?: boolean;
+  bgColor: string;
 }
 
 const products: Product[] = [
@@ -44,6 +45,7 @@ const products: Product[] = [
     price: '$395',
     image: reflectionMan,
     hoverImage: reflectionManBox,
+    bgColor: '#EDE4DC',
   },
   {
     id: 'guidance',
@@ -52,6 +54,7 @@ const products: Product[] = [
     price: '$395',
     image: guidance,
     hoverImage: guidanceBox,
+    bgColor: '#D9CABC',
   },
   {
     id: 'existence',
@@ -60,6 +63,7 @@ const products: Product[] = [
     image: existence,
     hoverImage: existenceBox,
     isNew: true,
+    bgColor: '#E8DDD3',
   },
   {
     id: 'purpose-50',
@@ -68,6 +72,7 @@ const products: Product[] = [
     price: '$550',
     image: purpose50,
     hoverImage: purpose50Box,
+    bgColor: '#E5D9CD',
   },
 ];
 
@@ -92,16 +97,13 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
       <div className="w-full">
         <div className="flex">
           {products.map((product, index) => {
-            // Unified background color for all products
-            const panelBgColor = '#E6D8CB';
-            
               return (
               <div 
                 key={product.id}
                 className={`group flex flex-col cursor-pointer flex-1 ${
                   index < products.length - 1 ? 'border-r border-foreground/15' : ''
                 }`}
-                style={{ backgroundColor: panelBgColor }}
+                style={{ backgroundColor: product.bgColor }}
                 onClick={() => onProductClick?.(product.id)}
               >
                 {/* Product Image Panel - full bleed */}
