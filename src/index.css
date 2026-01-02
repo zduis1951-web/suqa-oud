@@ -8,65 +8,72 @@
 
 @layer base {
   :root {
-    /* Core Colors - Warm Cream & Rich Brown Palette */
-    --background: 40 33% 96%;
-    --foreground: 30 20% 12%;
+    /* =============================================
+       AMOUAGE LUXURY PALETTE - #EEE5DA Primary
+       ============================================= */
+    
+    /* Core Background - The Signature Cream #EEE5DA */
+    --background: 33 37% 89%;
+    --foreground: 25 25% 15%;
 
-    --card: 40 33% 98%;
-    --card-foreground: 30 20% 12%;
+    /* Card Surfaces - Slightly Lighter Cream */
+    --card: 33 40% 92%;
+    --card-foreground: 25 25% 15%;
 
-    --popover: 40 33% 98%;
-    --popover-foreground: 30 20% 12%;
+    /* Popover - Pure White Touch */
+    --popover: 33 45% 95%;
+    --popover-foreground: 25 25% 15%;
 
-    /* Primary - Deep Mahogany Brown */
-    --primary: 30 25% 20%;
-    --primary-foreground: 40 33% 96%;
+    /* Primary - Rich Espresso Brown */
+    --primary: 25 30% 18%;
+    --primary-foreground: 33 37% 89%;
 
-    /* Secondary - Soft Cream */
-    --secondary: 40 25% 92%;
-    --secondary-foreground: 30 20% 12%;
+    /* Secondary - Warm Sand */
+    --secondary: 33 30% 85%;
+    --secondary-foreground: 25 25% 15%;
 
-    /* Muted - Subtle Warm Gray */
-    --muted: 35 15% 88%;
-    --muted-foreground: 30 10% 45%;
+    /* Muted - Subtle Taupe */
+    --muted: 30 20% 82%;
+    --muted-foreground: 25 15% 45%;
 
     /* Accent - Champagne Gold */
-    --accent: 38 35% 75%;
-    --accent-foreground: 30 20% 12%;
+    --accent: 38 40% 78%;
+    --accent-foreground: 25 25% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
-    --ring: 30 25% 20%;
+    /* Borders & Inputs */
+    --border: 33 25% 82%;
+    --input: 33 25% 82%;
+    --ring: 25 30% 18%;
 
     --radius: 0rem;
 
-    /* Hero Specific */
-    --hero-overlay: 30 15% 10%;
-    --hero-text: 40 33% 96%;
-    --hero-button-bg: 40 33% 96%;
-    --hero-button-text: 30 20% 12%;
-    --hero-button-border: 40 20% 90%;
+    /* Hero Specific - Cream on Dark */
+    --hero-overlay: 25 20% 8%;
+    --hero-text: 33 37% 89%;
+    --hero-button-bg: 33 37% 89%;
+    --hero-button-text: 25 25% 15%;
+    --hero-button-border: 33 30% 85%;
 
-    /* Announcement Bar */
-    --announcement-bg: 40 30% 94%;
-    --announcement-text: 30 20% 15%;
+    /* Announcement Bar - Dark Luxe */
+    --announcement-bg: 25 20% 12%;
+    --announcement-text: 33 37% 89%;
 
     /* Header */
-    --header-bg: transparent;
-    --header-text: 40 33% 96%;
+    --header-bg: 33 37% 89%;
+    --header-text: 25 25% 15%;
 
     /* Sidebar */
-    --sidebar-background: 40 33% 98%;
-    --sidebar-foreground: 30 20% 12%;
-    --sidebar-primary: 30 25% 20%;
-    --sidebar-primary-foreground: 40 33% 96%;
-    --sidebar-accent: 35 15% 88%;
-    --sidebar-accent-foreground: 30 20% 12%;
-    --sidebar-border: 35 20% 85%;
-    --sidebar-ring: 30 25% 20%;
+    --sidebar-background: 33 40% 92%;
+    --sidebar-foreground: 25 25% 15%;
+    --sidebar-primary: 25 30% 18%;
+    --sidebar-primary-foreground: 33 37% 89%;
+    --sidebar-accent: 33 30% 85%;
+    --sidebar-accent-foreground: 25 25% 15%;
+    --sidebar-border: 33 25% 82%;
+    --sidebar-ring: 25 30% 18%;
   }
 
   .dark {
@@ -133,8 +140,8 @@
      ======================================== */
   .announcement-bar-premium {
     @apply w-full py-3 text-center text-xs tracking-wider;
-    background-color: hsl(30 15% 15%);
-    color: hsl(40 33% 96%);
+    background-color: hsl(25 20% 12%);
+    color: hsl(33 37% 89%);
   }
 
   /* ========================================
@@ -145,8 +152,8 @@
   }
 
   .header-solid {
-    background-color: hsl(40 30% 94%);
-    box-shadow: 0 1px 0 hsl(35 20% 85%);
+    background-color: hsl(33 37% 89%);
+    box-shadow: 0 1px 0 hsl(33 25% 82%);
   }
 
   .header-transparent {
@@ -154,9 +161,9 @@
   }
 
   .header-scrolled {
-    background-color: hsl(40 30% 94% / 0.98);
+    background-color: hsl(33 37% 89% / 0.98);
     backdrop-filter: blur(12px);
-    box-shadow: 0 4px 20px hsl(30 15% 10% / 0.08);
+    box-shadow: 0 4px 20px hsl(25 20% 8% / 0.08);
   }
 
   .header-content {
