@@ -2,12 +2,13 @@ import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import GuidanceCollection from '@/components/GuidanceCollection';
 import OutlandsSection from '@/components/OutlandsSection';
+import LuxuryBodyLine from '@/components/LuxuryBodyLine';
 import { Helmet } from 'react-helmet-async';
 
 /**
  * Amouage Homepage
  * 
- * Features the header, hero section, Guidance Collection, and Outlands promotional sections
+ * Features the header, hero section, Guidance Collection, Outlands, and Luxury Body Line sections
  * recreation from the original amouage.com website.
  */
 const Index = () => {
@@ -21,6 +22,10 @@ const Index = () => {
 
   const handleOutlandsClick = () => {
     console.log('Outlands Shop Now clicked - navigate to Outlands collection');
+  };
+
+  const handleBodyLineClick = () => {
+    console.log('Luxury Body Line Shop Now clicked - navigate to body collection');
   };
 
   return (
@@ -41,6 +46,7 @@ const Index = () => {
         <HeroSection onShopNowClick={handleShopNowClick} />
         <GuidanceCollection onDiscoverClick={handleDiscoverClick} />
         <OutlandsSection onShopNowClick={handleOutlandsClick} />
+        <LuxuryBodyLine onShopNowClick={handleBodyLineClick} />
       </main>
     </>
   );
