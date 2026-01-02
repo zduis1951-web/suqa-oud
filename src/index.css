@@ -147,6 +147,25 @@
     ring-color: hsl(var(--hero-button-bg));
   }
 
+  /* Guidance Section Button */
+  .btn-guidance {
+    @apply inline-flex items-center justify-center px-10 py-4 text-sm font-medium tracking-[0.25em] uppercase transition-all duration-300 ease-out;
+    background-color: hsl(var(--hero-button-bg));
+    color: hsl(var(--hero-button-text));
+    border: 1px solid hsl(var(--hero-button-border));
+  }
+
+  .btn-guidance:hover {
+    background-color: hsl(var(--hero-button-text));
+    color: hsl(var(--hero-button-bg));
+    border-color: hsl(var(--hero-button-text));
+  }
+
+  .btn-guidance:focus-visible {
+    @apply outline-none ring-2 ring-offset-2;
+    ring-color: hsl(var(--hero-button-bg));
+  }
+
   /* Header Icon Button */
   .header-icon {
     @apply p-2 transition-opacity duration-200 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
@@ -183,6 +202,48 @@
     @apply w-full py-3 text-center text-xs tracking-wider;
     background-color: hsl(var(--announcement-bg));
     color: hsl(var(--announcement-text));
+  }
+
+  /* Guidance Collection Section */
+  .guidance-section {
+    @apply relative w-full overflow-hidden;
+    height: 770px;
+  }
+
+  @media (max-width: 767px) {
+    .guidance-section {
+      height: 100vh;
+      min-height: 600px;
+    }
+  }
+
+  .guidance-bg {
+    @apply absolute inset-0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .guidance-bg--desktop {
+    @apply hidden md:block;
+  }
+
+  .guidance-bg--mobile {
+    @apply block md:hidden;
+  }
+
+  .guidance-content {
+    @apply absolute inset-0 flex flex-col items-center justify-end pb-16 md:pb-20;
+  }
+
+  .guidance-title {
+    @apply font-display text-4xl font-light tracking-luxury text-hero-text mb-6 md:text-5xl lg:text-6xl;
+    text-shadow: 0 2px 8px hsl(var(--hero-overlay) / 0.3);
+  }
+
+  .guidance-media-control {
+    @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-opacity duration-200 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2;
+    color: hsl(var(--hero-text));
   }
 }
 
