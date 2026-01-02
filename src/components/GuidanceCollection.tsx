@@ -66,7 +66,8 @@ const GuidanceCollection = ({
       <div className="guidance-content">
         {/* Section Title */}
         <h2 className="guidance-title">
-          OUR STORY
+          SUQA OUD
+
         </h2>
         
         {/* Description */}
