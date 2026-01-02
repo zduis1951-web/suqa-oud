@@ -12,38 +12,32 @@ import suqaOudGcc from '@/assets/suqa-oud-gcc.jpg';
 interface PerfectGiftProps {
   onShopNowClick?: () => void;
 }
-
-const PerfectGift = ({ onShopNowClick }: PerfectGiftProps) => {
-  return (
-    <section className="relative w-full min-h-screen overflow-hidden">
+const PerfectGift = ({
+  onShopNowClick
+}: PerfectGiftProps) => {
+  return <section className="relative w-full min-h-screen overflow-hidden">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 w-full h-full"
-        style={{
-          backgroundImage: `url(${suqaOudGcc})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-        role="img"
-        aria-label="SUQA OUD GCC"
-      />
+      <div className="absolute inset-0 w-full h-full" style={{
+      backgroundImage: `url(${suqaOudGcc})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }} role="img" aria-label="SUQA OUD GCC" />
 
       {/* Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
         {/* Main Headline */}
-        <h2 
-          className="text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.3em] uppercase mb-4 md:mb-6"
-          style={{ fontFamily: 'var(--font-primary)' }}
-        >
-          SUQA OUD
+        <h2 style={{
+        fontFamily: 'var(--font-primary)'
+      }} className="text-2xl sm:text-3xl md:text-4xl tracking-[0.3em] uppercase mb-4 md:mb-6 font-bold text-center text-black lg:text-sm">
+          THIS IS NOT EXCESS. THIS IS INTENTION.
+
         </h2>
 
         {/* Subtext */}
-        <p 
-          className="text-foreground/80 text-xs sm:text-sm md:text-base max-w-md leading-relaxed mb-6 md:mb-8 whitespace-pre-line font-light"
-          style={{ fontFamily: 'var(--font-primary)' }}
-        >
+        <p className="text-foreground/80 text-xs sm:text-sm md:text-base max-w-md leading-relaxed mb-6 md:mb-8 whitespace-pre-line font-light" style={{
+        fontFamily: 'var(--font-primary)'
+      }}>
           {`For those who don't follow moments,
 but define their own.
 
@@ -56,42 +50,24 @@ To be royal is to breathe the kingdom of oud.`}
         </p>
 
         {/* CTA Button */}
-        <button
-          onClick={onShopNowClick}
-          className="border border-foreground text-foreground bg-transparent px-8 py-3 md:px-10 md:py-4 text-xs md:text-sm tracking-[0.2em] uppercase transition-all duration-300 hover:bg-foreground hover:text-background"
-          style={{ fontFamily: 'var(--font-primary)' }}
-        >
+        <button onClick={onShopNowClick} className="border border-foreground text-foreground bg-transparent px-8 py-3 md:px-10 md:py-4 text-xs md:text-sm tracking-[0.2em] uppercase transition-all duration-300 hover:bg-foreground hover:text-background" style={{
+        fontFamily: 'var(--font-primary)'
+      }}>
           DISCOVER
         </button>
       </div>
 
       {/* Accessibility Icon - Bottom Left */}
       <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
-        <button 
-          className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-foreground/80 flex items-center justify-center hover:bg-foreground transition-colors"
-          aria-label="Enable accessibility"
-        >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="20" 
-            height="20" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-            className="text-background"
-          >
-            <circle cx="12" cy="4" r="2"/>
-            <path d="M12 6v14"/>
-            <path d="M8 10h8"/>
-            <path d="M8 22l4-8 4 8"/>
+        <button className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-foreground/80 flex items-center justify-center hover:bg-foreground transition-colors" aria-label="Enable accessibility">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-background">
+            <circle cx="12" cy="4" r="2" />
+            <path d="M12 6v14" />
+            <path d="M8 10h8" />
+            <path d="M8 22l4-8 4 8" />
           </svg>
         </button>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default PerfectGift;
