@@ -6,6 +6,7 @@ import LuxuryBodyLine from '@/components/LuxuryBodyLine';
 import PowerOfTheInfinite from '@/components/PowerOfTheInfinite';
 import SohoFlagshipBoutique from '@/components/SohoFlagshipBoutique';
 import PerfectGift from '@/components/PerfectGift';
+import FeaturedProductsGrid from '@/components/FeaturedProductsGrid';
 import { Helmet } from 'react-helmet-async';
 
 /**
@@ -43,6 +44,10 @@ const Index = () => {
     console.log('Perfect Gift Shop Now clicked - navigate to gifting collection');
   };
 
+  const handleProductClick = (productId: string) => {
+    console.log(`Product clicked: ${productId} - navigate to product page`);
+  };
+
   return (
     <>
       <Helmet>
@@ -65,6 +70,7 @@ const Index = () => {
         <PowerOfTheInfinite onShopNowClick={handlePowerInfiniteClick} />
         <SohoFlagshipBoutique onDiscoverMoreClick={handleSohoDiscoverClick} />
         <PerfectGift onShopNowClick={handleGiftShopClick} />
+        <FeaturedProductsGrid onProductClick={handleProductClick} />
       </main>
     </>
   );
