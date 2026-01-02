@@ -95,12 +95,13 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
             // Unified background color for all products
             const panelBgColor = '#EEE1D9';
             
-            return (
+              return (
               <div 
                 key={product.id}
                 className={`group flex flex-col cursor-pointer flex-1 ${
                   index < products.length - 1 ? 'border-r border-foreground/15' : ''
                 }`}
+                style={{ backgroundColor: panelBgColor }}
                 onClick={() => onProductClick?.(product.id)}
               >
                 {/* Product Image Panel - full bleed */}
@@ -133,11 +134,8 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                   />
                 </div>
 
-                {/* Product Name & Price - same background as image */}
-                <div 
-                  className="text-center py-5 md:py-6"
-                  style={{ backgroundColor: panelBgColor }}
-                >
+                {/* Product Name & Price */}
+                <div className="text-center py-5 md:py-6">
                   <h3 
                     className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase font-normal mb-2"
                     style={{ fontFamily: 'var(--font-primary)' }}
