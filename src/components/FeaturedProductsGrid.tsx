@@ -92,11 +92,8 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
       <div className="w-full">
         <div className="flex">
           {products.map((product, index) => {
-            // Reflection Man gets darker background treatment
-            const isDark = product.id === 'reflection-man';
-            const panelBgColor = isDark 
-              ? 'hsl(35 10% 78%)' 
-              : 'hsl(30 15% 88%)';
+            // Unified background color for all products
+            const panelBgColor = '#EEE1D9';
             
             return (
               <div 
