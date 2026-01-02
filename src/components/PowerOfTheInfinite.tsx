@@ -1,5 +1,4 @@
-import powerInfiniteDesktop from '@/assets/power-infinite-desktop.jpg';
-import powerInfiniteMobile from '@/assets/power-infinite-mobile.png';
+import theCraftBg from '@/assets/the-craft-bg.jpg';
 
 interface PowerOfTheInfiniteProps {
   onShopNowClick?: () => void;
@@ -16,26 +15,19 @@ interface PowerOfTheInfiniteProps {
  */
 const PowerOfTheInfinite = ({ onShopNowClick }: PowerOfTheInfiniteProps) => {
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* Desktop Image - Hidden on mobile */}
-      <div className="hidden md:block w-full">
-        <img
-          src={powerInfiniteDesktop}
-          alt="The Craft - SUQA OUD"
-          className="w-full h-auto object-cover"
-          loading="lazy"
-        />
-      </div>
-      
-      {/* Mobile Image - Hidden on desktop */}
-      <div className="block md:hidden w-full">
-        <img
-          src={powerInfiniteMobile}
-          alt="The Craft - SUQA OUD"
-          className="w-full h-auto object-cover"
-          loading="lazy"
-        />
-      </div>
+    <section className="relative w-full min-h-screen overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 w-full h-full"
+        style={{
+          backgroundImage: `url(${theCraftBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+        role="img"
+        aria-label="The Craft - SUQA OUD Elite"
+      />
       
       {/* Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-end pb-16 md:pb-20 lg:pb-24">
