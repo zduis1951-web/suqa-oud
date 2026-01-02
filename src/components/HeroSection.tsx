@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react';
 import { Pause, Play, Accessibility } from 'lucide-react';
 
-import heroDesktopImage from '@/assets/gifting-hero-desktop.jpg';
-import heroMobileImage from '@/assets/gifting-hero-mobile.jpg';
+import heroDesktopImage from '@/assets/hero-new.jpg';
+import heroMobileImage from '@/assets/hero-new.jpg';
 
 interface HeroSectionProps {
   onShopNowClick?: () => void;
