@@ -101,14 +101,16 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
             return (
               <div 
                 key={product.id}
-                className={`group relative cursor-pointer flex-1 ${
+                className={`group flex flex-col cursor-pointer flex-1 ${
                   index < products.length - 1 ? 'border-r border-foreground/15' : ''
                 }`}
-                style={{ background: panelBg }}
                 onClick={() => onProductClick?.(product.id)}
               >
-                {/* Single panel container - image fills with text overlay at bottom */}
-                <div className="relative aspect-[4/5] overflow-hidden">
+                {/* Product Image Panel */}
+                <div 
+                  className="relative aspect-[4/5] overflow-hidden flex items-center justify-center"
+                  style={{ background: panelBg }}
+                >
                   {/* NEW Badge */}
                   {product.isNew && (
                     <span 
@@ -122,29 +124,38 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                     </span>
                   )}
                   
-                  {/* Bottle Image - fills entire frame */}
+                  {/* Bottle Image - object-contain to show full product */}
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                    className="w-full h-full object-contain p-4 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                   />
                   
                   {/* Box Image - visible on hover */}
                   <img
                     src={product.hoverImage}
                     alt={`${product.name} packaging`}
-                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 w-full h-full object-contain p-4 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                   />
+                </div>
 
-                  {/* Product Name - positioned at bottom inside the frame */}
-                  <div className="absolute bottom-0 left-0 right-0 text-center py-3 md:py-4">
-                    <h3 
-                      className="text-foreground text-[11px] sm:text-xs md:text-sm tracking-[0.15em] uppercase font-normal"
-                      style={{ fontFamily: 'var(--font-primary)' }}
-                    >
-                      {product.name.toUpperCase()}
-                    </h3>
-                  </div>
+                {/* Product Name & Price - below the image panel */}
+                <div 
+                  className="text-center py-4 md:py-5"
+                  style={{ background: 'linear-gradient(180deg, hsl(30 20% 92%) 0%, hsl(30 15% 88%) 100%)' }}
+                >
+                  <h3 
+                    className="text-foreground text-[11px] sm:text-xs md:text-sm tracking-[0.15em] uppercase font-normal mb-1"
+                    style={{ fontFamily: 'var(--font-primary)' }}
+                  >
+                    {product.name.toUpperCase()}
+                  </h3>
+                  <p 
+                    className="text-foreground text-[11px] sm:text-xs md:text-sm tracking-[0.05em]"
+                    style={{ fontFamily: 'var(--font-primary)' }}
+                  >
+                    {product.price}
+                  </p>
                 </div>
               </div>
             );
