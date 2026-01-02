@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Pause, Play } from 'lucide-react';
-import outlandsBg from '@/assets/outlands-bg.jpg';
+import outlandsVideo from '@/assets/store-locator-video.mp4';
 
 interface OutlandsSectionProps {
   onShopNowClick?: () => void;
@@ -10,13 +10,20 @@ interface OutlandsSectionProps {
  * Outlands Promotional Section
  * 
  * Full-width cinematic section featuring the Outlands fragrance.
- * Uses a single continuous background image with the bottle embedded
- * in the scene. Matches the Amouage homepage design exactly.
+ * Uses a video background with content overlay.
  */
 const OutlandsSection = ({ onShopNowClick }: OutlandsSectionProps) => {
   const [isPlaying, setIsPlaying] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+    }
     setIsPlaying(!isPlaying);
   };
 
@@ -25,13 +32,20 @@ const OutlandsSection = ({ onShopNowClick }: OutlandsSectionProps) => {
       className="outlands-section"
       aria-label="Our Philosophy - SUQA OUD"
     >
-      {/* Single Continuous Background Image with Embedded Bottle */}
-      <div 
-        className="outlands-bg"
-        style={{ backgroundImage: `url(${outlandsBg})` }}
-        role="img"
-        aria-label="SUQA OUD philosophy"
+      {/* Background Video */}
+      <video
+        ref={videoRef}
+        className="absolute inset-0 h-full w-full object-cover"
+        src={outlandsVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
       />
+
+      {/* Dark Overlay for text readability */}
+      <div className="absolute inset-0 bg-black/30" />
 
       {/* Content - Title and CTA positioned at bottom */}
       <div className="outlands-content">
@@ -68,7 +82,7 @@ breathed naturally.`}
       <button
         onClick={togglePlayPause}
         className="outlands-media-control"
-        aria-label={isPlaying ? 'Pause media' : 'Play media'}
+        aria-label={isPlaying ? 'Pause video' : 'Play video'}
       >
         {isPlaying ? (
           <Pause className="h-6 w-6" strokeWidth={1} />
