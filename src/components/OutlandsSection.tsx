@@ -45,7 +45,7 @@ const OutlandsSection = ({
         </p>
 
         {/* CTA Button */}
-        <button onClick={onShopNowClick} className="btn-outlands" aria-label="Explore SUQA OUD philosophy">
+        <button onClick={onShopNowClick} aria-label="Explore SUQA OUD philosophy" className="btn-outlands bg-white">
           EXPLORE
         </button>
       </div>
