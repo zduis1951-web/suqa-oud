@@ -1,4 +1,4 @@
-import storeLocatorBg from '@/assets/store-locator-bg.png';
+import storeLocatorVideo from '@/assets/store-locator-video.mp4';
 
 interface StoreLocatorSectionProps {
   onStoreLocatorClick?: () => void;
@@ -8,7 +8,7 @@ interface StoreLocatorSectionProps {
  * Store Locator Section
  * 
  * A calm architectural transition zone that serves as a luxury spatial divider.
- * Full-width horizontal band with marble/stone texture background.
+ * Full-width horizontal band with video background.
  */
 const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) => {
   const handleClick = () => {
@@ -21,16 +21,26 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
 
   return (
     <section
-      className="w-full relative"
+      className="w-full relative overflow-hidden"
       style={{
-        backgroundImage: `url(${storeLocatorBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
         height: '200px',
       }}
       aria-label="SUQA OUD - Exclusively Online"
     >
+      {/* Background Video */}
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        src={storeLocatorVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+      />
+
+      {/* Dark Overlay for text readability */}
+      <div className="absolute inset-0 bg-black/30" />
+
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
         {/* Heading */}
         <h2
@@ -40,7 +50,7 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
             fontSize: 'clamp(14px, 2.5vw, 18px)',
             fontWeight: 400,
             letterSpacing: '0.2em',
-            color: '#1a1a1a',
+            color: '#ffffff',
           }}
         >
           EXCLUSIVELY ONLINE
