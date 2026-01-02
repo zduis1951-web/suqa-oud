@@ -104,33 +104,33 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                 style={{ backgroundColor: panelBgColor }}
                 onClick={() => onProductClick?.(product.id)}
               >
-                {/* Product Image Panel - full bleed */}
-                <div className="relative aspect-[4/5] overflow-hidden">
+                {/* Product Image Panel */}
+                <div className="relative aspect-[4/5] overflow-hidden" style={{ backgroundColor: '#EEE1D9' }}>
                   {/* NEW Badge */}
                   {product.isNew && (
                     <span 
                       className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-foreground text-[10px] md:text-[11px] tracking-[0.1em] uppercase border border-foreground/40 px-3 py-1"
                       style={{ 
                         fontFamily: 'var(--font-primary)',
-                        background: 'hsl(30 20% 92% / 0.9)'
+                        background: '#EEE1D9'
                       }}
                     >
                       NEW
                     </span>
                   )}
                   
-                  {/* Bottle Image - fills entire frame */}
+                  {/* Bottle Image */}
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                    className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                   />
                   
                   {/* Box Image - visible on hover */}
                   <img
                     src={product.hoverImage}
                     alt={`${product.name} packaging`}
-                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                   />
                 </div>
 
