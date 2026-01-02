@@ -2,16 +2,28 @@ import reflectionMan from '@/assets/products/reflection-man.jpg';
 import guidance from '@/assets/products/guidance.jpg';
 import existence from '@/assets/products/existence.jpg';
 import purpose50 from '@/assets/products/purpose-50.png';
+import reflectionManBox from '@/assets/products/reflection-man-box.jpg';
+import guidanceBox from '@/assets/products/guidance-box.jpg';
+import existenceBox from '@/assets/products/existence-box.jpg';
+import purpose50Box from '@/assets/products/purpose-50-box.jpg';
 
 /**
  * FeaturedProductsGrid Section - "PRECIOUS, POTENT, PERSONAL"
  * 
  * README: All product images used in this component were downloaded directly from the live
  * amouage.com website. No images were generated, edited, or altered in any way.
+ * 
+ * Bottle images:
  * - Reflection Man: https://amouage.com/cdn/shop/files/REFLECTION-100-ML.jpg
  * - Guidance: https://amouage.com/cdn/shop/files/GUIDANCE-WOMAN-100-ML_178c631a-eaa5-4599-bce9-cb53a53486af.jpg
  * - Existence: https://amouage.com/cdn/shop/files/EXISTENCE_PLP.jpg
  * - Purpose 50: https://amouage.com/cdn/shop/files/PLP_purpose50-min.png
+ * 
+ * Packaging/Box images (hover state):
+ * - Reflection Man Box: https://amouage.com/cdn/shop/files/REFLECTION-MAN-BOX.jpg
+ * - Guidance Box: https://amouage.com/cdn/shop/files/GUIDANCE-BOX-100ML.jpg
+ * - Existence Box: https://amouage.com/cdn/shop/files/Amouage_CS_Photo_Box_Odyssey_Existence.jpg
+ * - Purpose 50 Box: https://amouage.com/cdn/shop/files/Amouage_CS_Photo_Box_Odyssey_Purpose50.jpg
  */
 
 interface Product {
@@ -20,6 +32,7 @@ interface Product {
   variant?: string;
   price: string;
   image: string;
+  hoverImage: string;
   isNew?: boolean;
 }
 
@@ -30,6 +43,7 @@ const products: Product[] = [
     variant: '100ml',
     price: '$395',
     image: reflectionMan,
+    hoverImage: reflectionManBox,
   },
   {
     id: 'guidance',
@@ -37,12 +51,14 @@ const products: Product[] = [
     variant: '100ml',
     price: '$395',
     image: guidance,
+    hoverImage: guidanceBox,
   },
   {
     id: 'existence',
     name: 'Existence',
     price: '$395',
     image: existence,
+    hoverImage: existenceBox,
     isNew: true,
   },
   {
@@ -51,6 +67,7 @@ const products: Product[] = [
     variant: '100ml',
     price: '$550',
     image: purpose50,
+    hoverImage: purpose50Box,
   },
 ];
 
@@ -77,7 +94,7 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
           {products.map((product) => (
             <div 
               key={product.id}
-              className="flex flex-col cursor-pointer"
+              className="group flex flex-col cursor-pointer"
               onClick={() => onProductClick?.(product.id)}
             >
               {/* Product Image Container */}
@@ -85,18 +102,25 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                 {/* NEW Badge */}
                 {product.isNew && (
                   <span 
-                    className="absolute top-3 left-3 text-foreground text-[10px] md:text-xs tracking-[0.15em] uppercase"
+                    className="absolute top-3 left-3 z-10 text-foreground text-[10px] md:text-xs tracking-[0.15em] uppercase"
                     style={{ fontFamily: 'var(--font-primary)' }}
                   >
                     NEW
                   </span>
                 )}
                 
-                {/* Product Image */}
+                {/* Bottle Image - visible by default */}
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-contain p-4"
+                  className="absolute inset-0 w-full h-full object-contain p-12 md:p-16 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                />
+                
+                {/* Box Image - visible on hover */}
+                <img
+                  src={product.hoverImage}
+                  alt={`${product.name} packaging`}
+                  className="absolute inset-0 w-full h-full object-contain p-12 md:p-16 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                 />
               </div>
 
