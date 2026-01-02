@@ -48,7 +48,7 @@ const HeroSection = ({
       <div className="absolute inset-x-0 bottom-16 md:bottom-24 flex justify-center">
         <div className="px-6 text-center">
           {/* Brand Name */}
-          <h1 className="animate-fade-in-up font-serif font-light tracking-[0.3em] sm:text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-8 text-white text-sm">
+          <h1 className="animate-fade-in-up font-serif font-light tracking-[0.3em] text-sm mb-6 md:mb-8 text-white">
             A NEW DUO OF MAJESTIC COMPOSITIONS
   
           </h1>
