@@ -37,15 +37,10 @@ const SohoFlagshipBoutique = ({
         </h2>
         
         {/* Description */}
-        <p className="text-white/80 text-xs sm:text-sm md:text-base max-w-md leading-relaxed mb-6 md:mb-8 whitespace-pre-line font-light" style={{
+        <p className="text-white/80 text-5xl tracking-[0.1em] uppercase mb-6 md:mb-8 font-light" style={{
         fontFamily: 'var(--font-primary)'
       }}>
-          {`Because value isn't mass-distributed.
-
-It's recognized
-by those who don't need to be told
-what luxury looks like —
-they already breathe it.`}
+          THE ESSENCE OF REFINEMENT
         </p>
 
         {/* CTA Button */}
