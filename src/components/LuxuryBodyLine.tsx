@@ -21,7 +21,7 @@ const LuxuryBodyLine = ({ onShopNowClick }: LuxuryBodyLineProps) => {
       <div className="hidden md:block w-full">
         <img
           src={luxuryBodyDesktop}
-          alt="Luxury Body Line - Amouage body care collection featuring Honour Woman Body Lotion"
+          alt="The Experience - SUQA OUD"
           className="w-full h-auto object-cover"
           loading="lazy"
         />
@@ -31,7 +31,7 @@ const LuxuryBodyLine = ({ onShopNowClick }: LuxuryBodyLineProps) => {
       <div className="block md:hidden w-full">
         <img
           src={luxuryBodyMobile}
-          alt="Luxury Body Line - Amouage body care collection featuring Honour Woman Body Lotion"
+          alt="The Experience - SUQA OUD"
           className="w-full h-auto object-cover"
           loading="lazy"
         />
@@ -41,19 +41,36 @@ const LuxuryBodyLine = ({ onShopNowClick }: LuxuryBodyLineProps) => {
       <div className="absolute inset-0 flex flex-col items-center justify-end pb-16 md:pb-20 lg:pb-24">
         {/* Title */}
         <h2 
-          className="text-xl md:text-2xl lg:text-3xl tracking-[0.3em] md:tracking-[0.4em] text-foreground font-light mb-6 md:mb-8"
+          className="text-xl md:text-2xl lg:text-3xl tracking-[0.3em] md:tracking-[0.4em] text-foreground font-light mb-4 md:mb-6"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          LUXURY BODY LINE
+          THE EXPERIENCE
         </h2>
         
-        {/* Shop Now Button */}
+        {/* Description */}
+        <p 
+          className="text-foreground/80 text-xs md:text-sm max-w-md mx-auto text-center leading-relaxed mb-6 md:mb-8 px-4 whitespace-pre-line font-light"
+        >
+          {`It doesn't seek attention.
+It creates a feeling of composure.
+Of clarity.
+Of being entirely at ease in your own presence.
+
+It becomes part of you —
+not something you wear,
+but something you inhabit.
+
+A quiet reminder that
+to be royal is to breathe the kingdom of oud.`}
+        </p>
+        
+        {/* Explore Button */}
         <button
           onClick={onShopNowClick}
           className="px-8 md:px-10 py-3 md:py-3.5 bg-background text-foreground text-xs md:text-sm tracking-[0.2em] font-light border border-transparent hover:bg-transparent hover:border-foreground transition-all duration-300"
-          aria-label="Shop Luxury Body Line collection"
+          aria-label="Explore The Experience"
         >
-          SHOP NOW
+          EXPLORE
         </button>
       </div>
       

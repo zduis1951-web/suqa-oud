@@ -15,7 +15,7 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
     if (onStoreLocatorClick) {
       onStoreLocatorClick();
     } else {
-      window.open('https://amouage.com/pages/store-locator', '_blank');
+      window.open('https://suqaoud.com/shop', '_blank');
     }
   };
 
@@ -29,7 +29,7 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
         backgroundRepeat: 'no-repeat',
         height: '200px',
       }}
-      aria-label="Find your nearest Amouage boutique"
+      aria-label="SUQA OUD - Exclusively Online"
     >
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
         {/* Heading */}
@@ -43,7 +43,7 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
             color: '#1a1a1a',
           }}
         >
-          FIND YOUR NEAREST AMOUAGE BOUTIQUE
+          EXCLUSIVELY ONLINE
         </h2>
 
         {/* Store Locator Button */}
@@ -60,9 +60,9 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
             border: '1px solid rgba(0, 0, 0, 0.15)',
             padding: '14px 32px',
           }}
-          aria-label="Open store locator to find nearest Amouage boutique"
+          aria-label="Shop SUQA OUD online"
         >
-          STORE LOCATOR
+          SHOP NOW
         </button>
       </div>
     </section>

@@ -21,7 +21,7 @@ const PowerOfTheInfinite = ({ onShopNowClick }: PowerOfTheInfiniteProps) => {
       <div className="hidden md:block w-full">
         <img
           src={powerInfiniteDesktop}
-          alt="The Power of the Infinite - Amouage Decision and Existence fragrances with twisted wood branches"
+          alt="The Craft - SUQA OUD"
           className="w-full h-auto object-cover"
           loading="lazy"
         />
@@ -31,7 +31,7 @@ const PowerOfTheInfinite = ({ onShopNowClick }: PowerOfTheInfiniteProps) => {
       <div className="block md:hidden w-full">
         <img
           src={powerInfiniteMobile}
-          alt="The Power of the Infinite - Amouage Decision and Existence fragrances with twisted wood branches"
+          alt="The Craft - SUQA OUD"
           className="w-full h-auto object-cover"
           loading="lazy"
         />
@@ -44,24 +44,32 @@ const PowerOfTheInfinite = ({ onShopNowClick }: PowerOfTheInfiniteProps) => {
           className="text-2xl md:text-3xl lg:text-4xl tracking-[0.25em] md:tracking-[0.35em] text-foreground font-light mb-3 md:mb-4 text-center px-4"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          THE POWER OF THE INFINITE
+          THE CRAFT
         </h2>
         
-        {/* Subtitle */}
+        {/* Description */}
         <p 
-          className="text-xs md:text-sm tracking-[0.15em] md:tracking-[0.2em] text-foreground/80 font-light mb-6 md:mb-8 text-center uppercase px-4"
-          style={{ fontFamily: 'var(--font-display)' }}
+          className="text-xs md:text-sm text-foreground/80 font-light mb-6 md:mb-8 text-center px-4 max-w-md leading-relaxed whitespace-pre-line"
         >
-          A NEW DUO OF MAJESTIC COMPOSITIONS
+          {`This is not excess.
+This is intention.
+
+Every detail is chosen to feel refined,
+not impressive.
+
+Luxury here is measured
+by balance,
+by restraint,
+by quiet confidence.`}
         </p>
         
-        {/* Shop Now Button */}
+        {/* Explore Button */}
         <button
           onClick={onShopNowClick}
           className="px-8 md:px-10 py-3 md:py-3.5 bg-background text-foreground text-xs md:text-sm tracking-[0.2em] font-light border border-transparent hover:bg-transparent hover:border-foreground transition-all duration-300"
-          aria-label="Shop The Power of the Infinite collection"
+          aria-label="Explore The Craft"
         >
-          SHOP NOW
+          EXPLORE
         </button>
       </div>
       

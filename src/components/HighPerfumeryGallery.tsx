@@ -11,14 +11,14 @@ import reflectionImg from '@/assets/products/reflection-man.jpg';
 import reflectionBoxImg from '@/assets/products/reflection-man-box.jpg';
 
 const galleryImages = [
-  { id: 1, image: existenceImg, alt: 'Amouage Existence' },
-  { id: 2, image: existenceBoxImg, alt: 'Amouage product display' },
-  { id: 3, image: guidanceImg, alt: 'Amouage Guidance green bottle' },
-  { id: 4, image: guidanceBoxImg, alt: 'Amouage Guidance pink bottle' },
-  { id: 5, image: purposeImg, alt: 'Amouage Purpose mint bottle' },
-  { id: 6, image: purposeBoxImg, alt: 'Amouage Purpose gold bottle' },
-  { id: 7, image: reflectionImg, alt: 'Amouage Reflection dark bottle' },
-  { id: 8, image: reflectionBoxImg, alt: 'Amouage boutique' },
+  { id: 1, image: existenceImg, alt: 'SUQA OUD Existence' },
+  { id: 2, image: existenceBoxImg, alt: 'SUQA OUD product display' },
+  { id: 3, image: guidanceImg, alt: 'SUQA OUD Guidance green bottle' },
+  { id: 4, image: guidanceBoxImg, alt: 'SUQA OUD Guidance pink bottle' },
+  { id: 5, image: purposeImg, alt: 'SUQA OUD Purpose mint bottle' },
+  { id: 6, image: purposeBoxImg, alt: 'SUQA OUD Purpose gold bottle' },
+  { id: 7, image: reflectionImg, alt: 'SUQA OUD Reflection dark bottle' },
+  { id: 8, image: reflectionBoxImg, alt: 'SUQA OUD boutique' },
 ];
 
 const HighPerfumeryGallery = () => {
@@ -47,7 +47,7 @@ const HighPerfumeryGallery = () => {
         transition={{ duration: 0.6 }}
         className="text-center uppercase tracking-[0.2em] font-serif text-base md:text-lg lg:text-xl mb-8 md:mb-12 text-foreground px-4"
       >
-        HIGH PERFUMERY FROM THE SULTANATE OF OMAN
+        CRAFTED IN THE KINGDOM OF OUD
       </motion.h2>
 
       {/* Gallery Container */}
@@ -73,7 +73,7 @@ const HighPerfumeryGallery = () => {
           {galleryImages.map((item, index) => (
             <motion.a
               key={item.id}
-              href="https://instagram.com/amouageofficial"
+              href="https://instagram.com/suqaoud"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}

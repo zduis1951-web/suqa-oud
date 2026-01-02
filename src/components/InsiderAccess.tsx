@@ -17,11 +17,11 @@ const InsiderAccess = () => {
     >
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-xl md:text-2xl tracking-[0.15em] mb-4 text-foreground font-serif">
-          INSI<span className="text-[#8B7355]">D</span>ER ACCESS
+          JOIN THE KING<span className="text-[#8B7355]">D</span>OM
         </h2>
         
         <p className="text-muted-foreground text-sm md:text-base mb-8 leading-relaxed">
-          Receive exclusive content and news from The House of Amouage and be the first to know about product launches and special announcements.
+          Receive exclusive content and news from The House of SUQA OUD and be the first to know about product launches and special announcements.
         </p>
         
         <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-6">

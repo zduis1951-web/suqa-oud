@@ -22,28 +22,33 @@ const SohoFlagshipBoutique = ({ onDiscoverMoreClick }: SohoFlagshipBoutiqueProps
         <source media="(min-width: 768px)" srcSet={sohoDesktop} />
         <img
           src={sohoMobile}
-          alt="AMOUAGE SOHO FLAGSHIP BOUTIQUE"
+          alt="SUQA OUD - Online Only By Design"
           className="w-full h-auto object-cover"
         />
       </picture>
 
       {/* Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-        {/* Sub-headline */}
-        <p 
-          className="text-foreground text-xs md:text-sm tracking-[0.3em] uppercase mb-2 md:mb-3"
-          style={{ fontFamily: 'var(--font-primary)' }}
-        >
-          NOW OPEN
-        </p>
-
         {/* Main Headline */}
         <h2 
-          className="text-foreground text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-[0.15em] uppercase mb-6 md:mb-8 max-w-4xl"
+          className="text-foreground text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-[0.15em] uppercase mb-4 md:mb-6 max-w-4xl"
           style={{ fontFamily: 'var(--font-primary)' }}
         >
-          AMOUAGE SOHO FLAGSHIP BOUTIQUE
+          ONLINE-ONLY. BY DESIGN.
         </h2>
+        
+        {/* Description */}
+        <p 
+          className="text-foreground/80 text-xs sm:text-sm md:text-base max-w-md leading-relaxed mb-6 md:mb-8 whitespace-pre-line font-light"
+          style={{ fontFamily: 'var(--font-primary)' }}
+        >
+          {`Because value isn't mass-distributed.
+
+It's recognized
+by those who don't need to be told
+what luxury looks like —
+they already breathe it.`}
+        </p>
 
         {/* CTA Button */}
         <button
@@ -51,7 +56,7 @@ const SohoFlagshipBoutique = ({ onDiscoverMoreClick }: SohoFlagshipBoutiqueProps
           className="border border-foreground text-foreground bg-transparent px-8 py-3 md:px-10 md:py-4 text-xs md:text-sm tracking-[0.2em] uppercase transition-all duration-300 hover:bg-foreground hover:text-background"
           style={{ fontFamily: 'var(--font-primary)' }}
         >
-          DISCOVER MORE
+          EXPLORE
         </button>
       </div>
 
