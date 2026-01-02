@@ -1,5 +1,4 @@
-import luxuryBodyDesktop from '@/assets/luxury-body-desktop.jpg';
-import luxuryBodyMobile from '@/assets/luxury-body-mobile.jpg';
+import luxuryBodyBg from '@/assets/luxury-body-bg.png';
 
 interface LuxuryBodyLineProps {
   onShopNowClick?: () => void;
@@ -16,26 +15,19 @@ interface LuxuryBodyLineProps {
  */
 const LuxuryBodyLine = ({ onShopNowClick }: LuxuryBodyLineProps) => {
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* Desktop Image - Hidden on mobile */}
-      <div className="hidden md:block w-full">
-        <img
-          src={luxuryBodyDesktop}
-          alt="The Experience - SUQA OUD"
-          className="w-full h-auto object-cover"
-          loading="lazy"
-        />
-      </div>
-      
-      {/* Mobile Image - Hidden on desktop */}
-      <div className="block md:hidden w-full">
-        <img
-          src={luxuryBodyMobile}
-          alt="The Experience - SUQA OUD"
-          className="w-full h-auto object-cover"
-          loading="lazy"
-        />
-      </div>
+    <section className="relative w-full min-h-screen overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 w-full h-full"
+        style={{
+          backgroundImage: `url(${luxuryBodyBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+        role="img"
+        aria-label="The Experience - SUQA OUD Discovery Set"
+      />
       
       {/* Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-end pb-16 md:pb-20 lg:pb-24">
