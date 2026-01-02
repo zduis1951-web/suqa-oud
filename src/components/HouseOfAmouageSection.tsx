@@ -1,13 +1,13 @@
-import houseOfAmouageBg from '@/assets/house-of-amouage-bg.jpg';
+import houseOfSuqaOudVideo from '@/assets/house-of-suqa-oud-video.mp4';
 
 interface HouseOfAmouageSectionProps {
   onDiscoverClick?: () => void;
 }
 
 /**
- * House of Amouage Section
+ * House of SUQA OUD Section
  * 
- * A cinematic brand statement section with image background.
+ * A cinematic brand statement section with video background.
  * Architectural, calm, and editorial feel.
  */
 const HouseOfAmouageSection = ({ onDiscoverClick }: HouseOfAmouageSectionProps) => {
@@ -27,10 +27,13 @@ const HouseOfAmouageSection = ({ onDiscoverClick }: HouseOfAmouageSectionProps) 
       }}
       aria-label="The House of SUQA OUD"
     >
-      {/* High Quality Image Background */}
-      <img
-        src={houseOfAmouageBg}
-        alt="The House of SUQA OUD"
+      {/* Video Background */}
+      <video
+        src={houseOfSuqaOudVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
         className="absolute inset-0 w-full h-full object-cover"
         style={{ objectPosition: 'center 40%' }}
       />
