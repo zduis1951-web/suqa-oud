@@ -34,6 +34,8 @@ interface Product {
   image: string;
   hoverImage: string;
   isNew?: boolean;
+  bgColor: string;
+  isDark?: boolean;
 }
 
 const products: Product[] = [
@@ -44,6 +46,7 @@ const products: Product[] = [
     price: '$395',
     image: reflectionMan,
     hoverImage: reflectionManBox,
+    bgColor: '#E8DED3',
   },
   {
     id: 'guidance',
@@ -52,6 +55,7 @@ const products: Product[] = [
     price: '$395',
     image: guidance,
     hoverImage: guidanceBox,
+    bgColor: '#C4A08B',
   },
   {
     id: 'existence',
@@ -60,6 +64,7 @@ const products: Product[] = [
     image: existence,
     hoverImage: existenceBox,
     isNew: true,
+    bgColor: '#B8D4C0',
   },
   {
     id: 'purpose-50',
@@ -68,6 +73,8 @@ const products: Product[] = [
     price: '$550',
     image: purpose50,
     hoverImage: purpose50Box,
+    bgColor: '#3D4A3A',
+    isDark: true,
   },
 ];
 
@@ -135,15 +142,15 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                 </div>
 
                 {/* Product Name & Price */}
-                <div className="text-center py-5 md:py-6" style={{ backgroundColor: '#E6D8CB' }}>
+                <div className="text-center py-5 md:py-6" style={{ backgroundColor: product.bgColor }}>
                   <h3 
-                    className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase font-normal mb-2"
+                    className={`text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase font-normal mb-2 ${product.isDark ? 'text-white' : 'text-foreground'}`}
                     style={{ fontFamily: 'var(--font-primary)' }}
                   >
                     {product.name.toUpperCase()}
                   </h3>
                   <p 
-                    className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.05em]"
+                    className={`text-xs sm:text-sm md:text-base tracking-[0.05em] ${product.isDark ? 'text-white' : 'text-foreground'}`}
                     style={{ fontFamily: 'var(--font-primary)' }}
                   >
                     {product.price}
