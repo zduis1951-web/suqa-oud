@@ -98,17 +98,17 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
               ? 'linear-gradient(180deg, hsl(35 12% 82%) 0%, hsl(35 10% 78%) 100%)' 
               : 'linear-gradient(180deg, hsl(30 20% 92%) 0%, hsl(30 15% 88%) 100%)';
             
-            return (
+              return (
               <div 
                 key={product.id}
-                className={`group flex flex-col cursor-pointer flex-1 ${
+                className={`group flex flex-col cursor-pointer flex-1 aspect-[3/4] ${
                   index < products.length - 1 ? 'border-r border-foreground/15' : ''
                 }`}
                 style={{ background: panelBg }}
                 onClick={() => onProductClick?.(product.id)}
               >
-                {/* Product Image Panel - extends to bottom including text area */}
-                <div className="relative aspect-[4/5] overflow-hidden flex items-end justify-center">
+                {/* Product Image Panel - fills most of the card */}
+                <div className="relative flex-1 overflow-hidden flex items-center justify-center">
                   {/* NEW Badge */}
                   {product.isNew && (
                     <span 
@@ -122,22 +122,22 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                     </span>
                   )}
                   
-                  {/* Bottle Image - positioned at bottom, leaving space for text */}
+                  {/* Bottle Image - fills the container */}
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-[85%] h-[85%] object-contain object-bottom transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                    className="w-full h-full object-contain p-4 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                   />
                   
                   {/* Box Image - visible on hover */}
                   <img
                     src={product.hoverImage}
                     alt={`${product.name} packaging`}
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] h-[85%] object-contain object-bottom transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 w-full h-full object-contain p-4 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                   />
                 </div>
 
-                {/* Product Name & Price - below the image, same background */}
+                {/* Product Name & Price - fixed at bottom */}
                 <div className="text-center py-5 md:py-6">
                   <h3 
                     className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase font-normal mb-2"
