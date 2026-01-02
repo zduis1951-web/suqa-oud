@@ -107,8 +107,8 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                 style={{ background: panelBg }}
                 onClick={() => onProductClick?.(product.id)}
               >
-                {/* Product Image Container - Fixed aspect ratio for exhibition panels */}
-                <div className="relative aspect-[4/5] overflow-hidden flex items-end justify-center px-6 pt-8 pb-4">
+                {/* Product Image Container - Full bleed to frame edges */}
+                <div className="relative aspect-[4/5] overflow-hidden">
                   {/* NEW Badge */}
                   {product.isNew && (
                     <span 
@@ -122,18 +122,18 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                     </span>
                   )}
                   
-                  {/* Bottle Image - positioned at bottom, object-contain to preserve proportions */}
+                  {/* Bottle Image - fills entire frame */}
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="relative w-[85%] h-[90%] object-contain object-bottom transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                   />
                   
                   {/* Box Image - visible on hover */}
                   <img
                     src={product.hoverImage}
                     alt={`${product.name} packaging`}
-                    className="absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 p-6"
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                   />
                 </div>
 
