@@ -1,96 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Amouage Design System - Luxury Fragrance Aesthetic */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Colors - Warm Cream & Rich Brown Palette */
+    --background: 40 33% 96%;
+    --foreground: 30 20% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 33% 98%;
+    --card-foreground: 30 20% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 33% 98%;
+    --popover-foreground: 30 20% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep Mahogany Brown */
+    --primary: 30 25% 20%;
+    --primary-foreground: 40 33% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Soft Cream */
+    --secondary: 40 25% 92%;
+    --secondary-foreground: 30 20% 12%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Subtle Warm Gray */
+    --muted: 35 15% 88%;
+    --muted-foreground: 30 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Champagne Gold */
+    --accent: 38 35% 75%;
+    --accent-foreground: 30 20% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 30 25% 20%;
 
-    --radius: 0.5rem;
+    --radius: 0rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Hero Specific */
+    --hero-overlay: 30 15% 10%;
+    --hero-text: 40 33% 96%;
+    --hero-button-bg: 40 33% 96%;
+    --hero-button-text: 30 20% 12%;
+    --hero-button-border: 40 20% 90%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Announcement Bar */
+    --announcement-bg: 40 30% 94%;
+    --announcement-text: 30 20% 15%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Header */
+    --header-bg: transparent;
+    --header-text: 40 33% 96%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 40 33% 98%;
+    --sidebar-foreground: 30 20% 12%;
+    --sidebar-primary: 30 25% 20%;
+    --sidebar-primary-foreground: 40 33% 96%;
+    --sidebar-accent: 35 15% 88%;
+    --sidebar-accent-foreground: 30 20% 12%;
+    --sidebar-border: 35 20% 85%;
+    --sidebar-ring: 30 25% 20%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 30 20% 8%;
+    --foreground: 40 33% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 30 20% 10%;
+    --card-foreground: 40 33% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 30 20% 10%;
+    --popover-foreground: 40 33% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 40 33% 96%;
+    --primary-foreground: 30 20% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 30 15% 18%;
+    --secondary-foreground: 40 33% 96%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 30 15% 18%;
+    --muted-foreground: 35 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 38 35% 45%;
+    --accent-foreground: 40 33% 96%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 30 15% 18%;
+    --input: 30 15% 18%;
+    --ring: 40 33% 85%;
+
+    --sidebar-background: 30 20% 10%;
+    --sidebar-foreground: 40 33% 96%;
+    --sidebar-primary: 40 33% 96%;
+    --sidebar-primary-foreground: 30 20% 8%;
+    --sidebar-accent: 30 15% 18%;
+    --sidebar-accent-foreground: 40 33% 96%;
+    --sidebar-border: 30 15% 18%;
+    --sidebar-ring: 40 33% 85%;
   }
 }
 
@@ -99,7 +114,129 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Hero Button Variant */
+  .btn-hero {
+    @apply inline-flex items-center justify-center px-10 py-4 text-sm font-medium tracking-[0.25em] uppercase transition-all duration-300 ease-out;
+    background-color: hsl(var(--hero-button-bg));
+    color: hsl(var(--hero-button-text));
+    border: 1px solid hsl(var(--hero-button-border));
+  }
+
+  .btn-hero:hover {
+    background-color: hsl(var(--hero-button-text));
+    color: hsl(var(--hero-button-bg));
+    border-color: hsl(var(--hero-button-text));
+  }
+
+  .btn-hero:focus-visible {
+    @apply outline-none ring-2 ring-offset-2;
+    ring-color: hsl(var(--hero-button-bg));
+  }
+
+  /* Header Icon Button */
+  .header-icon {
+    @apply p-2 transition-opacity duration-200 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    color: hsl(var(--header-text));
+  }
+
+  /* Accessibility Button */
+  .accessibility-btn {
+    @apply fixed bottom-6 left-6 z-50 flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-transform duration-200 hover:scale-105;
+    background-color: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  /* Play/Pause Control */
+  .media-control {
+    @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-opacity duration-200 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2;
+    color: hsl(var(--hero-text));
+  }
+
+  /* Country Selector */
+  .country-selector {
+    @apply flex items-center gap-2 text-sm tracking-wider transition-opacity duration-200 hover:opacity-70;
+    color: hsl(var(--header-text));
+  }
+
+  /* Navigation Link */
+  .nav-link {
+    @apply text-xs font-medium tracking-[0.15em] uppercase transition-opacity duration-200 hover:opacity-70;
+    color: hsl(var(--header-text));
+  }
+
+  /* Announcement Bar */
+  .announcement-bar {
+    @apply w-full py-3 text-center text-xs tracking-wider;
+    background-color: hsl(var(--announcement-bg));
+    color: hsl(var(--announcement-text));
+  }
+}
+
+@layer utilities {
+  /* Hero Overlay Gradient */
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--hero-overlay) / 0.2) 0%,
+      hsl(var(--hero-overlay) / 0.35) 100%
+    );
+  }
+
+  /* Text Shadow for Hero */
+  .text-shadow-hero {
+    text-shadow: 0 2px 8px hsl(var(--hero-overlay) / 0.3);
+  }
+
+  /* Tracking Widths */
+  .tracking-luxury {
+    letter-spacing: 0.35em;
+  }
+
+  .tracking-wide-luxury {
+    letter-spacing: 0.2em;
+  }
+
+  /* Animation Delays */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  /* Fade In Animation */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
   }
 }

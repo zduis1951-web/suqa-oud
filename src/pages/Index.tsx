@@ -1,13 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Hero from '@/components/Hero';
+import { Helmet } from 'react-helmet-async';
 
+/**
+ * Amouage Homepage
+ * 
+ * Features the hero section recreation from the original amouage.com website.
+ * This page serves as a demo/review of the hero component.
+ */
 const Index = () => {
+  const handleShopNowClick = () => {
+    console.log('Shop Now clicked - navigate to collection page');
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Helmet>
+        <title>AMOUAGE | Luxury Perfumes & Fragrances | The Gifting Edit</title>
+        <meta 
+          name="description" 
+          content="Discover AMOUAGE's exclusive gifting collection. Luxury perfumes crafted in Oman with the finest ingredients. Shop the Gifting Edit now." 
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://amouage.com" />
+      </Helmet>
+      
+      <main>
+        <Hero onShopNowClick={handleShopNowClick} />
+      </main>
+    </>
   );
 };
 
