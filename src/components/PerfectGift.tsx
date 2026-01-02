@@ -42,7 +42,7 @@ const PerfectGift = ({
         </p>
 
         {/* CTA Button */}
-        <button onClick={onShopNowClick} className="border border-foreground text-foreground bg-transparent px-8 py-3 md:px-10 md:py-4 text-xs md:text-sm tracking-[0.2em] uppercase transition-all duration-300 hover:bg-foreground hover:text-background" style={{
+        <button onClick={onShopNowClick} className="border border-foreground text-foreground bg-white px-8 py-3 md:px-10 md:py-4 text-xs md:text-sm tracking-[0.2em] uppercase transition-all duration-300 hover:bg-foreground hover:text-background" style={{
         fontFamily: 'var(--font-primary)'
       }}>
           DISCOVER
