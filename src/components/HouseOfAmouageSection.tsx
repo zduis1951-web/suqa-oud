@@ -1,6 +1,4 @@
-import { useState, useRef } from 'react';
-import houseOfAmouageDesktop from '@/assets/house-of-amouage-desktop.png';
-import houseOfAmouageMobile from '@/assets/house-of-amouage-mobile.png';
+import houseOfAmouageBg from '@/assets/house-of-amouage-bg.webp';
 
 interface HouseOfAmouageSectionProps {
   onDiscoverClick?: () => void;
@@ -9,29 +7,15 @@ interface HouseOfAmouageSectionProps {
 /**
  * House of Amouage Section
  * 
- * A cinematic brand statement section with video/image background.
+ * A cinematic brand statement section with image background.
  * Architectural, calm, and editorial feel.
  */
 const HouseOfAmouageSection = ({ onDiscoverClick }: HouseOfAmouageSectionProps) => {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
   const handleClick = () => {
     if (onDiscoverClick) {
       onDiscoverClick();
     } else {
       window.open('https://amouage.com/pages/house-of-amouage', '_blank');
-    }
-  };
-
-  const togglePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -43,29 +27,10 @@ const HouseOfAmouageSection = ({ onDiscoverClick }: HouseOfAmouageSectionProps) 
       }}
       aria-label="The House of Amouage"
     >
-      {/* Desktop Video Background */}
-      <div className="hidden md:block absolute inset-0">
-        <video
-          ref={videoRef}
-          className="w-full h-full object-cover"
-          poster={houseOfAmouageDesktop}
-          muted
-          autoPlay
-          loop
-          playsInline
-          preload="metadata"
-        >
-          <source
-            src="https://cdn.shopify.com/videos/c/o/v/0812009c0bf248f7a780a5ca640595f9.mp4"
-            type="video/mp4"
-          />
-        </video>
-      </div>
-
-      {/* Mobile Image Background */}
+      {/* Image Background */}
       <div
-        className="md:hidden absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${houseOfAmouageMobile})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${houseOfAmouageBg})` }}
       />
 
       {/* Content Overlay */}
@@ -104,42 +69,6 @@ const HouseOfAmouageSection = ({ onDiscoverClick }: HouseOfAmouageSectionProps) 
         </button>
       </div>
 
-      {/* Play/Pause Control - Desktop Only */}
-      <div className="hidden md:block absolute right-8 bottom-1/2 translate-y-1/2">
-        <button
-          onClick={togglePlayPause}
-          className="p-2 transition-opacity duration-200 hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-          aria-label={isPlaying ? 'Pause video' : 'Play video'}
-        >
-          {isPlaying ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-            >
-              <path
-                d="M23.3333 31.6666V8.33331H30V31.6666H23.3333ZM10 31.6666V8.33331H16.6667V31.6666H10Z"
-                fill="#F7F4EF"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-            >
-              <path
-                d="M10 8.33331V31.6666L31.6667 20L10 8.33331Z"
-                fill="#F7F4EF"
-              />
-            </svg>
-          )}
-        </button>
-      </div>
 
       {/* Accessibility Button - Bottom Left */}
       <div className="absolute left-4 bottom-4">
