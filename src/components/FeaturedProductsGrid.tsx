@@ -98,17 +98,17 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
               ? 'linear-gradient(180deg, hsl(35 12% 82%) 0%, hsl(35 10% 78%) 100%)' 
               : 'linear-gradient(180deg, hsl(30 20% 92%) 0%, hsl(30 15% 88%) 100%)';
             
-              return (
+            return (
               <div 
                 key={product.id}
-                className="group flex flex-col cursor-pointer flex-1"
+                className={`group flex flex-col cursor-pointer flex-1 ${
+                  index < products.length - 1 ? 'border-r border-foreground/15' : ''
+                }`}
+                style={{ background: panelBg }}
                 onClick={() => onProductClick?.(product.id)}
               >
-                {/* Product Image Panel with background */}
-                <div 
-                  className="relative aspect-square overflow-hidden flex items-center justify-center mx-2"
-                  style={{ background: panelBg }}
-                >
+                {/* Product Image Panel - full bleed */}
+                <div className="relative aspect-[4/5] overflow-hidden">
                   {/* NEW Badge */}
                   {product.isNew && (
                     <span 
@@ -122,25 +122,25 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                     </span>
                   )}
                   
-                  {/* Bottle Image - fills the container */}
+                  {/* Bottle Image - fills entire frame */}
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-[85%] h-[85%] object-contain transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                   />
                   
                   {/* Box Image - visible on hover */}
                   <img
                     src={product.hoverImage}
                     alt={`${product.name} packaging`}
-                    className="absolute inset-0 w-full h-full object-contain p-6 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                   />
                 </div>
 
-                {/* Product Name & Price - outside the panel */}
-                <div className="text-center py-4 md:py-5">
+                {/* Product Name & Price - below the image, same background */}
+                <div className="text-center py-5 md:py-6">
                   <h3 
-                    className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase font-normal mb-1"
+                    className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase font-normal mb-2"
                     style={{ fontFamily: 'var(--font-primary)' }}
                   >
                     {product.name.toUpperCase()}
