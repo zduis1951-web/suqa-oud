@@ -35,7 +35,7 @@ const PowerOfTheInfinite = ({
         </h2>
         
         {/* Description */}
-        <p className="text-3xl text-white font-medium mb-6 md:mb-8 text-center px-4 tracking-[0.2em]">THE EXPERIENCE</p>
+        <p className="text-5xl text-white font-semibold mb-6 md:mb-8 text-center px-4 tracking-[0.2em]">THE EXPERIENCE</p>
         
         {/* Explore Button */}
         <button onClick={onShopNowClick} className="px-8 md:px-10 py-3 md:py-3.5 bg-background text-foreground text-xs md:text-sm tracking-[0.2em] font-light border border-transparent hover:bg-transparent hover:border-foreground transition-all duration-300" aria-label="Explore The Craft">
