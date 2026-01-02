@@ -108,9 +108,6 @@ const Hero = ({ onShopNowClick }: HeroProps) => {
         aria-label="Luxury fragrance gift collection"
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 hero-overlay" aria-hidden="true" />
-
       {/* Announcement Bar */}
       <div className="announcement-bar relative z-20">
         <p className="font-body">
