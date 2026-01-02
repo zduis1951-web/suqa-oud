@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { Pause, Play } from 'lucide-react';
 
-// Import Guidance images from assets (original from amouage.com)
-import guidanceDesktopImage from '@/assets/guidance-desktop.png';
-import guidanceMobileImage from '@/assets/guidance-mobile.png';
+// Import Our Story background image
+import ourStoryBgImage from '@/assets/our-story-bg.jpg';
 
 /**
  * Guidance Collection Promotional Section
@@ -61,24 +60,17 @@ const GuidanceCollection = ({ onDiscoverClick }: GuidanceCollectionProps) => {
       className="guidance-section"
       aria-label="Our Story - SUQA OUD"
     >
-      {/* Background Image - Desktop */}
+      {/* Background Image */}
       <div 
-        className="guidance-bg guidance-bg--desktop"
+        className="absolute inset-0 w-full h-full"
         style={{
-          backgroundImage: `url(${guidanceDesktopImage})`,
+          backgroundImage: `url(${ourStoryBgImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         }}
         role="img"
-        aria-label="SUQA OUD collection"
-      />
-
-      {/* Background Image - Mobile */}
-      <div 
-        className="guidance-bg guidance-bg--mobile"
-        style={{
-          backgroundImage: `url(${guidanceMobileImage})`,
-        }}
-        role="img"
-        aria-label="SUQA OUD collection"
+        aria-label="SUQA OUD Elite fragrance"
       />
 
       {/* Content Overlay */}
