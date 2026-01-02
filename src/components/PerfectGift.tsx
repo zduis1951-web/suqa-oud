@@ -35,18 +35,10 @@ const PerfectGift = ({
         </h2>
 
         {/* Subtext */}
-        <p className="text-foreground/80 text-xs sm:text-sm md:text-base max-w-md leading-relaxed mb-6 md:mb-8 whitespace-pre-line font-light" style={{
+        <p className="text-white text-5xl tracking-[0.3em] uppercase font-light" style={{
         fontFamily: 'var(--font-primary)'
       }}>
-          {`For those who don't follow moments,
-but define their own.
-
-Where luxury is felt inwardly,
-presence is natural,
-and value is created —
-not borrowed.
-
-To be royal is to breathe the kingdom of oud.`}
+          THE CRAFT
         </p>
 
         {/* CTA Button */}
