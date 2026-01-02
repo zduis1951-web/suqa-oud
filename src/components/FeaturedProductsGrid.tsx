@@ -77,7 +77,7 @@ interface FeaturedProductsGridProps {
 
 const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => {
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20" style={{ backgroundColor: '#EEE1D9' }}>
+    <section className="w-full py-12 md:py-16 lg:py-20" style={{ backgroundColor: '#E6D8CB' }}>
       {/* Section Title */}
       <div className="text-center mb-8 md:mb-12">
         <h2 
@@ -135,7 +135,7 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                 </div>
 
                 {/* Product Name & Price */}
-                <div className="text-center py-5 md:py-6">
+                <div className="text-center py-5 md:py-6 border-t border-foreground/15">
                   <h3 
                     className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase font-normal mb-2"
                     style={{ fontFamily: 'var(--font-primary)' }}
