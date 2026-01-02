@@ -21,17 +21,18 @@ const HouseOfAmouageSection = ({ onDiscoverClick }: HouseOfAmouageSectionProps) 
 
   return (
     <section
-      className="w-full relative overflow-hidden -mt-px"
+      className="w-full relative overflow-hidden m-0 p-0"
       style={{ 
-        minHeight: 'clamp(450px, 45vw, 700px)',
+        minHeight: 'clamp(500px, 56.25vw, 800px)',
       }}
       aria-label="The House of Amouage"
     >
       {/* High Quality Image Background */}
       <img
         src={houseOfAmouageBg}
-        alt="The House of Amouage - Desert Landscape"
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        alt="The House of Amouage - Suqa Oud Desert"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: 'center 40%' }}
       />
 
       {/* Content Overlay */}
