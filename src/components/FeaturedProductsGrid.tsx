@@ -93,7 +93,7 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
         <div className="flex">
           {products.map((product, index) => {
             // Unified background color for all products
-            const panelBgColor = '#EEE1D9';
+            const panelBgColor = '#E6D8CB';
             
               return (
               <div 
@@ -135,7 +135,7 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                 </div>
 
                 {/* Product Name & Price */}
-                <div className="text-center py-5 md:py-6" style={{ backgroundColor: '#E6D8CB' }}>
+                <div className="text-center py-5 md:py-6">
                   <h3 
                     className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase font-normal mb-2"
                     style={{ fontFamily: 'var(--font-primary)' }}
