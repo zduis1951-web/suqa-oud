@@ -36,7 +36,7 @@ const LuxuryBodyLine = ({
         </h2>
         
         {/* Description */}
-        <p className="text-white text-4xl max-w-md mx-auto text-center leading-relaxed mb-6 md:mb-8 px-4 tracking-[0.2em] font-light">
+        <p className="text-white text-2xl max-w-md mx-auto text-center leading-relaxed mb-6 md:mb-8 px-4 tracking-[0.2em] font-light">
           OUR PHILOSOPHY
         </p>
         
