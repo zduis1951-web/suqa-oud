@@ -98,11 +98,11 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
               onClick={() => onProductClick?.(product.id)}
             >
               {/* Product Image Container */}
-              <div className="relative aspect-square bg-cream-light mb-4">
+              <div className="relative aspect-[3/4] bg-cream-light mb-4">
                 {/* NEW Badge */}
                 {product.isNew && (
                   <span 
-                    className="absolute top-3 left-3 z-10 text-foreground text-[10px] md:text-xs tracking-[0.15em] uppercase"
+                    className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-foreground text-[10px] md:text-xs tracking-[0.15em] uppercase border border-foreground/30 px-2 py-0.5"
                     style={{ fontFamily: 'var(--font-primary)' }}
                   >
                     NEW
@@ -113,24 +113,24 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="absolute inset-0 w-full h-full object-contain p-12 md:p-16 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                  className="absolute inset-0 w-full h-full object-contain p-4 md:p-6 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                 />
                 
                 {/* Box Image - visible on hover */}
                 <img
                   src={product.hoverImage}
                   alt={`${product.name} packaging`}
-                  className="absolute inset-0 w-full h-full object-contain p-12 md:p-16 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 w-full h-full object-contain p-4 md:p-6 transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                 />
               </div>
 
               {/* Product Info */}
               <div className="text-center">
                 <h3 
-                  className="text-foreground text-sm md:text-base tracking-[0.1em] mb-1"
+                  className="text-foreground text-sm md:text-base tracking-[0.15em] uppercase mb-1"
                   style={{ fontFamily: 'var(--font-primary)' }}
                 >
-                  {product.name}
+                  {product.name.toUpperCase()}
                 </h3>
                 
                 {product.variant && (
