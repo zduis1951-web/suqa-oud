@@ -40,7 +40,7 @@ const OutlandsSection = ({
       </h2>
         
         {/* Description */}
-        <p className="text-foreground/80 text-sm md:text-base max-w-lg mx-auto text-center leading-relaxed mb-8 px-4 whitespace-pre-line font-light">
+        <p className="text-sm max-w-lg mx-auto text-center leading-relaxed mb-8 px-4 whitespace-pre-line font-light text-white md:text-5xl">
           THE PERFECT GIFT
         </p>
 
