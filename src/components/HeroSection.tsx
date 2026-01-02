@@ -54,7 +54,7 @@ const HeroSection = ({
           </h1>
           
           {/* Main Headline */}
-          <p className="animate-fade-in-up font-serif font-light leading-relaxed text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-2xl mx-auto text-white tracking-[0.15em]">
+          <p className="animate-fade-in-up font-serif font-light leading-relaxed sm:text-5xl md:text-6xl lg:text-7xl max-w-2xl mx-auto text-white tracking-[0.15em] text-4xl">
             THE POWER OF THE INFINITE
           </p>
           
