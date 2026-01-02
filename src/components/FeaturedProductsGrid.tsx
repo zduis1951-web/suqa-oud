@@ -94,9 +94,9 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
           {products.map((product, index) => {
             // Reflection Man gets darker background treatment
             const isDark = product.id === 'reflection-man';
-            const panelBg = isDark 
-              ? 'linear-gradient(180deg, hsl(35 12% 82%) 0%, hsl(35 10% 78%) 100%)' 
-              : 'linear-gradient(180deg, hsl(30 20% 92%) 0%, hsl(30 15% 88%) 100%)';
+            const panelBgColor = isDark 
+              ? 'hsl(35 10% 78%)' 
+              : 'hsl(30 15% 88%)';
             
             return (
               <div 
@@ -104,7 +104,6 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                 className={`group flex flex-col cursor-pointer flex-1 ${
                   index < products.length - 1 ? 'border-r border-foreground/15' : ''
                 }`}
-                style={{ background: panelBg }}
                 onClick={() => onProductClick?.(product.id)}
               >
                 {/* Product Image Panel - full bleed */}
@@ -137,8 +136,11 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                   />
                 </div>
 
-                {/* Product Name & Price - inherits background from parent */}
-                <div className="text-center py-5 md:py-6">
+                {/* Product Name & Price - same background as image */}
+                <div 
+                  className="text-center py-5 md:py-6"
+                  style={{ backgroundColor: panelBgColor }}
+                >
                   <h3 
                     className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase font-normal mb-2"
                     style={{ fontFamily: 'var(--font-primary)' }}
