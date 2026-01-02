@@ -8,6 +8,7 @@ import SohoFlagshipBoutique from '@/components/SohoFlagshipBoutique';
 import PerfectGift from '@/components/PerfectGift';
 import FeaturedProductsGrid from '@/components/FeaturedProductsGrid';
 import StoreLocatorSection from '@/components/StoreLocatorSection';
+import HouseOfAmouageSection from '@/components/HouseOfAmouageSection';
 import { Helmet } from 'react-helmet-async';
 
 /**
@@ -53,6 +54,10 @@ const Index = () => {
     console.log('Store Locator clicked - navigate to store locator page');
   };
 
+  const handleDiscoverStoryClick = () => {
+    console.log('Discover Our Story clicked - navigate to House of Amouage page');
+  };
+
   return (
     <>
       <Helmet>
@@ -77,6 +82,7 @@ const Index = () => {
         <PerfectGift onShopNowClick={handleGiftShopClick} />
         <FeaturedProductsGrid onProductClick={handleProductClick} />
         <StoreLocatorSection onStoreLocatorClick={handleStoreLocatorClick} />
+        <HouseOfAmouageSection onDiscoverClick={handleDiscoverStoryClick} />
       </main>
     </>
   );
