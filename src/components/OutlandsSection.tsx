@@ -41,18 +41,7 @@ const OutlandsSection = ({
         
         {/* Description */}
         <p className="text-foreground/80 text-sm md:text-base max-w-lg mx-auto text-center leading-relaxed mb-8 px-4 whitespace-pre-line font-light">
-          {`There is a form of luxury
-that doesn't announce itself.
-
-It enters the room calmly,
-takes its place,
-and never asks to be validated.
-
-That is the kind we believe in.
-
-Royalty is felt, not declared.
-It is carried with ease,
-breathed naturally.`}
+          THE PERFECT GIFT
         </p>
 
         {/* CTA Button */}
