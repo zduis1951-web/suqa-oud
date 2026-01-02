@@ -1,4 +1,45 @@
-# Welcome to your Lovable project
+# Amouage Homepage Recreation
+
+## Components
+
+### Hero Section (`src/components/Hero.tsx`)
+Full-screen hero section featuring "THE GIFTING EDIT" campaign.
+
+### Guidance Collection (`src/components/GuidanceCollection.tsx`)
+Promotional section for the Guidance fragrance collection.
+
+### Outlands Section (`src/components/OutlandsSection.tsx`)
+Full-width promotional section featuring the Outlands fragrance with dramatic mood background.
+
+## Assets
+
+All images were downloaded directly from amouage.com. **No images were generated or edited.**
+
+### Source URLs:
+- `outlands-bottle.jpg` - Product shot from https://amouage.com/cdn/shop/files/Amouage_Essences_CS_Photo_Outlands_1.jpg
+- `outlands-bg.jpg` - Mood image from https://amouage.com/cdn/shop/files/OUTLANDS_WEBSITE_mood.jpg
+- `guidance-desktop.png` - Guidance section desktop background
+- `guidance-mobile.png` - Guidance section mobile background
+- `hero-desktop.jpg` - Hero desktop background
+- `hero-mobile.jpg` - Hero mobile background
+- `gifting-hero-desktop.jpg` - Gifting Edit desktop background
+- `gifting-hero-mobile.jpg` - Gifting Edit mobile background
+
+## Style Specifications
+
+- **Font Family**: Cormorant Garamond (display), Helvetica Neue (body)
+- **Colors**: Cream text on dark overlay, brown/champagne accent palette
+- **Desktop Section Height**: 770px
+- **Mobile Section Height**: 100vh (min 600px)
+- **CTA Button**: 14px uppercase, 0.25em letter-spacing, cream background with brown text
+
+## Usage
+
+All sections are rendered in `src/pages/Index.tsx`. Each section accepts callback props for CTA button clicks.
+
+```tsx
+<OutlandsSection onShopNowClick={() => console.log('Navigate to Outlands')} />
+```
 
 ## Project info
 

@@ -245,6 +245,86 @@
     @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-opacity duration-200 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2;
     color: hsl(var(--hero-text));
   }
+
+  /* Outlands Section */
+  .outlands-section {
+    @apply relative w-full overflow-hidden;
+    height: 770px;
+  }
+
+  @media (max-width: 767px) {
+    .outlands-section {
+      height: 100vh;
+      min-height: 600px;
+    }
+  }
+
+  .outlands-bg {
+    @apply absolute inset-0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .outlands-overlay {
+    @apply absolute inset-0;
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--hero-overlay) / 0.15) 0%,
+      hsl(var(--hero-overlay) / 0.25) 100%
+    );
+  }
+
+  .outlands-content {
+    @apply absolute inset-0 flex flex-col items-center justify-center;
+    padding-top: 40px;
+  }
+
+  .outlands-product {
+    @apply flex items-center justify-center mb-8;
+  }
+
+  .outlands-bottle {
+    @apply h-auto;
+    max-height: 380px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  @media (max-width: 767px) {
+    .outlands-bottle {
+      max-height: 280px;
+    }
+  }
+
+  .outlands-title {
+    @apply font-display text-4xl font-light tracking-luxury mb-6 md:text-5xl lg:text-6xl;
+    color: hsl(var(--hero-text));
+    text-shadow: 0 2px 8px hsl(var(--hero-overlay) / 0.3);
+  }
+
+  .btn-outlands {
+    @apply inline-flex items-center justify-center px-10 py-4 text-sm font-medium tracking-[0.25em] uppercase transition-all duration-300 ease-out;
+    background-color: hsl(var(--hero-button-bg));
+    color: hsl(var(--hero-button-text));
+    border: 1px solid hsl(var(--hero-button-border));
+  }
+
+  .btn-outlands:hover {
+    background-color: hsl(var(--hero-button-text));
+    color: hsl(var(--hero-button-bg));
+    border-color: hsl(var(--hero-button-text));
+  }
+
+  .btn-outlands:focus-visible {
+    @apply outline-none ring-2 ring-offset-2;
+    ring-color: hsl(var(--hero-button-bg));
+  }
+
+  .outlands-media-control {
+    @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-opacity duration-200 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2;
+    color: hsl(var(--hero-text));
+  }
 }
 
 @layer utilities {
