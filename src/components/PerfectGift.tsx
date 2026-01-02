@@ -35,7 +35,7 @@ const PerfectGift = ({
         </h2>
 
         {/* Subtext */}
-        <p className="text-white text-5xl tracking-[0.3em] uppercase font-light" style={{
+        <p className="text-white text-5xl tracking-[0.3em] uppercase font-bold" style={{
         fontFamily: 'var(--font-primary)'
       }}>
           THE CRAFT
