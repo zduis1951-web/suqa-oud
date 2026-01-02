@@ -1,4 +1,4 @@
-import houseOfAmouageBg from '@/assets/house-of-amouage-bg.webp';
+import houseOfAmouageBg from '@/assets/house-of-amouage-bg.jpg';
 
 interface HouseOfAmouageSectionProps {
   onDiscoverClick?: () => void;
@@ -23,14 +23,15 @@ const HouseOfAmouageSection = ({ onDiscoverClick }: HouseOfAmouageSectionProps) 
     <section
       className="w-full relative overflow-hidden -mt-px"
       style={{ 
-        height: '770px',
+        minHeight: 'clamp(450px, 45vw, 700px)',
       }}
       aria-label="The House of Amouage"
     >
-      {/* Image Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${houseOfAmouageBg})` }}
+      {/* High Quality Image Background */}
+      <img
+        src={houseOfAmouageBg}
+        alt="The House of Amouage - Desert Landscape"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
       {/* Content Overlay */}
