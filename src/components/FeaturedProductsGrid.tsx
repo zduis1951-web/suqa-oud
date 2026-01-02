@@ -77,74 +77,85 @@ interface FeaturedProductsGridProps {
 
 const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => {
   return (
-    <section className="w-full">
-      {/* Products Grid - Exact Amouage layout */}
-      <div className="flex w-full">
-        {products.map((product, index) => (
-          <div 
-            key={product.id}
-            className={`group cursor-pointer flex-1 flex flex-col ${
-              index < products.length - 1 ? 'border-r border-[#c4b8a8]' : ''
-            }`}
-            style={{ background: '#e8ddd0' }}
-            onClick={() => onProductClick?.(product.id)}
-          >
-            {/* Image Zone */}
-            <div 
-              className="relative flex items-end justify-center"
-              style={{ 
-                height: '420px',
-                background: '#e8ddd0'
-              }}
-            >
-              {/* NEW Badge */}
-              {product.isNew && (
-                <span 
-                  className="absolute top-5 left-1/2 -translate-x-1/2 z-10 text-[#3d3a36] text-[11px] tracking-[0.08em] uppercase border border-[#3d3a36]/50 px-3 py-1"
-                  style={{ 
-                    fontFamily: 'var(--font-primary)',
-                    background: '#e8ddd0'
-                  }}
-                >
-                  NEW
-                </span>
-              )}
-              
-              {/* Bottle Image */}
-              <img
-                src={product.image}
-                alt={product.name}
-                className="h-[85%] w-auto object-contain transition-opacity duration-300 group-hover:opacity-0"
-              />
-              
-              {/* Box Image - hover */}
-              <img
-                src={product.hoverImage}
-                alt={`${product.name} packaging`}
-                className="absolute inset-0 w-full h-full object-contain p-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-              />
-            </div>
+    <section className="w-full py-12 md:py-16 lg:py-20" style={{ background: 'linear-gradient(180deg, hsl(30 20% 92%) 0%, hsl(30 15% 88%) 100%)' }}>
+      {/* Section Title */}
+      <div className="text-center mb-8 md:mb-12">
+        <h2 
+          className="text-foreground text-xl sm:text-2xl md:text-3xl tracking-[0.15em] uppercase"
+          style={{ fontFamily: 'var(--font-primary)' }}
+        >
+          PRECIOUS, POTENT, PERSONAL
+        </h2>
+      </div>
 
-            {/* Text Zone */}
-            <div 
-              className="text-center py-5"
-              style={{ background: '#ddd2c4' }}
-            >
-              <h3 
-                className="text-[#3d3a36] text-sm tracking-[0.12em] uppercase font-normal mb-2"
-                style={{ fontFamily: 'var(--font-primary)' }}
+      {/* Products Grid - Full width, edge-to-edge, thin separator lines */}
+      <div className="w-full">
+        <div className="flex">
+          {products.map((product, index) => {
+            // Reflection Man gets darker background treatment
+            const isDark = product.id === 'reflection-man';
+            const panelBg = isDark 
+              ? 'linear-gradient(180deg, hsl(35 12% 82%) 0%, hsl(35 10% 78%) 100%)' 
+              : 'linear-gradient(180deg, hsl(30 20% 92%) 0%, hsl(30 15% 88%) 100%)';
+            
+            return (
+              <div 
+                key={product.id}
+                className={`group flex flex-col cursor-pointer flex-1 ${
+                  index < products.length - 1 ? 'border-r border-foreground/15' : ''
+                }`}
+                style={{ background: panelBg }}
+                onClick={() => onProductClick?.(product.id)}
               >
-                {product.name.toUpperCase()}
-              </h3>
-              <p 
-                className="text-[#3d3a36] text-sm tracking-[0.02em]"
-                style={{ fontFamily: 'var(--font-primary)' }}
-              >
-                {product.price}
-              </p>
-            </div>
-          </div>
-        ))}
+                {/* Product Image Panel - full bleed */}
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  {/* NEW Badge */}
+                  {product.isNew && (
+                    <span 
+                      className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-foreground text-[10px] md:text-[11px] tracking-[0.1em] uppercase border border-foreground/40 px-3 py-1"
+                      style={{ 
+                        fontFamily: 'var(--font-primary)',
+                        background: 'hsl(30 20% 92% / 0.9)'
+                      }}
+                    >
+                      NEW
+                    </span>
+                  )}
+                  
+                  {/* Bottle Image - fills entire frame */}
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                  />
+                  
+                  {/* Box Image - visible on hover */}
+                  <img
+                    src={product.hoverImage}
+                    alt={`${product.name} packaging`}
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                  />
+                </div>
+
+                {/* Product Name & Price - below the image, same background */}
+                <div className="text-center py-5 md:py-6">
+                  <h3 
+                    className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase font-normal mb-2"
+                    style={{ fontFamily: 'var(--font-primary)' }}
+                  >
+                    {product.name.toUpperCase()}
+                  </h3>
+                  <p 
+                    className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.05em]"
+                    style={{ fontFamily: 'var(--font-primary)' }}
+                  >
+                    {product.price}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
