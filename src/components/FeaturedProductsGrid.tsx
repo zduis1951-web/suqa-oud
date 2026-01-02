@@ -137,8 +137,11 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                   />
                 </div>
 
-                {/* Product Name & Price - below the image, same background */}
-                <div className="text-center py-5 md:py-6">
+                {/* Product Name & Price - inside the same background panel */}
+                <div 
+                  className="text-center py-5 md:py-6"
+                  style={{ background: panelBg }}
+                >
                   <h3 
                     className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase font-normal mb-2"
                     style={{ fontFamily: 'var(--font-primary)' }}
