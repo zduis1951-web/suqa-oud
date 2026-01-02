@@ -51,8 +51,8 @@ const HouseOfAmouageSection = ({
         backgroundColor: '#ffffff',
         border: '1px solid rgba(255, 255, 255, 0.3)',
         padding: '14px 32px'
-      }} aria-label="Discover our story - learn about the House of SUQA OUD">
-          DISCOVER OUR STORY
+      }} aria-label="Learn more about the House of SUQA OUD">
+          LEARN MORE
         </button>
       </div>
 
