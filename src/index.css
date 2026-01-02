@@ -128,80 +128,326 @@
 }
 
 @layer components {
-  /* Hero Button Variant */
+  /* ========================================
+     PREMIUM ANNOUNCEMENT BAR
+     ======================================== */
+  .announcement-bar-premium {
+    @apply w-full py-3 text-center text-xs tracking-wider;
+    background-color: hsl(30 15% 15%);
+    color: hsl(40 33% 96%);
+  }
+
+  /* ========================================
+     PREMIUM HEADER SYSTEM
+     ======================================== */
+  .header-container {
+    @apply sticky top-0 z-50 w-full transition-all duration-500 ease-out;
+  }
+
+  .header-solid {
+    background-color: hsl(40 30% 94%);
+    box-shadow: 0 1px 0 hsl(35 20% 85%);
+  }
+
+  .header-transparent {
+    background-color: transparent;
+  }
+
+  .header-scrolled {
+    background-color: hsl(40 30% 94% / 0.98);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px hsl(30 15% 10% / 0.08);
+  }
+
+  .header-content {
+    @apply mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16;
+  }
+
+  .header-top-row {
+    @apply flex items-center justify-between py-4;
+  }
+
+  .header-left {
+    @apply flex items-center;
+    min-width: 150px;
+  }
+
+  .header-center {
+    @apply absolute left-1/2 -translate-x-1/2;
+  }
+
+  .header-right {
+    @apply flex items-center gap-4;
+    min-width: 150px;
+    justify-content: flex-end;
+  }
+
+  /* Country Selector Premium */
+  .country-selector-premium {
+    @apply flex items-center gap-2 text-sm tracking-wider transition-all duration-300;
+    color: hsl(var(--foreground));
+  }
+
+  .country-selector-premium:hover {
+    color: hsl(var(--primary));
+  }
+
+  .flag-icon {
+    @apply ml-1 flex h-4 w-6 items-center justify-center overflow-hidden rounded-sm;
+  }
+
+  /* Logo Premium */
+  .logo-link {
+    @apply relative block;
+  }
+
+  .logo-text {
+    @apply font-display text-2xl font-light tracking-luxury transition-all duration-500 md:text-3xl lg:text-4xl;
+    color: hsl(var(--foreground));
+  }
+
+  .logo-underline {
+    @apply absolute -bottom-1 left-0 h-px w-0 transition-all duration-500 ease-out;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+  }
+
+  .logo-link:hover .logo-underline {
+    @apply w-full;
+  }
+
+  /* Header Icons Premium */
+  .header-icon-premium {
+    @apply relative flex items-center gap-2 p-2 transition-all duration-300;
+    color: hsl(var(--foreground));
+  }
+
+  .header-icon-premium:hover {
+    color: hsl(var(--primary));
+  }
+
+  .header-icon-premium::after {
+    @apply absolute -bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full opacity-0 transition-all duration-300;
+    content: '';
+    background-color: hsl(var(--primary));
+  }
+
+  .header-icon-premium:hover::after {
+    @apply opacity-100;
+  }
+
+  .icon-label {
+    @apply hidden text-xs tracking-wide-luxury md:block;
+  }
+
+  .cart-icon {
+    @apply relative;
+  }
+
+  .cart-badge {
+    @apply absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full text-[10px] font-medium;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  /* Navigation Row Premium */
+  .nav-row {
+    @apply items-center justify-center gap-8 pb-4 xl:gap-12;
+  }
+
+  .nav-link-premium {
+    @apply relative py-2 text-xs font-medium tracking-[0.15em] uppercase transition-all duration-300;
+    color: hsl(var(--foreground));
+  }
+
+  .nav-link-text {
+    @apply relative z-10 transition-all duration-300;
+  }
+
+  .nav-link-underline {
+    @apply absolute bottom-0 left-0 h-px w-0 transition-all duration-500 ease-out;
+    background-color: hsl(var(--primary));
+  }
+
+  .nav-link-underline.active,
+  .nav-link-premium:hover .nav-link-underline {
+    @apply w-full;
+  }
+
+  .nav-link-premium:hover .nav-link-text {
+    color: hsl(var(--primary));
+  }
+
+  /* Mobile Navigation */
+  .mobile-nav-overlay {
+    @apply fixed inset-0 z-40 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300;
+  }
+
+  .mobile-nav-overlay.active {
+    @apply opacity-100 pointer-events-auto;
+  }
+
+  .mobile-nav-drawer {
+    @apply fixed top-0 right-0 z-50 h-full w-80 translate-x-full transition-transform duration-500 ease-out;
+    background-color: hsl(var(--background));
+  }
+
+  .mobile-nav-drawer.active {
+    @apply translate-x-0;
+  }
+
+  .mobile-nav-content {
+    @apply flex flex-col gap-1 p-8 pt-24;
+  }
+
+  .mobile-nav-link {
+    @apply py-4 text-sm font-medium tracking-[0.2em] uppercase border-b transition-all duration-300 opacity-0;
+    color: hsl(var(--foreground));
+    border-color: hsl(var(--border));
+  }
+
+  .mobile-nav-drawer.active .mobile-nav-link {
+    @apply opacity-100;
+    animation: slideInFromRight 0.5s ease-out forwards;
+  }
+
+  .mobile-nav-link:hover {
+    @apply pl-4;
+    color: hsl(var(--primary));
+  }
+
+  /* ========================================
+     PREMIUM BUTTON SYSTEM
+     ======================================== */
   .btn-hero {
-    @apply inline-flex items-center justify-center px-10 py-4 text-sm font-medium tracking-[0.25em] uppercase transition-all duration-300 ease-out;
+    @apply relative inline-flex items-center justify-center px-12 py-5 text-sm font-medium tracking-[0.3em] uppercase overflow-hidden;
     background-color: hsl(var(--hero-button-bg));
     color: hsl(var(--hero-button-text));
     border: 1px solid hsl(var(--hero-button-border));
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .btn-hero::before {
+    @apply absolute inset-0 -translate-x-full;
+    content: '';
+    background: linear-gradient(90deg, transparent, hsl(var(--hero-button-text) / 0.1), transparent);
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .btn-hero:hover::before {
+    @apply translate-x-full;
+  }
+
+  .btn-hero::after {
+    @apply absolute inset-0;
+    content: '';
+    background-color: hsl(var(--hero-button-text));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: -1;
+  }
+
+  .btn-hero:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
   }
 
   .btn-hero:hover {
-    background-color: hsl(var(--hero-button-text));
     color: hsl(var(--hero-button-bg));
     border-color: hsl(var(--hero-button-text));
+    box-shadow: 0 10px 40px hsl(var(--hero-overlay) / 0.3);
+    transform: translateY(-2px);
   }
 
-  .btn-hero:focus-visible {
-    @apply outline-none ring-2 ring-offset-2;
-    ring-color: hsl(var(--hero-button-bg));
+  .btn-hero:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 20px hsl(var(--hero-overlay) / 0.2);
   }
 
   /* Guidance Section Button */
   .btn-guidance {
-    @apply inline-flex items-center justify-center px-10 py-4 text-sm font-medium tracking-[0.25em] uppercase transition-all duration-300 ease-out;
+    @apply relative inline-flex items-center justify-center px-12 py-5 text-sm font-medium tracking-[0.3em] uppercase overflow-hidden;
     background-color: hsl(var(--hero-button-bg));
     color: hsl(var(--hero-button-text));
     border: 1px solid hsl(var(--hero-button-border));
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .btn-guidance::after {
+    @apply absolute inset-0;
+    content: '';
+    background-color: hsl(var(--hero-button-text));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: -1;
+  }
+
+  .btn-guidance:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
   }
 
   .btn-guidance:hover {
-    background-color: hsl(var(--hero-button-text));
     color: hsl(var(--hero-button-bg));
     border-color: hsl(var(--hero-button-text));
+    box-shadow: 0 10px 40px hsl(var(--hero-overlay) / 0.3);
+    transform: translateY(-2px);
   }
 
-  .btn-guidance:focus-visible {
-    @apply outline-none ring-2 ring-offset-2;
-    ring-color: hsl(var(--hero-button-bg));
+  /* Outlands Button */
+  .btn-outlands {
+    @apply relative inline-flex items-center justify-center px-12 py-5 text-sm font-medium tracking-[0.3em] uppercase overflow-hidden;
+    background-color: transparent;
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--foreground));
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-  /* Header Icon Button */
-  .header-icon {
-    @apply p-2 transition-opacity duration-200 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
-    color: hsl(var(--header-text));
+  .btn-outlands::after {
+    @apply absolute inset-0;
+    content: '';
+    background-color: hsl(var(--foreground));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: -1;
   }
 
+  .btn-outlands:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .btn-outlands:hover {
+    color: hsl(var(--background));
+    box-shadow: 0 10px 40px hsl(var(--foreground) / 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* ========================================
+     SECTION STYLES
+     ======================================== */
   /* Accessibility Button */
   .accessibility-btn {
-    @apply fixed bottom-6 left-6 z-50 flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-transform duration-200 hover:scale-105;
+    @apply fixed bottom-6 left-6 z-50 flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-all duration-300;
     background-color: hsl(var(--foreground));
     color: hsl(var(--background));
   }
 
+  .accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px hsl(var(--foreground) / 0.3);
+  }
+
   /* Play/Pause Control */
   .media-control {
-    @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-opacity duration-200 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2;
+    @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-all duration-300;
     color: hsl(var(--hero-text));
   }
 
-  /* Country Selector */
-  .country-selector {
-    @apply flex items-center gap-2 text-sm tracking-wider transition-opacity duration-200 hover:opacity-70;
-    color: hsl(var(--header-text));
-  }
-
-  /* Navigation Link */
-  .nav-link {
-    @apply text-xs font-medium tracking-[0.15em] uppercase transition-opacity duration-200 hover:opacity-70;
-    color: hsl(var(--header-text));
-  }
-
-  /* Announcement Bar */
-  .announcement-bar {
-    @apply w-full py-3 text-center text-xs tracking-wider;
-    background-color: hsl(var(--announcement-bg));
-    color: hsl(var(--announcement-text));
+  .media-control:hover {
+    transform: scale(1.1);
   }
 
   /* Guidance Collection Section */
@@ -242,8 +488,12 @@
   }
 
   .guidance-media-control {
-    @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-opacity duration-200 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2;
+    @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-all duration-300;
     color: hsl(var(--hero-text));
+  }
+
+  .guidance-media-control:hover {
+    transform: scale(1.1);
   }
 
   /* Outlands Section - Cinematic Hero Style */
@@ -272,31 +522,17 @@
 
   .outlands-title {
     @apply font-display text-4xl font-light tracking-luxury mb-6 md:text-5xl lg:text-6xl;
-    color: hsl(var(--hero-text));
-    text-shadow: 0 2px 8px hsl(var(--hero-overlay) / 0.3);
-  }
-
-  .btn-outlands {
-    @apply inline-flex items-center justify-center px-10 py-4 text-sm font-medium tracking-[0.25em] uppercase transition-all duration-300 ease-out;
-    background-color: hsl(var(--hero-button-bg));
-    color: hsl(var(--hero-button-text));
-    border: 1px solid hsl(var(--hero-button-border));
-  }
-
-  .btn-outlands:hover {
-    background-color: hsl(var(--hero-button-text));
-    color: hsl(var(--hero-button-bg));
-    border-color: hsl(var(--hero-button-text));
-  }
-
-  .btn-outlands:focus-visible {
-    @apply outline-none ring-2 ring-offset-2;
-    ring-color: hsl(var(--hero-button-bg));
+    color: hsl(var(--foreground));
+    text-shadow: 0 2px 8px hsl(var(--hero-overlay) / 0.1);
   }
 
   .outlands-media-control {
-    @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-opacity duration-200 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2;
-    color: hsl(var(--hero-text));
+    @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-all duration-300;
+    color: hsl(var(--foreground));
+  }
+
+  .outlands-media-control:hover {
+    transform: scale(1.1);
   }
 }
 
@@ -337,7 +573,7 @@
     animation-delay: 300ms;
   }
 
-  /* Fade In Animation */
+  /* Premium Animations */
   @keyframes fade-in-up {
     from {
       opacity: 0;
@@ -349,8 +585,33 @@
     }
   }
 
+  @keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
   .animate-fade-in-up {
     animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in {
+    animation: fade-in-up 0.6s ease-out forwards;
     opacity: 0;
   }
 }

@@ -1,4 +1,5 @@
-import Hero from '@/components/Hero';
+import Header from '@/components/Header';
+import HeroSection from '@/components/HeroSection';
 import GuidanceCollection from '@/components/GuidanceCollection';
 import OutlandsSection from '@/components/OutlandsSection';
 import { Helmet } from 'react-helmet-async';
@@ -6,7 +7,7 @@ import { Helmet } from 'react-helmet-async';
 /**
  * Amouage Homepage
  * 
- * Features the hero section, Guidance Collection, and Outlands promotional sections
+ * Features the header, hero section, Guidance Collection, and Outlands promotional sections
  * recreation from the original amouage.com website.
  */
 const Index = () => {
@@ -34,8 +35,10 @@ const Index = () => {
         <link rel="canonical" href="https://amouage.com" />
       </Helmet>
       
+      <Header />
+      
       <main>
-        <Hero onShopNowClick={handleShopNowClick} />
+        <HeroSection onShopNowClick={handleShopNowClick} />
         <GuidanceCollection onDiscoverClick={handleDiscoverClick} />
         <OutlandsSection onShopNowClick={handleOutlandsClick} />
       </main>
