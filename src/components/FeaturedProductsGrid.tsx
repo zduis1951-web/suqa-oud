@@ -105,20 +105,14 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
                 onClick={() => onProductClick?.(product.id)}
               >
                 {/* Product Image Panel - full bleed */}
-                <div className="relative aspect-[4/5] overflow-hidden" style={{ backgroundColor: '#E3D6C6' }}>
-                  {/* Background overlay to unify colors */}
-                  <div 
-                    className="absolute inset-0 z-[1] pointer-events-none mix-blend-color"
-                    style={{ backgroundColor: '#E3D6C6' }}
-                  />
-                  
+                <div className="relative aspect-[4/5] overflow-hidden">
                   {/* NEW Badge */}
                   {product.isNew && (
                     <span 
                       className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-foreground text-[10px] md:text-[11px] tracking-[0.1em] uppercase border border-foreground/40 px-3 py-1"
                       style={{ 
                         fontFamily: 'var(--font-primary)',
-                        background: '#E3D6C6'
+                        background: 'hsl(30 20% 92% / 0.9)'
                       }}
                     >
                       NEW
