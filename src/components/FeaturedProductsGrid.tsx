@@ -77,7 +77,7 @@ interface FeaturedProductsGridProps {
 
 const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => {
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20" style={{ background: 'linear-gradient(180deg, hsl(30 20% 92%) 0%, hsl(30 15% 88%) 100%)' }}>
+    <section className="w-full pt-12 md:pt-16 lg:pt-20" style={{ background: 'linear-gradient(180deg, hsl(30 20% 92%) 0%, hsl(30 15% 88%) 100%)' }}>
       {/* Section Title */}
       <div className="text-center mb-8 md:mb-12">
         <h2 
