@@ -29,7 +29,7 @@ const PowerOfTheInfinite = ({
         {/* Main Title */}
         <h2 style={{
         fontFamily: 'var(--font-display)'
-      }} className="text-2xl md:text-3xl tracking-[0.25em] md:tracking-[0.35em] mb-3 md:mb-4 text-center px-4 text-inherit font-medium lg:text-sm">
+      }} className="text-2xl md:text-3xl tracking-[0.25em] md:tracking-[0.35em] mb-6 md:mb-8 text-center px-4 text-inherit font-medium lg:text-sm">
           IT DOESN'T SEEK ATTENTION. IT CREATES A FEELING OF COMPOSURE.
 
         </h2>
