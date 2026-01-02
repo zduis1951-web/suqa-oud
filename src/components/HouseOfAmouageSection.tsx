@@ -38,7 +38,6 @@ const HouseOfAmouageSection = ({
         {/* Heading */}
         <h2 style={{
         fontFamily: '"Cormorant Garamond", "Times New Roman", serif',
-        fontSize: 'clamp(20px, 3vw, 28px)',
         fontWeight: 400,
         letterSpacing: '0.25em',
         color: '#000000'
