@@ -23,6 +23,17 @@ export default {
         body: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
+        /* Signature Cream Palette */
+        cream: {
+          signature: "hsl(var(--cream-signature))",
+          light: "hsl(var(--cream-light))",
+          dark: "hsl(var(--cream-dark))",
+        },
+        brown: {
+          deep: "hsl(var(--brown-deep))",
+          medium: "hsl(var(--brown-medium))",
+          light: "hsl(var(--brown-light))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -66,6 +77,10 @@ export default {
         announcement: {
           bg: "hsl(var(--announcement-bg))",
           text: "hsl(var(--announcement-text))",
+        },
+        outlands: {
+          bg: "hsl(var(--outlands-bg))",
+          text: "hsl(var(--outlands-text))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
