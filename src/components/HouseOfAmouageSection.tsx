@@ -41,7 +41,7 @@ const HouseOfAmouageSection = ({
         fontSize: 'clamp(20px, 3vw, 28px)',
         fontWeight: 400,
         letterSpacing: '0.25em',
-        color: '#F7F4EF'
+        color: '#000000'
       }} className="text-center uppercase mb-8 text-5xl">
           DISCOVER OUR STORY
 
