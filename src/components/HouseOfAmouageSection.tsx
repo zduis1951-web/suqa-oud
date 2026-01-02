@@ -37,10 +37,9 @@ const HouseOfAmouageSection = ({ onDiscoverClick }: HouseOfAmouageSectionProps) 
 
   return (
     <section
-      className="w-full relative overflow-hidden"
+      className="w-full relative overflow-hidden -mt-px"
       style={{ 
         height: '770px',
-        backgroundColor: '#1a1a1a',
       }}
       aria-label="The House of Amouage"
     >
