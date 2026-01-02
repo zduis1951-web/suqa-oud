@@ -65,8 +65,25 @@ const HeroSection = ({
 
           {/* CTA Button */}
           <div className="animate-fade-in-up animation-delay-200 mt-8 md:mt-10">
-            <button onClick={handleShopNowClick} className="border border-[#d4c5b0] bg-transparent px-8 py-3 text-sm font-light tracking-[0.2em] text-[#d4c5b0] transition-all duration-300 hover:bg-[#d4c5b0] hover:text-black" aria-label="Discover SUQA OUD">
-              DISCOVER
+            <button onClick={handleShopNowClick} aria-label="Discover SUQA OUD" className="border border-[#d4c5b0] px-8 py-3 text-sm font-light tracking-[0.2em] transition-all duration-300 bg-white text-black">
+              SHOP NOW
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
             </button>
           </div>
         </div>
