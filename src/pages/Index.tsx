@@ -7,6 +7,7 @@ import PowerOfTheInfinite from '@/components/PowerOfTheInfinite';
 import SohoFlagshipBoutique from '@/components/SohoFlagshipBoutique';
 import PerfectGift from '@/components/PerfectGift';
 import FeaturedProductsGrid from '@/components/FeaturedProductsGrid';
+import StoreLocatorSection from '@/components/StoreLocatorSection';
 import { Helmet } from 'react-helmet-async';
 
 /**
@@ -48,6 +49,10 @@ const Index = () => {
     console.log(`Product clicked: ${productId} - navigate to product page`);
   };
 
+  const handleStoreLocatorClick = () => {
+    console.log('Store Locator clicked - navigate to store locator page');
+  };
+
   return (
     <>
       <Helmet>
@@ -71,6 +76,7 @@ const Index = () => {
         <SohoFlagshipBoutique onDiscoverMoreClick={handleSohoDiscoverClick} />
         <PerfectGift onShopNowClick={handleGiftShopClick} />
         <FeaturedProductsGrid onProductClick={handleProductClick} />
+        <StoreLocatorSection onStoreLocatorClick={handleStoreLocatorClick} />
       </main>
     </>
   );
