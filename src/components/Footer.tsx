@@ -20,7 +20,7 @@ const Footer = () => {
   return <footer className="w-full bg-gold text-cream">
       {/* Main Footer Content */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 py-8 sm:py-10 md:py-12 lg:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
           
           {/* Column 1 - Brand (Always visible) */}
           <div className="lg:col-span-1">
@@ -113,22 +113,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  {t('footer.paymentMethods')}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  {t('footer.accessibilityStatement')}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  {t('footer.helpCenter')}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
+                <a href="mailto:contact@suqaoud.com" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
                   {t('footer.contactUs')}
                 </a>
               </li>
@@ -145,25 +130,12 @@ const Footer = () => {
             </button>
             <ul className={`space-y-2 sm:space-y-3 overflow-hidden transition-all duration-300 ${openSection === 'legal' ? 'max-h-40 pt-3' : 'max-h-0 lg:max-h-none lg:pt-4 lg:mt-2'}`}>
               <li>
-                <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  {t('footer.termsConditions')}
-                </a>
-              </li>
-              <li>
                 <Link to="/privacy-policy" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
                   {t('footer.privacyPolicy')}
                 </Link>
               </li>
-              <li>
-                <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  {t('footer.cookiePolicy')}
-                </a>
-              </li>
             </ul>
           </div>
-
-          {/* Column 5 - SIGN UP (Always visible) */}
-          
         </div>
       </div>
 
