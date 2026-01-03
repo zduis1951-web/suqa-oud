@@ -7,11 +7,10 @@ interface LuxuryBodyLineProps {
 /**
  * Luxury Body Line Section
  * 
- * Recreated from amouage.com - displays the Luxury Body Line promotional section
+ * Displays the SUQA OUD Luxury Body Line promotional section
  * with full-width cinematic background image and centered CTA.
  * 
- * All images downloaded directly from the live Amouage website.
- * No images were generated or edited.
+ * All images are original SUQA OUD brand assets.
  */
 const LuxuryBodyLine = ({
   onShopNowClick

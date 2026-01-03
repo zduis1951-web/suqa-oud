@@ -7,11 +7,10 @@ interface PowerOfTheInfiniteProps {
 /**
  * Power of the Infinite Section
  * 
- * Recreated from amouage.com/pages/amouage-eternity - displays the Eternity collection
- * featuring Decision and Existence fragrances with twisted wood branches composition.
+ * Displays the SUQA OUD Eternity collection featuring Decision and Existence
+ * fragrances with twisted wood branches composition.
  * 
- * All images downloaded directly from the live Amouage website.
- * No images were generated or edited.
+ * All images are original SUQA OUD brand assets.
  */
 const PowerOfTheInfinite = ({
   onShopNowClick

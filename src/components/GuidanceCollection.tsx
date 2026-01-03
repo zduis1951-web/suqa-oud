@@ -8,31 +8,14 @@ import ourStoryBgImage from '@/assets/our-story-bg.jpg';
  * Guidance Collection Promotional Section
  * 
  * A full-width promotional section featuring the Guidance fragrance collection.
- * Displays below the hero section on the Amouage homepage.
+ * Displays below the hero section on the SUQA OUD homepage.
  * 
  * Features:
  * - Full-width background image with centered product display
  * - Collection title overlay
  * - CTA button
- * - Play/pause control for video/slideshow
  * 
- * Image Sources (original from amouage.com, no generation or editing):
- * - Desktop: src/assets/guidance-desktop.png
- * - Mobile: src/assets/guidance-mobile.png
- * 
- * Usage:
- * ```tsx
- * import GuidanceCollection from '@/components/GuidanceCollection';
- * 
- * function HomePage() {
- *   return (
- *     <>
- *       <Hero />
- *       <GuidanceCollection />
- *     </>
- *   );
- * }
- * ```
+ * All images are original SUQA OUD brand assets.
  */
 
 interface GuidanceCollectionProps {

@@ -3,10 +3,8 @@ import suqaOudGcc from '@/assets/suqa-oud-gcc.jpg';
 /**
  * PerfectGift Section
  * 
- * README: All images used in this component were downloaded directly from the live
- * amouage.com website. No images were generated, edited, or altered in any way.
- * - Desktop: https://amouage.com/cdn/shop/files/2025_Gift_wrap.png
- * - Mobile: https://amouage.com/cdn/shop/files/Amouage_GiftWrap_Mobile_2250_x_4000px_1_0b952789-a635-4f6d-9d9f-f7631b3b8934.jpg
+ * Displays the SUQA OUD gift collection promotional section.
+ * All images are original SUQA OUD brand assets.
  */
 
 interface PerfectGiftProps {
