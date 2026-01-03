@@ -1,57 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import privilege from '@/assets/products/privilege.png';
-import privilegeBox from '@/assets/products/privilege-box.png';
-import vida from '@/assets/products/vida.png';
-import vidaBox from '@/assets/products/vida-box.png';
-import elite from '@/assets/products/elite.png';
-import eliteBox from '@/assets/products/elite-box.png';
-import highness from '@/assets/products/highness.png';
-import highnessBox from '@/assets/products/highness-box.png';
+import { fetchShopifyProducts, handleDirectPurchase, ShopifyProduct } from '@/lib/shopify';
 
 interface Product {
   id: string;
+  handle: string;
   name: string;
-  variant?: string;
   price: string;
   image: string;
-  hoverImage: string;
+  hoverImage?: string;
   isNew?: boolean;
 }
 
-const products: Product[] = [
-  {
-    id: 'privilege',
-    name: 'Privilege',
-    price: 'AED 645',
-    image: privilege,
-    hoverImage: privilegeBox,
-  },
-  {
-    id: 'vida',
-    name: 'Vida',
-    price: 'AED 695',
-    image: vida,
-    hoverImage: vidaBox,
-  },
-  {
-    id: 'elite',
-    name: 'Elite',
-    price: 'AED 675',
-    image: elite,
-    hoverImage: eliteBox,
-  },
-  {
-    id: 'highness',
-    name: 'Highness',
-    price: 'AED 795',
-    image: highness,
-    hoverImage: highnessBox,
-  },
-];
-
 interface FeaturedProductsGridProps {
-  onProductClick?: (productId: string) => void;
+  onProductClick?: (productHandle: string) => void;
 }
 
 // Product Card Component - SUQA OUD Style
@@ -210,30 +172,32 @@ const ProductCard = ({
                     top: 0,
                     left: 0,
                     boxSizing: 'border-box',
-                    opacity: isHovered ? 0 : 1,
+                    opacity: isHovered && product.hoverImage ? 0 : 1,
                   }}
                 />
                 
                 {/* Hover Image */}
-                <img
-                  src={product.hoverImage}
-                  alt={`${product.name} packaging`}
-                  style={{
-                    objectFit: 'cover',
-                    minWidth: '100%',
-                    height: '598.992px',
-                    objectPosition: '50% 50%',
-                    width: '100%',
-                    opacity: isHovered ? 1 : 0,
-                    transition: 'opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                    display: 'block',
-                    maxWidth: '100%',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    boxSizing: 'border-box',
-                  }}
-                />
+                {product.hoverImage && (
+                  <img
+                    src={product.hoverImage}
+                    alt={`${product.name} packaging`}
+                    style={{
+                      objectFit: 'cover',
+                      minWidth: '100%',
+                      height: '598.992px',
+                      objectPosition: '50% 50%',
+                      width: '100%',
+                      opacity: isHovered ? 1 : 0,
+                      transition: 'opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                      display: 'block',
+                      maxWidth: '100%',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      boxSizing: 'border-box',
+                    }}
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -345,6 +309,74 @@ const ProductCard = ({
 };
 
 const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const shopifyProducts = await fetchShopifyProducts(7);
+        const formattedProducts: Product[] = shopifyProducts.map((p: ShopifyProduct) => ({
+          id: p.node.id,
+          handle: p.node.handle,
+          name: p.node.title,
+          price: `AED ${parseFloat(p.node.priceRange.minVariantPrice.amount).toFixed(0)}`,
+          image: p.node.images.edges[0]?.node.url || '',
+          hoverImage: p.node.images.edges[1]?.node.url,
+        }));
+        setProducts(formattedProducts);
+      } catch (error) {
+        console.error('Error loading products:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProducts();
+  }, []);
+
+  if (loading) {
+    return (
+      <section 
+        style={{ 
+          width: '100%',
+          backgroundColor: 'rgb(227, 214, 198)',
+          paddingTop: '48px',
+          paddingBottom: '48px',
+          minHeight: '700px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <p style={{ fontFamily: 'Assistant, sans-serif', color: 'rgb(18, 18, 18)' }}>
+          Loading products...
+        </p>
+      </section>
+    );
+  }
+
+  if (products.length === 0) {
+    return (
+      <section 
+        style={{ 
+          width: '100%',
+          backgroundColor: 'rgb(227, 214, 198)',
+          paddingTop: '48px',
+          paddingBottom: '48px',
+          minHeight: '400px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <p style={{ fontFamily: 'Assistant, sans-serif', color: 'rgb(18, 18, 18)' }}>
+          No products found
+        </p>
+      </section>
+    );
+  }
+
   return (
     <section 
       style={{ 
@@ -380,7 +412,7 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
       <ul 
         style={{
           display: 'flex',
-          flexWrap: 'nowrap',
+          flexWrap: 'wrap',
           margin: 0,
           padding: 0,
           listStyle: 'none',
@@ -393,7 +425,13 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
             product={product}
             index={index}
             isLast={index === products.length - 1}
-            onClick={() => onProductClick?.(product.id)}
+            onClick={() => {
+              if (onProductClick) {
+                onProductClick(product.handle);
+              } else {
+                handleDirectPurchase(product.handle);
+              }
+            }}
           />
         ))}
       </ul>
