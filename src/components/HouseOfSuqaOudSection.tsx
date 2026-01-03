@@ -1,4 +1,5 @@
 import houseOfSuqaOudVideo from '@/assets/house-of-suqa-oud-video.mp4';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface HouseOfSuqaOudSectionProps {
   onDiscoverClick?: () => void;
@@ -13,6 +14,8 @@ interface HouseOfSuqaOudSectionProps {
 const HouseOfSuqaOudSection = ({
   onDiscoverClick
 }: HouseOfSuqaOudSectionProps) => {
+  const { t } = useLanguage();
+
   const handleClick = () => {
     if (onDiscoverClick) {
       onDiscoverClick();
@@ -45,7 +48,7 @@ const HouseOfSuqaOudSection = ({
           className="text-gold text-[10px] sm:text-xs md:text-sm tracking-[0.12em] sm:tracking-[0.15em] md:tracking-[0.2em] uppercase mb-3 sm:mb-4 text-center max-w-xs sm:max-w-md" 
           style={{ fontFamily: '"Cormorant Garamond", "Times New Roman", serif' }}
         >
-          TO BE ROYAL IS TO BREATHE THE KINGDOM OF OUD
+          {t('houseOfSuqa.tagline')}
         </p>
         
         {/* Heading */}
@@ -57,7 +60,7 @@ const HouseOfSuqaOudSection = ({
           }} 
           className="text-center uppercase mb-6 sm:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gold sm:tracking-[0.2em] md:tracking-[0.25em]"
         >
-          DISCOVER OUR STORY
+          {t('houseOfSuqa.title')}
         </h2>
 
         {/* Discover Button */}
@@ -70,7 +73,7 @@ const HouseOfSuqaOudSection = ({
           }} 
           aria-label="Learn more about the House of SUQA OUD"
         >
-          LEARN MORE
+          {t('houseOfSuqa.learnMore')}
         </button>
       </div>
 

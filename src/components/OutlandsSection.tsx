@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { Pause, Play } from 'lucide-react';
 import outlandsVideo from '@/assets/store-locator-video.mp4';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface OutlandsSectionProps {
   onShopNowClick?: () => void;
@@ -17,6 +18,7 @@ const OutlandsSection = ({
 }: OutlandsSectionProps) => {
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { t, isRTL } = useLanguage();
 
   const togglePlayPause = () => {
     if (videoRef.current) {
@@ -50,12 +52,12 @@ const OutlandsSection = ({
       <div className="outlands-content px-4">
         {/* Title */}
         <h2 className="outlands-title text-cream text-center text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] max-w-xs sm:max-w-md md:max-w-lg mx-auto">
-          COMPLIMENTARY WRAPPING AND PERSONALIZATION CHOICES. A GIFT FIT FOR KINGS.
+          {t('outlands.title')}
         </h2>
         
         {/* Description */}
         <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-lg mx-auto text-center leading-tight mb-6 sm:mb-8 px-2 font-light text-cream tracking-[0.1em] sm:tracking-[0.15em]">
-          THE PERFECT GIFT
+          {t('outlands.description')}
         </p>
 
         {/* CTA Button */}
@@ -64,15 +66,15 @@ const OutlandsSection = ({
           aria-label="Explore SUQA OUD philosophy" 
           className="btn-outlands bg-cream text-gold hover:bg-transparent hover:text-cream px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 text-xs sm:text-sm min-h-[44px] min-w-[120px]"
         >
-          EXPLORE
+          {t('outlands.explore')}
         </button>
       </div>
 
       {/* Media Control - Play/Pause */}
       <button
         onClick={togglePlayPause}
-        className="media-control w-10 h-10 sm:w-12 sm:h-12 bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8"
-        aria-label={isPlaying ? 'Pause video' : 'Play video'}
+        className={`media-control w-10 h-10 sm:w-12 sm:h-12 bottom-4 sm:bottom-6 md:bottom-8 ${isRTL ? 'left-4 sm:left-6 md:left-8' : 'right-4 sm:right-6 md:right-8'}`}
+        aria-label={isPlaying ? t('outlands.pauseVideo') : t('outlands.playVideo')}
       >
         {isPlaying ? (
           <Pause className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1} aria-hidden="true" />

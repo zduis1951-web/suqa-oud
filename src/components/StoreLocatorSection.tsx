@@ -1,4 +1,5 @@
 import storeLocatorVideo from '@/assets/store-locator-video.mp4';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface StoreLocatorSectionProps {
   onStoreLocatorClick?: () => void;
@@ -11,6 +12,8 @@ interface StoreLocatorSectionProps {
  * Full-width horizontal band with video background.
  */
 const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) => {
+  const { t } = useLanguage();
+
   const handleClick = () => {
     if (onStoreLocatorClick) {
       onStoreLocatorClick();
@@ -50,7 +53,7 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
             fontWeight: 400,
           }}
         >
-          EXCLUSIVELY ONLINE
+          {t('storeLocator.title')}
         </h2>
 
         {/* Store Locator Button */}
@@ -63,7 +66,7 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
           }}
           aria-label="Shop SUQA OUD online"
         >
-          SHOP NOW
+          {t('storeLocator.shopNow')}
         </button>
       </div>
     </section>

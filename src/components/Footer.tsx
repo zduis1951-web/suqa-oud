@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
   const [openSection, setOpenSection] = useState<string | null>(null);
+  const { t, isRTL } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,14 +26,14 @@ const Footer = () => {
           
           {/* Column 1 - Brand (Always visible) */}
           <div className="lg:col-span-1">
-            <h3 className="font-serif text-base sm:text-lg tracking-[0.2em] mb-3 sm:mb-4">SUQA OUD</h3>
+            <h3 className="font-serif text-base sm:text-lg tracking-[0.2em] mb-3 sm:mb-4">{t('footer.brandName')}</h3>
             <p className="text-cream/70 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
-              High Perfumery from the Sultanate of Oman, founded in 2022.
+              {t('footer.brandDescription')}
             </p>
             <p className="text-[10px] sm:text-xs tracking-[0.12em] sm:tracking-[0.15em] uppercase mb-3 sm:mb-4">
-              Follow us for exclusive news and updates:
+              {t('footer.followUs')}
             </p>
-            <div className="flex items-center gap-4 sm:gap-5">
+            <div className={`flex items-center gap-4 sm:gap-5 ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
               {/* Instagram Icon */}
               <a 
                 href="https://www.instagram.com/suqaoud?igsh=MTc3ZnN2N3AyaXAwdQ==" 
@@ -98,29 +100,29 @@ const Footer = () => {
               className="w-full flex items-center justify-between py-3 border-b border-cream/20 lg:border-0 lg:pointer-events-none"
             >
               <h4 className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase font-normal">
-                The House of SUQA OUD
+                {t('footer.houseOfSuqa')}
               </h4>
               <ChevronDown className={`h-4 w-4 transition-transform lg:hidden ${openSection === 'house' ? 'rotate-180' : ''}`} />
             </button>
             <ul className={`space-y-2 sm:space-y-3 overflow-hidden transition-all duration-300 ${openSection === 'house' ? 'max-h-60 pt-3' : 'max-h-0 lg:max-h-none lg:pt-4 lg:mt-2'}`}>
               <li>
                 <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  Store Locator
+                  {t('footer.storeLocator')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  Our Story – The Gift Of Kings
+                  {t('footer.ourStory')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  Our Philosophy
+                  {t('footer.ourPhilosophy')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  Visitor's Centre
+                  {t('footer.visitorCentre')}
                 </a>
               </li>
             </ul>
@@ -133,39 +135,39 @@ const Footer = () => {
               className="w-full flex items-center justify-between py-3 border-b border-cream/20 lg:border-0 lg:pointer-events-none"
             >
               <h4 className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase font-normal">
-                Customer Service
+                {t('footer.customerService')}
               </h4>
               <ChevronDown className={`h-4 w-4 transition-transform lg:hidden ${openSection === 'service' ? 'rotate-180' : ''}`} />
             </button>
             <ul className={`space-y-2 sm:space-y-3 overflow-hidden transition-all duration-300 ${openSection === 'service' ? 'max-h-80 pt-3' : 'max-h-0 lg:max-h-none lg:pt-4 lg:mt-2'}`}>
               <li>
                 <Link to="/shipping-policy" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  Shipping Policy
+                  {t('footer.shippingPolicy')}
                 </Link>
               </li>
               <li>
                 <Link to="/return-policy" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  Return Policy
+                  {t('footer.returnPolicy')}
                 </Link>
               </li>
               <li>
                 <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  Payment Methods
+                  {t('footer.paymentMethods')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  Accessibility Statement
+                  {t('footer.accessibilityStatement')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  Help Center
+                  {t('footer.helpCenter')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  Contact Us
+                  {t('footer.contactUs')}
                 </a>
               </li>
             </ul>
@@ -178,24 +180,24 @@ const Footer = () => {
               className="w-full flex items-center justify-between py-3 border-b border-cream/20 lg:border-0 lg:pointer-events-none"
             >
               <h4 className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase font-normal">
-                Legal
+                {t('footer.legal')}
               </h4>
               <ChevronDown className={`h-4 w-4 transition-transform lg:hidden ${openSection === 'legal' ? 'rotate-180' : ''}`} />
             </button>
             <ul className={`space-y-2 sm:space-y-3 overflow-hidden transition-all duration-300 ${openSection === 'legal' ? 'max-h-40 pt-3' : 'max-h-0 lg:max-h-none lg:pt-4 lg:mt-2'}`}>
               <li>
                 <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  Terms & Conditions
+                  {t('footer.termsConditions')}
                 </a>
               </li>
               <li>
                 <Link to="/privacy-policy" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  Privacy Policy
+                  {t('footer.privacyPolicy')}
                 </Link>
               </li>
               <li>
                 <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  Cookie Policy
+                  {t('footer.cookiePolicy')}
                 </a>
               </li>
             </ul>
@@ -204,37 +206,38 @@ const Footer = () => {
           {/* Column 5 - SIGN UP (Always visible) */}
           <div className="lg:col-span-1 pt-4 lg:pt-0">
             <h4 className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-4 sm:mb-6 font-normal">
-              Sign Up
+              {t('footer.signUp')}
             </h4>
             <p className="text-cream/70 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-              Subscribe and be the first to know about new launches and exclusive news from The House of SUQA OUD.
+              {t('footer.signUpDescription')}
             </p>
             <form onSubmit={handleSubmit} className="mb-3 sm:mb-4">
               <input 
                 type="email" 
                 value={email} 
                 onChange={e => setEmail(e.target.value)} 
-                placeholder="E-mail" 
+                placeholder={t('footer.emailPlaceholder')} 
                 required 
-                className="w-full bg-transparent border border-cream/40 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-cream placeholder:text-cream/50 focus:outline-none focus:border-cream mb-2 sm:mb-3 min-h-[44px]" 
+                className="w-full bg-transparent border border-cream/40 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-cream placeholder:text-cream/50 focus:outline-none focus:border-cream mb-2 sm:mb-3 min-h-[44px]"
+                dir={isRTL ? 'rtl' : 'ltr'}
               />
               <button 
                 type="submit" 
                 className="w-full bg-cream text-gold text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase py-2.5 sm:py-3 px-4 sm:px-6 hover:bg-cream/90 transition-colors font-medium min-h-[44px]"
               >
-                Subscribe
+                {t('footer.subscribe')}
               </button>
             </form>
             <p className="text-cream/50 text-[9px] sm:text-[10px] leading-relaxed">
-              By clicking subscribe, you are accepting our{' '}
+              {t('footer.termsNotice')}{' '}
               <a href="#" className="underline hover:text-cream transition-colors">
-                Terms and Conditions
+                {t('footer.termsLink')}
               </a>{' '}
-              and{' '}
+              {t('footer.andText')}{' '}
               <Link to="/privacy-policy" className="underline hover:text-cream transition-colors">
-                Privacy Policy
+                {t('footer.privacyPolicy')}
               </Link>
-              . You can unsubscribe at anytime.
+              {t('footer.unsubscribeNotice')}
             </p>
           </div>
         </div>
@@ -299,7 +302,7 @@ const Footer = () => {
       {/* Copyright */}
       <div className="border-t border-cream/10 py-4 sm:py-6">
         <p className="text-cream/50 text-[10px] sm:text-xs text-center tracking-wider px-4">
-          © {new Date().getFullYear()} SUQA OUD. All rights reserved.
+          {t('footer.copyright')}
         </p>
       </div>
     </footer>

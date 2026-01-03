@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Pause, Play } from 'lucide-react';
 import heroVideo from '@/assets/hero-video.mp4';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface HeroSectionProps {
   onShopNowClick?: () => void;
@@ -12,6 +13,7 @@ const HeroSection = ({
   const [isPlaying, setIsPlaying] = useState(true);
   const heroRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { t, isRTL } = useLanguage();
 
   const handlePlayPause = () => {
     if (videoRef.current) {
@@ -62,17 +64,17 @@ const HeroSection = ({
         <div className="px-4 sm:px-6 text-center max-w-[95vw] sm:max-w-none">
           {/* Brand Name */}
           <h1 className="animate-fade-in-up font-serif font-light tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] text-xs sm:text-sm mb-4 sm:mb-6 md:mb-8 text-cream">
-            A NEW DUO OF MAJESTIC COMPOSITIONS
+            {t('hero.brandTitle')}
           </h1>
           
           {/* Main Headline */}
           <p className="animate-fade-in-up font-serif font-light leading-tight sm:leading-relaxed text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto text-cream tracking-[0.08em] sm:tracking-[0.12em] md:tracking-[0.15em]">
-            THE POWER OF THE INFINITE
+            {t('hero.mainHeadline')}
           </p>
           
           {/* Tagline */}
           <p className="animate-fade-in-up font-serif text-[10px] sm:text-xs md:text-sm font-light italic tracking-wide text-cream/80 mt-4 sm:mt-6 md:mt-8">
-            To be royal is to breathe the kingdom of oud.
+            {t('hero.tagline')}
           </p>
 
           {/* CTA Button */}
@@ -82,7 +84,7 @@ const HeroSection = ({
               aria-label="Discover SUQA OUD" 
               className="border border-cream px-6 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-sm font-light tracking-[0.15em] sm:tracking-[0.2em] transition-all duration-300 bg-cream text-gold hover:bg-transparent hover:text-cream min-h-[44px] min-w-[140px]"
             >
-              SHOP NOW
+              {t('hero.shopNow')}
             </button>
           </div>
         </div>
@@ -91,8 +93,8 @@ const HeroSection = ({
       {/* Play/Pause Control - Bottom Right */}
       <button 
         onClick={handlePlayPause} 
-        className="media-control w-10 h-10 sm:w-12 sm:h-12 bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8" 
-        aria-label={isPlaying ? 'Pause video' : 'Play video'}
+        className={`media-control w-10 h-10 sm:w-12 sm:h-12 bottom-4 sm:bottom-6 md:bottom-8 ${isRTL ? 'left-4 sm:left-6 md:left-8' : 'right-4 sm:right-6 md:right-8'}`}
+        aria-label={isPlaying ? t('hero.pauseVideo') : t('hero.playVideo')}
       >
         {isPlaying ? (
           <Pause className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8" aria-hidden="true" />
