@@ -4,9 +4,9 @@ import privilege from '@/assets/products/privilege.png';
 import privilegeBox from '@/assets/products/privilege-box.png';
 import vida from '@/assets/products/vida.png';
 import vidaBox from '@/assets/products/vida-box.png';
-import existence from '@/assets/products/existence.jpg';
+import elite from '@/assets/products/elite.png';
+import eliteBox from '@/assets/products/elite-box.png';
 import purpose50 from '@/assets/products/purpose-50.png';
-import existenceBox from '@/assets/products/existence-box.jpg';
 import purpose50Box from '@/assets/products/purpose-50-box.jpg';
 
 interface Product {
@@ -35,12 +35,11 @@ const products: Product[] = [
     hoverImage: vidaBox,
   },
   {
-    id: 'existence',
-    name: 'Existence',
-    price: '$395',
-    image: existence,
-    hoverImage: existenceBox,
-    isNew: true,
+    id: 'elite',
+    name: 'Elite',
+    price: 'AED 675',
+    image: elite,
+    hoverImage: eliteBox,
   },
   {
     id: 'purpose-50',
