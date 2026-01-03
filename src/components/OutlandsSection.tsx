@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { Pause, Play } from 'lucide-react';
 import outlandsVideo from '@/assets/store-locator-video.mp4';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { HoverButton } from '@/components/ui/hover-button';
 
 interface OutlandsSectionProps {
   onShopNowClick?: () => void;
@@ -56,13 +57,13 @@ const OutlandsSection = ({
         </p>
 
         {/* CTA Button */}
-        <button 
+        <HoverButton 
           onClick={onShopNowClick} 
           aria-label="Explore SUQA OUD philosophy" 
-          className="btn-outlands bg-cream text-gold hover:bg-transparent hover:text-cream px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 text-xs sm:text-sm min-h-[44px] min-w-[120px] mb-6 sm:mb-8"
+          className="mb-6 sm:mb-8"
         >
           {t('outlands.explore')}
-        </button>
+        </HoverButton>
 
         {/* Title */}
         <h2 className="outlands-title text-cream text-center text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] max-w-xs sm:max-w-md md:max-w-lg mx-auto">

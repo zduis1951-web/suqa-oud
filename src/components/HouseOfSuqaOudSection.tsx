@@ -1,5 +1,6 @@
 import houseOfSuqaOudVideo from '@/assets/house-of-suqa-oud-video.mp4';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { HoverButton } from '@/components/ui/hover-button';
 
 interface HouseOfSuqaOudSectionProps {
   onDiscoverClick?: () => void;
@@ -64,17 +65,12 @@ const HouseOfSuqaOudSection = ({
         </h2>
 
         {/* Discover Button */}
-        <button 
+        <HoverButton 
           onClick={handleClick} 
-          className="uppercase tracking-[0.1em] sm:tracking-[0.15em] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cream bg-cream text-gold border border-gold/30 hover:bg-transparent hover:text-cream hover:border-cream text-[10px] sm:text-xs md:text-sm px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5 min-h-[44px] min-w-[100px]" 
-          style={{
-            fontFamily: '"Cormorant Garamond", "Times New Roman", serif',
-            fontWeight: 400,
-          }} 
           aria-label="Learn more about the House of SUQA OUD"
         >
           {t('houseOfSuqa.learnMore')}
-        </button>
+        </HoverButton>
       </div>
 
       {/* Accessibility Button - Bottom Left */}

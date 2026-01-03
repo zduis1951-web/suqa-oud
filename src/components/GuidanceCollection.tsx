@@ -1,7 +1,7 @@
 // Import Our Story background image
 import ourStoryBgImage from '@/assets/our-story-bg.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
-
+import { HoverButton } from '@/components/ui/hover-button';
 /**
  * Guidance Collection Promotional Section
  * 
@@ -47,9 +47,9 @@ const GuidanceCollection = ({
         </p>
 
         {/* CTA Button */}
-        <button onClick={handleDiscoverClick} className="btn-guidance px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 text-xs sm:text-sm min-h-[44px] min-w-[140px]" aria-label="Discover more about SUQA OUD">
+        <HoverButton onClick={handleDiscoverClick} aria-label="Discover more about SUQA OUD">
           {t('guidance.discoverMore')}
-        </button>
+        </HoverButton>
       </div>
     </section>;
 };
