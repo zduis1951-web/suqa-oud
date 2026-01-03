@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export interface Product {
@@ -15,19 +16,34 @@ interface ProductCardProps {
   onClick?: () => void;
   animationDelay?: number;
   className?: string;
+  isLast?: boolean;
 }
 
-const ProductCard = ({ product, onClick, animationDelay = 0, className = '' }: ProductCardProps) => {
+const ProductCard = ({ 
+  product, 
+  onClick, 
+  animationDelay = 0, 
+  className = '',
+  isLast = false 
+}: ProductCardProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: animationDelay }}
-      className={`group cursor-pointer flex-grow flex-shrink-0 ${className}`}
+      transition={{ 
+        duration: 0.6, 
+        delay: animationDelay,
+        ease: [0, 0, 0.3, 1]
+      }}
       onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={className}
       style={{
-        width: 'calc(25% - 8px * 3 / 4)',
+        width: '100%',
         maxWidth: '100%',
         borderWidth: '1.5px 0px 1.5px 1.5px',
         borderTopStyle: 'solid',
@@ -36,36 +52,46 @@ const ProductCard = ({ product, onClick, animationDelay = 0, className = '' }: P
         borderTopColor: 'rgb(53, 53, 53)',
         borderBottomColor: 'rgb(53, 53, 53)',
         borderLeftColor: 'rgb(53, 53, 53)',
-        borderRightStyle: 'none',
+        borderRightStyle: isLast ? 'solid' : 'none',
+        borderRightColor: isLast ? 'rgb(53, 53, 53)' : 'transparent',
+        borderRightWidth: isLast ? '1.5px' : '0',
         background: 'rgb(247, 244, 239)',
-        minHeight: '602px',
         zIndex: 1,
+        minHeight: '602px',
+        flexGrow: 1,
+        flexShrink: 0,
+        boxSizing: 'border-box',
+        cursor: 'pointer',
       }}
     >
-      {/* Card Link Container */}
       <div 
-        className="relative h-full"
         style={{
           color: 'rgba(18, 18, 18, 0.75)',
           height: '598.992px',
+          position: 'relative',
           textDecoration: 'none',
+          boxSizing: 'border-box',
         }}
       >
         <div 
-          className="flex flex-col h-full text-left"
           style={{
+            display: 'flex',
+            flexDirection: 'column',
             height: '598.992px',
+            textDecoration: 'none',
+            textAlign: 'left',
+            boxSizing: 'border-box',
           }}
         >
           {/* NEW Badge */}
           {product.isNew && (
             <span 
-              className="absolute z-10"
               style={{
                 background: 'rgba(165, 126, 116, 0)',
-                fontFamily: 'var(--font-primary)',
+                fontFamily: 'Assistant, sans-serif',
                 fontSize: '10px',
                 fontWeight: 400,
+                letterSpacing: 'normal',
                 color: 'rgb(79, 79, 79)',
                 padding: '0px 8px',
                 margin: '22px 0px 0px 22px',
@@ -73,10 +99,13 @@ const ProductCard = ({ product, onClick, animationDelay = 0, className = '' }: P
                 borderStyle: 'solid',
                 borderColor: 'rgb(79, 79, 79)',
                 textTransform: 'uppercase',
+                position: 'absolute',
                 top: 0,
                 left: 0,
+                zIndex: 9,
                 lineHeight: '20px',
                 borderRadius: 0,
+                boxSizing: 'border-box',
               }}
             >
               NEW
@@ -85,27 +114,49 @@ const ProductCard = ({ product, onClick, animationDelay = 0, className = '' }: P
 
           {/* Image Container */}
           <div 
-            className="relative w-full flex items-stretch"
             style={{
               backgroundColor: 'rgba(0, 0, 0, 0)',
               height: '598.992px',
               minHeight: '510px',
+              width: '100%',
+              position: 'relative',
+              boxSizing: 'border-box',
               borderRadius: 0,
+              display: 'flex',
+              alignItems: 'stretch',
+              color: 'rgba(18, 18, 18, 0.75)',
             }}
           >
             <div 
-              className="absolute top-0 bottom-0 w-full overflow-hidden"
               style={{
                 margin: 'auto',
                 backgroundColor: 'rgb(247, 244, 239)',
+                width: '100%',
+                bottom: 0,
+                position: 'absolute',
+                top: 0,
+                overflow: 'hidden',
+                zIndex: 0,
+                borderRadius: 0,
+                boxSizing: 'border-box',
               }}
             >
-              <div className="absolute top-0 bottom-0 w-full overflow-hidden block">
+              <div 
+                style={{
+                  width: '100%',
+                  bottom: 0,
+                  position: 'absolute',
+                  top: 0,
+                  backgroundColor: 'rgba(0, 0, 0, 0)',
+                  display: 'block',
+                  overflow: 'hidden',
+                  boxSizing: 'border-box',
+                }}
+              >
                 {/* Primary Image */}
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="absolute top-0 left-0 block"
                   style={{
                     objectFit: 'cover',
                     minWidth: '100%',
@@ -113,24 +164,35 @@ const ProductCard = ({ product, onClick, animationDelay = 0, className = '' }: P
                     objectPosition: '50% 50%',
                     width: '100%',
                     transition: 'opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                    display: 'block',
                     maxWidth: '100%',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    boxSizing: 'border-box',
+                    opacity: isHovered && product.hoverImage ? 0 : 1,
                   }}
                 />
                 
-                {/* Hover Image (if provided) */}
+                {/* Hover Image */}
                 {product.hoverImage && (
                   <img
                     src={product.hoverImage}
                     alt={`${product.name} packaging`}
-                    className="absolute top-0 left-0 block opacity-0 group-hover:opacity-100"
                     style={{
                       objectFit: 'cover',
                       minWidth: '100%',
                       height: '598.992px',
                       objectPosition: '50% 50%',
                       width: '100%',
+                      opacity: isHovered ? 1 : 0,
                       transition: 'opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                      display: 'block',
                       maxWidth: '100%',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      boxSizing: 'border-box',
                     }}
                   />
                 )}
@@ -140,10 +202,16 @@ const ProductCard = ({ product, onClick, animationDelay = 0, className = '' }: P
 
           {/* Product Info - Bottom */}
           <div 
-            className="absolute bottom-0 w-full block text-center"
             style={{
+              position: 'absolute',
+              width: '100%',
+              bottom: 0,
+              display: 'block',
+              textAlign: 'center',
+              textDecoration: 'none',
               padding: 0,
               flexGrow: 1,
+              boxSizing: 'border-box',
             }}
           >
             <div 
@@ -154,12 +222,13 @@ const ProductCard = ({ product, onClick, animationDelay = 0, className = '' }: P
                 height: '97.0078px',
                 paddingLeft: 0,
                 paddingRight: 0,
+                boxSizing: 'border-box',
               }}
             >
               <h3 
                 style={{
                   fontSize: '18px',
-                  fontFamily: 'var(--font-primary)',
+                  fontFamily: 'Assistant, sans-serif',
                   color: 'rgb(0, 0, 0)',
                   lineHeight: '30px',
                   textTransform: 'uppercase',
@@ -170,33 +239,24 @@ const ProductCard = ({ product, onClick, animationDelay = 0, className = '' }: P
                   display: 'flow-root',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
+                  marginTop: 0,
+                  marginBottom: 0,
+                  fontStyle: 'normal',
                   fontWeight: 400,
                   letterSpacing: '0.6px',
                   wordBreak: 'break-word',
+                  boxSizing: 'border-box',
                 }}
               >
                 {product.name}
               </h3>
-              
-              {product.variant && (
-                <span 
-                  style={{
-                    lineHeight: '18.2px',
-                    color: 'rgb(18, 18, 18)',
-                    opacity: 0.7,
-                    fontSize: '13px',
-                    letterSpacing: '0.4px',
-                  }}
-                >
-                  {product.variant}
-                </span>
-              )}
-              
+
               <div 
                 style={{
                   marginTop: '7px',
                   lineHeight: '22.4px',
                   color: 'rgb(18, 18, 18)',
+                  boxSizing: 'border-box',
                 }}
               >
                 <div 
@@ -207,19 +267,30 @@ const ProductCard = ({ product, onClick, animationDelay = 0, className = '' }: P
                     letterSpacing: '1px',
                     lineHeight: '24px',
                     color: 'rgb(18, 18, 18)',
+                    boxSizing: 'border-box',
                   }}
                 >
-                  <div className="flex justify-center items-center">
+                  <div 
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      verticalAlign: 'top',
+                      boxSizing: 'border-box',
+                    }}
+                  >
                     <span 
                       style={{
                         paddingTop: '12px',
                         color: 'rgb(0, 0, 0)',
-                        fontFamily: 'var(--font-primary)',
+                        fontFamily: 'Assistant, sans-serif',
                         fontSize: '15px',
                         margin: 0,
                         fontWeight: 400,
                         lineHeight: '28px',
+                        marginRight: 0,
                         display: 'inline-block',
+                        boxSizing: 'border-box',
                       }}
                     >
                       {product.price}
