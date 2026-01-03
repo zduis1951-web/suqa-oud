@@ -51,8 +51,16 @@ const OutlandsSection = ({
       </div>
 
       {/* Media Control - Play/Pause */}
-      <button onClick={togglePlayPause} className="outlands-media-control" aria-label={isPlaying ? 'Pause video' : 'Play video'}>
-        {isPlaying ? <Pause className="h-6 w-6" strokeWidth={1} /> : <Play className="h-6 w-6" strokeWidth={1} />}
+      <button
+        onClick={togglePlayPause}
+        className="media-control"
+        aria-label={isPlaying ? 'Pause video' : 'Play video'}
+      >
+        {isPlaying ? (
+          <Pause className="h-6 w-6" strokeWidth={1} aria-hidden="true" />
+        ) : (
+          <Play className="h-6 w-6" strokeWidth={1} aria-hidden="true" />
+        )}
       </button>
     </section>;
 };

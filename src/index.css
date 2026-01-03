@@ -466,15 +466,17 @@
 
   /* Play/Pause Control */
   .media-control {
-    @apply absolute bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center transition-all duration-300;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    background-color: transparent;
+    @apply absolute bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full border transition-all duration-300;
+    color: hsl(var(--hero-text));
+    border-color: hsl(var(--hero-text) / 0.55);
+    background-color: hsl(var(--hero-overlay) / 0.25);
+    backdrop-filter: blur(2px);
   }
 
   .media-control:hover {
-    transform: scale(1.1);
-    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.08);
+    background-color: hsl(var(--hero-overlay) / 0.35);
+    border-color: hsl(var(--hero-text) / 0.8);
   }
 
   /* Guidance Collection Section */
