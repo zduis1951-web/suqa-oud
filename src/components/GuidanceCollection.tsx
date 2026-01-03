@@ -12,12 +12,12 @@ import { useLanguage } from '@/contexts/LanguageContext';
 interface GuidanceCollectionProps {
   onDiscoverClick?: () => void;
 }
-
 const GuidanceCollection = ({
   onDiscoverClick
 }: GuidanceCollectionProps) => {
-  const { t } = useLanguage();
-
+  const {
+    t
+  } = useLanguage();
   const handleDiscoverClick = () => {
     if (onDiscoverClick) {
       onDiscoverClick();
@@ -25,21 +25,14 @@ const GuidanceCollection = ({
       window.location.href = '#guidance-collection';
     }
   };
-
-  return (
-    <section className="guidance-section" aria-label="Our Story - SUQA OUD">
+  return <section className="guidance-section" aria-label="Our Story - SUQA OUD">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 w-full h-full" 
-        style={{
-          backgroundImage: `url(${ourStoryBgImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }} 
-        role="img" 
-        aria-label="SUQA OUD Elite fragrance" 
-      />
+      <div className="absolute inset-0 w-full h-full" style={{
+      backgroundImage: `url(${ourStoryBgImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }} role="img" aria-label="SUQA OUD Elite fragrance" />
 
       {/* Content Overlay */}
       <div className="guidance-content px-4">
@@ -49,21 +42,15 @@ const GuidanceCollection = ({
         </h2>
         
         {/* Description */}
-        <p className="text-xs sm:text-sm md:text-base max-w-sm sm:max-w-md lg:max-w-lg mx-auto text-center leading-relaxed mb-6 sm:mb-8 px-2 font-light text-white">
+        <p className="text-xs sm:text-sm max-w-sm sm:max-w-md lg:max-w-lg mx-auto text-center leading-relaxed mb-6 sm:mb-8 px-2 font-light text-white md:text-xl">
           {t('guidance.description')}
         </p>
 
         {/* CTA Button */}
-        <button 
-          onClick={handleDiscoverClick} 
-          className="btn-guidance px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 text-xs sm:text-sm min-h-[44px] min-w-[140px]" 
-          aria-label="Discover more about SUQA OUD"
-        >
+        <button onClick={handleDiscoverClick} className="btn-guidance px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 text-xs sm:text-sm min-h-[44px] min-w-[140px]" aria-label="Discover more about SUQA OUD">
           {t('guidance.discoverMore')}
         </button>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default GuidanceCollection;
