@@ -23,8 +23,8 @@ const Header = ({
     label: 'DISCOVERY',
     href: '#discovery'
   }, {
-    label: 'GIFT IDEAS',
-    href: '#gift-ideas'
+    label: 'THE CRAFT',
+    href: '/the-craft'
   }, {
     label: 'THE EXPERIENCE',
     href: '/the-experience'
