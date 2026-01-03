@@ -1,10 +1,5 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
-import OurStorySection from '@/components/OurStorySection';
-import OurPhilosophySection from '@/components/OurPhilosophySection';
-import TheExperienceSection from '@/components/TheExperienceSection';
-import TheCraftSection from '@/components/TheCraftSection';
-import OnlineOnlySection from '@/components/OnlineOnlySection';
 import GuidanceCollection from '@/components/GuidanceCollection';
 import OutlandsSection from '@/components/OutlandsSection';
 import LuxuryBodyLine from '@/components/LuxuryBodyLine';
@@ -13,7 +8,7 @@ import SohoFlagshipBoutique from '@/components/SohoFlagshipBoutique';
 import PerfectGift from '@/components/PerfectGift';
 import FeaturedProductsGrid from '@/components/FeaturedProductsGrid';
 import StoreLocatorSection from '@/components/StoreLocatorSection';
-import ClosingSection from '@/components/ClosingSection';
+import HouseOfAmouageSection from '@/components/HouseOfAmouageSection';
 import HighPerfumeryGallery from '@/components/HighPerfumeryGallery';
 import InsiderAccess from '@/components/InsiderAccess';
 import Footer from '@/components/Footer';
@@ -63,6 +58,10 @@ const Index = () => {
     console.log('Store Locator clicked - navigate to store locator page');
   };
 
+  const handleDiscoverStoryClick = () => {
+    console.log('Discover Our Story clicked - navigate to House of SUQA OUD page');
+  };
+
   return (
     <>
       <Helmet>
@@ -78,15 +77,7 @@ const Index = () => {
       <Header />
       
       <main>
-        {/* Hero & Brand Story */}
         <HeroSection onShopNowClick={handleShopNowClick} />
-        <OurStorySection />
-        <OurPhilosophySection />
-        <TheExperienceSection />
-        <TheCraftSection />
-        <OnlineOnlySection />
-        
-        {/* Collections & Products */}
         <GuidanceCollection onDiscoverClick={handleDiscoverClick} />
         <OutlandsSection onShopNowClick={handleOutlandsClick} />
         <LuxuryBodyLine onShopNowClick={handleBodyLineClick} />
@@ -95,9 +86,7 @@ const Index = () => {
         <PerfectGift onShopNowClick={handleGiftShopClick} />
         <FeaturedProductsGrid onProductClick={handleProductClick} />
         <StoreLocatorSection onStoreLocatorClick={handleStoreLocatorClick} />
-        
-        {/* Closing */}
-        <ClosingSection />
+        <HouseOfAmouageSection onDiscoverClick={handleDiscoverStoryClick} />
         <HighPerfumeryGallery />
         <InsiderAccess />
       </main>
