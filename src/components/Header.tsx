@@ -26,8 +26,8 @@ const Header = ({
     label: 'GIFT IDEAS',
     href: '#gift-ideas'
   }, {
-    label: 'HOUSE OF SUQA OUD',
-    href: '#house'
+    label: 'THE EXPERIENCE',
+    href: '/the-experience'
   }, {
     label: 'OUR STORY',
     href: '/our-story'
