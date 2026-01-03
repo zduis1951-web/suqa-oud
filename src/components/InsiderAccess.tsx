@@ -40,10 +40,10 @@ const InsiderAccess = () => {
         </p>
         
         <form onSubmit={handleSubmit} className="max-w-sm sm:max-w-md mx-auto mb-4 sm:mb-6 px-2">
-          <div className="flex items-center border-b border-gray-400 pb-2 bg-transparent">
-            <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t('insider.emailPlaceholder')} required className="flex-1 bg-transparent py-2 sm:py-3 outline-none text-sm sm:text-base text-foreground placeholder:text-muted-foreground min-h-[44px]" dir={isRTL ? 'rtl' : 'ltr'} />
-            <button type="submit" className="p-2 sm:p-3 hover:opacity-70 transition-opacity min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label={t('insider.subscribe')}>
-              <ArrowRight className={`w-5 h-5 sm:w-6 sm:h-6 text-foreground ${isRTL ? 'rotate-180' : ''}`} />
+          <div className="flex items-center border border-foreground/30 rounded-sm bg-white shadow-sm">
+            <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t('insider.emailPlaceholder')} required className="flex-1 bg-transparent px-4 py-3 sm:py-4 outline-none text-sm sm:text-base text-foreground placeholder:text-muted-foreground min-h-[48px]" dir={isRTL ? 'rtl' : 'ltr'} />
+            <button type="submit" className="px-4 sm:px-5 py-3 sm:py-4 bg-foreground text-background hover:bg-foreground/90 transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center" aria-label={t('insider.subscribe')}>
+              <ArrowRight className={`w-5 h-5 sm:w-6 sm:h-6 ${isRTL ? 'rotate-180' : ''}`} />
             </button>
           </div>
         </form>
