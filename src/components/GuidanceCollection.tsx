@@ -82,9 +82,7 @@ const GuidanceCollection = ({
       </div>
 
       {/* Play/Pause Control - Bottom Right */}
-      <button onClick={handlePlayPause} className="guidance-media-control" aria-label={isPlaying ? 'Pause video' : 'Play video'}>
-        {isPlaying ? <Pause className="h-8 w-8" aria-hidden="true" /> : <Play className="h-8 w-8" aria-hidden="true" />}
-      </button>
+      
     </section>;
 };
 export default GuidanceCollection;
