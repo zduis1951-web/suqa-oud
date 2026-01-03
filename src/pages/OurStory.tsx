@@ -16,6 +16,8 @@ import royal from '@/assets/products/royal.webp';
 import royalBox from '@/assets/products/royal-box.webp';
 import gcc from '@/assets/products/gcc.webp';
 import gccBox from '@/assets/products/gcc-box.webp';
+import discoverySet from '@/assets/products/discovery-set.webp';
+import discoverySetBox from '@/assets/products/discovery-set-box.webp';
 import ourStory1 from '@/assets/our-story-1.webp';
 
 const OurStory = () => {
@@ -37,6 +39,7 @@ const OurStory = () => {
     { id: 'highness', image: highness, hoverImage: highnessBox, name: "HIGHNESS", price: "AED 795" },
     { id: 'royal', image: royal, hoverImage: royalBox, name: "ROYAL", price: "AED 735" },
     { id: 'gcc', image: gcc, hoverImage: gccBox, name: "GCC", price: "AED 999" },
+    { id: 'discovery-set', image: discoverySet, hoverImage: discoverySetBox, name: "DISCOVERY SET", price: "AED 245" },
   ];
 
   return (
