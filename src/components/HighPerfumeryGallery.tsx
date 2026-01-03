@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Instagram } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import existenceImg from '@/assets/products/existence.jpg';
 import highnesGallery from '@/assets/gallery/highness-gallery.webp';
 import guidanceImg from '@/assets/products/guidance.jpg';
@@ -23,12 +24,15 @@ const galleryImages = [
 
 const HighPerfumeryGallery = () => {
   const galleryRef = useRef<HTMLDivElement>(null);
+  const { t, isRTL } = useLanguage();
 
   const scroll = (direction: 'left' | 'right') => {
     if (galleryRef.current) {
       const scrollAmount = galleryRef.current.clientWidth / 2;
+      // For RTL, reverse the scroll direction
+      const actualDirection = isRTL ? (direction === 'left' ? 'right' : 'left') : direction;
       galleryRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        left: actualDirection === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth'
       });
     }
@@ -47,7 +51,7 @@ const HighPerfumeryGallery = () => {
         transition={{ duration: 0.6 }}
         className="text-center uppercase tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] font-serif text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-foreground px-4"
       >
-        CRAFTED IN THE KINGDOM OF OUD
+        {t('gallery.title')}
       </motion.h2>
 
       {/* Gallery Container */}
@@ -55,11 +59,12 @@ const HighPerfumeryGallery = () => {
         {/* Left Arrow */}
         <button 
           onClick={() => scroll('left')}
-          className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 z-10
+          className={`absolute top-1/2 -translate-y-1/2 z-10
                      w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-white/90 backdrop-blur-sm
                      flex items-center justify-center hover:bg-white transition-colors
-                     shadow-md border border-gray-200 min-w-[44px] min-h-[44px]"
-          aria-label="Scroll left"
+                     shadow-md border border-gray-200 min-w-[44px] min-h-[44px]
+                     ${isRTL ? 'right-1 sm:right-2 md:right-4' : 'left-1 sm:left-2 md:left-4'}`}
+          aria-label={t('gallery.scrollLeft')}
         >
           <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-foreground" />
         </button>
@@ -69,6 +74,7 @@ const HighPerfumeryGallery = () => {
           ref={galleryRef}
           className="flex overflow-x-auto scroll-smooth gap-0.5 sm:gap-1"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          dir="ltr"
         >
           {galleryImages.map((item, index) => (
             <motion.a
@@ -98,11 +104,12 @@ const HighPerfumeryGallery = () => {
         {/* Right Arrow */}
         <button 
           onClick={() => scroll('right')}
-          className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 z-10
+          className={`absolute top-1/2 -translate-y-1/2 z-10
                      w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-white/90 backdrop-blur-sm
                      flex items-center justify-center hover:bg-white transition-colors
-                     shadow-md border border-gray-200 min-w-[44px] min-h-[44px]"
-          aria-label="Scroll right"
+                     shadow-md border border-gray-200 min-w-[44px] min-h-[44px]
+                     ${isRTL ? 'left-1 sm:left-2 md:left-4' : 'right-1 sm:right-2 md:right-4'}`}
+          aria-label={t('gallery.scrollRight')}
         >
           <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-foreground" />
         </button>

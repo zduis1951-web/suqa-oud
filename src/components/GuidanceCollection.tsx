@@ -1,7 +1,6 @@
-import { useState } from 'react';
-
 // Import Our Story background image
 import ourStoryBgImage from '@/assets/our-story-bg.jpg';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 /**
  * Guidance Collection Promotional Section
@@ -17,6 +16,8 @@ interface GuidanceCollectionProps {
 const GuidanceCollection = ({
   onDiscoverClick
 }: GuidanceCollectionProps) => {
+  const { t } = useLanguage();
+
   const handleDiscoverClick = () => {
     if (onDiscoverClick) {
       onDiscoverClick();
@@ -44,12 +45,12 @@ const GuidanceCollection = ({
       <div className="guidance-content px-4">
         {/* Section Title */}
         <h2 className="guidance-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[0.2em] sm:tracking-[0.3em] md:tracking-luxury">
-          SUQA OUD
+          {t('guidance.title')}
         </h2>
         
         {/* Description */}
         <p className="text-xs sm:text-sm md:text-base max-w-sm sm:max-w-md lg:max-w-lg mx-auto text-center leading-relaxed mb-6 sm:mb-8 px-2 font-light text-white">
-          YOU DON'T REACH FOR IT TO BE NOTICED. YOU REACH FOR IT WHEN YOU WANT LUXURY TO FEEL EFFORTLESS.
+          {t('guidance.description')}
         </p>
 
         {/* CTA Button */}
@@ -58,7 +59,7 @@ const GuidanceCollection = ({
           className="btn-guidance px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 text-xs sm:text-sm min-h-[44px] min-w-[140px]" 
           aria-label="Discover more about SUQA OUD"
         >
-          DISCOVER MORE
+          {t('guidance.discoverMore')}
         </button>
       </div>
     </section>

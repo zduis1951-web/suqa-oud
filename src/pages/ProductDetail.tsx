@@ -112,12 +112,12 @@ const ProductDetail = () => {
       <div className="min-h-screen bg-background">
         <Header />
         <div className="flex flex-col items-center justify-center min-h-[60vh] px-4">
-          <h1 className="text-2xl font-light tracking-widest uppercase mb-4">Product Not Found</h1>
+          <h1 className="text-2xl font-light tracking-widest uppercase mb-4">{t('products.productNotFound')}</h1>
           <button 
             onClick={() => navigate('/')}
             className="text-sm tracking-widest uppercase underline underline-offset-4 hover:opacity-70 transition-opacity"
           >
-            Return Home
+            {t('products.returnHome')}
           </button>
         </div>
         <Footer />
@@ -145,7 +145,7 @@ const ProductDetail = () => {
             className="flex items-center gap-2 text-sm tracking-wider uppercase opacity-70 hover:opacity-100 transition-opacity"
           >
             <ArrowLeft className="h-4 w-4" />
-            <span>{isRTL ? 'رجوع' : 'Back'}</span>
+            <span>{t('products.back')}</span>
           </button>
         </div>
 
@@ -244,7 +244,7 @@ const ProductDetail = () => {
                 }`}
               >
                 <Gift className="h-4 w-4" />
-                <span>{isRTL ? 'اجعلها هدية' : 'MAKE IT A GIFT'}</span>
+                <span>{t('products.makeItGift')}</span>
               </button>
               <button 
                 onClick={() => setEngrave(!engrave)}
@@ -253,7 +253,7 @@ const ProductDetail = () => {
                 }`}
               >
                 <PenTool className="h-4 w-4" />
-                <span>{isRTL ? 'نقش على الزجاجة' : 'ENGRAVE MY BOTTLE'}</span>
+                <span>{t('products.engrave')}</span>
               </button>
             </div>
 
@@ -264,7 +264,7 @@ const ProductDetail = () => {
               onClick={handleAddToBag}
               className="w-full bg-primary text-primary-foreground py-4 lg:py-5 text-sm tracking-[0.2em] uppercase font-medium hover:bg-primary/90 transition-colors mb-8"
             >
-              {isRTL ? 'أضف إلى الحقيبة' : 'ADD TO BAG'}
+              {t('products.addToBag')}
             </motion.button>
 
             {/* Divider */}
@@ -274,7 +274,7 @@ const ProductDetail = () => {
             <Accordion type="single" collapsible className="mb-8">
               <AccordionItem value="description" className="border-b border-border">
                 <AccordionTrigger className="text-xs tracking-[0.15em] uppercase py-5 hover:no-underline">
-                  {isRTL ? 'وصف المنتج' : 'PRODUCT DESCRIPTION'}
+                  {t('products.productDescription')}
                 </AccordionTrigger>
                 <AccordionContent className="text-sm leading-relaxed text-muted-foreground pb-5">
                   {product.node.description || 'A luxurious fragrance crafted with the finest ingredients, designed to evoke elegance and sophistication.'}
@@ -282,12 +282,12 @@ const ProductDetail = () => {
               </AccordionItem>
               <AccordionItem value="notes" className="border-b border-border">
                 <AccordionTrigger className="text-xs tracking-[0.15em] uppercase py-5 hover:no-underline">
-                  {isRTL ? 'المكونات والروائح' : 'NOTES & INGREDIENTS'}
+                  {t('products.notesIngredients')}
                 </AccordionTrigger>
                 <AccordionContent className="text-sm leading-relaxed text-muted-foreground pb-5">
-                  <p className="mb-3"><strong>{isRTL ? 'المقدمة:' : 'Top Notes:'}</strong> {isRTL ? 'بخور، زعفران' : 'Incense, Saffron'}</p>
-                  <p className="mb-3"><strong>{isRTL ? 'القلب:' : 'Heart Notes:'}</strong> {isRTL ? 'عود، ورد' : 'Oud, Rose'}</p>
-                  <p><strong>{isRTL ? 'القاعدة:' : 'Base Notes:'}</strong> {isRTL ? 'مسك، عنبر' : 'Musk, Amber'}</p>
+                  <p className="mb-3"><strong>{t('products.topNotes')}</strong> {isRTL ? 'بخور، زعفران' : 'Incense, Saffron'}</p>
+                  <p className="mb-3"><strong>{t('products.heartNotes')}</strong> {isRTL ? 'عود، ورد' : 'Oud, Rose'}</p>
+                  <p><strong>{t('products.baseNotes')}</strong> {isRTL ? 'مسك، عنبر' : 'Musk, Amber'}</p>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -299,7 +299,7 @@ const ProductDetail = () => {
                   <Package className="h-4 w-4" />
                 </div>
                 <span className="text-[10px] tracking-wider uppercase text-center text-muted-foreground">
-                  {isRTL ? 'عينات مجانية' : 'Complimentary Samples'}
+                  {t('products.complimentarySamples')}
                 </span>
               </div>
               <div className="flex flex-col items-center gap-2 flex-1 min-w-[80px]">
@@ -307,7 +307,7 @@ const ProductDetail = () => {
                   <Gift className="h-4 w-4" />
                 </div>
                 <span className="text-[10px] tracking-wider uppercase text-center text-muted-foreground">
-                  {isRTL ? 'تغليف هدايا' : 'Gift Wrapping'}
+                  {t('products.giftWrapping')}
                 </span>
               </div>
               <div className="flex flex-col items-center gap-2 flex-1 min-w-[80px]">
@@ -315,7 +315,7 @@ const ProductDetail = () => {
                   <Phone className="h-4 w-4" />
                 </div>
                 <span className="text-[10px] tracking-wider uppercase text-center text-muted-foreground">
-                  {isRTL ? 'خدمة العملاء' : 'Customer Service'}
+                  {t('products.customerService')}
                 </span>
               </div>
             </div>

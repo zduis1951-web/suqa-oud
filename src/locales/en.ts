@@ -21,11 +21,95 @@ export const en = {
     ourPhilosophy: 'OUR PHILOSOPHY',
   },
   
-  // Hero
+  // Hero Section
   hero: {
     title: 'TO BE ROYAL IS TO BREATHE THE KINGDOM OF OUD',
     subtitle: 'Where luxury is felt inwardly, presence is natural, and value is created — not borrowed.',
-    shopNow: 'Shop Now',
+    shopNow: 'SHOP NOW',
+    brandTitle: 'A NEW DUO OF MAJESTIC COMPOSITIONS',
+    mainHeadline: 'THE POWER OF THE INFINITE',
+    tagline: 'To be royal is to breathe the kingdom of oud.',
+    pauseVideo: 'Pause video',
+    playVideo: 'Play video',
+  },
+  
+  // Guidance Collection
+  guidance: {
+    title: 'SUQA OUD',
+    description: "YOU DON'T REACH FOR IT TO BE NOTICED. YOU REACH FOR IT WHEN YOU WANT LUXURY TO FEEL EFFORTLESS.",
+    discoverMore: 'DISCOVER MORE',
+  },
+  
+  // Outlands Section (Perfect Gift)
+  outlands: {
+    title: 'COMPLIMENTARY WRAPPING AND PERSONALIZATION CHOICES. A GIFT FIT FOR KINGS.',
+    description: 'THE PERFECT GIFT',
+    explore: 'EXPLORE',
+    pauseVideo: 'Pause video',
+    playVideo: 'Play video',
+  },
+  
+  // Luxury Body Line
+  luxuryBody: {
+    title: "THERE IS A FORM OF LUXURY THAT DOESN'T ANNOUNCE ITSELF.",
+    description: 'OUR PHILOSOPHY',
+    explore: 'EXPLORE',
+  },
+  
+  // Power of the Infinite (The Experience)
+  powerInfinite: {
+    title: "IT DOESN'T SEEK ATTENTION. IT CREATES A FEELING OF COMPOSURE.",
+    description: 'THE EXPERIENCE',
+    explore: 'EXPLORE',
+  },
+  
+  // Soho Flagship Boutique
+  soho: {
+    title: 'CRAFTED FOR THE EXTRAORDINARY',
+    subtitle: 'THE ESSENCE OF REFINEMENT',
+    explore: 'EXPLORE',
+    pauseVideo: 'Pause video',
+    playVideo: 'Play video',
+  },
+  
+  // Perfect Gift (The Craft)
+  perfectGift: {
+    title: 'THIS IS NOT EXCESS. THIS IS INTENTION.',
+    description: 'THE CRAFT',
+    discover: 'DISCOVER',
+  },
+  
+  // Store Locator
+  storeLocator: {
+    title: 'EXCLUSIVELY ONLINE',
+    shopNow: 'SHOP NOW',
+  },
+  
+  // House of SUQA OUD
+  houseOfSuqa: {
+    tagline: 'TO BE ROYAL IS TO BREATHE THE KINGDOM OF OUD',
+    title: 'DISCOVER OUR STORY',
+    learnMore: 'LEARN MORE',
+  },
+  
+  // High Perfumery Gallery
+  gallery: {
+    title: 'CRAFTED IN THE KINGDOM OF OUD',
+    scrollLeft: 'Scroll left',
+    scrollRight: 'Scroll right',
+  },
+  
+  // Insider Access (Newsletter)
+  insider: {
+    title: 'JOIN THE KING{D}OM',
+    description: 'Receive exclusive content and news from The House of SUQA OUD and be the first to know about product launches and special announcements.',
+    emailPlaceholder: 'E-mail',
+    subscribe: 'Subscribe',
+    termsNotice: 'By clicking subscribe, you are accepting our',
+    termsLink: 'Terms and Conditions',
+    andText: 'and',
+    privacyLink: 'Privacy Policy',
+    unsubscribeNotice: '. You can unsubscribe at anytime.',
   },
   
   // Cart
@@ -90,6 +174,12 @@ export const en = {
     complimentarySamples: 'Complimentary Samples',
     giftWrapping: 'Gift Wrapping',
     customerService: 'Customer Service',
+    back: 'Back',
+    productNotFound: 'Product Not Found',
+    returnHome: 'Return Home',
+    topNotes: 'Top Notes:',
+    heartNotes: 'Heart Notes:',
+    baseNotes: 'Base Notes:',
   },
   
   // Common
@@ -104,22 +194,42 @@ export const en = {
     shopNow: 'Shop Now',
     discover: 'Discover',
     learnMore: 'Learn More',
+    explore: 'Explore',
   },
   
   // Footer
   footer: {
     newsletter: 'Newsletter',
     subscribeText: 'Subscribe to receive updates and exclusive offers',
-    emailPlaceholder: 'Enter your email',
+    emailPlaceholder: 'E-mail',
     subscribe: 'Subscribe',
     customerService: 'Customer Service',
     aboutUs: 'About Us',
     legal: 'Legal',
-    followUs: 'Follow Us',
+    followUs: 'Follow us for exclusive news and updates:',
     privacyPolicy: 'Privacy Policy',
     shippingPolicy: 'Shipping Policy',
     returnPolicy: 'Return Policy',
     contactUs: 'Contact Us',
+    brandName: 'SUQA OUD',
+    brandDescription: 'High Perfumery from the Sultanate of Oman, founded in 2022.',
+    houseOfSuqa: 'The House of SUQA OUD',
+    storeLocator: 'Store Locator',
+    ourStory: 'Our Story – The Gift Of Kings',
+    ourPhilosophy: 'Our Philosophy',
+    visitorCentre: "Visitor's Centre",
+    paymentMethods: 'Payment Methods',
+    accessibilityStatement: 'Accessibility Statement',
+    helpCenter: 'Help Center',
+    termsConditions: 'Terms & Conditions',
+    cookiePolicy: 'Cookie Policy',
+    signUp: 'Sign Up',
+    signUpDescription: 'Subscribe and be the first to know about new launches and exclusive news from The House of SUQA OUD.',
+    termsNotice: 'By clicking subscribe, you are accepting our',
+    termsLink: 'Terms and Conditions',
+    andText: 'and',
+    unsubscribeNotice: '. You can unsubscribe at anytime.',
+    copyright: '© 2024 SUQA OUD. All rights reserved.',
   },
   
   // Announcements

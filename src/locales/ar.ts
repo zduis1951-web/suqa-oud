@@ -21,11 +21,95 @@ export const ar = {
     ourPhilosophy: 'فلسفتنا',
   },
   
-  // Hero
+  // Hero Section
   hero: {
     title: 'أن تكون ملكياً هو أن تتنفس مملكة العود',
     subtitle: 'حيث الفخامة تُشعر من الداخل، والحضور طبيعي، والقيمة تُخلق ولا تُستعار.',
     shopNow: 'تسوق الآن',
+    brandTitle: 'ثنائي جديد من التراكيب الملكية',
+    mainHeadline: 'قوة اللانهاية',
+    tagline: 'أن تكون ملكياً هو أن تتنفس مملكة العود.',
+    pauseVideo: 'إيقاف الفيديو',
+    playVideo: 'تشغيل الفيديو',
+  },
+  
+  // Guidance Collection
+  guidance: {
+    title: 'سوقا عود',
+    description: 'لا تصل إليه لتلفت الانتباه. تصل إليه عندما تريد أن تشعر الفخامة بلا جهد.',
+    discoverMore: 'اكتشف المزيد',
+  },
+  
+  // Outlands Section (Perfect Gift)
+  outlands: {
+    title: 'تغليف مجاني وخيارات تخصيص. هدية تليق بالملوك.',
+    description: 'الهدية المثالية',
+    explore: 'استكشف',
+    pauseVideo: 'إيقاف الفيديو',
+    playVideo: 'تشغيل الفيديو',
+  },
+  
+  // Luxury Body Line
+  luxuryBody: {
+    title: 'هناك شكل من الفخامة لا يعلن عن نفسه.',
+    description: 'فلسفتنا',
+    explore: 'استكشف',
+  },
+  
+  // Power of the Infinite (The Experience)
+  powerInfinite: {
+    title: 'لا يسعى للفت الانتباه. بل يخلق شعوراً بالهدوء.',
+    description: 'التجربة',
+    explore: 'استكشف',
+  },
+  
+  // Soho Flagship Boutique
+  soho: {
+    title: 'صُنعت للاستثنائيين',
+    subtitle: 'جوهر الرقي',
+    explore: 'استكشف',
+    pauseVideo: 'إيقاف الفيديو',
+    playVideo: 'تشغيل الفيديو',
+  },
+  
+  // Perfect Gift (The Craft)
+  perfectGift: {
+    title: 'هذا ليس إسرافاً. هذه نية.',
+    description: 'الحرفة',
+    discover: 'اكتشف',
+  },
+  
+  // Store Locator
+  storeLocator: {
+    title: 'حصرياً عبر الإنترنت',
+    shopNow: 'تسوق الآن',
+  },
+  
+  // House of SUQA OUD
+  houseOfSuqa: {
+    tagline: 'أن تكون ملكياً هو أن تتنفس مملكة العود',
+    title: 'اكتشف قصتنا',
+    learnMore: 'اعرف المزيد',
+  },
+  
+  // High Perfumery Gallery
+  gallery: {
+    title: 'صُنعت في مملكة العود',
+    scrollLeft: 'التمرير لليسار',
+    scrollRight: 'التمرير لليمين',
+  },
+  
+  // Insider Access (Newsletter)
+  insider: {
+    title: 'انضم إلى المـ{ل}ـكة',
+    description: 'احصل على محتوى حصري وأخبار من دار سوقا عود وكن أول من يعلم عن إطلاق المنتجات والإعلانات الخاصة.',
+    emailPlaceholder: 'البريد الإلكتروني',
+    subscribe: 'اشترك',
+    termsNotice: 'بالنقر على اشتراك، فإنك توافق على',
+    termsLink: 'الشروط والأحكام',
+    andText: 'و',
+    privacyLink: 'سياسة الخصوصية',
+    unsubscribeNotice: '. يمكنك إلغاء الاشتراك في أي وقت.',
   },
   
   // Cart
@@ -90,6 +174,12 @@ export const ar = {
     complimentarySamples: 'عينات مجانية',
     giftWrapping: 'تغليف هدايا',
     customerService: 'خدمة العملاء',
+    back: 'رجوع',
+    productNotFound: 'المنتج غير موجود',
+    returnHome: 'العودة للرئيسية',
+    topNotes: 'المقدمة:',
+    heartNotes: 'القلب:',
+    baseNotes: 'القاعدة:',
   },
   
   // Common
@@ -104,22 +194,42 @@ export const ar = {
     shopNow: 'تسوق الآن',
     discover: 'اكتشف',
     learnMore: 'اعرف المزيد',
+    explore: 'استكشف',
   },
   
   // Footer
   footer: {
     newsletter: 'النشرة البريدية',
     subscribeText: 'اشترك للحصول على التحديثات والعروض الحصرية',
-    emailPlaceholder: 'أدخل بريدك الإلكتروني',
+    emailPlaceholder: 'البريد الإلكتروني',
     subscribe: 'اشتراك',
     customerService: 'خدمة العملاء',
     aboutUs: 'من نحن',
     legal: 'قانوني',
-    followUs: 'تابعنا',
+    followUs: 'تابعنا للحصول على آخر الأخبار والتحديثات:',
     privacyPolicy: 'سياسة الخصوصية',
     shippingPolicy: 'سياسة الشحن',
     returnPolicy: 'سياسة الإرجاع',
     contactUs: 'اتصل بنا',
+    brandName: 'سوقا عود',
+    brandDescription: 'عطور فاخرة من سلطنة عمان، تأسست في 2022.',
+    houseOfSuqa: 'دار سوقا عود',
+    storeLocator: 'محدد المتاجر',
+    ourStory: 'قصتنا - هدية الملوك',
+    ourPhilosophy: 'فلسفتنا',
+    visitorCentre: 'مركز الزوار',
+    paymentMethods: 'طرق الدفع',
+    accessibilityStatement: 'بيان إمكانية الوصول',
+    helpCenter: 'مركز المساعدة',
+    termsConditions: 'الشروط والأحكام',
+    cookiePolicy: 'سياسة ملفات تعريف الارتباط',
+    signUp: 'اشترك',
+    signUpDescription: 'اشترك وكن أول من يعلم عن الإطلاقات الجديدة والأخبار الحصرية من دار سوقا عود.',
+    termsNotice: 'بالنقر على اشتراك، فإنك توافق على',
+    termsLink: 'الشروط والأحكام',
+    andText: 'و',
+    unsubscribeNotice: '. يمكنك إلغاء الاشتراك في أي وقت.',
+    copyright: '© 2024 سوقا عود. جميع الحقوق محفوظة.',
   },
   
   // Announcements
