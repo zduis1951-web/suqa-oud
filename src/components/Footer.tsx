@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -122,9 +123,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-cream/70 text-sm hover:text-cream transition-colors">
+                <Link to="/privacy-policy" className="text-cream/70 text-sm hover:text-cream transition-colors">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-cream/70 text-sm hover:text-cream transition-colors">
@@ -164,9 +165,9 @@ const Footer = () => {
                 Terms and Conditions
               </a>{' '}
               and{' '}
-              <a href="#" className="underline hover:text-cream transition-colors">
+              <Link to="/privacy-policy" className="underline hover:text-cream transition-colors">
                 Privacy Policy
-              </a>
+              </Link>
               . You can unsubscribe at anytime.
             </p>
           </div>
