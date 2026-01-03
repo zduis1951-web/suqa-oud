@@ -42,7 +42,7 @@ const GuidanceCollection = ({
         </h2>
         
         {/* Description */}
-        <p className="text-xs sm:text-sm max-w-sm sm:max-w-md lg:max-w-lg mx-auto text-center leading-relaxed mb-6 sm:mb-8 px-2 font-light text-white md:text-xl">
+        <p className="text-xs sm:text-sm max-w-sm sm:max-w-md lg:max-w-lg mx-auto text-center leading-relaxed mb-6 sm:mb-8 font-light text-white md:text-xl px-[4px]">
           {t('guidance.description')}
         </p>
 
