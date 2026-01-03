@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Pause, Play } from 'lucide-react';
 import heroVideo from '@/assets/hero-video.mp4';
 import { useLanguage } from '@/contexts/LanguageContext';
-
+import { HoverButton } from '@/components/ui/hover-button';
 interface HeroSectionProps {
   onShopNowClick?: () => void;
 }
@@ -79,13 +79,12 @@ const HeroSection = ({
 
           {/* CTA Button */}
           <div className="animate-fade-in-up animation-delay-200 mt-6 sm:mt-8 md:mt-10">
-            <button 
+            <HoverButton 
               onClick={handleShopNowClick} 
-              aria-label="Discover SUQA OUD" 
-              className="border border-cream px-6 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-sm font-light tracking-[0.15em] sm:tracking-[0.2em] transition-all duration-300 bg-cream text-gold hover:bg-transparent hover:text-cream min-h-[44px] min-w-[140px]"
+              aria-label="Discover SUQA OUD"
             >
               {t('hero.shopNow')}
-            </button>
+            </HoverButton>
           </div>
         </div>
       </div>

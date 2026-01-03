@@ -1,5 +1,6 @@
 import theCraftBg from '@/assets/the-craft-bg.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { HoverButton } from '@/components/ui/hover-button';
 
 interface PowerOfTheInfiniteProps {
   onShopNowClick?: () => void;
@@ -47,13 +48,12 @@ const PowerOfTheInfinite = ({
         </p>
         
         {/* Explore Button */}
-        <button 
+        <HoverButton 
           onClick={onShopNowClick} 
-          className="px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 bg-cream text-gold text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] font-light border border-transparent hover:bg-transparent hover:text-cream hover:border-cream transition-all duration-300 min-h-[44px] min-w-[120px]" 
           aria-label="Explore The Craft"
         >
           {t('powerInfinite.explore')}
-        </button>
+        </HoverButton>
       </div>
       
       {/* Accessibility Icon - Bottom Left */}

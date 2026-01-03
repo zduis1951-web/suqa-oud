@@ -1,5 +1,6 @@
 import suqaOudGcc from '@/assets/suqa-oud-gcc.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { HoverButton } from '@/components/ui/hover-button';
 
 /**
  * PerfectGift Section
@@ -50,13 +51,12 @@ const PerfectGift = ({
         </p>
 
         {/* CTA Button */}
-        <button 
+        <HoverButton 
           onClick={onShopNowClick} 
-          className="border border-gold text-gold bg-cream px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-300 hover:bg-transparent hover:text-cream hover:border-cream mt-6 sm:mt-8 min-h-[44px] min-w-[120px]" 
-          style={{ fontFamily: 'var(--font-primary)' }}
+          className="mt-6 sm:mt-8"
         >
           {t('perfectGift.discover')}
-        </button>
+        </HoverButton>
       </div>
 
       {/* Accessibility Icon - Bottom Left */}

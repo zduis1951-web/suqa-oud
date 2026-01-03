@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { Pause, Play } from 'lucide-react';
 import onlineOnlyVideo from '@/assets/online-only-video.mp4';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { HoverButton } from '@/components/ui/hover-button';
 
 interface SohoFlagshipBoutiqueProps {
   onDiscoverMoreClick?: () => void;
@@ -61,13 +62,11 @@ const SohoFlagshipBoutique = ({
         </p>
 
         {/* CTA Button */}
-        <button 
-          onClick={onDiscoverMoreClick} 
-          className="border border-cream text-gold bg-cream px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-300 hover:bg-transparent hover:text-cream min-h-[44px] min-w-[120px]" 
-          style={{ fontFamily: 'var(--font-primary)' }}
+        <HoverButton 
+          onClick={onDiscoverMoreClick}
         >
           {t('soho.explore')}
-        </button>
+        </HoverButton>
       </div>
 
       {/* Media Control - Play/Pause - Bottom Right */}
