@@ -36,7 +36,7 @@ export const en = {
   // Guidance Collection
   guidance: {
     title: 'SUQA OUD',
-    description: "Check our signature perfume",
+    description: "CHECK OUR SIGNATURE PERFUME",
     discoverMore: 'DISCOVER MORE',
   },
   
