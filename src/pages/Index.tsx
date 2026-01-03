@@ -14,6 +14,15 @@ import InsiderAccess from '@/components/InsiderAccess';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Helmet } from 'react-helmet-async';
+import AmouageProductCard from '@/components/AmouageProductCard';
+import guidanceImage from '@/assets/products/guidance.jpg';
+import guidanceBox from '@/assets/products/guidance-box.jpg';
+import existenceImage from '@/assets/products/existence.jpg';
+import existenceBox from '@/assets/products/existence-box.jpg';
+import reflectionManImage from '@/assets/products/reflection-man.jpg';
+import reflectionManBox from '@/assets/products/reflection-man-box.jpg';
+import purpose50Image from '@/assets/products/purpose-50.png';
+import purpose50Box from '@/assets/products/purpose-50-box.jpg';
 
 /**
  * SUQA OUD Homepage
@@ -77,6 +86,67 @@ const Index = () => {
       <Header />
       
       <main>
+        <section style={{
+          padding: '120px 40px 60px',
+          backgroundColor: '#f7f4ef',
+        }}>
+          <h2 style={{
+            fontFamily: 'Assistant, sans-serif',
+            fontSize: '14px',
+            fontWeight: 400,
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
+            textAlign: 'center',
+            marginBottom: '40px',
+            color: '#121212',
+          }}>
+            Product Card Demo
+          </h2>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '0px',
+            flexWrap: 'wrap',
+            maxWidth: '1400px',
+            margin: '0 auto',
+            borderRight: '1.5px solid rgb(53, 53, 53)',
+            width: 'fit-content',
+          }}>
+            <AmouageProductCard
+              product={{
+                name: "Reflection Man",
+                price: "$395",
+                image: reflectionManImage,
+                hoverImage: reflectionManBox,
+              }}
+            />
+            <AmouageProductCard
+              product={{
+                name: "Guidance",
+                price: "$395",
+                image: guidanceImage,
+                hoverImage: guidanceBox,
+              }}
+            />
+            <AmouageProductCard
+              product={{
+                name: "Existence",
+                price: "$395",
+                image: existenceImage,
+                hoverImage: existenceBox,
+                isNew: true,
+              }}
+            />
+            <AmouageProductCard
+              product={{
+                name: "Purpose 50",
+                price: "$550",
+                image: purpose50Image,
+                hoverImage: purpose50Box,
+              }}
+            />
+          </div>
+        </section>
         <HeroSection onShopNowClick={handleShopNowClick} />
         <GuidanceCollection onDiscoverClick={handleDiscoverClick} />
         <OutlandsSection onShopNowClick={handleOutlandsClick} />
