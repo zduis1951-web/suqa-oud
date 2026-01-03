@@ -31,6 +31,9 @@ const Header = ({
   }, {
     label: 'OUR STORY',
     href: '/our-story'
+  }, {
+    label: 'OUR PHILOSOPHY',
+    href: '/our-philosophy'
   }];
   useEffect(() => {
     const handleScroll = () => {
