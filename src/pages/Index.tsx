@@ -14,6 +14,7 @@ import InsiderAccess from '@/components/InsiderAccess';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Helmet } from 'react-helmet-async';
+import { handleDirectPurchase } from '@/lib/shopify';
 
 /**
  * SUQA OUD Homepage
@@ -50,8 +51,8 @@ const Index = () => {
     console.log('Perfect Gift Shop Now clicked - navigate to gifting collection');
   };
 
-  const handleProductClick = (productId: string) => {
-    console.log(`Product clicked: ${productId} - navigate to product page`);
+  const handleProductClick = async (productHandle: string) => {
+    await handleDirectPurchase(productHandle);
   };
 
   const handleStoreLocatorClick = () => {
