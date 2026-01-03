@@ -19,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        body: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        display: ['"Sakkal Majalla"', 'serif'],
+        body: ['"Sakkal Majalla"', 'sans-serif'],
       },
       colors: {
         /* Signature Cream Palette */
