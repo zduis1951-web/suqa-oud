@@ -12,6 +12,7 @@ import HouseOfAmouageSection from '@/components/HouseOfAmouageSection';
 import HighPerfumeryGallery from '@/components/HighPerfumeryGallery';
 import InsiderAccess from '@/components/InsiderAccess';
 import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
 import { Helmet } from 'react-helmet-async';
 
 /**
@@ -91,6 +92,7 @@ const Index = () => {
       </main>
       
       <Footer />
+      <ScrollToTop />
     </>
   );
 };
