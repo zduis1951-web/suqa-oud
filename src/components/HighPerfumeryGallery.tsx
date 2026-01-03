@@ -5,7 +5,7 @@ import existenceImg from '@/assets/products/existence.jpg';
 import highnesGallery from '@/assets/gallery/highness-gallery.webp';
 import guidanceImg from '@/assets/products/guidance.jpg';
 import royalGallery from '@/assets/gallery/royal-gallery.webp';
-import purposeImg from '@/assets/products/purpose-50.png';
+import discoverySetGallery from '@/assets/gallery/discovery-set-gallery.webp';
 import vidaGallery from '@/assets/gallery/vida-gallery.webp';
 import reflectionImg from '@/assets/products/reflection-man.jpg';
 import privilegeGallery from '@/assets/gallery/privilege-gallery.webp';
@@ -15,7 +15,7 @@ const galleryImages = [
   { id: 2, image: highnesGallery, alt: 'SUQA OUD Highness' },
   { id: 3, image: guidanceImg, alt: 'SUQA OUD Guidance' },
   { id: 4, image: royalGallery, alt: 'SUQA OUD Royal' },
-  { id: 5, image: purposeImg, alt: 'SUQA OUD Purpose' },
+  { id: 5, image: discoverySetGallery, alt: 'SUQA OUD Discovery Set' },
   { id: 6, image: vidaGallery, alt: 'SUQA OUD Vida' },
   { id: 7, image: reflectionImg, alt: 'SUQA OUD Reflection' },
   { id: 8, image: privilegeGallery, alt: 'SUQA OUD Privilege' },
