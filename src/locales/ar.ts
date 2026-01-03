@@ -82,6 +82,14 @@ export const ar = {
     viewDetails: 'عرض التفاصيل',
     outOfStock: 'نفذت الكمية',
     new: 'جديد',
+    addToBag: 'أضف إلى الحقيبة',
+    makeItGift: 'اجعلها هدية',
+    engrave: 'نقش على الزجاجة',
+    productDescription: 'وصف المنتج',
+    notesIngredients: 'المكونات والروائح',
+    complimentarySamples: 'عينات مجانية',
+    giftWrapping: 'تغليف هدايا',
+    customerService: 'خدمة العملاء',
   },
   
   // Common

@@ -82,6 +82,14 @@ export const en = {
     viewDetails: 'View Details',
     outOfStock: 'Out of Stock',
     new: 'NEW',
+    addToBag: 'ADD TO BAG',
+    makeItGift: 'MAKE IT A GIFT',
+    engrave: 'ENGRAVE MY BOTTLE',
+    productDescription: 'PRODUCT DESCRIPTION',
+    notesIngredients: 'NOTES & INGREDIENTS',
+    complimentarySamples: 'Complimentary Samples',
+    giftWrapping: 'Gift Wrapping',
+    customerService: 'Customer Service',
   },
   
   // Common
