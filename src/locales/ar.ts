@@ -43,7 +43,7 @@ export const ar = {
   // Outlands Section (Perfect Gift)
   outlands: {
     title: 'لا تعرف أي عطر تختار؟ لا تتردد في تجربتها جميعاً!',
-    description: 'الهدية المثالية',
+    description: 'طقم الاكتشاف',
     explore: 'استكشف',
     pauseVideo: 'إيقاف الفيديو',
     playVideo: 'تشغيل الفيديو',

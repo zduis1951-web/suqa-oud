@@ -43,7 +43,7 @@ export const en = {
   // Outlands Section (Perfect Gift)
   outlands: {
     title: "DON'T KNOW WHICH PERFUME TO CHOOSE? FEEL FREE TO TRY ALL OF THEM!",
-    description: 'THE PERFECT GIFT',
+    description: 'DISCOVERY SET',
     explore: 'EXPLORE',
     pauseVideo: 'Pause video',
     playVideo: 'Play video',
