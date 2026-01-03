@@ -36,7 +36,7 @@ export const ar = {
   // Guidance Collection
   guidance: {
     title: 'سوقا عود',
-    description: 'لا تصل إليه لتلفت الانتباه. تصل إليه عندما تريد أن تشعر الفخامة بلا جهد.',
+    description: 'اكتشف عطرنا المميز',
     discoverMore: 'اكتشف المزيد',
   },
   
