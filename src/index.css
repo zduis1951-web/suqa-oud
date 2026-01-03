@@ -24,48 +24,51 @@
 @layer base {
   :root {
     /* =============================================
-       AMOUAGE LUXURY PALETTE
-       PRIMARY SIGNATURE COLOR: #EEE5DA
-       HSL Equivalent: 33 37% 89%
+       SUQA OUD BRAND PALETTE
        ============================================= */
     
-    /* ===== THE SIGNATURE CREAM #EEE5DA ===== */
-    --cream-signature: 33 37% 89%;
-    --cream-light: 33 40% 94%;
-    --cream-dark: 33 35% 84%;
+    /* ===== BEIGE #FAF6F0 ===== */
+    --cream-signature: 40 56% 96%;
+    --cream-light: 40 60% 98%;
+    --cream-dark: 42 36% 87%;
     
-    /* ===== LUXE DARK BROWN ===== */
-    --brown-deep: 25 30% 12%;
-    --brown-medium: 25 25% 20%;
-    --brown-light: 25 20% 35%;
+    /* ===== CREAM BEIGE #E8E3D5 ===== */
+    --brown-deep: 42 36% 87%;
+    --brown-medium: 42 30% 80%;
+    --brown-light: 42 25% 75%;
+    
+    /* ===== GOLD TEXT COLOR ===== */
+    --gold: 43 75% 45%;
+    --gold-light: 43 70% 55%;
+    --gold-dark: 43 80% 35%;
     
     /* ===== CORE BACKGROUNDS ===== */
     --background: var(--cream-signature);
-    --foreground: 0 0% 0%;
+    --foreground: var(--gold);
 
     /* Card Surfaces */
     --card: var(--cream-light);
-    --card-foreground: 0 0% 0%;
+    --card-foreground: var(--gold);
 
     /* Popover */
     --popover: var(--cream-light);
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: var(--gold);
 
-    /* Primary - Black Text */
-    --primary: 0 0% 0%;
+    /* Primary - Gold Text */
+    --primary: var(--gold);
     --primary-foreground: var(--cream-signature);
 
     /* Secondary - Cream Variant */
     --secondary: var(--cream-dark);
-    --secondary-foreground: 0 0% 0%;
+    --secondary-foreground: var(--gold);
 
     /* Muted */
-    --muted: 30 20% 80%;
-    --muted-foreground: 0 0% 20%;
+    --muted: 40 30% 90%;
+    --muted-foreground: var(--gold-light);
 
-    /* Accent - Champagne Gold */
-    --accent: 38 40% 78%;
-    --accent-foreground: 0 0% 0%;
+    /* Accent - Gold */
+    --accent: var(--gold-light);
+    --accent-foreground: var(--cream-signature);
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -73,7 +76,7 @@
     /* Borders & Inputs */
     --border: var(--cream-dark);
     --input: var(--cream-dark);
-    --ring: 0 0% 0%;
+    --ring: var(--gold);
 
     --radius: 0rem;
 
@@ -81,31 +84,31 @@
     --hero-overlay: 25 25% 8%;
     --hero-text: var(--cream-signature);
     --hero-button-bg: var(--cream-signature);
-    --hero-button-text: 0 0% 0%;
-    --hero-button-border: var(--cream-dark);
+    --hero-button-text: var(--gold);
+    --hero-button-border: var(--gold);
 
     /* ===== ANNOUNCEMENT BAR ===== */
-    --announcement-bg: 0 0% 0%;
+    --announcement-bg: var(--gold);
     --announcement-text: var(--cream-signature);
 
     /* ===== HEADER ===== */
     --header-bg: var(--cream-signature);
-    --header-text: 0 0% 0%;
+    --header-text: var(--gold);
 
     /* ===== OUTLANDS SECTION ===== */
     --outlands-bg: var(--cream-signature);
-    --outlands-text: 0 0% 0%;
-    --outlands-button-border: 0 0% 0%;
+    --outlands-text: var(--gold);
+    --outlands-button-border: var(--gold);
 
     /* ===== SIDEBAR ===== */
     --sidebar-background: var(--cream-light);
-    --sidebar-foreground: 0 0% 0%;
-    --sidebar-primary: 0 0% 0%;
+    --sidebar-foreground: var(--gold);
+    --sidebar-primary: var(--gold);
     --sidebar-primary-foreground: var(--cream-signature);
     --sidebar-accent: var(--cream-dark);
-    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-accent-foreground: var(--gold);
     --sidebar-border: var(--cream-dark);
-    --sidebar-ring: 0 0% 0%;
+    --sidebar-ring: var(--gold);
   }
 
   .dark {

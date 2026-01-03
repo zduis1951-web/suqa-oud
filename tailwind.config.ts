@@ -34,6 +34,11 @@ export default {
           medium: "hsl(var(--brown-medium))",
           light: "hsl(var(--brown-light))",
         },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+          dark: "hsl(var(--gold-dark))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
