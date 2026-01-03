@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Plus } from 'lucide-react';
 import { fetchShopifyProducts, ShopifyProduct } from '@/lib/shopify';
-import { useCartStore } from '@/stores/cartStore';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { toast } from 'sonner';
 
 interface Product {
   id: string;
@@ -26,14 +24,12 @@ const ProductCard = ({
   product, 
   index, 
   totalProducts,
-  onAddToCart 
+  onClick 
 }: { 
   product: Product; 
   index: number;
-  isLast: boolean;
   totalProducts: number;
-  onClick?: () => void;
-  onAddToCart: () => void;
+  onClick: () => void;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const { t } = useLanguage();
@@ -50,7 +46,8 @@ const ProductCard = ({
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="product-card-item"
+      onClick={onClick}
+      className="product-card-item cursor-pointer"
       style={{
         '--card-index': index,
         '--total-products': totalProducts,
@@ -103,21 +100,6 @@ const ProductCard = ({
               </div>
             </div>
           </div>
-
-          {/* Add to Cart Button - Shows on Hover */}
-          <motion.button
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
-            transition={{ duration: 0.2 }}
-            onClick={(e) => {
-              e.stopPropagation();
-              onAddToCart();
-            }}
-            className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-6 py-3 flex items-center gap-2 text-xs tracking-wider uppercase font-medium hover:bg-primary/90 transition-colors z-10"
-          >
-            <Plus className="h-4 w-4" />
-            <span>{t('products.addToCart')}</span>
-          </motion.button>
         </div>
       </div>
     </motion.li>
@@ -127,7 +109,7 @@ const ProductCard = ({
 const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-  const { addItem, setOpen } = useCartStore();
+  const navigate = useNavigate();
   const { t } = useLanguage();
 
   // Only show these 4 products in this section
@@ -167,26 +149,11 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
     loadProducts();
   }, []);
 
-  const handleAddToCart = (product: Product) => {
-    const firstVariant = product.shopifyProduct.node.variants.edges[0]?.node;
-    if (!firstVariant) {
-      toast.error('No variant available');
-      return;
+  const handleProductClick = (handle: string) => {
+    if (onProductClick) {
+      onProductClick(handle);
     }
-
-    addItem({
-      product: product.shopifyProduct,
-      variantId: firstVariant.id,
-      variantTitle: firstVariant.title,
-      price: firstVariant.price,
-      quantity: 1,
-      selectedOptions: firstVariant.selectedOptions,
-    });
-
-    toast.success(t('cart.addedToCart'), {
-      position: 'top-center',
-    });
-    setOpen(true);
+    navigate(`/product/${handle}`);
   };
 
   if (loading) {
@@ -219,14 +186,8 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
             key={product.id}
             product={product}
             index={index}
-            isLast={index === products.length - 1}
             totalProducts={products.length}
-            onClick={() => {
-              if (onProductClick) {
-                onProductClick(product.handle);
-              }
-            }}
-            onAddToCart={() => handleAddToCart(product)}
+            onClick={() => handleProductClick(product.handle)}
           />
         ))}
       </ul>
