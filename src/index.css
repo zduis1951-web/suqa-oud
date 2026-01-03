@@ -466,12 +466,15 @@
 
   /* Play/Pause Control */
   .media-control {
-    @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-all duration-300;
-    color: hsl(var(--hero-text));
+    @apply absolute bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center transition-all duration-300;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: transparent;
   }
 
   .media-control:hover {
     transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   /* Guidance Collection Section */
