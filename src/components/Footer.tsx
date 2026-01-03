@@ -84,9 +84,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-cream/70 text-sm hover:text-cream transition-colors">
+                <Link to="/return-policy" className="text-cream/70 text-sm hover:text-cream transition-colors">
                   Return Policy
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-cream/70 text-sm hover:text-cream transition-colors">
