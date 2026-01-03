@@ -170,6 +170,12 @@ export async function fetchShopifyProducts(first: number = 10, query?: string): 
   }
 }
 
+// Search products
+export async function searchProducts(searchQuery: string): Promise<ShopifyProduct[]> {
+  if (!searchQuery.trim()) return [];
+  return fetchShopifyProducts(20, `title:*${searchQuery}*`);
+}
+
 // Create direct checkout - user clicks product and goes straight to checkout
 export async function createDirectCheckout(variantId: string, quantity: number = 1): Promise<string | null> {
   try {
