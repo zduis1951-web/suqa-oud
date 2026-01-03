@@ -6,8 +6,8 @@ import vida from '@/assets/products/vida.png';
 import vidaBox from '@/assets/products/vida-box.png';
 import elite from '@/assets/products/elite.png';
 import eliteBox from '@/assets/products/elite-box.png';
-import purpose50 from '@/assets/products/purpose-50.png';
-import purpose50Box from '@/assets/products/purpose-50-box.jpg';
+import highness from '@/assets/products/highness.png';
+import highnessBox from '@/assets/products/highness-box.png';
 
 interface Product {
   id: string;
@@ -42,11 +42,11 @@ const products: Product[] = [
     hoverImage: eliteBox,
   },
   {
-    id: 'purpose-50',
-    name: 'Purpose 50',
-    price: '$550',
-    image: purpose50,
-    hoverImage: purpose50Box,
+    id: 'highness',
+    name: 'Highness',
+    price: 'AED 795',
+    image: highness,
+    hoverImage: highnessBox,
   },
 ];
 
