@@ -234,6 +234,6 @@ export const en = {
   
   // Announcements
   announcement: {
-    sampler: 'Discover our redeemable sampler sets. *T&Cs Apply.',
+    sampler: "Don't know which perfume to choose? Feel free to try all of them!",
   },
 };
