@@ -42,6 +42,10 @@
     --gold-light: 43 70% 55%;
     --gold-dark: 43 80% 35%;
     
+    /* ===== TEXT ON DARK BACKGROUNDS ===== */
+    --text-on-dark: var(--cream-signature);
+    --text-on-dark-muted: 40 56% 96%;
+    
     /* ===== CORE BACKGROUNDS ===== */
     --background: var(--cream-signature);
     --foreground: var(--gold);
