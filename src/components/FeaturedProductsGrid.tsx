@@ -54,7 +54,7 @@ interface FeaturedProductsGridProps {
   onProductClick?: (productId: string) => void;
 }
 
-// Product Card Component - Exact Amouage Style
+// Product Card Component - SUQA OUD Style
 const ProductCard = ({ 
   product, 
   index, 

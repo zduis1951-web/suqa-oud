@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export interface AmouageProduct {
+export interface SuqaOudProduct {
   name: string;
   price: string;
   image: string;
@@ -8,12 +8,12 @@ export interface AmouageProduct {
   isNew?: boolean;
 }
 
-interface AmouageProductCardProps {
-  product: AmouageProduct;
+interface SuqaOudProductCardProps {
+  product: SuqaOudProduct;
   onClick?: () => void;
 }
 
-const AmouageProductCard = ({ product, onClick }: AmouageProductCardProps) => {
+const SuqaOudProductCard = ({ product, onClick }: SuqaOudProductCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const cardStyle: React.CSSProperties = {
@@ -175,4 +175,4 @@ const AmouageProductCard = ({ product, onClick }: AmouageProductCardProps) => {
   );
 };
 
-export default AmouageProductCard;
+export default SuqaOudProductCard;
