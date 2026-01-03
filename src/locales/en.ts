@@ -42,7 +42,7 @@ export const en = {
   
   // Outlands Section (Perfect Gift)
   outlands: {
-    title: 'COMPLIMENTARY WRAPPING AND PERSONALIZATION CHOICES. A GIFT FIT FOR KINGS.',
+    title: "DON'T KNOW WHICH PERFUME TO CHOOSE? FEEL FREE TO TRY ALL OF THEM!",
     description: 'THE PERFECT GIFT',
     explore: 'EXPLORE',
     pauseVideo: 'Pause video',
