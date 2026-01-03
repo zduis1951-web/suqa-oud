@@ -312,11 +312,18 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Only show these 4 products in this section
+  const featuredProductHandles = ['privilege', 'vida', 'elite', 'highness'];
+
   useEffect(() => {
     const loadProducts = async () => {
       try {
-        const shopifyProducts = await fetchShopifyProducts(7);
-        const formattedProducts: Product[] = shopifyProducts.map((p: ShopifyProduct) => ({
+        const shopifyProducts = await fetchShopifyProducts(10);
+        // Filter to only show the 4 featured products
+        const filteredProducts = shopifyProducts.filter((p: ShopifyProduct) => 
+          featuredProductHandles.includes(p.node.handle.toLowerCase())
+        );
+        const formattedProducts: Product[] = filteredProducts.map((p: ShopifyProduct) => ({
           id: p.node.id,
           handle: p.node.handle,
           name: p.node.title,
@@ -324,6 +331,12 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
           image: p.node.images.edges[0]?.node.url || '',
           hoverImage: p.node.images.edges[1]?.node.url,
         }));
+        // Sort to maintain order: Privilege, Vida, Elite, Highness
+        formattedProducts.sort((a, b) => {
+          const aIndex = featuredProductHandles.indexOf(a.handle.toLowerCase());
+          const bIndex = featuredProductHandles.indexOf(b.handle.toLowerCase());
+          return aIndex - bIndex;
+        });
         setProducts(formattedProducts);
       } catch (error) {
         console.error('Error loading products:', error);
