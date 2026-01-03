@@ -36,7 +36,7 @@ export const en = {
   // Guidance Collection
   guidance: {
     title: 'SUQA OUD',
-    description: "YOU DON'T REACH FOR IT TO BE NOTICED. YOU REACH FOR IT WHEN YOU WANT LUXURY TO FEEL EFFORTLESS.",
+    description: "Check our signature perfume",
     discoverMore: 'DISCOVER MORE',
   },
   
