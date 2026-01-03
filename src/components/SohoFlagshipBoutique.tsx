@@ -45,14 +45,14 @@ const SohoFlagshipBoutique = ({
         {/* Main Headline */}
         <h2 
           style={{ fontFamily: 'var(--font-primary)' }} 
-          className="text-cream text-xl sm:text-2xl md:text-3xl tracking-[0.15em] uppercase mb-4 md:mb-6 max-w-4xl lg:text-sm"
+          className="text-cream text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] uppercase mb-3 sm:mb-4 md:mb-6 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-4xl"
         >
           CRAFTED FOR THE EXTRAORDINARY
         </h2>
         
         {/* Description */}
         <p 
-          className="text-cream/80 text-5xl tracking-[0.1em] uppercase mb-6 md:mb-8 font-light" 
+          className="text-cream/80 text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.1em] uppercase mb-4 sm:mb-6 md:mb-8 font-light" 
           style={{ fontFamily: 'var(--font-primary)' }}
         >
           THE ESSENCE OF REFINEMENT
@@ -61,7 +61,7 @@ const SohoFlagshipBoutique = ({
         {/* CTA Button */}
         <button 
           onClick={onDiscoverMoreClick} 
-          className="border border-cream text-gold bg-cream px-8 py-3 md:px-10 md:py-4 text-xs md:text-sm tracking-[0.2em] uppercase transition-all duration-300 hover:bg-transparent hover:text-cream" 
+          className="border border-cream text-gold bg-cream px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-300 hover:bg-transparent hover:text-cream min-h-[44px] min-w-[120px]" 
           style={{ fontFamily: 'var(--font-primary)' }}
         >
           EXPLORE
@@ -69,22 +69,22 @@ const SohoFlagshipBoutique = ({
       </div>
 
       {/* Media Control - Play/Pause - Bottom Right */}
-      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6">
+      <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8">
         <button 
           onClick={togglePlayPause} 
-          className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-cream/50 flex items-center justify-center hover:border-cream transition-colors bg-black/20" 
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-cream/50 flex items-center justify-center hover:border-cream transition-colors bg-black/20 min-w-[44px] min-h-[44px]" 
           aria-label={isPlaying ? 'Pause video' : 'Play video'}
         >
           {isPlaying ? (
-            <Pause className="h-5 w-5 text-cream" strokeWidth={1.5} />
+            <Pause className="h-4 w-4 sm:h-5 sm:w-5 text-cream" strokeWidth={1.5} />
           ) : (
-            <Play className="h-5 w-5 text-cream ml-0.5" strokeWidth={1.5} />
+            <Play className="h-4 w-4 sm:h-5 sm:w-5 text-cream ml-0.5" strokeWidth={1.5} />
           )}
         </button>
       </div>
 
       {/* Accessibility Icon - Bottom Left */}
-      <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
+      <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-8 md:left-8">
         
       </div>
     </section>

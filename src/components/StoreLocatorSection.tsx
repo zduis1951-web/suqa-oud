@@ -23,7 +23,7 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
     <section
       className="w-full relative overflow-hidden"
       style={{
-        height: '200px',
+        height: 'clamp(180px, 25vw, 250px)',
       }}
       aria-label="SUQA OUD - Exclusively Online"
     >
@@ -44,12 +44,10 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
         {/* Heading */}
         <h2
-          className="text-center uppercase tracking-[0.2em] mb-6 text-cream"
+          className="text-center uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-4 sm:mb-6 text-cream text-xs sm:text-sm md:text-base lg:text-lg"
           style={{
             fontFamily: '"Cormorant Garamond", "Times New Roman", serif',
-            fontSize: 'clamp(14px, 2.5vw, 18px)',
             fontWeight: 400,
-            letterSpacing: '0.2em',
           }}
         >
           EXCLUSIVELY ONLINE
@@ -58,13 +56,10 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
         {/* Store Locator Button */}
         <button
           onClick={handleClick}
-          className="uppercase tracking-[0.15em] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-foreground bg-cream text-gold border border-gold/20 hover:bg-transparent hover:text-cream hover:border-cream"
+          className="uppercase tracking-[0.1em] sm:tracking-[0.15em] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-foreground bg-cream text-gold border border-gold/20 hover:bg-transparent hover:text-cream hover:border-cream text-[10px] sm:text-xs md:text-sm px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5 min-h-[44px] min-w-[100px]"
           style={{
             fontFamily: '"Cormorant Garamond", "Times New Roman", serif',
-            fontSize: '12px',
             fontWeight: 400,
-            letterSpacing: '0.15em',
-            padding: '14px 32px',
           }}
           aria-label="Shop SUQA OUD online"
         >
