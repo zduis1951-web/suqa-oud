@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { fetchShopifyProducts, handleDirectPurchase, ShopifyProduct } from '@/lib/shopify';
+import { Plus } from 'lucide-react';
+import { fetchShopifyProducts, ShopifyProduct } from '@/lib/shopify';
+import { useCartStore } from '@/stores/cartStore';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { toast } from 'sonner';
 
 interface Product {
   id: string;
@@ -10,6 +14,7 @@ interface Product {
   image: string;
   hoverImage?: string;
   isNew?: boolean;
+  shopifyProduct: ShopifyProduct;
 }
 
 interface FeaturedProductsGridProps {
@@ -20,17 +25,18 @@ interface FeaturedProductsGridProps {
 const ProductCard = ({ 
   product, 
   index, 
-  isLast,
   totalProducts,
-  onClick 
+  onAddToCart 
 }: { 
   product: Product; 
   index: number;
   isLast: boolean;
   totalProducts: number;
   onClick?: () => void;
+  onAddToCart: () => void;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <motion.li
@@ -42,7 +48,6 @@ const ProductCard = ({
         delay: index * 0.075,
         ease: [0, 0, 0.3, 1]
       }}
-      onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="product-card-item"
@@ -55,7 +60,7 @@ const ProductCard = ({
         <div className="product-card-content">
           {/* NEW Badge */}
           {product.isNew && (
-            <span className="product-badge">NEW</span>
+            <span className="product-badge">{t('products.new')}</span>
           )}
 
           {/* Image Container */}
@@ -98,6 +103,21 @@ const ProductCard = ({
               </div>
             </div>
           </div>
+
+          {/* Add to Cart Button - Shows on Hover */}
+          <motion.button
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
+            transition={{ duration: 0.2 }}
+            onClick={(e) => {
+              e.stopPropagation();
+              onAddToCart();
+            }}
+            className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-6 py-3 flex items-center gap-2 text-xs tracking-wider uppercase font-medium hover:bg-primary/90 transition-colors z-10"
+          >
+            <Plus className="h-4 w-4" />
+            <span>{t('products.addToCart')}</span>
+          </motion.button>
         </div>
       </div>
     </motion.li>
@@ -107,6 +127,8 @@ const ProductCard = ({
 const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const { addItem, setOpen } = useCartStore();
+  const { t } = useLanguage();
 
   // Only show these 4 products in this section
   const featuredProductHandles = ['privilege', 'vida', 'elite', 'highness'];
@@ -126,6 +148,7 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
           price: `AED ${parseFloat(p.node.priceRange.minVariantPrice.amount).toFixed(0)}`,
           image: p.node.images.edges[0]?.node.url || '',
           hoverImage: p.node.images.edges[1]?.node.url,
+          shopifyProduct: p,
         }));
         // Sort to maintain order: Privilege, Vida, Elite, Highness
         formattedProducts.sort((a, b) => {
@@ -144,10 +167,32 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
     loadProducts();
   }, []);
 
+  const handleAddToCart = (product: Product) => {
+    const firstVariant = product.shopifyProduct.node.variants.edges[0]?.node;
+    if (!firstVariant) {
+      toast.error('No variant available');
+      return;
+    }
+
+    addItem({
+      product: product.shopifyProduct,
+      variantId: firstVariant.id,
+      variantTitle: firstVariant.title,
+      price: firstVariant.price,
+      quantity: 1,
+      selectedOptions: firstVariant.selectedOptions,
+    });
+
+    toast.success(t('cart.addedToCart'), {
+      position: 'top-center',
+    });
+    setOpen(true);
+  };
+
   if (loading) {
     return (
       <section className="products-section products-section-loading">
-        <p className="products-loading-text">Loading products...</p>
+        <p className="products-loading-text">{t('common.loading')}</p>
       </section>
     );
   }
@@ -155,7 +200,7 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
   if (products.length === 0) {
     return (
       <section className="products-section products-section-empty">
-        <p className="products-loading-text">No products found</p>
+        <p className="products-loading-text">{t('search.noResults')}</p>
       </section>
     );
   }
@@ -179,10 +224,9 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
             onClick={() => {
               if (onProductClick) {
                 onProductClick(product.handle);
-              } else {
-                handleDirectPurchase(product.handle);
               }
             }}
+            onAddToCart={() => handleAddToCart(product)}
           />
         ))}
       </ul>

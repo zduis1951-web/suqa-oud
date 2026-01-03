@@ -1069,3 +1069,201 @@
     color: hsl(var(--hero-text));
   }
 }
+
+/* ========================================
+   RTL (RIGHT-TO-LEFT) SUPPORT
+   ======================================== */
+
+/* RTL Base Styles */
+html[dir="rtl"] {
+  font-family: 'Sakkal Majalla', 'Segoe UI', Tahoma, sans-serif;
+}
+
+body.rtl {
+  text-align: right;
+}
+
+/* RTL Navigation */
+body.rtl .mobile-nav-drawer {
+  @apply right-auto left-0 translate-x-0;
+  transform: translateX(-100%);
+}
+
+body.rtl .mobile-nav-drawer.active {
+  transform: translateX(0);
+}
+
+body.rtl .mobile-nav-link:hover {
+  @apply pl-0 pr-4;
+}
+
+/* RTL Header */
+body.rtl .header-right {
+  flex-direction: row-reverse;
+}
+
+body.rtl .logo-underline {
+  @apply left-auto right-0;
+}
+
+/* RTL Buttons & Icons */
+body.rtl .btn-hero::before,
+body.rtl .btn-guidance::before {
+  @apply translate-x-full;
+}
+
+body.rtl .btn-hero:hover::before,
+body.rtl .btn-guidance:hover::before {
+  @apply -translate-x-full;
+}
+
+/* RTL Navigation Links */
+body.rtl .nav-link-underline {
+  @apply left-auto right-0;
+}
+
+/* RTL Form Elements */
+body.rtl input[type="text"],
+body.rtl input[type="email"],
+body.rtl input[type="password"],
+body.rtl textarea {
+  text-align: right;
+}
+
+/* RTL Footer */
+body.rtl .footer-section {
+  text-align: right;
+}
+
+/* RTL Product Card */
+body.rtl .product-badge {
+  @apply left-auto right-4;
+}
+
+/* RTL Animations */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+body.rtl .mobile-nav-drawer.active .mobile-nav-link {
+  animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+/* RTL Cart Drawer */
+body.rtl .cart-drawer-container {
+  @apply right-auto left-0;
+}
+
+/* RTL Text Alignment Utilities */
+.rtl\:text-right {
+  text-align: right;
+}
+
+.rtl\:text-left {
+  text-align: left;
+}
+
+/* RTL Spacing Utilities */
+body.rtl .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+body.rtl .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* RTL Flex Direction */
+body.rtl .flex-row {
+  flex-direction: row-reverse;
+}
+
+body.rtl .flex-row-reverse {
+  flex-direction: row;
+}
+
+/* RTL Border Radius */
+body.rtl .rounded-l-xl {
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+
+body.rtl .rounded-r-xl {
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+
+/* RTL Shadows */
+body.rtl .shadow-right {
+  box-shadow: -10px 0 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* RTL Icon Flip */
+body.rtl .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* RTL Transitions */
+body.rtl .transition-transform {
+  transition-property: transform;
+}
+
+/* ========================================
+   ARABIC TYPOGRAPHY ENHANCEMENTS
+   ======================================== */
+
+body.rtl h1,
+body.rtl h2,
+body.rtl h3,
+body.rtl h4,
+body.rtl h5,
+body.rtl h6 {
+  font-family: 'Sakkal Majalla', 'Segoe UI', Tahoma, sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+body.rtl p,
+body.rtl span,
+body.rtl a {
+  font-family: 'Sakkal Majalla', 'Segoe UI', Tahoma, sans-serif;
+  line-height: 1.6;
+}
+
+body.rtl .tracking-luxury,
+body.rtl .tracking-wide-luxury,
+body.rtl .tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+/* ========================================
+   ENHANCED ACCESSIBILITY
+   ======================================== */
+
+/* Focus States */
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Skip Link */
+.skip-link {
+  @apply absolute -top-full left-4 z-50 bg-primary text-primary-foreground px-4 py-2 rounded-b-lg transition-all focus:top-0;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
