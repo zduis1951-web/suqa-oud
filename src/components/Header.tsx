@@ -33,10 +33,6 @@ const Header = ({
 
   const navItems = [
     { label: t('nav.perfumes'), href: '#perfumes' },
-    { label: t('nav.collections'), href: '#collections' },
-    { label: t('nav.body'), href: '#body' },
-    { label: t('nav.discovery'), href: '#discovery' },
-    { label: t('nav.theCraft'), href: '/the-craft' },
     { label: t('nav.theExperience'), href: '/the-experience' },
     { label: t('nav.ourStory'), href: '/our-story' },
     { label: t('nav.ourPhilosophy'), href: '/our-philosophy' },
