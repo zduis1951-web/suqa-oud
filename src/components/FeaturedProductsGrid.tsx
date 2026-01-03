@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import reflectionMan from '@/assets/products/reflection-man.jpg';
+import privilege from '@/assets/products/privilege.png';
+import privilegeBox from '@/assets/products/privilege-box.png';
 import guidance from '@/assets/products/guidance.jpg';
 import existence from '@/assets/products/existence.jpg';
 import purpose50 from '@/assets/products/purpose-50.png';
-import reflectionManBox from '@/assets/products/reflection-man-box.jpg';
 import guidanceBox from '@/assets/products/guidance-box.jpg';
 import existenceBox from '@/assets/products/existence-box.jpg';
 import purpose50Box from '@/assets/products/purpose-50-box.jpg';
@@ -21,11 +21,11 @@ interface Product {
 
 const products: Product[] = [
   {
-    id: 'reflection-man',
-    name: 'Reflection Man',
-    price: '$395',
-    image: reflectionMan,
-    hoverImage: reflectionManBox,
+    id: 'privilege',
+    name: 'Privilege',
+    price: 'AED 645',
+    image: privilege,
+    hoverImage: privilegeBox,
   },
   {
     id: 'guidance',
