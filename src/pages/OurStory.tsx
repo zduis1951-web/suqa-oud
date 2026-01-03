@@ -12,6 +12,8 @@ import elite from '@/assets/products/elite.png';
 import eliteBox from '@/assets/products/elite-box.png';
 import highness from '@/assets/products/highness.png';
 import highnessBox from '@/assets/products/highness-box.png';
+import royal from '@/assets/products/royal.webp';
+import royalBox from '@/assets/products/royal-box.webp';
 import ourStory1 from '@/assets/our-story-1.webp';
 
 const OurStory = () => {
@@ -31,6 +33,7 @@ const OurStory = () => {
     { id: 'vida', image: vida, hoverImage: vidaBox, name: "VIDA", price: "AED 695" },
     { id: 'elite', image: elite, hoverImage: eliteBox, name: "ELITE", price: "AED 675" },
     { id: 'highness', image: highness, hoverImage: highnessBox, name: "HIGHNESS", price: "AED 795" },
+    { id: 'royal', image: royal, hoverImage: royalBox, name: "ROYAL", price: "AED 735" },
   ];
 
   return (
