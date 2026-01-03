@@ -1,4 +1,4 @@
-# Amouage Homepage Recreation
+# SUQA OUD - Luxury Fragrance Website
 
 ## Components
 
@@ -13,11 +13,11 @@ Full-width promotional section featuring the Outlands fragrance with dramatic mo
 
 ## Assets
 
-All images were downloaded directly from amouage.com. **No images were generated or edited.**
+All images are original SUQA OUD brand assets.
 
-### Source URLs:
-- `outlands-bottle.jpg` - Product shot from https://amouage.com/cdn/shop/files/Amouage_Essences_CS_Photo_Outlands_1.jpg
-- `outlands-bg.jpg` - Mood image from https://amouage.com/cdn/shop/files/OUTLANDS_WEBSITE_mood.jpg
+### Image Assets:
+- `outlands-bottle.jpg` - Product shot
+- `outlands-bg.jpg` - Mood image
 - `guidance-desktop.png` - Guidance section desktop background
 - `guidance-mobile.png` - Guidance section mobile background
 - `hero-desktop.jpg` - Hero desktop background

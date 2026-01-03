@@ -14,7 +14,7 @@ interface ProductCarouselProps {
   className?: string;
 }
 
-// Amouage-style Product Card for Carousel
+// SUQA OUD style Product Card for Carousel
 const CarouselProductCard = ({ 
   product, 
   index,

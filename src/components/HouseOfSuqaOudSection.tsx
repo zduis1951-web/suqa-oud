@@ -1,6 +1,6 @@
 import houseOfSuqaOudVideo from '@/assets/house-of-suqa-oud-video.mp4';
 
-interface HouseOfAmouageSectionProps {
+interface HouseOfSuqaOudSectionProps {
   onDiscoverClick?: () => void;
 }
 
@@ -10,9 +10,9 @@ interface HouseOfAmouageSectionProps {
  * A cinematic brand statement section with video background.
  * Architectural, calm, and editorial feel.
  */
-const HouseOfAmouageSection = ({
+const HouseOfSuqaOudSection = ({
   onDiscoverClick
-}: HouseOfAmouageSectionProps) => {
+}: HouseOfSuqaOudSectionProps) => {
   const handleClick = () => {
     if (onDiscoverClick) {
       onDiscoverClick();
@@ -85,4 +85,4 @@ const HouseOfAmouageSection = ({
   );
 };
 
-export default HouseOfAmouageSection;
+export default HouseOfSuqaOudSection;
