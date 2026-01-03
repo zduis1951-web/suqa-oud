@@ -2,23 +2,23 @@ import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Instagram } from 'lucide-react';
 import existenceImg from '@/assets/products/existence.jpg';
-import existenceBoxImg from '@/assets/products/existence-box.jpg';
+import highnesGallery from '@/assets/gallery/highness-gallery.webp';
 import guidanceImg from '@/assets/products/guidance.jpg';
-import guidanceBoxImg from '@/assets/products/guidance-box.jpg';
+import royalGallery from '@/assets/gallery/royal-gallery.webp';
 import purposeImg from '@/assets/products/purpose-50.png';
-import purposeBoxImg from '@/assets/products/purpose-50-box.jpg';
+import vidaGallery from '@/assets/gallery/vida-gallery.webp';
 import reflectionImg from '@/assets/products/reflection-man.jpg';
-import reflectionBoxImg from '@/assets/products/reflection-man-box.jpg';
+import privilegeGallery from '@/assets/gallery/privilege-gallery.webp';
 
 const galleryImages = [
   { id: 1, image: existenceImg, alt: 'SUQA OUD Existence' },
-  { id: 2, image: existenceBoxImg, alt: 'SUQA OUD product display' },
-  { id: 3, image: guidanceImg, alt: 'SUQA OUD Guidance green bottle' },
-  { id: 4, image: guidanceBoxImg, alt: 'SUQA OUD Guidance pink bottle' },
-  { id: 5, image: purposeImg, alt: 'SUQA OUD Purpose mint bottle' },
-  { id: 6, image: purposeBoxImg, alt: 'SUQA OUD Purpose gold bottle' },
-  { id: 7, image: reflectionImg, alt: 'SUQA OUD Reflection dark bottle' },
-  { id: 8, image: reflectionBoxImg, alt: 'SUQA OUD boutique' },
+  { id: 2, image: highnesGallery, alt: 'SUQA OUD Highness' },
+  { id: 3, image: guidanceImg, alt: 'SUQA OUD Guidance' },
+  { id: 4, image: royalGallery, alt: 'SUQA OUD Royal' },
+  { id: 5, image: purposeImg, alt: 'SUQA OUD Purpose' },
+  { id: 6, image: vidaGallery, alt: 'SUQA OUD Vida' },
+  { id: 7, image: reflectionImg, alt: 'SUQA OUD Reflection' },
+  { id: 8, image: privilegeGallery, alt: 'SUQA OUD Privilege' },
 ];
 
 const HighPerfumeryGallery = () => {
