@@ -51,23 +51,24 @@ const OutlandsSection = ({
 
       {/* Content - Title and CTA positioned at bottom */}
       <div className="outlands-content px-4">
+        {/* CTA Button */}
+        <HoverButton 
+          onClick={onShopNowClick} 
+          aria-label="Explore SUQA OUD philosophy"
+          className="mb-6 sm:mb-8"
+        >
+          {t('outlands.explore')}
+        </HoverButton>
+
         {/* Description */}
         <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-lg mx-auto text-center leading-tight mb-4 sm:mb-6 px-2 font-light text-cream tracking-[0.1em] sm:tracking-[0.15em]">
           {t('outlands.description')}
         </p>
 
         {/* Title */}
-        <h2 className="outlands-title text-cream text-center text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] max-w-xs sm:max-w-md md:max-w-lg mx-auto mb-4 sm:mb-5">
+        <h2 className="outlands-title text-cream text-center text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] max-w-xs sm:max-w-md md:max-w-lg mx-auto">
           {t('outlands.title')}
         </h2>
-
-        {/* CTA Button */}
-        <HoverButton 
-          onClick={onShopNowClick} 
-          aria-label="Explore SUQA OUD philosophy"
-        >
-          {t('outlands.explore')}
-        </HoverButton>
       </div>
 
       {/* Media Control - Play/Pause */}
