@@ -1,4 +1,4 @@
-import houseOfSuqaOudBg from '@/assets/house-of-suqa-oud-new-bg.jpg';
+import houseOfSuqaOudVideo from '@/assets/house-of-suqa-oud-video.mp4';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface HouseOfSuqaOudSectionProps {
@@ -8,7 +8,7 @@ interface HouseOfSuqaOudSectionProps {
 /**
  * House of SUQA OUD Section
  * 
- * A cinematic brand statement section with image background.
+ * A cinematic brand statement section with video background.
  * Architectural, calm, and editorial feel.
  */
 const HouseOfSuqaOudSection = ({
@@ -30,10 +30,13 @@ const HouseOfSuqaOudSection = ({
       style={{ minHeight: 'clamp(400px, 56.25vw, 800px)' }} 
       aria-label="The House of SUQA OUD"
     >
-      {/* Image Background */}
-      <img 
-        src={houseOfSuqaOudBg} 
-        alt="SUQA OUD Background"
+      {/* Video Background */}
+      <video 
+        src={houseOfSuqaOudVideo} 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
         className="absolute inset-0 w-full h-full object-cover" 
         style={{ objectPosition: 'center 40%' }} 
       />
