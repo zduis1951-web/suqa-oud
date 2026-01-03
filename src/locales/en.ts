@@ -37,7 +37,7 @@ export const en = {
   guidance: {
     title: 'SUQA OUD',
     description: "CHECK OUR SIGNATURE PERFUME",
-    discoverMore: 'DISCOVER MORE',
+    discoverMore: 'SHOP NOW',
   },
   
   // Outlands Section (Perfect Gift)

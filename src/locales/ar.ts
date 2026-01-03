@@ -37,7 +37,7 @@ export const ar = {
   guidance: {
     title: 'سوقا عود',
     description: 'اكتشف عطرنا المميز',
-    discoverMore: 'اكتشف المزيد',
+    discoverMore: 'تسوق الآن',
   },
   
   // Outlands Section (Perfect Gift)
