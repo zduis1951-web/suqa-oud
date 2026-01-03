@@ -30,7 +30,7 @@ const Header = ({
     href: '#house'
   }, {
     label: 'OUR STORY',
-    href: '#our-story'
+    href: '/our-story'
   }];
   useEffect(() => {
     const handleScroll = () => {
