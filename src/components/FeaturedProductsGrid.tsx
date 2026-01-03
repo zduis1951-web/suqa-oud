@@ -95,7 +95,7 @@ const ProductCard = ({
         borderRightStyle: isLast ? 'solid' : 'none',
         borderRightColor: isLast ? 'rgb(53, 53, 53)' : 'transparent',
         borderRightWidth: isLast ? '1.5px' : '0',
-        background: 'rgb(247, 244, 239)',
+        background: '#EFE3D9',
         zIndex: 1,
         minHeight: '602px',
         flexGrow: 1,
@@ -171,7 +171,7 @@ const ProductCard = ({
             <div 
               style={{
                 margin: 'auto',
-                backgroundColor: 'rgb(247, 244, 239)',
+                backgroundColor: '#EFE3D9',
                 width: '100%',
                 bottom: 0,
                 position: 'absolute',
