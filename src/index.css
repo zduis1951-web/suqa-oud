@@ -45,27 +45,27 @@
 
     /* Card Surfaces */
     --card: var(--cream-light);
-    --card-foreground: var(--brown-deep);
+    --card-foreground: 0 0% 0%;
 
     /* Popover */
     --popover: var(--cream-light);
-    --popover-foreground: var(--brown-deep);
+    --popover-foreground: 0 0% 0%;
 
-    /* Primary - Deep Brown on Cream */
-    --primary: var(--brown-deep);
+    /* Primary - Black Text */
+    --primary: 0 0% 0%;
     --primary-foreground: var(--cream-signature);
 
     /* Secondary - Cream Variant */
     --secondary: var(--cream-dark);
-    --secondary-foreground: var(--brown-deep);
+    --secondary-foreground: 0 0% 0%;
 
     /* Muted */
     --muted: 30 20% 80%;
-    --muted-foreground: 25 15% 45%;
+    --muted-foreground: 0 0% 20%;
 
     /* Accent - Champagne Gold */
     --accent: 38 40% 78%;
-    --accent-foreground: var(--brown-deep);
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -73,7 +73,7 @@
     /* Borders & Inputs */
     --border: var(--cream-dark);
     --input: var(--cream-dark);
-    --ring: var(--brown-deep);
+    --ring: 0 0% 0%;
 
     --radius: 0rem;
 
@@ -81,31 +81,31 @@
     --hero-overlay: 25 25% 8%;
     --hero-text: var(--cream-signature);
     --hero-button-bg: var(--cream-signature);
-    --hero-button-text: var(--brown-deep);
+    --hero-button-text: 0 0% 0%;
     --hero-button-border: var(--cream-dark);
 
     /* ===== ANNOUNCEMENT BAR ===== */
-    --announcement-bg: var(--brown-deep);
+    --announcement-bg: 0 0% 0%;
     --announcement-text: var(--cream-signature);
 
     /* ===== HEADER ===== */
     --header-bg: var(--cream-signature);
-    --header-text: var(--brown-deep);
+    --header-text: 0 0% 0%;
 
     /* ===== OUTLANDS SECTION ===== */
     --outlands-bg: var(--cream-signature);
-    --outlands-text: var(--brown-deep);
-    --outlands-button-border: var(--brown-deep);
+    --outlands-text: 0 0% 0%;
+    --outlands-button-border: 0 0% 0%;
 
     /* ===== SIDEBAR ===== */
     --sidebar-background: var(--cream-light);
-    --sidebar-foreground: var(--brown-deep);
-    --sidebar-primary: var(--brown-deep);
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 0 0% 0%;
     --sidebar-primary-foreground: var(--cream-signature);
     --sidebar-accent: var(--cream-dark);
-    --sidebar-accent-foreground: var(--brown-deep);
+    --sidebar-accent-foreground: 0 0% 0%;
     --sidebar-border: var(--cream-dark);
-    --sidebar-ring: var(--brown-deep);
+    --sidebar-ring: 0 0% 0%;
   }
 
   .dark {
