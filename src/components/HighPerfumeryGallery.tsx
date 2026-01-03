@@ -26,7 +26,7 @@ const HighPerfumeryGallery = () => {
 
   const scroll = (direction: 'left' | 'right') => {
     if (galleryRef.current) {
-      const scrollAmount = galleryRef.current.clientWidth / 3;
+      const scrollAmount = galleryRef.current.clientWidth / 2;
       galleryRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth'
@@ -36,7 +36,7 @@ const HighPerfumeryGallery = () => {
 
   return (
     <section 
-      className="py-12 md:py-16"
+      className="py-8 sm:py-10 md:py-12 lg:py-16"
       style={{ backgroundColor: '#F7F4EF' }}
     >
       {/* Section Header */}
@@ -45,7 +45,7 @@ const HighPerfumeryGallery = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center uppercase tracking-[0.2em] font-serif text-base md:text-lg lg:text-xl mb-8 md:mb-12 text-foreground px-4"
+        className="text-center uppercase tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] font-serif text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-foreground px-4"
       >
         CRAFTED IN THE KINGDOM OF OUD
       </motion.h2>
@@ -55,19 +55,19 @@ const HighPerfumeryGallery = () => {
         {/* Left Arrow */}
         <button 
           onClick={() => scroll('left')}
-          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10
-                     w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/90 backdrop-blur-sm
+          className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 z-10
+                     w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-white/90 backdrop-blur-sm
                      flex items-center justify-center hover:bg-white transition-colors
-                     shadow-md border border-gray-200"
+                     shadow-md border border-gray-200 min-w-[44px] min-h-[44px]"
           aria-label="Scroll left"
         >
-          <ChevronLeft className="w-5 h-5 text-foreground" />
+          <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-foreground" />
         </button>
 
         {/* Gallery */}
         <div 
           ref={galleryRef}
-          className="flex overflow-x-auto scroll-smooth"
+          className="flex overflow-x-auto scroll-smooth gap-0.5 sm:gap-1"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {galleryImages.map((item, index) => (
@@ -80,7 +80,7 @@ const HighPerfumeryGallery = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="flex-shrink-0 w-1/2 md:w-1/4 lg:w-[12.5%] aspect-square relative overflow-hidden group"
+              className="flex-shrink-0 w-[45%] sm:w-1/3 md:w-1/4 lg:w-[12.5%] aspect-square relative overflow-hidden group"
             >
               <img 
                 src={item.image} 
@@ -89,7 +89,7 @@ const HighPerfumeryGallery = () => {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-colors duration-300 flex items-center justify-center">
-                <Instagram className="w-6 h-6 text-background opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Instagram className="w-5 h-5 sm:w-6 sm:h-6 text-background opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </motion.a>
           ))}
@@ -98,13 +98,13 @@ const HighPerfumeryGallery = () => {
         {/* Right Arrow */}
         <button 
           onClick={() => scroll('right')}
-          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10
-                     w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/90 backdrop-blur-sm
+          className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 z-10
+                     w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-white/90 backdrop-blur-sm
                      flex items-center justify-center hover:bg-white transition-colors
-                     shadow-md border border-gray-200"
+                     shadow-md border border-gray-200 min-w-[44px] min-h-[44px]"
           aria-label="Scroll right"
         >
-          <ChevronRight className="w-5 h-5 text-foreground" />
+          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-foreground" />
         </button>
       </div>
     </section>

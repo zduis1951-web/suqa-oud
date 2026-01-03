@@ -47,14 +47,14 @@ const OutlandsSection = ({
       <div className="absolute inset-0 bg-black/30" />
 
       {/* Content - Title and CTA positioned at bottom */}
-      <div className="outlands-content">
+      <div className="outlands-content px-4">
         {/* Title */}
-        <h2 className="outlands-title text-cream text-center text-sm">
+        <h2 className="outlands-title text-cream text-center text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] max-w-xs sm:max-w-md md:max-w-lg mx-auto">
           COMPLIMENTARY WRAPPING AND PERSONALIZATION CHOICES. A GIFT FIT FOR KINGS.
         </h2>
         
         {/* Description */}
-        <p className="text-sm max-w-lg mx-auto text-center leading-relaxed mb-8 px-4 whitespace-pre-line font-light text-cream md:text-5xl">
+        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-lg mx-auto text-center leading-tight mb-6 sm:mb-8 px-2 font-light text-cream tracking-[0.1em] sm:tracking-[0.15em]">
           THE PERFECT GIFT
         </p>
 
@@ -62,7 +62,7 @@ const OutlandsSection = ({
         <button 
           onClick={onShopNowClick} 
           aria-label="Explore SUQA OUD philosophy" 
-          className="btn-outlands bg-cream text-gold hover:bg-transparent hover:text-cream"
+          className="btn-outlands bg-cream text-gold hover:bg-transparent hover:text-cream px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 text-xs sm:text-sm min-h-[44px] min-w-[120px]"
         >
           EXPLORE
         </button>
@@ -71,13 +71,13 @@ const OutlandsSection = ({
       {/* Media Control - Play/Pause */}
       <button
         onClick={togglePlayPause}
-        className="media-control"
+        className="media-control w-10 h-10 sm:w-12 sm:h-12 bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8"
         aria-label={isPlaying ? 'Pause video' : 'Play video'}
       >
         {isPlaying ? (
-          <Pause className="h-6 w-6" strokeWidth={1} aria-hidden="true" />
+          <Pause className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1} aria-hidden="true" />
         ) : (
-          <Play className="h-6 w-6" strokeWidth={1} aria-hidden="true" />
+          <Play className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1} aria-hidden="true" />
         )}
       </button>
     </section>

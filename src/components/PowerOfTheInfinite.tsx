@@ -9,8 +9,6 @@ interface PowerOfTheInfiniteProps {
  * 
  * Displays the SUQA OUD Eternity collection featuring Decision and Existence
  * fragrances with twisted wood branches composition.
- * 
- * All images are original SUQA OUD brand assets.
  */
 const PowerOfTheInfinite = ({
   onShopNowClick
@@ -31,24 +29,24 @@ const PowerOfTheInfinite = ({
       />
       
       {/* Content Overlay */}
-      <div className="absolute inset-0 flex flex-col items-center justify-end pb-32 md:pb-44 lg:pb-56">
+      <div className="absolute inset-0 flex flex-col items-center justify-end pb-16 sm:pb-24 md:pb-32 lg:pb-44 xl:pb-56 px-4">
         {/* Main Title */}
         <h2 
           style={{ fontFamily: 'var(--font-display)' }} 
-          className="text-2xl md:text-3xl tracking-[0.25em] md:tracking-[0.35em] mb-10 md:mb-12 text-center px-4 text-cream font-medium lg:text-sm"
+          className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] lg:tracking-[0.25em] xl:tracking-[0.35em] mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-center text-cream font-medium max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl"
         >
           IT DOESN'T SEEK ATTENTION. IT CREATES A FEELING OF COMPOSURE.
         </h2>
         
         {/* Description */}
-        <p className="text-5xl text-cream font-semibold mb-6 md:mb-8 text-center px-4 tracking-[0.2em]">
+        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-cream font-semibold mb-4 sm:mb-6 md:mb-8 text-center px-2 tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em]">
           THE EXPERIENCE
         </p>
         
         {/* Explore Button */}
         <button 
           onClick={onShopNowClick} 
-          className="px-8 md:px-10 py-3 md:py-3.5 bg-cream text-gold text-xs md:text-sm tracking-[0.2em] font-light border border-transparent hover:bg-transparent hover:text-cream hover:border-cream transition-all duration-300" 
+          className="px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 bg-cream text-gold text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] font-light border border-transparent hover:bg-transparent hover:text-cream hover:border-cream transition-all duration-300 min-h-[44px] min-w-[120px]" 
           aria-label="Explore The Craft"
         >
           EXPLORE
