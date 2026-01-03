@@ -48,13 +48,7 @@ const LuxuryBodyLine = ({
       
       {/* Accessibility Icon - Bottom Left */}
       <div className="absolute bottom-4 left-4 z-10">
-        <button className="w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-background transition-colors duration-200" aria-label="Enable accessibility options">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-foreground">
-            <circle cx="12" cy="4" r="2" />
-            <path d="M12 6v6m0 0l-4 8m4-8l4 8" />
-            <path d="M6 10h12" />
-          </svg>
-        </button>
+        
       </div>
       
       {/* Scroll to Top Icon - Bottom Left (next to accessibility) */}

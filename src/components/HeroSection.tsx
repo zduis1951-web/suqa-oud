@@ -90,9 +90,7 @@ const HeroSection = ({
       </div>
 
       {/* Accessibility Button - Bottom Left */}
-      <button onClick={handleAccessibilityClick} className="accessibility-btn" aria-label="Enable accessibility features">
-        <Accessibility className="h-5 w-5" aria-hidden="true" />
-      </button>
+      
 
       {/* Play/Pause Control - Bottom Right */}
       <button onClick={handlePlayPause} className="media-control" aria-label={isPlaying ? 'Pause video' : 'Play video'}>

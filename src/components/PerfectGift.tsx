@@ -51,14 +51,7 @@ const PerfectGift = ({
 
       {/* Accessibility Icon - Bottom Left */}
       <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
-        <button className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-foreground/80 flex items-center justify-center hover:bg-foreground transition-colors" aria-label="Enable accessibility">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-background">
-            <circle cx="12" cy="4" r="2" />
-            <path d="M12 6v14" />
-            <path d="M8 10h8" />
-            <path d="M8 22l4-8 4 8" />
-          </svg>
-        </button>
+        
       </div>
     </section>;
 };
