@@ -79,9 +79,9 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-cream/70 text-sm hover:text-cream transition-colors">
+                <Link to="/shipping-policy" className="text-cream/70 text-sm hover:text-cream transition-colors">
                   Shipping Policy
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-cream/70 text-sm hover:text-cream transition-colors">
