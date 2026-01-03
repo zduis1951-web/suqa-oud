@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import privilege from '@/assets/products/privilege.png';
-import privilegeBox from '@/assets/products/privilege-box.png';
-import vida from '@/assets/products/vida.png';
-import vidaBox from '@/assets/products/vida-box.png';
-import elite from '@/assets/products/elite.png';
-import eliteBox from '@/assets/products/elite-box.png';
-import highness from '@/assets/products/highness.png';
-import highnessBox from '@/assets/products/highness-box.png';
+import privilege from '@/assets/products/privilege-new.webp';
+import vida from '@/assets/products/vida-new.webp';
+import vidaHover from '@/assets/products/vida-hover.webp';
+import elite from '@/assets/products/elite-new.webp';
+import eliteHover from '@/assets/products/elite-hover.webp';
+import highness from '@/assets/products/highness-new.webp';
 
 interface Product {
   id: string;
@@ -25,28 +23,28 @@ const products: Product[] = [
     name: 'Privilege',
     price: 'AED 645',
     image: privilege,
-    hoverImage: privilegeBox,
+    hoverImage: privilege,
   },
   {
     id: 'vida',
     name: 'Vida',
     price: 'AED 695',
     image: vida,
-    hoverImage: vidaBox,
+    hoverImage: vidaHover,
   },
   {
     id: 'elite',
     name: 'Elite',
     price: 'AED 675',
     image: elite,
-    hoverImage: eliteBox,
+    hoverImage: eliteHover,
   },
   {
     id: 'highness',
     name: 'Highness',
     price: 'AED 795',
     image: highness,
-    hoverImage: highnessBox,
+    hoverImage: highness,
   },
 ];
 
