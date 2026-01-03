@@ -31,7 +31,7 @@ const InsiderAccess = () => {
     backgroundColor: '#F7F4EF'
   }}>
       <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-lg sm:text-xl md:text-2xl tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] mb-3 sm:mb-4 text-foreground font-serif">
+        <h2 className="text-lg sm:text-xl tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] mb-3 sm:mb-4 text-foreground font-serif md:text-4xl">
           {renderTitle()}
         </h2>
         
