@@ -28,6 +28,9 @@ const Header = ({
   }, {
     label: 'HOUSE OF SUQA OUD',
     href: '#house'
+  }, {
+    label: 'OUR STORY',
+    href: '#our-story'
   }];
   useEffect(() => {
     const handleScroll = () => {
