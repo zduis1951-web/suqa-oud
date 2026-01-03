@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import privilege from '@/assets/products/privilege.png';
 import privilegeBox from '@/assets/products/privilege-box.png';
-import guidance from '@/assets/products/guidance.jpg';
+import vida from '@/assets/products/vida.png';
+import vidaBox from '@/assets/products/vida-box.png';
 import existence from '@/assets/products/existence.jpg';
 import purpose50 from '@/assets/products/purpose-50.png';
-import guidanceBox from '@/assets/products/guidance-box.jpg';
 import existenceBox from '@/assets/products/existence-box.jpg';
 import purpose50Box from '@/assets/products/purpose-50-box.jpg';
 
@@ -28,11 +28,11 @@ const products: Product[] = [
     hoverImage: privilegeBox,
   },
   {
-    id: 'guidance',
-    name: 'Guidance',
-    price: '$395',
-    image: guidance,
-    hoverImage: guidanceBox,
+    id: 'vida',
+    name: 'Vida',
+    price: 'AED 695',
+    image: vida,
+    hoverImage: vidaBox,
   },
   {
     id: 'existence',
