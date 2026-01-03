@@ -158,31 +158,7 @@ const Footer = () => {
           </div>
 
           {/* Column 5 - SIGN UP (Always visible) */}
-          <div className="lg:col-span-1 pt-4 lg:pt-0">
-            <h4 className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-4 sm:mb-6 font-normal">
-              {t('footer.signUp')}
-            </h4>
-            <p className="text-cream/70 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-              {t('footer.signUpDescription')}
-            </p>
-            <form onSubmit={handleSubmit} className="mb-3 sm:mb-4">
-              <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t('footer.emailPlaceholder')} required className="w-full bg-transparent border border-cream/40 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-cream placeholder:text-cream/50 focus:outline-none focus:border-cream mb-2 sm:mb-3 min-h-[44px]" dir={isRTL ? 'rtl' : 'ltr'} />
-              <button type="submit" className="w-full bg-cream text-gold text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase py-2.5 sm:py-3 px-4 sm:px-6 hover:bg-cream/90 transition-colors font-medium min-h-[44px]">
-                {t('footer.subscribe')}
-              </button>
-            </form>
-            <p className="text-cream/50 text-[9px] sm:text-[10px] leading-relaxed">
-              {t('footer.termsNotice')}{' '}
-              <a href="#" className="underline hover:text-cream transition-colors">
-                {t('footer.termsLink')}
-              </a>{' '}
-              {t('footer.andText')}{' '}
-              <Link to="/privacy-policy" className="underline hover:text-cream transition-colors">
-                {t('footer.privacyPolicy')}
-              </Link>
-              {t('footer.unsubscribeNotice')}
-            </p>
-          </div>
+          
         </div>
       </div>
 
