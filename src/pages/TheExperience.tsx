@@ -60,7 +60,7 @@ const TheExperience = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-white/70 uppercase tracking-[0.4em] text-xs md:text-sm font-body mb-6 block"
+                className="text-cream/70 uppercase tracking-[0.4em] text-xs md:text-sm font-body mb-6 block"
               >
                 Discover
               </motion.span>
@@ -69,7 +69,7 @@ const TheExperience = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="font-display text-4xl md:text-6xl lg:text-7xl text-white tracking-wide mb-8"
+                className="font-display text-4xl md:text-6xl lg:text-7xl text-cream tracking-wide mb-8"
               >
                 THE EXPERIENCE
               </motion.h1>
@@ -78,7 +78,7 @@ const TheExperience = () => {
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="w-24 h-px bg-white/50 mx-auto mb-16"
+                className="w-24 h-px bg-cream/50 mx-auto mb-16"
               />
 
               {/* Experience Text */}
@@ -93,8 +93,8 @@ const TheExperience = () => {
                       line === "" 
                         ? "h-4" 
                         : line === "It doesn't seek attention." || line === "to be royal is to breathe the kingdom of oud."
-                          ? "text-white font-medium"
-                          : "text-white/80"
+                          ? "text-cream font-medium"
+                          : "text-cream/80"
                     }`}
                   >
                     {line || "\u00A0"}
@@ -111,7 +111,7 @@ const TheExperience = () => {
             transition={{ duration: 0.8, delay: 2.5, repeat: Infinity, repeatType: "reverse" }}
             className="absolute bottom-10 left-1/2 -translate-x-1/2"
           >
-            <div className="w-px h-16 bg-gradient-to-b from-white/50 to-transparent" />
+            <div className="w-px h-16 bg-gradient-to-b from-cream/50 to-transparent" />
           </motion.div>
         </section>
 

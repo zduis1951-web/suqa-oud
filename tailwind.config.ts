@@ -25,6 +25,7 @@ export default {
       colors: {
         /* Signature Cream Palette */
         cream: {
+          DEFAULT: "hsl(var(--cream-signature))",
           signature: "hsl(var(--cream-signature))",
           light: "hsl(var(--cream-light))",
           dark: "hsl(var(--cream-dark))",
@@ -39,6 +40,7 @@ export default {
           light: "hsl(var(--gold-light))",
           dark: "hsl(var(--gold-dark))",
         },
+        "text-on-dark": "hsl(var(--text-on-dark))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
