@@ -4,12 +4,15 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import ProductCarousel from '@/components/products/ProductCarousel';
+import privilege from '@/assets/products/privilege.png';
+import privilegeBox from '@/assets/products/privilege-box.png';
+import vida from '@/assets/products/vida.png';
+import vidaBox from '@/assets/products/vida-box.png';
+import elite from '@/assets/products/elite.png';
+import eliteBox from '@/assets/products/elite-box.png';
+import highness from '@/assets/products/highness.png';
+import highnessBox from '@/assets/products/highness-box.png';
 import ourStory1 from '@/assets/our-story-1.webp';
-import ourStory2 from '@/assets/our-story-2.webp';
-import ourStory3 from '@/assets/our-story-3.webp';
-import ourStory4 from '@/assets/our-story-4.webp';
-import ourStory5 from '@/assets/our-story-5.webp';
-import ourStory6 from '@/assets/our-story-6.webp';
 
 const OurStory = () => {
   const storyLines = [
@@ -24,12 +27,10 @@ const OurStory = () => {
   ];
 
   const products = [
-    { id: 'vida', image: ourStory1, name: "VIDA", price: "$395" },
-    { id: 'privilege', image: ourStory2, name: "PRIVILEGE", price: "$395" },
-    { id: 'gcc', image: ourStory3, name: "GCC", price: "$450" },
-    { id: 'gcc-noir', image: ourStory4, name: "GCC NOIR", price: "$450" },
-    { id: 'heritage', image: ourStory5, name: "HERITAGE", price: "$550" },
-    { id: 'elite', image: ourStory6, name: "ELITE", price: "$395" },
+    { id: 'privilege', image: privilege, hoverImage: privilegeBox, name: "PRIVILEGE", price: "AED 645" },
+    { id: 'vida', image: vida, hoverImage: vidaBox, name: "VIDA", price: "AED 695" },
+    { id: 'elite', image: elite, hoverImage: eliteBox, name: "ELITE", price: "AED 675" },
+    { id: 'highness', image: highness, hoverImage: highnessBox, name: "HIGHNESS", price: "AED 795" },
   ];
 
   return (
