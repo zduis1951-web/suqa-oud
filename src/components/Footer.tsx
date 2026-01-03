@@ -25,19 +25,61 @@ const Footer = () => {
             <p className="text-xs tracking-[0.15em] uppercase mb-4">
               Follow us for exclusive news and updates:
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-5">
               {/* Instagram Icon */}
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Instagram">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              <a 
+                href="https://www.instagram.com/suqaoud?igsh=MTc3ZnN2N3AyaXAwdQ==" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="group relative hover:scale-110 transition-all duration-300" 
+                aria-label="Follow us on Instagram"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="transition-all duration-300">
+                  <defs>
+                    <linearGradient id="instagramGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#FCAF45" />
+                      <stop offset="25%" stopColor="#F77737" />
+                      <stop offset="50%" stopColor="#F56040" />
+                      <stop offset="75%" stopColor="#C13584" />
+                      <stop offset="100%" stopColor="#833AB4" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" strokeWidth="1.5" className="group-hover:stroke-[url(#instagramGradient)] transition-all duration-300" />
+                  <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.5" className="group-hover:stroke-[url(#instagramGradient)] transition-all duration-300" />
+                  <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" className="group-hover:fill-[#C13584] transition-all duration-300" />
                 </svg>
               </a>
+
+              {/* TikTok Icon */}
+              <a 
+                href="https://www.tiktok.com/@suqaoud?_r=1&_t=ZS-924vJot38N8" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="group relative hover:scale-110 transition-all duration-300" 
+                aria-label="Follow us on TikTok"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="transition-all duration-300">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" className="group-hover:fill-[#00F2EA] transition-all duration-300"/>
+                </svg>
+              </a>
+
               {/* Facebook Icon */}
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Facebook">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              <a 
+                href="https://www.facebook.com/share/1GsEX2SwCt/?mibextid=wwXIfr" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="group relative hover:scale-110 transition-all duration-300" 
+                aria-label="Follow us on Facebook"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="transition-all duration-300">
+                  <path 
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" 
+                    stroke="currentColor" 
+                    strokeWidth="1.5" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    className="group-hover:stroke-[#1877F2] transition-all duration-300"
+                  />
                 </svg>
               </a>
             </div>
