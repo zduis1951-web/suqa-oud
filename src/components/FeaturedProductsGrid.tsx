@@ -396,7 +396,7 @@ const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => 
         width: '100%',
         backgroundColor: 'rgb(227, 214, 198)',
         paddingTop: '48px',
-        paddingBottom: '48px',
+        paddingBottom: '0px',
       }}
     >
       {/* Section Title */}
