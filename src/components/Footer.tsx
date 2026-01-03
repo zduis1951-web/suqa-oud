@@ -76,20 +76,14 @@ const Footer = () => {
             </button>
             <ul className={`space-y-2 sm:space-y-3 overflow-hidden transition-all duration-300 ${openSection === 'house' ? 'max-h-60 pt-3' : 'max-h-0 lg:max-h-none lg:pt-4 lg:mt-2'}`}>
               <li>
-                
-              </li>
-              <li>
-                <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
+                <Link to="/our-story" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
                   {t('footer.ourStory')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
+                <Link to="/our-philosophy" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
                   {t('footer.ourPhilosophy')}
-                </a>
-              </li>
-              <li>
-                
+                </Link>
               </li>
             </ul>
           </div>
