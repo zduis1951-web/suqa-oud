@@ -45,7 +45,7 @@ const CarouselProductCard = ({
         borderWidth: '1.5px',
         borderStyle: 'solid',
         borderColor: 'rgb(53, 53, 53)',
-        background: 'rgb(247, 244, 239)',
+        background: '#EFE3D9',
         zIndex: 1,
         minHeight: '502px',
         boxSizing: 'border-box',
@@ -118,7 +118,7 @@ const CarouselProductCard = ({
             <div 
               style={{
                 margin: 'auto',
-                backgroundColor: 'rgb(247, 244, 239)',
+                backgroundColor: '#EFE3D9',
                 width: '100%',
                 bottom: 0,
                 position: 'absolute',
@@ -320,7 +320,7 @@ const ProductCarousel = ({ products, onProductClick, className = '' }: ProductCa
         onClick={scrollPrev}
         className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center transition-all duration-300 -translate-x-1/2 md:-translate-x-6 disabled:opacity-30 disabled:cursor-not-allowed"
         style={{
-          backgroundColor: 'rgb(247, 244, 239)',
+          backgroundColor: '#EFE3D9',
           border: '1.5px solid rgb(53, 53, 53)',
           borderRadius: '50%',
         }}
@@ -334,7 +334,7 @@ const ProductCarousel = ({ products, onProductClick, className = '' }: ProductCa
         onClick={scrollNext}
         className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center transition-all duration-300 translate-x-1/2 md:translate-x-6 disabled:opacity-30 disabled:cursor-not-allowed"
         style={{
-          backgroundColor: 'rgb(247, 244, 239)',
+          backgroundColor: '#EFE3D9',
           border: '1.5px solid rgb(53, 53, 53)',
           borderRadius: '50%',
         }}
