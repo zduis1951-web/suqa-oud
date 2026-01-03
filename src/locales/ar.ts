@@ -42,7 +42,7 @@ export const ar = {
   
   // Outlands Section (Perfect Gift)
   outlands: {
-    title: 'تغليف مجاني وخيارات تخصيص. هدية تليق بالملوك.',
+    title: 'لا تعرف أي عطر تختار؟ لا تتردد في تجربتها جميعاً!',
     description: 'الهدية المثالية',
     explore: 'استكشف',
     pauseVideo: 'إيقاف الفيديو',
