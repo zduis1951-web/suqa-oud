@@ -57,7 +57,7 @@ const OutlandsSection = ({
         </p>
 
         {/* Title */}
-        <h2 className="outlands-title text-cream text-center text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] max-w-xs sm:max-w-md md:max-w-lg mx-auto mb-6 sm:mb-8">
+        <h2 className="outlands-title text-cream text-center text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] max-w-xs sm:max-w-md md:max-w-lg mx-auto mb-4 sm:mb-5">
           {t('outlands.title')}
         </h2>
 
