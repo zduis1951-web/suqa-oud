@@ -582,7 +582,7 @@
   }
 
   .outlands-content {
-    @apply absolute inset-0 flex flex-col items-center justify-end pb-12 sm:pb-16 md:pb-20;
+    @apply absolute inset-0 flex flex-col items-center justify-end pb-24 sm:pb-32 md:pb-40;
   }
 
   .outlands-title {
