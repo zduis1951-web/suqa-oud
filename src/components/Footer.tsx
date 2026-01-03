@@ -2,24 +2,22 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-
 const Footer = () => {
   const [email, setEmail] = useState('');
   const [openSection, setOpenSection] = useState<string | null>(null);
-  const { t, isRTL } = useLanguage();
-
+  const {
+    t,
+    isRTL
+  } = useLanguage();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Subscribe email:', email);
     setEmail('');
   };
-
   const toggleSection = (section: string) => {
     setOpenSection(openSection === section ? null : section);
   };
-
-  return (
-    <footer className="w-full bg-gold text-cream">
+  return <footer className="w-full bg-gold text-cream">
       {/* Main Footer Content */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 py-8 sm:py-10 md:py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-6">
@@ -35,13 +33,7 @@ const Footer = () => {
             </p>
             <div className={`flex items-center gap-4 sm:gap-5 ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
               {/* Instagram Icon */}
-              <a 
-                href="https://www.instagram.com/suqaoud?igsh=MTc3ZnN2N3AyaXAwdQ==" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="group relative hover:scale-110 transition-all duration-300 p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center" 
-                aria-label="Follow us on Instagram"
-              >
+              <a href="https://www.instagram.com/suqaoud?igsh=MTc3ZnN2N3AyaXAwdQ==" target="_blank" rel="noopener noreferrer" className="group relative hover:scale-110 transition-all duration-300 p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Follow us on Instagram">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="transition-all duration-300">
                   <defs>
                     <linearGradient id="instagramGradient" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -59,35 +51,16 @@ const Footer = () => {
               </a>
 
               {/* TikTok Icon */}
-              <a 
-                href="https://www.tiktok.com/@suqaoud?_r=1&_t=ZS-924vJot38N8" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="group relative hover:scale-110 transition-all duration-300 p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center" 
-                aria-label="Follow us on TikTok"
-              >
+              <a href="https://www.tiktok.com/@suqaoud?_r=1&_t=ZS-924vJot38N8" target="_blank" rel="noopener noreferrer" className="group relative hover:scale-110 transition-all duration-300 p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Follow us on TikTok">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="transition-all duration-300">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" className="group-hover:fill-[#00F2EA] transition-all duration-300"/>
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" className="group-hover:fill-[#00F2EA] transition-all duration-300" />
                 </svg>
               </a>
 
               {/* Facebook Icon */}
-              <a 
-                href="https://www.facebook.com/share/1GsEX2SwCt/?mibextid=wwXIfr" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="group relative hover:scale-110 transition-all duration-300 p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center" 
-                aria-label="Follow us on Facebook"
-              >
+              <a href="https://www.facebook.com/share/1GsEX2SwCt/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="group relative hover:scale-110 transition-all duration-300 p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Follow us on Facebook">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="transition-all duration-300">
-                  <path 
-                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" 
-                    stroke="currentColor" 
-                    strokeWidth="1.5" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                    className="group-hover:stroke-[#1877F2] transition-all duration-300"
-                  />
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-[#1877F2] transition-all duration-300" />
                 </svg>
               </a>
             </div>
@@ -95,10 +68,7 @@ const Footer = () => {
 
           {/* Column 2 - THE HOUSE OF SUQA OUD (Accordion on mobile) */}
           <div className="lg:col-span-1">
-            <button 
-              onClick={() => toggleSection('house')}
-              className="w-full flex items-center justify-between py-3 border-b border-cream/20 lg:border-0 lg:pointer-events-none"
-            >
+            <button onClick={() => toggleSection('house')} className="w-full flex items-center justify-between py-3 border-b border-cream/20 lg:border-0 lg:pointer-events-none">
               <h4 className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase font-normal">
                 {t('footer.houseOfSuqa')}
               </h4>
@@ -106,9 +76,7 @@ const Footer = () => {
             </button>
             <ul className={`space-y-2 sm:space-y-3 overflow-hidden transition-all duration-300 ${openSection === 'house' ? 'max-h-60 pt-3' : 'max-h-0 lg:max-h-none lg:pt-4 lg:mt-2'}`}>
               <li>
-                <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  {t('footer.storeLocator')}
-                </a>
+                
               </li>
               <li>
                 <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
@@ -121,19 +89,14 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
-                  {t('footer.visitorCentre')}
-                </a>
+                
               </li>
             </ul>
           </div>
 
           {/* Column 3 - CUSTOMER SERVICE (Accordion on mobile) */}
           <div className="lg:col-span-1">
-            <button 
-              onClick={() => toggleSection('service')}
-              className="w-full flex items-center justify-between py-3 border-b border-cream/20 lg:border-0 lg:pointer-events-none"
-            >
+            <button onClick={() => toggleSection('service')} className="w-full flex items-center justify-between py-3 border-b border-cream/20 lg:border-0 lg:pointer-events-none">
               <h4 className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase font-normal">
                 {t('footer.customerService')}
               </h4>
@@ -175,10 +138,7 @@ const Footer = () => {
 
           {/* Column 4 - LEGAL (Accordion on mobile) */}
           <div className="lg:col-span-1">
-            <button 
-              onClick={() => toggleSection('legal')}
-              className="w-full flex items-center justify-between py-3 border-b border-cream/20 lg:border-0 lg:pointer-events-none"
-            >
+            <button onClick={() => toggleSection('legal')} className="w-full flex items-center justify-between py-3 border-b border-cream/20 lg:border-0 lg:pointer-events-none">
               <h4 className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase font-normal">
                 {t('footer.legal')}
               </h4>
@@ -212,19 +172,8 @@ const Footer = () => {
               {t('footer.signUpDescription')}
             </p>
             <form onSubmit={handleSubmit} className="mb-3 sm:mb-4">
-              <input 
-                type="email" 
-                value={email} 
-                onChange={e => setEmail(e.target.value)} 
-                placeholder={t('footer.emailPlaceholder')} 
-                required 
-                className="w-full bg-transparent border border-cream/40 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-cream placeholder:text-cream/50 focus:outline-none focus:border-cream mb-2 sm:mb-3 min-h-[44px]"
-                dir={isRTL ? 'rtl' : 'ltr'}
-              />
-              <button 
-                type="submit" 
-                className="w-full bg-cream text-gold text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase py-2.5 sm:py-3 px-4 sm:px-6 hover:bg-cream/90 transition-colors font-medium min-h-[44px]"
-              >
+              <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t('footer.emailPlaceholder')} required className="w-full bg-transparent border border-cream/40 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-cream placeholder:text-cream/50 focus:outline-none focus:border-cream mb-2 sm:mb-3 min-h-[44px]" dir={isRTL ? 'rtl' : 'ltr'} />
+              <button type="submit" className="w-full bg-cream text-gold text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase py-2.5 sm:py-3 px-4 sm:px-6 hover:bg-cream/90 transition-colors font-medium min-h-[44px]">
                 {t('footer.subscribe')}
               </button>
             </form>
@@ -305,8 +254,6 @@ const Footer = () => {
           {t('footer.copyright')}
         </p>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
