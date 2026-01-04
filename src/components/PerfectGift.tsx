@@ -37,14 +37,14 @@ const PerfectGift = ({
         {/* Main Headline */}
         <h2 
           style={{ fontFamily: 'var(--font-primary)' }} 
-          className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] lg:tracking-[0.3em] uppercase mb-3 sm:mb-4 md:mb-6 font-bold text-center text-gold max-w-xs sm:max-w-md md:max-w-lg"
+          className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] lg:tracking-[0.3em] uppercase mb-3 sm:mb-4 md:mb-6 font-bold text-center text-gold max-w-xs sm:max-w-md md:max-w-lg"
         >
           {t('perfectGift.title')}
         </h2>
 
         {/* Subtext */}
         <p 
-          className="text-cream text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] lg:tracking-[0.3em] uppercase font-bold" 
+          className="text-cream text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] lg:tracking-[0.3em] uppercase font-bold" 
           style={{ fontFamily: 'var(--font-primary)' }}
         >
           {t('perfectGift.description')}

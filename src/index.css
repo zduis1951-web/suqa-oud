@@ -187,7 +187,7 @@
      PREMIUM ANNOUNCEMENT BAR
      ======================================== */
   .announcement-bar-premium {
-    @apply w-full py-2 sm:py-3 text-center text-[10px] sm:text-xs tracking-wider;
+    @apply w-full py-2 sm:py-3 text-center text-[15px] sm:text-lg tracking-wider;
     background-color: hsl(var(--announcement-bg));
     color: hsl(var(--announcement-text));
   }
@@ -291,7 +291,7 @@
   }
 
   .icon-label {
-    @apply hidden text-xs tracking-wide-luxury lg:block;
+    @apply hidden text-lg tracking-wide-luxury lg:block;
   }
 
   .cart-icon {
@@ -310,7 +310,7 @@
   }
 
   .nav-link-premium {
-    @apply relative py-2 text-[10px] md:text-xs font-medium tracking-[0.1em] md:tracking-[0.15em] uppercase transition-all duration-300;
+    @apply relative py-2 text-[15px] md:text-lg font-medium tracking-[0.1em] md:tracking-[0.15em] uppercase transition-all duration-300;
     color: hsl(var(--foreground));
   }
 
@@ -355,7 +355,7 @@
   }
 
   .mobile-nav-link {
-    @apply py-4 text-sm sm:text-base font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase border-b transition-all duration-300 opacity-0;
+    @apply py-4 text-xl sm:text-2xl font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase border-b transition-all duration-300 opacity-0;
     color: hsl(var(--foreground));
     border-color: hsl(var(--border));
   }
@@ -669,7 +669,7 @@
 
   .products-title {
     font-family: 'Assistant', sans-serif;
-    font-size: clamp(14px, 3vw, 28px);
+    font-size: clamp(21px, 4.5vw, 42px);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: rgb(18, 18, 18);
@@ -780,7 +780,7 @@
   .product-badge {
     background: transparent;
     font-family: 'Assistant', sans-serif;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 400;
     letter-spacing: normal;
     color: rgb(79, 79, 79);
@@ -792,16 +792,16 @@
     top: 0;
     left: 0;
     z-index: 9;
-    line-height: 18px;
+    line-height: 22px;
     border-radius: 0;
   }
 
   @media (min-width: 640px) {
     .product-badge {
-      font-size: 10px;
+      font-size: 15px;
       padding: 0 8px;
       margin: 16px 0 0 16px;
-      line-height: 20px;
+      line-height: 24px;
     }
   }
 
@@ -902,7 +902,7 @@
   }
 
   .product-title {
-    font-size: 13px;
+    font-size: 20px;
     font-family: 'Assistant', sans-serif;
     color: rgb(0, 0, 0);
     line-height: 1.4;
@@ -922,23 +922,23 @@
 
   @media (min-width: 480px) {
     .product-title {
-      font-size: 14px;
+      font-size: 21px;
       letter-spacing: 0.5px;
     }
   }
 
   @media (min-width: 640px) {
     .product-title {
-      font-size: 16px;
-      line-height: 28px;
+      font-size: 24px;
+      line-height: 32px;
       max-width: 85%;
     }
   }
 
   @media (min-width: 1024px) {
     .product-title {
-      font-size: 18px;
-      line-height: 30px;
+      font-size: 27px;
+      line-height: 36px;
       letter-spacing: 0.6px;
       max-width: 80%;
     }

@@ -49,7 +49,7 @@ const HighPerfumeryGallery = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center uppercase tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] font-serif text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-foreground px-4"
+        className="text-center uppercase tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] font-serif text-xl sm:text-2xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-foreground px-4"
       >
         {t('gallery.title')}
       </motion.h2>

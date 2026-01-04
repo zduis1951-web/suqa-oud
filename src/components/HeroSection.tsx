@@ -63,17 +63,17 @@ const HeroSection = ({
       <div className="absolute inset-x-0 bottom-12 sm:bottom-16 md:bottom-24 flex justify-center">
         <div className="px-4 sm:px-6 text-center max-w-[95vw] sm:max-w-none">
           {/* Brand Name */}
-          <h1 className="animate-fade-in-up font-serif font-light tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] text-xs sm:text-sm mb-4 sm:mb-6 md:mb-8 text-cream">
+          <h1 className="animate-fade-in-up font-serif font-light tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] text-lg sm:text-xl mb-4 sm:mb-6 md:mb-8 text-cream">
             {t('hero.brandTitle')}
           </h1>
           
           {/* Main Headline */}
-          <p className="animate-fade-in-up font-serif font-light leading-tight sm:leading-relaxed text-2xl sm:text-3xl md:text-4xl max-w-2xl mx-auto text-cream tracking-[0.08em] sm:tracking-[0.12em] md:tracking-[0.15em]">
+          <p className="animate-fade-in-up font-serif font-light leading-tight sm:leading-relaxed text-4xl sm:text-5xl md:text-6xl max-w-2xl mx-auto text-cream tracking-[0.08em] sm:tracking-[0.12em] md:tracking-[0.15em]">
             {t('hero.mainHeadline')}
           </p>
           
           {/* Tagline */}
-          <p className="animate-fade-in-up font-serif text-[10px] sm:text-xs md:text-sm font-light italic tracking-wide text-cream/80 mt-4 sm:mt-6 md:mt-8">
+          <p className="animate-fade-in-up font-serif text-[15px] sm:text-lg md:text-xl font-light italic tracking-wide text-cream/80 mt-4 sm:mt-6 md:mt-8">
             {t('hero.tagline')}
           </p>
 
