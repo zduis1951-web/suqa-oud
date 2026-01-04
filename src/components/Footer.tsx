@@ -24,7 +24,13 @@ const Footer = () => {
           
           {/* Column 1 - Brand (Always visible) */}
           <div className="lg:col-span-1">
-            <h3 className="font-serif text-base sm:text-lg tracking-[0.2em] mb-3 sm:mb-4">{t('footer.brandName')}</h3>
+            <a href="/" className="inline-block mb-3 sm:mb-4">
+              <img 
+                src="/suqa-oud-logo.svg" 
+                alt="SUQA OUD" 
+                className="h-8 sm:h-10 w-auto brightness-0 invert"
+              />
+            </a>
             <p className="text-cream/70 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
               {t('footer.brandDescription')}
             </p>
