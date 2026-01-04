@@ -28,7 +28,7 @@ const Footer = () => {
               <img 
                 src="/suqa-oud-logo.svg" 
                 alt="SUQA OUD" 
-                className="h-8 sm:h-10 w-auto brightness-0 invert"
+                className="h-[52px] sm:h-16 w-auto brightness-0 invert"
               />
             </a>
             <p className="text-cream/70 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
