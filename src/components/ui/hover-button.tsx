@@ -95,13 +95,15 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
           "group relative inline-flex items-center justify-center overflow-hidden",
           "px-8 sm:px-10 md:px-14 py-4 sm:py-5 md:py-6",
           "text-xs sm:text-sm font-medium tracking-[0.25em] sm:tracking-[0.3em] uppercase",
-          "bg-cream text-gold",
-          "border border-gold/40",
+          // Liquid glass effect - more transparent
+          "bg-transparent backdrop-blur-[2px]",
+          "text-gold",
+          "border border-gold/60",
           "transition-all duration-700 ease-out",
-          "hover:border-gold hover:shadow-[0_0_40px_rgba(180,140,50,0.15)]",
+          "hover:bg-gold/5 hover:border-gold hover:shadow-[0_0_30px_rgba(180,140,50,0.12)]",
           "hover:scale-[1.02]",
           "active:scale-[0.98]",
-          "[--circle-start:hsl(43_75%_45%/0.3)] [--circle-end:hsl(43_75%_55%/0.2)]",
+          "[--circle-start:hsl(43_75%_45%/0.2)] [--circle-end:hsl(43_75%_55%/0.15)]",
           className
         )}
         onPointerMove={handlePointerMove}
@@ -109,9 +111,12 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
         onPointerLeave={handlePointerLeave}
         {...props}
       >
-        {/* Animated border glow */}
-        <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-          <span className="absolute inset-[-2px] bg-gradient-to-r from-transparent via-gold/20 to-transparent animate-[shimmer_2s_infinite]" />
+        {/* Subtle glass reflection */}
+        <span className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-transparent pointer-events-none" />
+        
+        {/* Animated border glow on hover */}
+        <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+          <span className="absolute inset-[-1px] bg-gradient-to-r from-transparent via-gold/15 to-transparent animate-[shimmer_2.5s_infinite]" />
         </span>
         
         {/* Circle effects */}
@@ -119,8 +124,8 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
           <span
             key={id}
             className={cn(
-              "pointer-events-none absolute h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full blur-xl transition-opacity duration-1000",
-              fadeState === "in" && "opacity-100",
+              "pointer-events-none absolute h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full blur-xl transition-opacity duration-1000",
+              fadeState === "in" && "opacity-80",
               fadeState === "out" && "opacity-0",
               !fadeState && "opacity-0"
             )}
@@ -131,9 +136,6 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
             }}
           />
         ))}
-        
-        {/* Inner shine effect */}
-        <span className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         
         {/* Text content with z-index */}
         <span className="relative z-10 transition-all duration-500 group-hover:tracking-[0.35em]">
