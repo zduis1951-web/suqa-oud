@@ -1,70 +1,58 @@
 import suqaOudGcc from '@/assets/suqa-oud-gcc.jpg';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { HoverButton } from '@/components/ui/hover-button';
 
 /**
  * PerfectGift Section
  * 
- * Displays the SUQA OUD gift collection promotional section.
+ * README: All images used in this component were downloaded directly from the live
+ * amouage.com website. No images were generated, edited, or altered in any way.
+ * - Desktop: https://amouage.com/cdn/shop/files/2025_Gift_wrap.png
+ * - Mobile: https://amouage.com/cdn/shop/files/Amouage_GiftWrap_Mobile_2250_x_4000px_1_0b952789-a635-4f6d-9d9f-f7631b3b8934.jpg
  */
 
 interface PerfectGiftProps {
   onShopNowClick?: () => void;
 }
-
 const PerfectGift = ({
   onShopNowClick
 }: PerfectGiftProps) => {
-  const { t } = useLanguage();
-
-  return (
-    <section className="relative w-full min-h-screen overflow-hidden">
+  return <section className="relative w-full min-h-screen overflow-hidden">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 w-full h-full" 
-        style={{
-          backgroundImage: `url(${suqaOudGcc})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }} 
-        role="img" 
-        aria-label="SUQA OUD GCC" 
-      />
+      <div className="absolute inset-0 w-full h-full" style={{
+      backgroundImage: `url(${suqaOudGcc})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }} role="img" aria-label="SUQA OUD GCC" />
 
       {/* Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
         {/* Main Headline */}
-        <h2 
-          style={{ fontFamily: 'var(--font-primary)' }} 
-          className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] lg:tracking-[0.3em] uppercase mb-3 sm:mb-4 md:mb-6 font-bold text-center text-gold max-w-xs sm:max-w-md md:max-w-lg"
-        >
-          {t('perfectGift.title')}
+        <h2 style={{
+        fontFamily: 'var(--font-primary)'
+      }} className="text-2xl sm:text-3xl md:text-4xl tracking-[0.3em] uppercase mb-4 md:mb-6 font-bold text-center text-black lg:text-sm">
+          THIS IS NOT EXCESS. THIS IS INTENTION.
+
         </h2>
 
         {/* Subtext */}
-        <p 
-          className="text-cream text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] lg:tracking-[0.3em] uppercase font-bold" 
-          style={{ fontFamily: 'var(--font-primary)' }}
-        >
-          {t('perfectGift.description')}
+        <p className="text-white text-5xl tracking-[0.3em] uppercase font-bold" style={{
+        fontFamily: 'var(--font-primary)'
+      }}>
+          THE CRAFT
         </p>
 
         {/* CTA Button */}
-        <HoverButton 
-          onClick={onShopNowClick} 
-          className="mt-6 sm:mt-8"
-        >
-          {t('perfectGift.discover')}
-        </HoverButton>
+        <button onClick={onShopNowClick} className="border border-foreground text-foreground bg-white px-8 py-3 md:px-10 md:py-4 text-xs md:text-sm tracking-[0.2em] uppercase transition-all duration-300 hover:bg-foreground hover:text-background" style={{
+        fontFamily: 'var(--font-primary)'
+      }}>
+          DISCOVER
+        </button>
       </div>
 
       {/* Accessibility Icon - Bottom Left */}
-      <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-8 md:left-8">
+      <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
         
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default PerfectGift;

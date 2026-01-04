@@ -1,81 +1,56 @@
-/* Sakkal Majalla Font - SUQA OUD Brand */
-@font-face {
-  font-family: 'Sakkal Majalla';
-  src: url('/fonts/majalla.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Sakkal Majalla';
-  src: url('/fonts/majallab.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
+/* Amouage Design System - Luxury Fragrance Aesthetic */
 
 @layer base {
   :root {
     /* =============================================
-       SUQA OUD BRAND PALETTE
+       AMOUAGE LUXURY PALETTE
+       PRIMARY SIGNATURE COLOR: #EEE5DA
+       HSL Equivalent: 33 37% 89%
        ============================================= */
     
-    /* ===== BEIGE #FAF6F0 ===== */
-    --cream-signature: 40 56% 96%;
-    --cream-light: 40 60% 98%;
-    --cream-dark: 42 36% 87%;
+    /* ===== THE SIGNATURE CREAM #EEE5DA ===== */
+    --cream-signature: 33 37% 89%;
+    --cream-light: 33 40% 94%;
+    --cream-dark: 33 35% 84%;
     
-    /* ===== CREAM BEIGE #E8E3D5 ===== */
-    --brown-deep: 42 36% 87%;
-    --brown-medium: 42 30% 80%;
-    --brown-light: 42 25% 75%;
-    
-    /* ===== GOLD TEXT COLOR ===== */
-    --gold: 43 75% 45%;
-    --gold-light: 43 70% 55%;
-    --gold-dark: 43 80% 35%;
-    
-    /* ===== TEXT ON DARK BACKGROUNDS ===== */
-    --text-on-dark: var(--cream-signature);
-    --text-on-dark-muted: 40 56% 96%;
+    /* ===== LUXE DARK BROWN ===== */
+    --brown-deep: 25 30% 12%;
+    --brown-medium: 25 25% 20%;
+    --brown-light: 25 20% 35%;
     
     /* ===== CORE BACKGROUNDS ===== */
     --background: var(--cream-signature);
-    --foreground: var(--gold);
+    --foreground: var(--brown-deep);
 
     /* Card Surfaces */
     --card: var(--cream-light);
-    --card-foreground: var(--gold);
+    --card-foreground: var(--brown-deep);
 
     /* Popover */
     --popover: var(--cream-light);
-    --popover-foreground: var(--gold);
+    --popover-foreground: var(--brown-deep);
 
-    /* Primary - Gold Text */
-    --primary: var(--gold);
+    /* Primary - Deep Brown on Cream */
+    --primary: var(--brown-deep);
     --primary-foreground: var(--cream-signature);
 
     /* Secondary - Cream Variant */
     --secondary: var(--cream-dark);
-    --secondary-foreground: var(--gold);
+    --secondary-foreground: var(--brown-deep);
 
     /* Muted */
-    --muted: 40 30% 90%;
-    --muted-foreground: var(--gold-light);
+    --muted: 30 20% 80%;
+    --muted-foreground: 25 15% 45%;
 
-    /* Accent - Gold */
-    --accent: var(--gold-light);
-    --accent-foreground: var(--cream-signature);
+    /* Accent - Champagne Gold */
+    --accent: 38 40% 78%;
+    --accent-foreground: var(--brown-deep);
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -83,7 +58,7 @@
     /* Borders & Inputs */
     --border: var(--cream-dark);
     --input: var(--cream-dark);
-    --ring: var(--gold);
+    --ring: var(--brown-deep);
 
     --radius: 0rem;
 
@@ -91,31 +66,31 @@
     --hero-overlay: 25 25% 8%;
     --hero-text: var(--cream-signature);
     --hero-button-bg: var(--cream-signature);
-    --hero-button-text: var(--gold);
-    --hero-button-border: var(--gold);
+    --hero-button-text: var(--brown-deep);
+    --hero-button-border: var(--cream-dark);
 
     /* ===== ANNOUNCEMENT BAR ===== */
-    --announcement-bg: var(--gold);
+    --announcement-bg: var(--brown-deep);
     --announcement-text: var(--cream-signature);
 
     /* ===== HEADER ===== */
     --header-bg: var(--cream-signature);
-    --header-text: var(--gold);
+    --header-text: var(--brown-deep);
 
     /* ===== OUTLANDS SECTION ===== */
     --outlands-bg: var(--cream-signature);
-    --outlands-text: var(--gold);
-    --outlands-button-border: var(--gold);
+    --outlands-text: var(--brown-deep);
+    --outlands-button-border: var(--brown-deep);
 
     /* ===== SIDEBAR ===== */
     --sidebar-background: var(--cream-light);
-    --sidebar-foreground: var(--gold);
-    --sidebar-primary: var(--gold);
+    --sidebar-foreground: var(--brown-deep);
+    --sidebar-primary: var(--brown-deep);
     --sidebar-primary-foreground: var(--cream-signature);
     --sidebar-accent: var(--cream-dark);
-    --sidebar-accent-foreground: var(--gold);
+    --sidebar-accent-foreground: var(--brown-deep);
     --sidebar-border: var(--cream-dark);
-    --sidebar-ring: var(--gold);
+    --sidebar-ring: var(--brown-deep);
   }
 
   .dark {
@@ -161,17 +136,14 @@
 @layer base {
   * {
     @apply border-border;
-    -webkit-tap-highlight-color: transparent;
   }
 
   html {
     scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
   }
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -184,7 +156,7 @@
      PREMIUM ANNOUNCEMENT BAR
      ======================================== */
   .announcement-bar-premium {
-    @apply w-full py-2 sm:py-3 text-center text-[10px] sm:text-xs tracking-wider;
+    @apply w-full py-3 text-center text-xs tracking-wider;
     background-color: hsl(var(--announcement-bg));
     color: hsl(var(--announcement-text));
   }
@@ -212,15 +184,16 @@
   }
 
   .header-content {
-    @apply mx-auto max-w-screen-2xl px-3 sm:px-4 md:px-6 lg:px-12 xl:px-16;
+    @apply mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16;
   }
 
   .header-top-row {
-    @apply flex items-center justify-between;
+    @apply flex items-center justify-between py-4;
   }
 
   .header-left {
     @apply flex items-center;
+    min-width: 150px;
   }
 
   .header-center {
@@ -228,13 +201,14 @@
   }
 
   .header-right {
-    @apply flex items-center;
+    @apply flex items-center gap-4;
+    min-width: 150px;
     justify-content: flex-end;
   }
 
   /* Country Selector Premium */
   .country-selector-premium {
-    @apply flex items-center gap-1 sm:gap-2 text-sm tracking-wider transition-all duration-300;
+    @apply flex items-center gap-2 text-sm tracking-wider transition-all duration-300;
     color: hsl(var(--foreground));
   }
 
@@ -252,7 +226,7 @@
   }
 
   .logo-text {
-    @apply font-display font-light transition-all duration-500;
+    @apply font-display text-2xl font-light tracking-luxury transition-all duration-500 md:text-3xl lg:text-4xl;
     color: hsl(var(--foreground));
   }
 
@@ -267,7 +241,7 @@
 
   /* Header Icons Premium */
   .header-icon-premium {
-    @apply relative flex items-center gap-1 sm:gap-2 transition-all duration-300;
+    @apply relative flex items-center gap-2 p-2 transition-all duration-300;
     color: hsl(var(--foreground));
   }
 
@@ -286,7 +260,7 @@
   }
 
   .icon-label {
-    @apply hidden text-xs tracking-wide-luxury lg:block;
+    @apply hidden text-xs tracking-wide-luxury md:block;
   }
 
   .cart-icon {
@@ -301,11 +275,11 @@
 
   /* Navigation Row Premium */
   .nav-row {
-    @apply items-center justify-center gap-4 md:gap-6 lg:gap-8 xl:gap-12 pb-3 md:pb-4;
+    @apply items-center justify-center gap-8 pb-4 xl:gap-12;
   }
 
   .nav-link-premium {
-    @apply relative py-2 text-[10px] md:text-xs font-medium tracking-[0.1em] md:tracking-[0.15em] uppercase transition-all duration-300;
+    @apply relative py-2 text-xs font-medium tracking-[0.15em] uppercase transition-all duration-300;
     color: hsl(var(--foreground));
   }
 
@@ -337,7 +311,7 @@
   }
 
   .mobile-nav-drawer {
-    @apply fixed top-0 right-0 z-50 h-full w-full sm:w-80 translate-x-full transition-transform duration-500 ease-out;
+    @apply fixed top-0 right-0 z-50 h-full w-80 translate-x-full transition-transform duration-500 ease-out;
     background-color: hsl(var(--background));
   }
 
@@ -346,11 +320,11 @@
   }
 
   .mobile-nav-content {
-    @apply flex flex-col gap-1 p-6 sm:p-8 overflow-y-auto h-full;
+    @apply flex flex-col gap-1 p-8 pt-24;
   }
 
   .mobile-nav-link {
-    @apply py-4 text-sm sm:text-base font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase border-b transition-all duration-300 opacity-0;
+    @apply py-4 text-sm font-medium tracking-[0.2em] uppercase border-b transition-all duration-300 opacity-0;
     color: hsl(var(--foreground));
     border-color: hsl(var(--border));
   }
@@ -369,7 +343,7 @@
      PREMIUM BUTTON SYSTEM
      ======================================== */
   .btn-hero {
-    @apply relative inline-flex items-center justify-center px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase overflow-hidden;
+    @apply relative inline-flex items-center justify-center px-12 py-5 text-sm font-medium tracking-[0.3em] uppercase overflow-hidden;
     background-color: hsl(var(--hero-button-bg));
     color: hsl(var(--hero-button-text));
     border: 1px solid hsl(var(--hero-button-border));
@@ -416,7 +390,7 @@
 
   /* Guidance Section Button */
   .btn-guidance {
-    @apply relative inline-flex items-center justify-center text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase overflow-hidden;
+    @apply relative inline-flex items-center justify-center px-12 py-5 text-sm font-medium tracking-[0.3em] uppercase overflow-hidden;
     background-color: hsl(var(--hero-button-bg));
     color: hsl(var(--hero-button-text));
     border: 1px solid hsl(var(--hero-button-border));
@@ -447,7 +421,7 @@
 
   /* Outlands Button */
   .btn-outlands {
-    @apply relative inline-flex items-center justify-center text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase overflow-hidden;
+    @apply relative inline-flex items-center justify-center px-12 py-5 text-sm font-medium tracking-[0.3em] uppercase overflow-hidden;
     background-color: transparent;
     color: hsl(var(--foreground));
     border: 1px solid hsl(var(--foreground));
@@ -480,11 +454,9 @@
      ======================================== */
   /* Accessibility Button */
   .accessibility-btn {
-    @apply fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-50 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full shadow-lg transition-all duration-300;
+    @apply fixed bottom-6 left-6 z-50 flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-all duration-300;
     background-color: hsl(var(--foreground));
     color: hsl(var(--background));
-    min-width: 44px;
-    min-height: 44px;
   }
 
   .accessibility-btn:hover {
@@ -494,13 +466,11 @@
 
   /* Play/Pause Control */
   .media-control {
-    @apply absolute z-50 flex items-center justify-center rounded-full border transition-all duration-300;
+    @apply absolute bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full border transition-all duration-300;
     color: hsl(var(--hero-text));
     border-color: hsl(var(--hero-text) / 0.55);
     background-color: hsl(var(--hero-overlay) / 0.25);
     backdrop-filter: blur(2px);
-    min-width: 44px;
-    min-height: 44px;
   }
 
   .media-control:hover {
@@ -512,14 +482,12 @@
   /* Guidance Collection Section */
   .guidance-section {
     @apply relative w-full overflow-hidden;
-    height: 100vh;
-    min-height: 500px;
-    max-height: 900px;
+    height: 770px;
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 767px) {
     .guidance-section {
-      height: 770px;
+      height: 100vh;
       min-height: 600px;
     }
   }
@@ -540,19 +508,17 @@
   }
 
   .guidance-content {
-    @apply absolute inset-0 flex flex-col items-center justify-end pb-12 sm:pb-16 md:pb-20;
+    @apply absolute inset-0 flex flex-col items-center justify-end pb-16 md:pb-20;
   }
 
   .guidance-title {
-    @apply font-display font-light text-hero-text mb-4 sm:mb-6;
+    @apply font-display text-4xl font-light tracking-luxury text-hero-text mb-6 md:text-5xl lg:text-6xl;
     text-shadow: 0 2px 8px hsl(var(--hero-overlay) / 0.3);
   }
 
   .guidance-media-control {
-    @apply absolute bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-30 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center transition-all duration-300;
+    @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-all duration-300;
     color: hsl(var(--hero-text));
-    min-width: 44px;
-    min-height: 44px;
   }
 
   .guidance-media-control:hover {
@@ -564,15 +530,13 @@
      ======================================== */
   .outlands-section {
     @apply relative w-full overflow-hidden;
-    height: 100vh;
-    min-height: 500px;
-    max-height: 900px;
+    height: 770px;
     background-color: hsl(var(--outlands-bg));
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 767px) {
     .outlands-section {
-      height: 770px;
+      height: 100vh;
       min-height: 600px;
     }
   }
@@ -585,406 +549,22 @@
   }
 
   .outlands-content {
-    @apply absolute inset-0 flex flex-col items-center justify-end pb-24 sm:pb-32 md:pb-40;
+    @apply absolute inset-0 flex flex-col items-center justify-end pb-16 md:pb-20;
   }
 
   .outlands-title {
-    @apply font-display font-light mb-4 sm:mb-6;
+    @apply font-display text-4xl font-light tracking-luxury mb-6 md:text-5xl lg:text-6xl;
     color: hsl(var(--outlands-text));
     text-shadow: 0 2px 8px hsl(var(--hero-overlay) / 0.1);
   }
 
   .outlands-media-control {
-    @apply absolute bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-30 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center transition-all duration-300;
+    @apply absolute bottom-8 right-8 z-30 flex h-10 w-10 items-center justify-center transition-all duration-300;
     color: hsl(var(--outlands-text));
-    min-width: 44px;
-    min-height: 44px;
   }
 
   .outlands-media-control:hover {
     transform: scale(1.1);
-  }
-
-  /* ========================================
-     PRODUCTS GRID - Mobile Responsive
-     ======================================== */
-  .products-section {
-    @apply w-full;
-    background-color: rgb(227, 214, 198);
-    padding-top: 32px;
-    padding-bottom: 0;
-  }
-
-  @media (min-width: 640px) {
-    .products-section {
-      padding-top: 40px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .products-section {
-      padding-top: 48px;
-    }
-  }
-
-  .products-section-loading,
-  .products-section-empty {
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .products-section-loading {
-    min-height: 500px;
-  }
-
-  .products-loading-text {
-    font-family: 'Assistant', sans-serif;
-    color: rgb(18, 18, 18);
-  }
-
-  .products-header {
-    text-align: center;
-    margin-bottom: 24px;
-    padding: 0 16px;
-  }
-
-  @media (min-width: 640px) {
-    .products-header {
-      margin-bottom: 32px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .products-header {
-      margin-bottom: 48px;
-    }
-  }
-
-  .products-title {
-    font-family: 'Assistant', sans-serif;
-    font-size: clamp(14px, 3vw, 28px);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgb(18, 18, 18);
-    font-weight: 400;
-    margin: 0;
-  }
-
-  @media (min-width: 640px) {
-    .products-title {
-      letter-spacing: 0.15em;
-    }
-  }
-
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    .products-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  .product-card-item {
-    background: #EFE3D9;
-    border: 1px solid rgb(53, 53, 53);
-    border-right: none;
-    border-bottom: none;
-    cursor: pointer;
-    list-style: none;
-    min-height: 380px;
-  }
-
-  @media (min-width: 480px) {
-    .product-card-item {
-      min-height: 420px;
-    }
-  }
-
-  @media (min-width: 640px) {
-    .product-card-item {
-      min-height: 480px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .product-card-item {
-      min-height: 520px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .product-card-item {
-      min-height: 600px;
-    }
-  }
-
-  /* Right border for last item in each row */
-  .product-card-item:nth-child(2n) {
-    border-right: 1px solid rgb(53, 53, 53);
-  }
-
-  @media (min-width: 768px) {
-    .product-card-item:nth-child(2n) {
-      border-right: none;
-    }
-    .product-card-item:nth-child(4n) {
-      border-right: 1px solid rgb(53, 53, 53);
-    }
-  }
-
-  /* Bottom border for last row */
-  .product-card-item:nth-last-child(-n+2) {
-    border-bottom: 1px solid rgb(53, 53, 53);
-  }
-
-  @media (min-width: 768px) {
-    .product-card-item:nth-last-child(-n+2) {
-      border-bottom: none;
-    }
-    .product-card-item:nth-last-child(-n+4) {
-      border-bottom: 1px solid rgb(53, 53, 53);
-    }
-  }
-
-  .product-card-inner {
-    color: rgba(18, 18, 18, 0.75);
-    height: 100%;
-    position: relative;
-    text-decoration: none;
-    box-sizing: border-box;
-  }
-
-  .product-card-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    text-decoration: none;
-    text-align: left;
-    box-sizing: border-box;
-  }
-
-  .product-badge {
-    background: transparent;
-    font-family: 'Assistant', sans-serif;
-    font-size: 8px;
-    font-weight: 400;
-    letter-spacing: normal;
-    color: rgb(79, 79, 79);
-    padding: 0 6px;
-    margin: 12px 0 0 12px;
-    border: 1px solid rgb(79, 79, 79);
-    text-transform: uppercase;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 9;
-    line-height: 18px;
-    border-radius: 0;
-  }
-
-  @media (min-width: 640px) {
-    .product-badge {
-      font-size: 10px;
-      padding: 0 8px;
-      margin: 16px 0 0 16px;
-      line-height: 20px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .product-badge {
-      margin: 22px 0 0 22px;
-    }
-  }
-
-  .product-image-container {
-    background-color: transparent;
-    height: calc(100% - 80px);
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: stretch;
-    flex: 1;
-  }
-
-  @media (min-width: 640px) {
-    .product-image-container {
-      height: calc(100% - 90px);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .product-image-container {
-      height: calc(100% - 97px);
-    }
-  }
-
-  .product-image-wrapper {
-    margin: auto;
-    background-color: #EFE3D9;
-    width: 100%;
-    bottom: 0;
-    position: absolute;
-    top: 0;
-    overflow: hidden;
-    z-index: 0;
-  }
-
-  .product-image-inner {
-    width: 100%;
-    bottom: 0;
-    position: absolute;
-    top: 0;
-    display: block;
-    overflow: hidden;
-  }
-
-  .product-image {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    object-position: 50% 50%;
-    transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .product-image-hover {
-    opacity: 0;
-  }
-
-  .product-info {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    display: block;
-    text-align: center;
-    padding: 0;
-    flex-grow: 1;
-  }
-
-  .product-info-inner {
-    padding-bottom: 16px;
-    padding-top: 8px;
-    background-color: transparent;
-    height: auto;
-    min-height: 70px;
-  }
-
-  @media (min-width: 640px) {
-    .product-info-inner {
-      padding-bottom: 20px;
-      min-height: 80px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .product-info-inner {
-      padding-bottom: 27px;
-      min-height: 97px;
-    }
-  }
-
-  .product-title {
-    font-size: 13px;
-    font-family: 'Assistant', sans-serif;
-    color: rgb(0, 0, 0);
-    line-height: 1.4;
-    text-transform: uppercase;
-    padding: 0;
-    max-width: 90%;
-    margin: 0 auto;
-    white-space: nowrap;
-    display: flow-root;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-style: normal;
-    font-weight: 400;
-    letter-spacing: 0.4px;
-    word-break: break-word;
-  }
-
-  @media (min-width: 480px) {
-    .product-title {
-      font-size: 14px;
-      letter-spacing: 0.5px;
-    }
-  }
-
-  @media (min-width: 640px) {
-    .product-title {
-      font-size: 16px;
-      line-height: 28px;
-      max-width: 85%;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .product-title {
-      font-size: 18px;
-      line-height: 30px;
-      letter-spacing: 0.6px;
-      max-width: 80%;
-    }
-  }
-
-  .product-price-wrapper {
-    margin-top: 4px;
-    line-height: 1.4;
-    color: rgb(18, 18, 18);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media (min-width: 640px) {
-    .product-price-wrapper {
-      margin-top: 7px;
-    }
-  }
-
-  .product-price {
-    padding-top: 6px;
-    color: rgb(0, 0, 0);
-    font-family: 'Assistant', sans-serif;
-    font-size: 12px;
-    margin: 0;
-    font-weight: 400;
-    line-height: 1.5;
-    display: inline-block;
-  }
-
-  @media (min-width: 480px) {
-    .product-price {
-      font-size: 13px;
-    }
-  }
-
-  @media (min-width: 640px) {
-    .product-price {
-      font-size: 14px;
-      padding-top: 8px;
-      line-height: 24px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .product-price {
-      font-size: 15px;
-      padding-top: 12px;
-      line-height: 28px;
-    }
   }
 }
 
@@ -1065,208 +645,5 @@
   .animate-fade-in {
     animation: fade-in-up 0.6s ease-out forwards;
     opacity: 0;
-  }
-
-  /* Hero Text Colors */
-  .text-hero-text {
-    color: hsl(var(--hero-text));
-  }
-}
-
-/* ========================================
-   RTL (RIGHT-TO-LEFT) SUPPORT
-   ======================================== */
-
-/* RTL Base Styles */
-html[dir="rtl"] {
-  font-family: 'Sakkal Majalla', 'Segoe UI', Tahoma, sans-serif;
-}
-
-body.rtl {
-  text-align: right;
-}
-
-/* RTL Navigation */
-body.rtl .mobile-nav-drawer {
-  @apply right-auto left-0 translate-x-0;
-  transform: translateX(-100%);
-}
-
-body.rtl .mobile-nav-drawer.active {
-  transform: translateX(0);
-}
-
-body.rtl .mobile-nav-link:hover {
-  @apply pl-0 pr-4;
-}
-
-/* RTL Header */
-body.rtl .header-right {
-  flex-direction: row-reverse;
-}
-
-body.rtl .logo-underline {
-  @apply left-auto right-0;
-}
-
-/* RTL Buttons & Icons */
-body.rtl .btn-hero::before,
-body.rtl .btn-guidance::before {
-  @apply translate-x-full;
-}
-
-body.rtl .btn-hero:hover::before,
-body.rtl .btn-guidance:hover::before {
-  @apply -translate-x-full;
-}
-
-/* RTL Navigation Links */
-body.rtl .nav-link-underline {
-  @apply left-auto right-0;
-}
-
-/* RTL Form Elements */
-body.rtl input[type="text"],
-body.rtl input[type="email"],
-body.rtl input[type="password"],
-body.rtl textarea {
-  text-align: right;
-}
-
-/* RTL Footer */
-body.rtl .footer-section {
-  text-align: right;
-}
-
-/* RTL Product Card */
-body.rtl .product-badge {
-  @apply left-auto right-4;
-}
-
-/* RTL Animations */
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-body.rtl .mobile-nav-drawer.active .mobile-nav-link {
-  animation: slideInFromLeft 0.5s ease-out forwards;
-}
-
-/* RTL Cart Drawer */
-body.rtl .cart-drawer-container {
-  @apply right-auto left-0;
-}
-
-/* RTL Text Alignment Utilities */
-.rtl\:text-right {
-  text-align: right;
-}
-
-.rtl\:text-left {
-  text-align: left;
-}
-
-/* RTL Spacing Utilities */
-body.rtl .ml-auto {
-  margin-left: 0;
-  margin-right: auto;
-}
-
-body.rtl .mr-auto {
-  margin-right: 0;
-  margin-left: auto;
-}
-
-/* RTL Flex Direction */
-body.rtl .flex-row {
-  flex-direction: row-reverse;
-}
-
-body.rtl .flex-row-reverse {
-  flex-direction: row;
-}
-
-/* RTL Border Radius */
-body.rtl .rounded-l-xl {
-  border-radius: 0 0.75rem 0.75rem 0;
-}
-
-body.rtl .rounded-r-xl {
-  border-radius: 0.75rem 0 0 0.75rem;
-}
-
-/* RTL Shadows */
-body.rtl .shadow-right {
-  box-shadow: -10px 0 30px -10px rgba(0, 0, 0, 0.1);
-}
-
-/* RTL Icon Flip */
-body.rtl .rtl-flip {
-  transform: scaleX(-1);
-}
-
-/* RTL Transitions */
-body.rtl .transition-transform {
-  transition-property: transform;
-}
-
-/* ========================================
-   ARABIC TYPOGRAPHY ENHANCEMENTS
-   ======================================== */
-
-body.rtl h1,
-body.rtl h2,
-body.rtl h3,
-body.rtl h4,
-body.rtl h5,
-body.rtl h6 {
-  font-family: 'Sakkal Majalla', 'Segoe UI', Tahoma, sans-serif;
-  font-weight: 700;
-  line-height: 1.4;
-}
-
-body.rtl p,
-body.rtl span,
-body.rtl a {
-  font-family: 'Sakkal Majalla', 'Segoe UI', Tahoma, sans-serif;
-  line-height: 1.6;
-}
-
-body.rtl .tracking-luxury,
-body.rtl .tracking-wide-luxury,
-body.rtl .tracking-wider {
-  letter-spacing: 0.05em;
-}
-
-/* ========================================
-   ENHANCED ACCESSIBILITY
-   ======================================== */
-
-/* Focus States */
-:focus-visible {
-  outline: 2px solid hsl(var(--primary));
-  outline-offset: 2px;
-}
-
-/* Skip Link */
-.skip-link {
-  @apply absolute -top-full left-4 z-50 bg-primary text-primary-foreground px-4 py-2 rounded-b-lg transition-all focus:top-0;
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
   }
 }

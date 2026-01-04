@@ -8,13 +8,12 @@ import SohoFlagshipBoutique from '@/components/SohoFlagshipBoutique';
 import PerfectGift from '@/components/PerfectGift';
 import FeaturedProductsGrid from '@/components/FeaturedProductsGrid';
 import StoreLocatorSection from '@/components/StoreLocatorSection';
-import HouseOfSuqaOudSection from '@/components/HouseOfSuqaOudSection';
+import HouseOfAmouageSection from '@/components/HouseOfAmouageSection';
 import HighPerfumeryGallery from '@/components/HighPerfumeryGallery';
 import InsiderAccess from '@/components/InsiderAccess';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Helmet } from 'react-helmet-async';
-import { handleDirectPurchase } from '@/lib/shopify';
 
 /**
  * SUQA OUD Homepage
@@ -51,8 +50,8 @@ const Index = () => {
     console.log('Perfect Gift Shop Now clicked - navigate to gifting collection');
   };
 
-  const handleProductClick = async (productHandle: string) => {
-    await handleDirectPurchase(productHandle);
+  const handleProductClick = (productId: string) => {
+    console.log(`Product clicked: ${productId} - navigate to product page`);
   };
 
   const handleStoreLocatorClick = () => {
@@ -87,7 +86,7 @@ const Index = () => {
         <PerfectGift onShopNowClick={handleGiftShopClick} />
         <FeaturedProductsGrid onProductClick={handleProductClick} />
         <StoreLocatorSection onStoreLocatorClick={handleStoreLocatorClick} />
-        <HouseOfSuqaOudSection onDiscoverClick={handleDiscoverStoryClick} />
+        <HouseOfAmouageSection onDiscoverClick={handleDiscoverStoryClick} />
         <HighPerfumeryGallery />
         <InsiderAccess />
       </main>

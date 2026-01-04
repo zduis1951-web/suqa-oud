@@ -1,196 +1,159 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { fetchShopifyProducts, ShopifyProduct } from '@/lib/shopify';
-import { useLanguage } from '@/contexts/LanguageContext';
+import reflectionMan from '@/assets/products/reflection-man.jpg';
+import guidance from '@/assets/products/guidance.jpg';
+import existence from '@/assets/products/existence.jpg';
+import purpose50 from '@/assets/products/purpose-50.png';
+import reflectionManBox from '@/assets/products/reflection-man-box.jpg';
+import guidanceBox from '@/assets/products/guidance-box.jpg';
+import existenceBox from '@/assets/products/existence-box.jpg';
+import purpose50Box from '@/assets/products/purpose-50-box.jpg';
+
+/**
+ * FeaturedProductsGrid Section - "PRECIOUS, POTENT, PERSONAL"
+ * 
+ * README: All product images used in this component were downloaded directly from the live
+ * amouage.com website. No images were generated, edited, or altered in any way.
+ * 
+ * Bottle images:
+ * - Reflection Man: https://amouage.com/cdn/shop/files/REFLECTION-100-ML.jpg
+ * - Guidance: https://amouage.com/cdn/shop/files/GUIDANCE-WOMAN-100-ML_178c631a-eaa5-4599-bce9-cb53a53486af.jpg
+ * - Existence: https://amouage.com/cdn/shop/files/EXISTENCE_PLP.jpg
+ * - Purpose 50: https://amouage.com/cdn/shop/files/PLP_purpose50-min.png
+ * 
+ * Packaging/Box images (hover state):
+ * - Reflection Man Box: https://amouage.com/cdn/shop/files/REFLECTION-MAN-BOX.jpg
+ * - Guidance Box: https://amouage.com/cdn/shop/files/GUIDANCE-BOX-100ML.jpg
+ * - Existence Box: https://amouage.com/cdn/shop/files/Amouage_CS_Photo_Box_Odyssey_Existence.jpg
+ * - Purpose 50 Box: https://amouage.com/cdn/shop/files/Amouage_CS_Photo_Box_Odyssey_Purpose50.jpg
+ */
 
 interface Product {
   id: string;
-  handle: string;
   name: string;
+  variant?: string;
   price: string;
   image: string;
-  hoverImage?: string;
+  hoverImage: string;
   isNew?: boolean;
-  shopifyProduct: ShopifyProduct;
 }
+
+const products: Product[] = [
+  {
+    id: 'reflection-man',
+    name: 'Reflection Man',
+    variant: '100ml',
+    price: '$395',
+    image: reflectionMan,
+    hoverImage: reflectionManBox,
+  },
+  {
+    id: 'guidance',
+    name: 'Guidance',
+    variant: '100ml',
+    price: '$395',
+    image: guidance,
+    hoverImage: guidanceBox,
+  },
+  {
+    id: 'existence',
+    name: 'Existence',
+    price: '$395',
+    image: existence,
+    hoverImage: existenceBox,
+    isNew: true,
+  },
+  {
+    id: 'purpose-50',
+    name: 'Purpose 50',
+    variant: '100ml',
+    price: '$550',
+    image: purpose50,
+    hoverImage: purpose50Box,
+  },
+];
 
 interface FeaturedProductsGridProps {
-  onProductClick?: (productHandle: string) => void;
+  onProductClick?: (productId: string) => void;
 }
 
-// Product Card Component - SUQA OUD Style - Responsive
-const ProductCard = ({ 
-  product, 
-  index, 
-  totalProducts,
-  onClick 
-}: { 
-  product: Product; 
-  index: number;
-  totalProducts: number;
-  onClick: () => void;
-}) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const { t } = useLanguage();
-
+const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => {
   return (
-    <motion.li
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ 
-        duration: 0.6, 
-        delay: index * 0.075,
-        ease: [0, 0, 0.3, 1]
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={onClick}
-      className="product-card-item cursor-pointer"
-      style={{
-        '--card-index': index,
-        '--total-products': totalProducts,
-      } as React.CSSProperties}
-    >
-      <div className="product-card-inner">
-        <div className="product-card-content">
-          {/* NEW Badge */}
-          {product.isNew && (
-            <span className="product-badge">{t('products.new')}</span>
-          )}
+    <section className="w-full py-12 md:py-16 lg:py-20" style={{ backgroundColor: '#E3D6C6' }}>
+      {/* Section Title */}
+      <div className="text-center mb-8 md:mb-12">
+        <h2 
+          className="text-foreground text-xl sm:text-2xl md:text-3xl tracking-[0.15em] uppercase"
+          style={{ fontFamily: 'var(--font-primary)' }}
+        >
+          PRECIOUS, POTENT, PERSONAL
+        </h2>
+      </div>
 
-          {/* Image Container */}
-          <div className="product-image-container">
-            <div className="product-image-wrapper">
-              <div className="product-image-inner">
-                {/* Primary Image */}
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="product-image"
-                  style={{
-                    opacity: isHovered && product.hoverImage ? 0 : 1,
-                  }}
-                  loading="lazy"
-                />
-                
-                {/* Hover Image */}
-                {product.hoverImage && (
+      {/* Products Grid - Full width, edge-to-edge, thin separator lines */}
+      <div className="w-full">
+        <div className="flex">
+          {products.map((product, index) => {
+            // Unified background color for all products
+            const panelBgColor = '#E3D6C6';
+            
+              return (
+              <div 
+                key={product.id}
+                className={`group flex flex-col cursor-pointer flex-1 ${
+                  index < products.length - 1 ? 'border-r border-foreground/15' : ''
+                }`}
+                style={{ backgroundColor: panelBgColor }}
+                onClick={() => onProductClick?.(product.id)}
+              >
+                {/* Product Image Panel - full bleed */}
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  {/* NEW Badge */}
+                  {product.isNew && (
+                    <span 
+                      className="absolute top-4 left-1/2 -translate-x-1/2 z-10 text-foreground text-[10px] md:text-[11px] tracking-[0.1em] uppercase border border-foreground/40 px-3 py-1"
+                      style={{ 
+                        fontFamily: 'var(--font-primary)',
+                        background: 'hsl(30 20% 92% / 0.9)'
+                      }}
+                    >
+                      NEW
+                    </span>
+                  )}
+                  
+                  {/* Bottle Image - fills entire frame */}
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                  />
+                  
+                  {/* Box Image - visible on hover */}
                   <img
                     src={product.hoverImage}
                     alt={`${product.name} packaging`}
-                    className="product-image product-image-hover"
-                    style={{
-                      opacity: isHovered ? 1 : 0,
-                    }}
-                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                   />
-                )}
-              </div>
-            </div>
-          </div>
+                </div>
 
-          {/* Product Info - Bottom */}
-          <div className="product-info">
-            <div className="product-info-inner">
-              <h3 className="product-title">{product.name}</h3>
-              <div className="product-price-wrapper">
-                <span className="product-price">{product.price}</span>
+                {/* Product Name & Price */}
+                <div className="text-center py-5 md:py-6">
+                  <h3 
+                    className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase font-normal mb-2"
+                    style={{ fontFamily: 'var(--font-primary)' }}
+                  >
+                    {product.name.toUpperCase()}
+                  </h3>
+                  <p 
+                    className="text-foreground text-xs sm:text-sm md:text-base tracking-[0.05em]"
+                    style={{ fontFamily: 'var(--font-primary)' }}
+                  >
+                    {product.price}
+                  </p>
+                </div>
               </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
-    </motion.li>
-  );
-};
-
-const FeaturedProductsGrid = ({ onProductClick }: FeaturedProductsGridProps) => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
-  const { t } = useLanguage();
-
-  // Only show these 4 products in this section
-  const featuredProductHandles = ['privilege', 'vida', 'elite', 'highness'];
-
-  useEffect(() => {
-    const loadProducts = async () => {
-      try {
-        const shopifyProducts = await fetchShopifyProducts(10);
-        // Filter to only show the 4 featured products
-        const filteredProducts = shopifyProducts.filter((p: ShopifyProduct) => 
-          featuredProductHandles.includes(p.node.handle.toLowerCase())
-        );
-        const formattedProducts: Product[] = filteredProducts.map((p: ShopifyProduct) => ({
-          id: p.node.id,
-          handle: p.node.handle,
-          name: p.node.title,
-          price: `AED ${parseFloat(p.node.priceRange.minVariantPrice.amount).toFixed(0)}`,
-          image: p.node.images.edges[0]?.node.url || '',
-          hoverImage: p.node.images.edges[1]?.node.url,
-          shopifyProduct: p,
-        }));
-        // Sort to maintain order: Privilege, Vida, Elite, Highness
-        formattedProducts.sort((a, b) => {
-          const aIndex = featuredProductHandles.indexOf(a.handle.toLowerCase());
-          const bIndex = featuredProductHandles.indexOf(b.handle.toLowerCase());
-          return aIndex - bIndex;
-        });
-        setProducts(formattedProducts);
-      } catch (error) {
-        console.error('Error loading products:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadProducts();
-  }, []);
-
-  const handleProductClick = (handle: string) => {
-    if (onProductClick) {
-      onProductClick(handle);
-    }
-    navigate(`/product/${handle}`);
-  };
-
-  if (loading) {
-    return (
-      <section className="products-section products-section-loading">
-        <p className="products-loading-text">{t('common.loading')}</p>
-      </section>
-    );
-  }
-
-  if (products.length === 0) {
-    return (
-      <section className="products-section products-section-empty">
-        <p className="products-loading-text">{t('search.noResults')}</p>
-      </section>
-    );
-  }
-
-  return (
-    <section className="products-section">
-      {/* Section Title */}
-      <div className="products-header">
-        <h2 className="products-title">PRECIOUS, POTENT, PERSONAL</h2>
-      </div>
-
-      {/* Products Grid */}
-      <ul className="products-grid">
-        {products.map((product, index) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            index={index}
-            totalProducts={products.length}
-            onClick={() => handleProductClick(product.handle)}
-          />
-        ))}
-      </ul>
     </section>
   );
 };

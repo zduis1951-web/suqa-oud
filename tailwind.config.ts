@@ -19,13 +19,12 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Sakkal Majalla"', 'serif'],
-        body: ['"Sakkal Majalla"', 'sans-serif'],
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        body: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
         /* Signature Cream Palette */
         cream: {
-          DEFAULT: "hsl(var(--cream-signature))",
           signature: "hsl(var(--cream-signature))",
           light: "hsl(var(--cream-light))",
           dark: "hsl(var(--cream-dark))",
@@ -35,12 +34,6 @@ export default {
           medium: "hsl(var(--brown-medium))",
           light: "hsl(var(--brown-light))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
-        },
-        "text-on-dark": "hsl(var(--text-on-dark))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -1,23 +1,51 @@
+import { useState } from 'react';
+import { Pause, Play } from 'lucide-react';
+
 // Import Our Story background image
 import ourStoryBgImage from '@/assets/our-story-bg.jpg';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { HoverButton } from '@/components/ui/hover-button';
+
 /**
  * Guidance Collection Promotional Section
  * 
  * A full-width promotional section featuring the Guidance fragrance collection.
- * Displays below the hero section on the SUQA OUD homepage.
+ * Displays below the hero section on the Amouage homepage.
+ * 
+ * Features:
+ * - Full-width background image with centered product display
+ * - Collection title overlay
+ * - CTA button
+ * - Play/pause control for video/slideshow
+ * 
+ * Image Sources (original from amouage.com, no generation or editing):
+ * - Desktop: src/assets/guidance-desktop.png
+ * - Mobile: src/assets/guidance-mobile.png
+ * 
+ * Usage:
+ * ```tsx
+ * import GuidanceCollection from '@/components/GuidanceCollection';
+ * 
+ * function HomePage() {
+ *   return (
+ *     <>
+ *       <Hero />
+ *       <GuidanceCollection />
+ *     </>
+ *   );
+ * }
+ * ```
  */
 
 interface GuidanceCollectionProps {
+  /** Optional callback when CTA button is clicked */
   onDiscoverClick?: () => void;
 }
 const GuidanceCollection = ({
   onDiscoverClick
 }: GuidanceCollectionProps) => {
-  const {
-    t
-  } = useLanguage();
+  const [isPlaying, setIsPlaying] = useState(true);
+  const handlePlayPause = () => {
+    setIsPlaying(!isPlaying);
+  };
   const handleDiscoverClick = () => {
     if (onDiscoverClick) {
       onDiscoverClick();
@@ -35,22 +63,26 @@ const GuidanceCollection = ({
     }} role="img" aria-label="SUQA OUD Elite fragrance" />
 
       {/* Content Overlay */}
-      <div className="guidance-content px-4">
+      <div className="guidance-content">
         {/* Section Title */}
-        <h2 className="guidance-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[0.2em] sm:tracking-[0.3em] md:tracking-luxury">
-          {t('guidance.title')}
+        <h2 className="guidance-title">
+          SUQA OUD
+
         </h2>
         
         {/* Description */}
-        <p className="text-xs sm:text-sm max-w-sm sm:max-w-md lg:max-w-lg mx-auto text-center leading-relaxed mb-6 sm:mb-8 font-light text-white md:text-xl px-[4px]">
-          {t('guidance.description')}
+        <p className="text-sm md:text-base max-w-lg mx-auto text-center leading-relaxed mb-8 px-4 font-light text-white">
+          YOU DON'T REACH FOR IT TO BE NOTICED. YOU REACH FOR IT WHEN YOU WANT LUXURY TO FEEL EFFORTLESS.
         </p>
 
         {/* CTA Button */}
-        <HoverButton onClick={handleDiscoverClick} aria-label="Discover more about SUQA OUD">
-          {t('guidance.discoverMore')}
-        </HoverButton>
+        <button onClick={handleDiscoverClick} className="btn-guidance" aria-label="Discover more about SUQA OUD">
+          DISCOVER MORE
+        </button>
       </div>
+
+      {/* Play/Pause Control - Bottom Right */}
+      
     </section>;
 };
 export default GuidanceCollection;
