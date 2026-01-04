@@ -99,7 +99,7 @@ const ProductDetail = () => {
             className="text-center"
           >
             <div className="w-16 h-16 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-muted-foreground tracking-widest uppercase text-sm">{t('common.loading')}</p>
+            <p className="text-muted-foreground tracking-widest uppercase text-xl">{t('common.loading')}</p>
           </motion.div>
         </div>
         <Footer />
@@ -112,10 +112,10 @@ const ProductDetail = () => {
       <div className="min-h-screen bg-background">
         <Header />
         <div className="flex flex-col items-center justify-center min-h-[60vh] px-4">
-          <h1 className="text-2xl font-light tracking-widest uppercase mb-4">{t('products.productNotFound')}</h1>
+          <h1 className="text-4xl font-light tracking-widest uppercase mb-4">{t('products.productNotFound')}</h1>
           <button 
             onClick={() => navigate('/')}
-            className="text-sm tracking-widest uppercase underline underline-offset-4 hover:opacity-70 transition-opacity"
+            className="text-xl tracking-widest uppercase underline underline-offset-4 hover:opacity-70 transition-opacity"
           >
             {t('products.returnHome')}
           </button>
@@ -142,7 +142,7 @@ const ProductDetail = () => {
         <div className="lg:hidden px-4 py-3">
           <button 
             onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-sm tracking-wider uppercase opacity-70 hover:opacity-100 transition-opacity"
+            className="flex items-center gap-2 text-xl tracking-wider uppercase opacity-70 hover:opacity-100 transition-opacity"
           >
             <ArrowLeft className="h-4 w-4" />
             <span>{t('products.back')}</span>
@@ -176,16 +176,16 @@ const ProductDetail = () => {
           >
             {/* Product Title & Badge */}
             <div className="flex items-start justify-between gap-4 mb-3">
-              <h1 className="text-2xl lg:text-3xl xl:text-4xl font-light tracking-[0.2em] uppercase">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light tracking-[0.2em] uppercase">
                 {product.node.title}
               </h1>
-              <span className="px-3 py-1 bg-primary text-primary-foreground text-[10px] tracking-[0.2em] uppercase font-medium shrink-0">
+              <span className="px-3 py-1 bg-primary text-primary-foreground text-[15px] tracking-[0.2em] uppercase font-medium shrink-0">
                 {t('products.new')}
               </span>
             </div>
 
             {/* Product Type */}
-            <p className="text-xs tracking-[0.15em] text-muted-foreground uppercase mb-6">
+            <p className="text-lg tracking-[0.15em] text-muted-foreground uppercase mb-6">
               {getProductType()}
             </p>
 
@@ -205,9 +205,9 @@ const ProductDetail = () => {
                     <button
                       key={variant.node.id}
                       onClick={() => setSelectedVariantIndex(index)}
-                      className={`px-6 py-3 text-xs tracking-[0.15em] uppercase border transition-all duration-300 ${
+                      className={`px-6 py-3 text-lg tracking-[0.15em] uppercase border transition-all duration-300 ${
                         selectedVariantIndex === index 
-                          ? 'border-primary bg-primary text-primary-foreground' 
+                          ? 'border-primary bg-primary text-primary-foreground'
                           : 'border-border hover:border-primary'
                       }`}
                     >
@@ -239,7 +239,7 @@ const ProductDetail = () => {
             <div className="flex flex-wrap gap-4 mb-8">
               <button 
                 onClick={() => setMakeItGift(!makeItGift)}
-                className={`flex items-center gap-3 px-5 py-3 border text-xs tracking-[0.12em] uppercase transition-all duration-300 ${
+                className={`flex items-center gap-3 px-5 py-3 border text-lg tracking-[0.12em] uppercase transition-all duration-300 ${
                   makeItGift ? 'border-primary bg-primary/5' : 'border-border hover:border-primary'
                 }`}
               >
@@ -248,7 +248,7 @@ const ProductDetail = () => {
               </button>
               <button 
                 onClick={() => setEngrave(!engrave)}
-                className={`flex items-center gap-3 px-5 py-3 border text-xs tracking-[0.12em] uppercase transition-all duration-300 ${
+                className={`flex items-center gap-3 px-5 py-3 border text-lg tracking-[0.12em] uppercase transition-all duration-300 ${
                   engrave ? 'border-primary bg-primary/5' : 'border-border hover:border-primary'
                 }`}
               >
@@ -262,7 +262,7 @@ const ProductDetail = () => {
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
               onClick={handleAddToBag}
-              className="w-full bg-primary text-primary-foreground py-4 lg:py-5 text-sm tracking-[0.2em] uppercase font-medium hover:bg-primary/90 transition-colors mb-8"
+              className="w-full bg-primary text-primary-foreground py-4 lg:py-5 text-xl tracking-[0.2em] uppercase font-medium hover:bg-primary/90 transition-colors mb-8"
             >
               {t('products.addToBag')}
             </motion.button>
@@ -273,18 +273,18 @@ const ProductDetail = () => {
             {/* Accordion Sections */}
             <Accordion type="single" collapsible className="mb-8">
               <AccordionItem value="description" className="border-b border-border">
-                <AccordionTrigger className="text-xs tracking-[0.15em] uppercase py-5 hover:no-underline">
+                <AccordionTrigger className="text-lg tracking-[0.15em] uppercase py-5 hover:no-underline">
                   {t('products.productDescription')}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm leading-relaxed text-muted-foreground pb-5">
+                <AccordionContent className="text-xl leading-relaxed text-muted-foreground pb-5">
                   {product.node.description || 'A luxurious fragrance crafted with the finest ingredients, designed to evoke elegance and sophistication.'}
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="notes" className="border-b border-border">
-                <AccordionTrigger className="text-xs tracking-[0.15em] uppercase py-5 hover:no-underline">
+                <AccordionTrigger className="text-lg tracking-[0.15em] uppercase py-5 hover:no-underline">
                   {t('products.notesIngredients')}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm leading-relaxed text-muted-foreground pb-5">
+                <AccordionContent className="text-xl leading-relaxed text-muted-foreground pb-5">
                   <p className="mb-3"><strong>{t('products.topNotes')}</strong> {isRTL ? 'بخور، زعفران' : 'Incense, Saffron'}</p>
                   <p className="mb-3"><strong>{t('products.heartNotes')}</strong> {isRTL ? 'عود، ورد' : 'Oud, Rose'}</p>
                   <p><strong>{t('products.baseNotes')}</strong> {isRTL ? 'مسك، عنبر' : 'Musk, Amber'}</p>
@@ -294,11 +294,11 @@ const ProductDetail = () => {
 
             {/* Service Icons */}
             <div className="flex flex-wrap justify-between gap-4 pt-4">
-              <div className="flex flex-col items-center gap-2 flex-1 min-w-[80px]">
+                <div className="flex flex-col items-center gap-2 flex-1 min-w-[80px]">
                 <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center">
                   <Package className="h-4 w-4" />
                 </div>
-                <span className="text-[10px] tracking-wider uppercase text-center text-muted-foreground">
+                <span className="text-[15px] tracking-wider uppercase text-center text-muted-foreground">
                   {t('products.complimentarySamples')}
                 </span>
               </div>
@@ -306,7 +306,7 @@ const ProductDetail = () => {
                 <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center">
                   <Gift className="h-4 w-4" />
                 </div>
-                <span className="text-[10px] tracking-wider uppercase text-center text-muted-foreground">
+                <span className="text-[15px] tracking-wider uppercase text-center text-muted-foreground">
                   {t('products.giftWrapping')}
                 </span>
               </div>
@@ -314,7 +314,7 @@ const ProductDetail = () => {
                 <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center">
                   <Phone className="h-4 w-4" />
                 </div>
-                <span className="text-[10px] tracking-wider uppercase text-center text-muted-foreground">
+                <span className="text-[15px] tracking-wider uppercase text-center text-muted-foreground">
                   {t('products.customerService')}
                 </span>
               </div>
