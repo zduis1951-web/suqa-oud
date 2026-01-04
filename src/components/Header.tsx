@@ -88,7 +88,7 @@ const Header = ({
   return <>
     {/* Announcement Bar */}
     <div className="announcement-bar-premium">
-      <p className="font-body animate-fade-in text-[10px] sm:text-xs">
+      <p className="font-body animate-fade-in text-[15px] sm:text-lg">
         {t('announcement.sampler')}
       </p>
     </div>
@@ -111,7 +111,7 @@ const Header = ({
               ) : (
                 <>
                   <span className="text-base sm:text-lg">{flag}</span>
-                  <span className="font-body text-xs tracking-wide hidden sm:inline">{countryCode}</span>
+                  <span className="font-body text-lg tracking-wide hidden sm:inline">{countryCode}</span>
                   <ChevronDown className="h-3 w-3 transition-transform duration-300 hidden sm:block" />
                 </>
               )}
@@ -124,17 +124,19 @@ const Header = ({
               aria-label="Toggle language"
             >
               <Languages className="h-4 w-4" />
-              <span className="text-xs font-medium">{language.toUpperCase()}</span>
+              <span className="text-lg font-medium">{language.toUpperCase()}</span>
             </button>
           </div>
 
           {/* Center - Logo */}
           <div className="header-center">
             <a href="/" className="logo-link group" aria-label="SUQA OUD - Home">
-              <span className="logo-text text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-[0.15em] sm:tracking-[0.25em] md:tracking-luxury">
-                SUQA OUD
-              </span>
-              <span className="logo-underline" />
+              <img 
+                src="/suqa-oud-logo.svg" 
+                alt="SUQA OUD" 
+                className="h-[58px] sm:h-[72px] md:h-[86px] lg:h-[100px] w-auto transition-all duration-300 group-hover:opacity-80 group-hover:scale-105"
+                loading="eager"
+              />
             </a>
           </div>
 
@@ -177,14 +179,14 @@ const Header = ({
               {isUserMenuOpen && user && (
                 <div className={`absolute top-full mt-2 ${isRTL ? 'left-0' : 'right-0'} bg-background border border-border rounded-xl shadow-lg overflow-hidden min-w-[200px] z-50`}>
                   <div className="px-4 py-3 border-b border-border">
-                    <p className="text-sm font-medium truncate">{user.email}</p>
+                    <p className="text-xl font-medium truncate">{user.email}</p>
                   </div>
                   <button
                     onClick={handleSignOut}
                     className="w-full flex items-center gap-3 px-4 py-3 hover:bg-muted transition-colors text-destructive"
                   >
                     <LogOut className="h-4 w-4" />
-                    <span className="text-sm">{t('header.signOut')}</span>
+                    <span className="text-xl">{t('header.signOut')}</span>
                   </button>
                 </div>
               )}
@@ -241,7 +243,7 @@ const Header = ({
           <a 
             key={item.label} 
             href={item.href} 
-            className="mobile-nav-link text-base py-5" 
+            className="mobile-nav-link text-2xl py-5" 
             style={{ animationDelay: `${index * 80}ms` }} 
             onClick={() => setIsMobileMenuOpen(false)}
           >
@@ -254,7 +256,8 @@ const Header = ({
           <div className="flex flex-col gap-4 px-2">
             {/* Search */}
             <button 
-              className="flex items-center gap-3 text-foreground py-3" 
+              className="flex items-center gap-3 py-3" 
+              style={{ color: 'hsl(22 59% 31%)' }}
               aria-label={t('header.search')}
               onClick={() => {
                 setIsMobileMenuOpen(false);
@@ -262,55 +265,58 @@ const Header = ({
               }}
             >
               <Search className="h-5 w-5" />
-              <span className="text-sm tracking-wide">{t('header.search')}</span>
+              <span className="text-xl tracking-wide">{t('header.search')}</span>
             </button>
 
             {/* Account */}
             {user ? (
               <div className="flex flex-col gap-2">
-                <p className="text-sm text-muted-foreground truncate px-8">{user.email}</p>
+                <p className="text-xl text-muted-foreground truncate px-8">{user.email}</p>
                 <button 
                   className="flex items-center gap-3 text-destructive py-3" 
                   onClick={handleSignOut}
                 >
                   <LogOut className="h-5 w-5" />
-                  <span className="text-sm tracking-wide">{t('header.signOut')}</span>
+                  <span className="text-xl tracking-wide">{t('header.signOut')}</span>
                 </button>
               </div>
             ) : (
               <button 
-                className="flex items-center gap-3 text-foreground py-3" 
+                className="flex items-center gap-3 py-3" 
+                style={{ color: 'hsl(22 59% 31%)' }}
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   navigate('/auth');
                 }}
               >
                 <User className="h-5 w-5" />
-                <span className="text-sm tracking-wide">{t('header.signIn')}</span>
+                <span className="text-xl tracking-wide">{t('header.signIn')}</span>
               </button>
             )}
             
             {/* Language Toggle */}
             <button 
-              className="flex items-center gap-3 text-foreground py-3"
+              className="flex items-center gap-3 py-3"
+              style={{ color: 'hsl(22 59% 31%)' }}
               onClick={toggleLanguage}
             >
               <Languages className="h-5 w-5" />
-              <span className="text-sm tracking-wide">
+              <span className="text-xl tracking-wide">
                 {language === 'en' ? 'العربية' : 'English'}
               </span>
             </button>
             
             {/* Country selector for mobile */}
             <button 
-              className="flex items-center gap-3 text-foreground py-3"
+              className="flex items-center gap-3 py-3"
+              style={{ color: 'hsl(22 59% 31%)' }}
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 setIsCountryOpen(true);
               }}
             >
               <Globe className="h-5 w-5" />
-              <span className="text-sm tracking-wide">{countryCode} {flag}</span>
+              <span className="text-xl tracking-wide">{countryCode} {flag}</span>
               <ChevronDown className="h-4 w-4" />
             </button>
           </div>

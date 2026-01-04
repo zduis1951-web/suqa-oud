@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, X, Loader2 } from 'lucide-react';
 import { searchProducts, ShopifyProduct } from '@/lib/shopify';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useCartStore } from '@/stores/cartStore';
-import { toast } from 'sonner';
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -12,8 +11,8 @@ interface SearchModalProps {
 }
 
 const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
+  const navigate = useNavigate();
   const { t, isRTL } = useLanguage();
-  const { addItem, setOpen: setCartOpen } = useCartStore();
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<ShopifyProduct[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -70,25 +69,12 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
     }, 300);
   }, []);
 
-  const handleAddToCart = (product: ShopifyProduct) => {
-    const firstVariant = product.node.variants.edges[0]?.node;
-    if (!firstVariant) {
-      toast.error('No variant available');
-      return;
-    }
-
-    addItem({
-      product,
-      variantId: firstVariant.id,
-      variantTitle: firstVariant.title,
-      price: firstVariant.price,
-      quantity: 1,
-      selectedOptions: firstVariant.selectedOptions,
-    });
-
-    toast.success(t('cart.addedToCart'));
+  const handleProductClick = (product: ShopifyProduct) => {
+    setQuery('');
+    setResults([]);
+    setHasSearched(false);
     onClose();
-    setCartOpen(true);
+    navigate(`/product/${product.node.handle}`);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -180,7 +166,7 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ delay: index * 0.05 }}
                             className="flex items-center gap-4 p-4 rounded-xl hover:bg-muted/50 cursor-pointer transition-colors group"
-                            onClick={() => handleAddToCart(product)}
+                            onClick={() => handleProductClick(product)}
                           >
                             {/* Product Image */}
                             <div className="w-16 h-16 bg-secondary/20 rounded-lg overflow-hidden flex-shrink-0">
@@ -208,7 +194,7 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
                                 {parseFloat(product.node.priceRange.minVariantPrice.amount).toFixed(2)}
                               </p>
                               <p className="text-xs text-muted-foreground group-hover:text-primary transition-colors">
-                                {t('products.addToCart')}
+                                {t('products.viewDetails')}
                               </p>
                             </div>
                           </motion.div>

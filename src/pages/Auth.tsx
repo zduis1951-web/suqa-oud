@@ -109,7 +109,7 @@ const Auth = () => {
           className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-12 self-start"
         >
           <ArrowLeft className="h-5 w-5" />
-          <span>{isRTL ? 'العودة للرئيسية' : 'Back to Home'}</span>
+          <span className="text-xl">{isRTL ? 'العودة للرئيسية' : 'Back to Home'}</span>
         </motion.button>
 
         <motion.div
@@ -120,14 +120,18 @@ const Auth = () => {
         >
           {/* Logo */}
           <a href="/" className="inline-block mb-8">
-            <span className="text-3xl font-display tracking-[0.2em]">SUQA OUD</span>
+            <img 
+              src="/suqa-oud-logo.svg" 
+              alt="SUQA OUD" 
+              className="h-10 md:h-12 w-auto"
+            />
           </a>
 
           {/* Title */}
-          <h1 className="text-3xl md:text-4xl font-display tracking-wide mb-2">
+          <h1 className="text-5xl md:text-6xl font-display tracking-wide mb-2">
             {mode === 'signin' ? t('auth.welcomeBack') : t('auth.createYourAccount')}
           </h1>
-          <p className="text-muted-foreground mb-8">
+          <p className="text-muted-foreground mb-8 text-xl">
             {mode === 'signin' ? t('auth.signInSubtitle') : t('auth.signUpSubtitle')}
           </p>
 
@@ -135,7 +139,7 @@ const Auth = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium mb-2">{t('auth.email')}</label>
+              <label className="block text-xl font-medium mb-2">{t('auth.email')}</label>
               <div className="relative">
                 <Mail className={`absolute top-1/2 -translate-y-1/2 ${isRTL ? 'right-4' : 'left-4'} h-5 w-5 text-muted-foreground`} />
                 <input
@@ -148,13 +152,13 @@ const Auth = () => {
                 />
               </div>
               {errors.email && (
-                <p className="text-destructive text-sm mt-1">{errors.email}</p>
+                <p className="text-destructive text-xl mt-1">{errors.email}</p>
               )}
             </div>
 
             {/* Password */}
             <div>
-              <label className="block text-sm font-medium mb-2">{t('auth.password')}</label>
+              <label className="block text-xl font-medium mb-2">{t('auth.password')}</label>
               <div className="relative">
                 <Lock className={`absolute top-1/2 -translate-y-1/2 ${isRTL ? 'right-4' : 'left-4'} h-5 w-5 text-muted-foreground`} />
                 <input
@@ -174,7 +178,7 @@ const Auth = () => {
                 </button>
               </div>
               {errors.password && (
-                <p className="text-destructive text-sm mt-1">{errors.password}</p>
+                <p className="text-destructive text-xl mt-1">{errors.password}</p>
               )}
             </div>
 
@@ -185,7 +189,7 @@ const Auth = () => {
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
               >
-                <label className="block text-sm font-medium mb-2">{t('auth.confirmPassword')}</label>
+                <label className="block text-xl font-medium mb-2">{t('auth.confirmPassword')}</label>
                 <div className="relative">
                   <Lock className={`absolute top-1/2 -translate-y-1/2 ${isRTL ? 'right-4' : 'left-4'} h-5 w-5 text-muted-foreground`} />
                   <input
@@ -198,7 +202,7 @@ const Auth = () => {
                   />
                 </div>
                 {errors.confirmPassword && (
-                  <p className="text-destructive text-sm mt-1">{errors.confirmPassword}</p>
+                  <p className="text-destructive text-xl mt-1">{errors.confirmPassword}</p>
                 )}
               </motion.div>
             )}
@@ -221,7 +225,7 @@ const Auth = () => {
           </form>
 
           {/* Toggle Mode */}
-          <p className="text-center mt-8 text-muted-foreground">
+          <p className="text-center mt-8 text-muted-foreground text-xl">
             {mode === 'signin' ? t('auth.noAccount') : t('auth.hasAccount')}{' '}
             <button
               onClick={() => {
@@ -245,15 +249,17 @@ const Auth = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              <span className="text-6xl font-display tracking-[0.3em] text-primary/20">SUQA</span>
-              <br />
-              <span className="text-8xl font-display tracking-[0.2em] text-primary/30">OUD</span>
+              <img 
+                src="/suqa-oud-logo.svg" 
+                alt="SUQA OUD" 
+                className="h-24 md:h-32 w-auto opacity-30"
+              />
             </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="mt-8 text-lg text-muted-foreground max-w-md mx-auto leading-relaxed"
+              className="mt-8 text-2xl text-muted-foreground max-w-md mx-auto leading-relaxed"
             >
               {isRTL 
                 ? 'حيث الفخامة تُشعر من الداخل، والحضور طبيعي، والقيمة تُخلق ولا تُستعار.'

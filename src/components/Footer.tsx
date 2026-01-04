@@ -24,11 +24,17 @@ const Footer = () => {
           
           {/* Column 1 - Brand (Always visible) */}
           <div className="lg:col-span-1">
-            <h3 className="font-serif text-base sm:text-lg tracking-[0.2em] mb-3 sm:mb-4">{t('footer.brandName')}</h3>
-            <p className="text-cream/70 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
+            <a href="/" className="inline-block mb-3 sm:mb-4">
+              <img 
+                src="/suqa-oud-logo.svg" 
+                alt="SUQA OUD" 
+                className="h-[52px] sm:h-16 w-auto brightness-0 invert"
+              />
+            </a>
+            <p className="text-cream/70 text-lg sm:text-xl leading-relaxed mb-4 sm:mb-6">
               {t('footer.brandDescription')}
             </p>
-            <p className="text-[10px] sm:text-xs tracking-[0.12em] sm:tracking-[0.15em] uppercase mb-3 sm:mb-4">
+            <p className="text-[15px] sm:text-lg tracking-[0.12em] sm:tracking-[0.15em] uppercase mb-3 sm:mb-4">
               {t('footer.followUs')}
             </p>
             <div className={`flex items-center gap-4 sm:gap-5 ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
@@ -69,24 +75,24 @@ const Footer = () => {
           {/* Column 2 - THE HOUSE OF SUQA OUD (Accordion on mobile) */}
           <div className="lg:col-span-1">
             <button onClick={() => toggleSection('house')} className="w-full flex items-center justify-between py-3 border-b border-cream/20 lg:border-0 lg:pointer-events-none">
-              <h4 className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase font-normal">
+              <h4 className="text-[15px] sm:text-lg tracking-[0.15em] sm:tracking-[0.2em] uppercase font-normal">
                 {t('footer.houseOfSuqa')}
               </h4>
               <ChevronDown className={`h-4 w-4 transition-transform lg:hidden ${openSection === 'house' ? 'rotate-180' : ''}`} />
             </button>
             <ul className={`space-y-2 sm:space-y-3 overflow-hidden transition-all duration-300 ${openSection === 'house' ? 'max-h-60 pt-3' : 'max-h-0 lg:max-h-none lg:pt-4 lg:mt-2'}`}>
               <li>
-                <Link to="/the-experience" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
+                <Link to="/the-experience" className="text-cream/70 text-lg sm:text-xl hover:text-cream transition-colors block py-1">
                   {t('nav.theExperience')}
                 </Link>
               </li>
               <li>
-                <Link to="/our-story" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
+                <Link to="/our-story" className="text-cream/70 text-lg sm:text-xl hover:text-cream transition-colors block py-1">
                   {t('footer.ourStory')}
                 </Link>
               </li>
               <li>
-                <Link to="/our-philosophy" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
+                <Link to="/our-philosophy" className="text-cream/70 text-lg sm:text-xl hover:text-cream transition-colors block py-1">
                   {t('footer.ourPhilosophy')}
                 </Link>
               </li>
@@ -96,24 +102,24 @@ const Footer = () => {
           {/* Column 3 - CUSTOMER SERVICE (Accordion on mobile) */}
           <div className="lg:col-span-1">
             <button onClick={() => toggleSection('service')} className="w-full flex items-center justify-between py-3 border-b border-cream/20 lg:border-0 lg:pointer-events-none">
-              <h4 className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase font-normal">
+              <h4 className="text-[15px] sm:text-lg tracking-[0.15em] sm:tracking-[0.2em] uppercase font-normal">
                 {t('footer.customerService')}
               </h4>
               <ChevronDown className={`h-4 w-4 transition-transform lg:hidden ${openSection === 'service' ? 'rotate-180' : ''}`} />
             </button>
             <ul className={`space-y-2 sm:space-y-3 overflow-hidden transition-all duration-300 ${openSection === 'service' ? 'max-h-80 pt-3' : 'max-h-0 lg:max-h-none lg:pt-4 lg:mt-2'}`}>
               <li>
-                <Link to="/shipping-policy" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
+                <Link to="/shipping-policy" className="text-cream/70 text-lg sm:text-xl hover:text-cream transition-colors block py-1">
                   {t('footer.shippingPolicy')}
                 </Link>
               </li>
               <li>
-                <Link to="/return-policy" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
+                <Link to="/return-policy" className="text-cream/70 text-lg sm:text-xl hover:text-cream transition-colors block py-1">
                   {t('footer.returnPolicy')}
                 </Link>
               </li>
               <li>
-                <a href="mailto:contact@suqaoud.com" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
+                <a href="mailto:contact@suqaoud.com" className="text-cream/70 text-lg sm:text-xl hover:text-cream transition-colors block py-1">
                   {t('footer.contactUs')}
                 </a>
               </li>
@@ -123,14 +129,14 @@ const Footer = () => {
           {/* Column 4 - LEGAL (Accordion on mobile) */}
           <div className="lg:col-span-1">
             <button onClick={() => toggleSection('legal')} className="w-full flex items-center justify-between py-3 border-b border-cream/20 lg:border-0 lg:pointer-events-none">
-              <h4 className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase font-normal">
+              <h4 className="text-[15px] sm:text-lg tracking-[0.15em] sm:tracking-[0.2em] uppercase font-normal">
                 {t('footer.legal')}
               </h4>
               <ChevronDown className={`h-4 w-4 transition-transform lg:hidden ${openSection === 'legal' ? 'rotate-180' : ''}`} />
             </button>
             <ul className={`space-y-2 sm:space-y-3 overflow-hidden transition-all duration-300 ${openSection === 'legal' ? 'max-h-40 pt-3' : 'max-h-0 lg:max-h-none lg:pt-4 lg:mt-2'}`}>
               <li>
-                <Link to="/privacy-policy" className="text-cream/70 text-xs sm:text-sm hover:text-cream transition-colors block py-1">
+                <Link to="/privacy-policy" className="text-cream/70 text-lg sm:text-xl hover:text-cream transition-colors block py-1">
                   {t('footer.privacyPolicy')}
                 </Link>
               </li>
@@ -197,7 +203,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="border-t border-cream/10 py-4 sm:py-6">
-        <p className="text-cream/50 text-[10px] sm:text-xs text-center tracking-wider px-4">
+        <p className="text-cream/50 text-[15px] sm:text-lg text-center tracking-wider px-4">
           {t('footer.copyright')}
         </p>
       </div>

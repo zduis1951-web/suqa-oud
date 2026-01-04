@@ -37,13 +37,13 @@ const PowerOfTheInfinite = ({
         {/* Main Title */}
         <h2 
           style={{ fontFamily: 'var(--font-display)' }} 
-          className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] lg:tracking-[0.25em] xl:tracking-[0.35em] mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-center text-cream font-medium max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl"
+          className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] lg:tracking-[0.25em] xl:tracking-[0.35em] mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-center text-cream font-medium max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl"
         >
           {t('powerInfinite.title')}
         </h2>
         
         {/* Description */}
-        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-cream font-semibold mb-4 sm:mb-6 md:mb-8 text-center px-2 tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em]">
+        <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-cream font-semibold mb-4 sm:mb-6 md:mb-8 text-center px-2 tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em]">
           {t('powerInfinite.description')}
         </p>
         

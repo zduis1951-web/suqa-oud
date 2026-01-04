@@ -37,12 +37,12 @@ const GuidanceCollection = ({
       {/* Content Overlay */}
       <div className="guidance-content px-4">
         {/* Section Title */}
-        <h2 className="guidance-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[0.2em] sm:tracking-[0.3em] md:tracking-luxury">
+        <h2 className="guidance-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.2em] sm:tracking-[0.3em] md:tracking-luxury">
           {t('guidance.title')}
         </h2>
         
         {/* Description */}
-        <p className="text-xs sm:text-sm max-w-sm sm:max-w-md lg:max-w-lg mx-auto text-center leading-relaxed mb-6 sm:mb-8 font-light text-white md:text-xl px-[4px]">
+        <p className="text-lg sm:text-xl max-w-sm sm:max-w-md lg:max-w-lg mx-auto text-center leading-relaxed mb-6 sm:mb-8 font-light text-white md:text-3xl px-[4px]">
           {t('guidance.description')}
         </p>
 

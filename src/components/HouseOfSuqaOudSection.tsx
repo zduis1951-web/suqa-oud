@@ -46,7 +46,7 @@ const HouseOfSuqaOudSection = ({
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
         {/* Tagline */}
         <p 
-          className="text-gold text-[10px] sm:text-xs md:text-sm tracking-[0.12em] sm:tracking-[0.15em] md:tracking-[0.2em] uppercase mb-3 sm:mb-4 text-center max-w-xs sm:max-w-md" 
+          className="text-gold text-[15px] sm:text-lg md:text-xl tracking-[0.12em] sm:tracking-[0.15em] md:tracking-[0.2em] uppercase mb-3 sm:mb-4 text-center max-w-xs sm:max-w-md" 
           style={{ fontFamily: '"Cormorant Garamond", "Times New Roman", serif' }}
         >
           {t('houseOfSuqa.tagline')}
@@ -59,7 +59,7 @@ const HouseOfSuqaOudSection = ({
             fontWeight: 400,
             letterSpacing: '0.15em',
           }} 
-          className="text-center uppercase mb-6 sm:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gold sm:tracking-[0.2em] md:tracking-[0.25em]"
+          className="text-center uppercase mb-6 sm:mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gold sm:tracking-[0.2em] md:tracking-[0.25em]"
         >
           {t('houseOfSuqa.title')}
         </h2>

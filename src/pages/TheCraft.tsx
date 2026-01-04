@@ -129,9 +129,14 @@ const TheCraft = () => {
               "Luxury is measured by quiet confidence"
             </blockquote>
             <div className="w-20 h-px bg-accent mx-auto mt-10" />
-            <p className="mt-8 text-muted-foreground font-body text-lg tracking-wide">
-              — SUQA OUD
-            </p>
+            <div className="mt-8 flex items-center justify-center gap-2">
+              <span className="text-muted-foreground font-body text-lg tracking-wide">—</span>
+              <img 
+                src="/suqa-oud-logo.svg" 
+                alt="SUQA OUD" 
+                className="h-6 w-auto"
+              />
+            </div>
           </motion.div>
         </section>
       </main>
