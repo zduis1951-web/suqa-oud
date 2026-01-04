@@ -93,17 +93,19 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
         ref={buttonRef}
         className={cn(
           "group relative inline-flex items-center justify-center overflow-hidden",
-          "px-8 sm:px-10 md:px-14 py-4 sm:py-5 md:py-6",
+          "px-8 sm:px-10 md:px-14 py-3 sm:py-4 md:py-5",
           "text-xs sm:text-sm font-medium tracking-[0.25em] sm:tracking-[0.3em] uppercase",
-          // Liquid glass effect - more transparent
-          "bg-transparent backdrop-blur-[2px]",
+          // Pill-shaped with rounded corners
+          "rounded-full",
+          // Liquid glass effect - transparent with subtle backdrop
+          "bg-white/5 backdrop-blur-sm",
           "text-gold",
-          "border border-gold/60",
-          "transition-all duration-700 ease-out",
-          "hover:bg-gold/5 hover:border-gold hover:shadow-[0_0_30px_rgba(180,140,50,0.12)]",
+          "border border-gold/50",
+          "transition-all duration-500 ease-out",
+          "hover:bg-white/10 hover:border-gold/80 hover:shadow-[0_0_25px_rgba(180,140,50,0.1)]",
           "hover:scale-[1.02]",
           "active:scale-[0.98]",
-          "[--circle-start:hsl(43_75%_45%/0.2)] [--circle-end:hsl(43_75%_55%/0.15)]",
+          "[--circle-start:hsl(43_75%_45%/0.15)] [--circle-end:hsl(43_75%_55%/0.1)]",
           className
         )}
         onPointerMove={handlePointerMove}
