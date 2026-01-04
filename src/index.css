@@ -45,6 +45,9 @@
     --gold-light: 43 70% 55%;
     --gold-dark: 43 80% 35%;
     
+    /* ===== HEADER ICONS COLOR #7f4721 ===== */
+    --header-icon: 22 59% 31%;
+    
     /* ===== TEXT ON DARK BACKGROUNDS ===== */
     --text-on-dark: var(--cream-signature);
     --text-on-dark-muted: 40 56% 96%;
@@ -235,11 +238,12 @@
   /* Country Selector Premium */
   .country-selector-premium {
     @apply flex items-center gap-1 sm:gap-2 text-sm tracking-wider transition-all duration-300;
-    color: hsl(var(--foreground));
+    color: hsl(var(--header-icon));
   }
 
   .country-selector-premium:hover {
-    color: hsl(var(--primary));
+    color: hsl(var(--header-icon));
+    opacity: 0.8;
   }
 
   .flag-icon {
@@ -268,11 +272,12 @@
   /* Header Icons Premium */
   .header-icon-premium {
     @apply relative flex items-center gap-1 sm:gap-2 transition-all duration-300;
-    color: hsl(var(--foreground));
+    color: hsl(var(--header-icon));
   }
 
   .header-icon-premium:hover {
-    color: hsl(var(--primary));
+    color: hsl(var(--header-icon));
+    opacity: 0.8;
   }
 
   .header-icon-premium::after {
