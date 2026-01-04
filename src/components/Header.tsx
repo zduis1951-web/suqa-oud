@@ -134,7 +134,7 @@ const Header = ({
               <img 
                 src="/suqa-oud-logo.svg" 
                 alt="SUQA OUD" 
-                className="h-[72px] sm:h-[84px] md:h-24 lg:h-[120px] w-auto transition-all duration-300 group-hover:opacity-80 group-hover:scale-105"
+                className="h-[58px] sm:h-[72px] md:h-[86px] lg:h-[100px] w-auto transition-all duration-300 group-hover:opacity-80 group-hover:scale-105"
                 loading="eager"
               />
             </a>
