@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Minus, Plus, Gift, PenTool, Package, Phone, ChevronDown, ArrowLeft } from 'lucide-react';
+import { Minus, Plus, ArrowLeft } from 'lucide-react';
 import { fetchProductByHandle, ShopifyProduct } from '@/lib/shopify';
 import { useCartStore } from '@/stores/cartStore';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -26,8 +26,6 @@ const ProductDetail = () => {
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
-  const [makeItGift, setMakeItGift] = useState(false);
-  const [engrave, setEngrave] = useState(false);
 
   useEffect(() => {
     const loadProduct = async () => {
@@ -197,26 +195,6 @@ const ProductDetail = () => {
             {/* Divider */}
             <div className="w-full h-px bg-border mb-8" />
 
-            {/* Size Selector */}
-            {product.node.options && product.node.options.length > 0 && (
-              <div className="mb-6">
-                <div className="flex flex-wrap gap-3">
-                  {product.node.variants.edges.map((variant, index) => (
-                    <button
-                      key={variant.node.id}
-                      onClick={() => setSelectedVariantIndex(index)}
-                      className={`px-6 py-3 text-lg tracking-[0.15em] uppercase border transition-all duration-300 ${
-                        selectedVariantIndex === index 
-                          ? 'border-primary bg-primary text-primary-foreground'
-                          : 'border-border hover:border-primary'
-                      }`}
-                    >
-                      {variant.node.title}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
 
             {/* Quantity Selector */}
             <div className="flex items-center gap-4 mb-8">
@@ -235,27 +213,6 @@ const ProductDetail = () => {
               </button>
             </div>
 
-            {/* Gift & Engrave Options */}
-            <div className="flex flex-wrap gap-4 mb-8">
-              <button 
-                onClick={() => setMakeItGift(!makeItGift)}
-                className={`flex items-center gap-3 px-5 py-3 border text-lg tracking-[0.12em] uppercase transition-all duration-300 ${
-                  makeItGift ? 'border-primary bg-primary/5' : 'border-border hover:border-primary'
-                }`}
-              >
-                <Gift className="h-4 w-4" />
-                <span>{t('products.makeItGift')}</span>
-              </button>
-              <button 
-                onClick={() => setEngrave(!engrave)}
-                className={`flex items-center gap-3 px-5 py-3 border text-lg tracking-[0.12em] uppercase transition-all duration-300 ${
-                  engrave ? 'border-primary bg-primary/5' : 'border-border hover:border-primary'
-                }`}
-              >
-                <PenTool className="h-4 w-4" />
-                <span>{t('products.engrave')}</span>
-              </button>
-            </div>
 
             {/* Add to Bag Button */}
             <motion.button
@@ -292,33 +249,6 @@ const ProductDetail = () => {
               </AccordionItem>
             </Accordion>
 
-            {/* Service Icons */}
-            <div className="flex flex-wrap justify-between gap-4 pt-4">
-                <div className="flex flex-col items-center gap-2 flex-1 min-w-[80px]">
-                <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center">
-                  <Package className="h-4 w-4" />
-                </div>
-                <span className="text-[15px] tracking-wider uppercase text-center text-muted-foreground">
-                  {t('products.complimentarySamples')}
-                </span>
-              </div>
-              <div className="flex flex-col items-center gap-2 flex-1 min-w-[80px]">
-                <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center">
-                  <Gift className="h-4 w-4" />
-                </div>
-                <span className="text-[15px] tracking-wider uppercase text-center text-muted-foreground">
-                  {t('products.giftWrapping')}
-                </span>
-              </div>
-              <div className="flex flex-col items-center gap-2 flex-1 min-w-[80px]">
-                <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center">
-                  <Phone className="h-4 w-4" />
-                </div>
-                <span className="text-[15px] tracking-wider uppercase text-center text-muted-foreground">
-                  {t('products.customerService')}
-                </span>
-              </div>
-            </div>
           </motion.div>
         </div>
       </main>
