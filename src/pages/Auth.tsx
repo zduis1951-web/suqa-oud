@@ -120,7 +120,11 @@ const Auth = () => {
         >
           {/* Logo */}
           <a href="/" className="inline-block mb-8">
-            <span className="text-3xl font-display tracking-[0.2em]">SUQA OUD</span>
+            <img 
+              src="/suqa-oud-logo.svg" 
+              alt="SUQA OUD" 
+              className="h-10 md:h-12 w-auto"
+            />
           </a>
 
           {/* Title */}
@@ -245,9 +249,11 @@ const Auth = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              <span className="text-6xl font-display tracking-[0.3em] text-primary/20">SUQA</span>
-              <br />
-              <span className="text-8xl font-display tracking-[0.2em] text-primary/30">OUD</span>
+              <img 
+                src="/suqa-oud-logo.svg" 
+                alt="SUQA OUD" 
+                className="h-24 md:h-32 w-auto opacity-30"
+              />
             </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

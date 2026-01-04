@@ -131,10 +131,12 @@ const Header = ({
           {/* Center - Logo */}
           <div className="header-center">
             <a href="/" className="logo-link group" aria-label="SUQA OUD - Home">
-              <span className="logo-text text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-[0.15em] sm:tracking-[0.25em] md:tracking-luxury">
-                SUQA OUD
-              </span>
-              <span className="logo-underline" />
+              <img 
+                src="/suqa-oud-logo.svg" 
+                alt="SUQA OUD" 
+                className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto transition-opacity duration-300 group-hover:opacity-80"
+                loading="eager"
+              />
             </a>
           </div>
 
