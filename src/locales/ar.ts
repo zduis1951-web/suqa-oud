@@ -180,7 +180,6 @@ export const ar = {
     topNotes: 'المقدمة:',
     heartNotes: 'القلب:',
     baseNotes: 'القاعدة:',
-    youMayAlsoLike: 'قد يعجبك أيضاً',
   },
   
   // Common

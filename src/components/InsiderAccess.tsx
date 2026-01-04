@@ -31,24 +31,24 @@ const InsiderAccess = () => {
     backgroundColor: '#F7F4EF'
   }}>
       <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-2xl sm:text-3xl tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] mb-3 sm:mb-4 text-foreground font-serif md:text-6xl">
+        <h2 className="text-lg sm:text-xl tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] mb-3 sm:mb-4 text-foreground font-serif md:text-4xl">
           {renderTitle()}
         </h2>
         
-        <p className="text-muted-foreground text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 leading-relaxed px-2">
+        <p className="text-muted-foreground text-xs sm:text-sm md:text-base mb-6 sm:mb-8 leading-relaxed px-2">
           {t('insider.description')}
         </p>
         
         <form onSubmit={handleSubmit} className="max-w-sm sm:max-w-md mx-auto mb-4 sm:mb-6 px-2">
-          <div className="flex items-center border border-black rounded-sm bg-white shadow-sm">
-            <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t('insider.emailPlaceholder')} required className="flex-1 bg-transparent px-4 py-3 sm:py-4 outline-none text-xl sm:text-2xl text-black placeholder:text-black/50 min-h-[48px]" dir={isRTL ? 'rtl' : 'ltr'} />
+          <div className="flex items-center border border-foreground/30 rounded-sm bg-white shadow-sm">
+            <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder={t('insider.emailPlaceholder')} required className="flex-1 bg-transparent px-4 py-3 sm:py-4 outline-none text-sm sm:text-base text-black placeholder:text-black/50 min-h-[48px]" dir={isRTL ? 'rtl' : 'ltr'} />
             <button type="submit" className="px-4 sm:px-5 py-3 sm:py-4 bg-foreground text-background hover:bg-foreground/90 transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center" aria-label={t('insider.subscribe')}>
               <ArrowRight className={`w-5 h-5 sm:w-6 sm:h-6 ${isRTL ? 'rotate-180' : ''}`} />
             </button>
           </div>
         </form>
         
-        <p className="text-[15px] sm:text-lg text-muted-foreground leading-relaxed px-2">
+        <p className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed px-2">
           {t('insider.termsNotice')}{' '}
           <a href="#" className="underline hover:text-foreground transition-colors">
             {t('insider.termsLink')}

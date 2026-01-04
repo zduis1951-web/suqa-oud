@@ -180,7 +180,6 @@ export const en = {
     topNotes: 'Top Notes:',
     heartNotes: 'Heart Notes:',
     baseNotes: 'Base Notes:',
-    youMayAlsoLike: 'YOU MAY ALSO LIKE',
   },
   
   // Common

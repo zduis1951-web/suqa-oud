@@ -48,14 +48,14 @@ const SohoFlagshipBoutique = ({
         {/* Main Headline */}
         <h2 
           style={{ fontFamily: 'var(--font-primary)' }} 
-          className="text-cream text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] uppercase mb-3 sm:mb-4 md:mb-6 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-4xl"
+          className="text-cream text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] uppercase mb-3 sm:mb-4 md:mb-6 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-4xl"
         >
           {t('soho.title')}
         </h2>
         
         {/* Description */}
         <p 
-          className="text-cream/80 text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.1em] uppercase mb-4 sm:mb-6 md:mb-8 font-light" 
+          className="text-cream/80 text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.1em] uppercase mb-4 sm:mb-6 md:mb-8 font-light" 
           style={{ fontFamily: 'var(--font-primary)' }}
         >
           {t('soho.subtitle')}

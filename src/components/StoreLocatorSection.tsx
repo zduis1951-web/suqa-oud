@@ -48,7 +48,7 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
         {/* Heading */}
         <h2
-          className="text-center uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-4 sm:mb-6 text-cream text-lg sm:text-xl md:text-2xl lg:text-2xl"
+          className="text-center uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-4 sm:mb-6 text-cream text-xs sm:text-sm md:text-base lg:text-lg"
           style={{
             fontFamily: '"Cormorant Garamond", "Times New Roman", serif',
             fontWeight: 400,
