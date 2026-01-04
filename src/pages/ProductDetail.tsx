@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Minus, Plus, ArrowLeft } from 'lucide-react';
+import { Minus, Plus, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { fetchProductByHandle, fetchShopifyProducts, ShopifyProduct } from '@/lib/shopify';
 import { useCartStore } from '@/stores/cartStore';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -27,11 +27,13 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
   const [suggestedProducts, setSuggestedProducts] = useState<ShopifyProduct[]>([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const loadProduct = async () => {
       if (!handle) return;
       setLoading(true);
+      setCurrentImageIndex(0);
       try {
         const productData = await fetchProductByHandle(handle);
         setProduct(productData);
@@ -49,16 +51,32 @@ const ProductDetail = () => {
   useEffect(() => {
     const loadSuggestedProducts = async () => {
       try {
-        const products = await fetchShopifyProducts(8);
+        const products = await fetchShopifyProducts(20);
         // Exclude current product
         const filtered = products.filter(p => p.node.handle !== handle);
-        setSuggestedProducts(filtered.slice(0, 4));
+        setSuggestedProducts(filtered);
       } catch (error) {
         console.error('Error loading suggested products:', error);
       }
     };
     loadSuggestedProducts();
   }, [handle]);
+
+  // Image gallery navigation
+  const productImages = product?.node.images.edges || [];
+  const currentImage = productImages[currentImageIndex]?.node.url || '';
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === productImages.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? productImages.length - 1 : prev - 1
+    );
+  };
 
   const selectedVariant = product?.node.variants.edges[selectedVariantIndex]?.node;
   const price = selectedVariant?.price.amount || product?.node.priceRange.minVariantPrice.amount || '0';
@@ -147,7 +165,6 @@ const ProductDetail = () => {
     );
   }
 
-  const productImage = product.node.images.edges[0]?.node.url || '';
   const isRTL = language === 'ar';
 
   return (
@@ -173,21 +190,63 @@ const ProductDetail = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row min-h-[calc(100vh-140px)]">
-          {/* Left Side - Product Image */}
+          {/* Left Side - Product Image Gallery */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="w-full lg:w-1/2 bg-[#EFE3D9] flex items-center justify-center p-8 lg:p-16 min-h-[50vh] lg:min-h-full lg:sticky lg:top-[140px] lg:h-[calc(100vh-140px)]"
+            className="w-full lg:w-1/2 bg-[#EFE3D9] flex items-center justify-center p-8 lg:p-16 min-h-[50vh] lg:min-h-full lg:sticky lg:top-[140px] lg:h-[calc(100vh-140px)] relative"
           >
-            <motion.img
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              src={productImage}
-              alt={product.node.title}
-              className="max-w-full max-h-[60vh] lg:max-h-[70vh] object-contain"
-            />
+            {/* Left Arrow */}
+            {productImages.length > 1 && (
+              <button
+                onClick={prevImage}
+                className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-white/80 hover:bg-white rounded-full shadow-lg transition-all z-10"
+              >
+                <ChevronLeft className="h-5 w-5 lg:h-6 lg:w-6" />
+              </button>
+            )}
+
+            {/* Product Image */}
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentImageIndex}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                src={currentImage}
+                alt={product.node.title}
+                className="max-w-full max-h-[60vh] lg:max-h-[70vh] object-contain"
+              />
+            </AnimatePresence>
+
+            {/* Right Arrow */}
+            {productImages.length > 1 && (
+              <button
+                onClick={nextImage}
+                className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-white/80 hover:bg-white rounded-full shadow-lg transition-all z-10"
+              >
+                <ChevronRight className="h-5 w-5 lg:h-6 lg:w-6" />
+              </button>
+            )}
+
+            {/* Image Indicators */}
+            {productImages.length > 1 && (
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                {productImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentImageIndex 
+                        ? 'bg-primary w-4' 
+                        : 'bg-primary/30 hover:bg-primary/50'
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
           </motion.div>
 
           {/* Right Side - Product Details */}
@@ -284,7 +343,7 @@ const ProductDetail = () => {
               <h2 className="text-2xl lg:text-3xl font-light tracking-[0.2em] uppercase text-center mb-10">
                 {isRTL ? 'قد يعجبك أيضاً' : 'YOU MAY ALSO LIKE'}
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                 {suggestedProducts.map((suggestedProduct) => (
                   <motion.div
                     key={suggestedProduct.node.id}
