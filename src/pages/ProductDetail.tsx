@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Minus, Plus, ArrowLeft } from 'lucide-react';
-import { fetchProductByHandle, ShopifyProduct } from '@/lib/shopify';
+import { fetchProductByHandle, fetchShopifyProducts, ShopifyProduct } from '@/lib/shopify';
 import { useCartStore } from '@/stores/cartStore';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { toast } from 'sonner';
@@ -26,6 +26,7 @@ const ProductDetail = () => {
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
+  const [suggestedProducts, setSuggestedProducts] = useState<ShopifyProduct[]>([]);
 
   useEffect(() => {
     const loadProduct = async () => {
@@ -42,6 +43,21 @@ const ProductDetail = () => {
     };
 
     loadProduct();
+  }, [handle]);
+
+  // Load suggested products
+  useEffect(() => {
+    const loadSuggestedProducts = async () => {
+      try {
+        const products = await fetchShopifyProducts(8);
+        // Exclude current product
+        const filtered = products.filter(p => p.node.handle !== handle);
+        setSuggestedProducts(filtered.slice(0, 4));
+      } catch (error) {
+        console.error('Error loading suggested products:', error);
+      }
+    };
+    loadSuggestedProducts();
   }, [handle]);
 
   const selectedVariant = product?.node.variants.edges[selectedVariantIndex]?.node;
@@ -84,6 +100,14 @@ const ProductDetail = () => {
     if (description.includes('oud')) types.push('OUD');
     if (description.includes('amber')) types.push('AMBER');
     return types.length > 0 ? types.join(' | ') : 'EDP | LUXURY';
+  };
+
+  const handleGoBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
   };
 
   if (loading) {
@@ -139,10 +163,11 @@ const ProductDetail = () => {
         {/* Back Button - Mobile */}
         <div className="lg:hidden px-4 py-3">
           <button 
-            onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-xl tracking-wider uppercase opacity-70 hover:opacity-100 transition-opacity"
+            onClick={handleGoBack}
+            className="flex items-center gap-2 text-xl tracking-wider uppercase opacity-70 hover:opacity-100 transition-opacity active:scale-95"
+            type="button"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft className="h-5 w-5" />
             <span>{t('products.back')}</span>
           </button>
         </div>
@@ -153,7 +178,7 @@ const ProductDetail = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="w-full lg:w-1/2 bg-[#f7f4ef] flex items-center justify-center p-8 lg:p-16 min-h-[50vh] lg:min-h-full lg:sticky lg:top-[140px] lg:h-[calc(100vh-140px)]"
+            className="w-full lg:w-1/2 bg-[#EFE3D9] flex items-center justify-center p-8 lg:p-16 min-h-[50vh] lg:min-h-full lg:sticky lg:top-[140px] lg:h-[calc(100vh-140px)]"
           >
             <motion.img
               initial={{ scale: 0.9, opacity: 0 }}
@@ -251,6 +276,46 @@ const ProductDetail = () => {
 
           </motion.div>
         </div>
+
+        {/* You May Also Like Section */}
+        {suggestedProducts.length > 0 && (
+          <section className="py-12 lg:py-20 bg-[#EFE3D9]">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl lg:text-3xl font-light tracking-[0.2em] uppercase text-center mb-10">
+                {isRTL ? 'قد يعجبك أيضاً' : 'YOU MAY ALSO LIKE'}
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {suggestedProducts.map((suggestedProduct) => (
+                  <motion.div
+                    key={suggestedProduct.node.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    onClick={() => navigate(`/product/${suggestedProduct.node.handle}`)}
+                    className="cursor-pointer group"
+                  >
+                    <div className="bg-[#EFE3D9] border border-[rgb(53,53,53)] p-4 transition-all duration-300 hover:shadow-lg">
+                      <div className="aspect-square overflow-hidden">
+                        <img
+                          src={suggestedProduct.node.images.edges[0]?.node.url}
+                          alt={suggestedProduct.node.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <h3 className="mt-4 text-center uppercase tracking-wider text-sm font-light">
+                        {suggestedProduct.node.title}
+                      </h3>
+                      <p className="text-center text-sm mt-2 font-light">
+                        {suggestedProduct.node.priceRange.minVariantPrice.currencyCode} {parseFloat(suggestedProduct.node.priceRange.minVariantPrice.amount).toFixed(0)}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
       </main>
 
       <Footer />
