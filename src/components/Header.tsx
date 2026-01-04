@@ -254,7 +254,8 @@ const Header = ({
           <div className="flex flex-col gap-4 px-2">
             {/* Search */}
             <button 
-              className="flex items-center gap-3 text-foreground py-3" 
+              className="flex items-center gap-3 py-3" 
+              style={{ color: 'hsl(22 59% 31%)' }}
               aria-label={t('header.search')}
               onClick={() => {
                 setIsMobileMenuOpen(false);
@@ -279,7 +280,8 @@ const Header = ({
               </div>
             ) : (
               <button 
-                className="flex items-center gap-3 text-foreground py-3" 
+                className="flex items-center gap-3 py-3" 
+                style={{ color: 'hsl(22 59% 31%)' }}
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   navigate('/auth');
@@ -292,7 +294,8 @@ const Header = ({
             
             {/* Language Toggle */}
             <button 
-              className="flex items-center gap-3 text-foreground py-3"
+              className="flex items-center gap-3 py-3"
+              style={{ color: 'hsl(22 59% 31%)' }}
               onClick={toggleLanguage}
             >
               <Languages className="h-5 w-5" />
@@ -303,7 +306,8 @@ const Header = ({
             
             {/* Country selector for mobile */}
             <button 
-              className="flex items-center gap-3 text-foreground py-3"
+              className="flex items-center gap-3 py-3"
+              style={{ color: 'hsl(22 59% 31%)' }}
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 setIsCountryOpen(true);
