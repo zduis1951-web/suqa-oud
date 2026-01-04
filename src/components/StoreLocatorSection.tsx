@@ -1,4 +1,6 @@
 import storeLocatorVideo from '@/assets/store-locator-video.mp4';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { HoverButton } from '@/components/ui/hover-button';
 
 interface StoreLocatorSectionProps {
   onStoreLocatorClick?: () => void;
@@ -11,6 +13,8 @@ interface StoreLocatorSectionProps {
  * Full-width horizontal band with video background.
  */
 const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) => {
+  const { t } = useLanguage();
+
   const handleClick = () => {
     if (onStoreLocatorClick) {
       onStoreLocatorClick();
@@ -23,7 +27,7 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
     <section
       className="w-full relative overflow-hidden"
       style={{
-        height: '200px',
+        height: 'clamp(180px, 25vw, 250px)',
       }}
       aria-label="SUQA OUD - Exclusively Online"
     >
@@ -44,36 +48,22 @@ const StoreLocatorSection = ({ onStoreLocatorClick }: StoreLocatorSectionProps) 
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
         {/* Heading */}
         <h2
-          className="text-center uppercase tracking-[0.2em] mb-6"
+          className="text-center uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-4 sm:mb-6 text-cream text-xs sm:text-sm md:text-base lg:text-lg"
           style={{
             fontFamily: '"Cormorant Garamond", "Times New Roman", serif',
-            fontSize: 'clamp(14px, 2.5vw, 18px)',
             fontWeight: 400,
-            letterSpacing: '0.2em',
-            color: '#ffffff',
           }}
         >
-          EXCLUSIVELY ONLINE
+          {t('storeLocator.title')}
         </h2>
 
         {/* Store Locator Button */}
-        <button
+        <HoverButton
           onClick={handleClick}
-          className="uppercase tracking-[0.15em] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-foreground"
-          style={{
-            fontFamily: '"Cormorant Garamond", "Times New Roman", serif',
-            fontSize: '12px',
-            fontWeight: 400,
-            letterSpacing: '0.15em',
-            color: '#1a1a1a',
-            backgroundColor: '#ffffff',
-            border: '1px solid rgba(0, 0, 0, 0.15)',
-            padding: '14px 32px',
-          }}
           aria-label="Shop SUQA OUD online"
         >
-          SHOP NOW
-        </button>
+          {t('storeLocator.shopNow')}
+        </HoverButton>
       </div>
     </section>
   );
