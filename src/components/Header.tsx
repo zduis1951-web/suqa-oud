@@ -87,8 +87,8 @@ const Header = ({
 
   return <>
     {/* Announcement Bar */}
-    <div className="announcement-bar-premium">
-      <p className="font-body animate-fade-in text-[15px] sm:text-lg">
+    <div className="announcement-bar-premium py-1.5 sm:py-2">
+      <p className="font-body animate-fade-in text-xs sm:text-sm">
         {t('announcement.sampler')}
       </p>
     </div>
@@ -97,7 +97,7 @@ const Header = ({
     <header className={`header-container ${isTransparent ? 'header-transparent' : 'header-solid'} ${isScrolled ? 'header-scrolled' : ''}`}>
       <div className="header-content border-[#ede4d9]">
         {/* Top Row - Country, Logo, Icons */}
-        <div className="header-top-row py-3 md:py-4">
+        <div className="header-top-row py-1.5 md:py-2">
           {/* Left - Country & Language Selector */}
           <div className="header-left min-w-[80px] sm:min-w-[100px] md:min-w-[150px]">
             {/* Country Selector */}
@@ -134,7 +134,7 @@ const Header = ({
               <img 
                 src="/suqa-oud-logo.svg" 
                 alt="SUQA OUD" 
-                className="h-[58px] sm:h-[72px] md:h-[86px] lg:h-[100px] w-auto transition-all duration-300 group-hover:opacity-80 group-hover:scale-105"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto transition-all duration-300 group-hover:opacity-80 group-hover:scale-105"
                 loading="eager"
               />
             </a>
@@ -204,12 +204,12 @@ const Header = ({
         </div>
 
         {/* Navigation Row - Desktop */}
-        <nav className="nav-row hidden lg:flex" aria-label="Main navigation">
+        <nav className="nav-row hidden lg:flex py-2" aria-label="Main navigation">
           {navItems.map((item, index) => (
             <a 
               key={item.label} 
               href={item.href} 
-              className="nav-link-premium" 
+              className="nav-link-premium text-xs tracking-[0.2em]" 
               onMouseEnter={() => setHoveredItem(item.label)} 
               onMouseLeave={() => setHoveredItem(null)} 
               style={{ animationDelay: `${index * 50}ms` }}
